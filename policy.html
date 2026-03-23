@@ -1,516 +1,500 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legio — Policy Management for Campus Safety</title>
+<meta name="description" content="Legio's Policy module gives campus safety teams a centralized, IACLEA-ready system for managing directives, tracking reviews, and proving compliance without the scramble.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Legio — Policy Management for Campus Safety">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://yourcampusdomain.com/policy">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #07090f;
+    --navy-mid: #0e1422;
+    --navy-card: #131929;
+    --navy-light: #1a2235;
+    --border: rgba(255,255,255,0.07);
+    --border-accent: rgba(59,124,255,0.3);
+    --text-primary: #eef2ff;
+    --text-secondary: #7a8ba8;
+    --accent: #3b7cff;
+    --accent-hover: #2d6aee;
+    --teal: #0d9488;
+    --indigo: #6366f1;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--navy);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 20px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(7,9,15,0.9);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-left { display: flex; align-items: center; gap: 20px; }
+  .logo { font-size: 17px; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+  .nav-divider { width: 1px; height: 16px; background: var(--border); }
+  .nav-page { font-size: 13px; color: var(--text-secondary); }
+  .nav-cta {
+    background: var(--accent); color: #fff;
+    padding: 9px 20px; border-radius: 6px;
+    font-size: 14px; font-weight: 500; text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--accent-hover); }
+
+  /* HERO — SPLIT LAYOUT */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 80px 80px;
+    position: relative; overflow: hidden;
+    gap: 64px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(59,124,255,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-left { position: relative; z-index: 1; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 500; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--text-secondary);
+    margin-bottom: 28px;
+  }
+  .eyebrow a { color: var(--accent); text-decoration: none; }
+  .eyebrow a:hover { text-decoration: underline; }
+  .eyebrow-sep { color: var(--border); }
+  h1 {
+    font-size: clamp(32px, 4vw, 52px); font-weight: 600;
+    line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 24px;
+  }
+  h1 em { font-style: normal; color: var(--accent); }
+  .hero-sub {
+    font-size: 17px; color: var(--text-secondary);
+    max-width: 440px; margin-bottom: 40px; line-height: 1.75;
+  }
+  .btn-primary {
+    display: inline-block; background: var(--accent); color: #fff;
+    padding: 14px 28px; border-radius: 8px; font-size: 14px; font-weight: 500;
+    text-decoration: none; transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+  /* HERO RIGHT — STAT CARD CLUSTER */
+  .hero-right {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .hero-card {
+    background: var(--navy-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px 28px;
+  }
+  .hero-card-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+  .hero-card-value {
+    font-size: 28px; font-weight: 600; letter-spacing: -0.8px;
+    color: var(--text-primary); line-height: 1.1; margin-bottom: 6px;
+  }
+  .hero-card-value span { font-size: 0.5em; color: var(--accent); }
+  .hero-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+  .hero-card.accent-border { border-left: 3px solid var(--accent); }
+  .hero-card.teal-border { border-left: 3px solid var(--teal); }
+  .hero-card.indigo-border { border-left: 3px solid var(--indigo); }
+
+  /* SECTIONS */
+  section { padding: 96px 24px; }
+  .container { max-width: 960px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+  }
+  h2 {
+    font-size: clamp(26px, 4vw, 38px); font-weight: 600;
+    letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 48px;
+  }
+  h2 .muted { color: var(--text-secondary); }
+
+  /* PROBLEM */
+  .problem { background: var(--navy-mid); border-top: 1px solid var(--border); }
+  .problem-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .problem-left h2 { margin-bottom: 20px; }
+  .problem-left p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; max-width: 380px; }
+  .problem-right { display: flex; flex-direction: column; gap: 16px; }
+  .problem-card {
+    background: var(--navy-light); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent); border-radius: 10px;
+    padding: 22px 24px; display: flex; gap: 18px; align-items: flex-start;
+  }
+  .problem-card:nth-child(2) { border-left-color: var(--teal); }
+  .problem-card:nth-child(3) { border-left-color: var(--indigo); }
+  .problem-card .number {
+    font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+    color: var(--accent); text-transform: uppercase; flex-shrink: 0; padding-top: 2px;
+  }
+  .problem-card:nth-child(2) .number { color: var(--teal); }
+  .problem-card:nth-child(3) .number { color: var(--indigo); }
+  .problem-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+  .problem-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* STANDARDS SECTION */
+  .standards { background: var(--navy); border-top: 1px solid var(--border); }
+  .standards-intro {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 64px; align-items: start; margin-bottom: 48px;
+  }
+  .standards-intro h2 { margin-bottom: 16px; }
+  .standards-intro p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; }
+  .standards-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+  }
+  .standard-pill {
+    background: var(--navy-card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 16px;
+    text-align: center;
+  }
+  .standard-pill .pill-tag {
+    font-size: 10px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .standard-pill h4 { font-size: 12px; font-weight: 600; margin-bottom: 4px; line-height: 1.3; }
+  .standard-pill p { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
+
+  /* TIMELINE */
+  .timeline-section { background: var(--navy-mid); border-top: 1px solid var(--border); }
+  .timeline-header { margin-bottom: 56px; }
+  .timeline-header h2 { margin-bottom: 0; }
+  .timeline-cols {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  }
+  .timeline-col h3 {
+    font-size: 13px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; padding: 10px 16px;
+    border-radius: 6px; margin-bottom: 24px;
+  }
+  .timeline-col.before h3 { background: rgba(255,255,255,0.04); color: var(--text-secondary); }
+  .timeline-col.after h3 { background: rgba(59,124,255,0.1); color: var(--accent); }
+  .timeline-items { display: flex; flex-direction: column; gap: 0; }
+  .tl-item {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .tl-item:last-child { border-bottom: none; }
+  .tl-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--text-secondary); flex-shrink: 0; margin-top: 6px;
+  }
+  .timeline-col.after .tl-dot { background: var(--accent); }
+  .tl-time {
+    font-size: 11px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--text-secondary);
+    flex-shrink: 0; width: 64px; margin-top: 4px;
+  }
+  .timeline-col.after .tl-time { color: var(--accent); }
+  .tl-content h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .tl-content p { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+  .timeline-col.before .tl-content h4 { color: var(--text-secondary); }
+
+  /* HOW IT WORKS */
+  .how { background: var(--navy); border-top: 1px solid var(--border); }
+  .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .how-card {
+    background: var(--navy-card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 28px; position: relative;
+  }
+  .how-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; border-radius: 10px 10px 0 0;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.4;
+  }
+  .how-card:nth-child(2)::before { background: linear-gradient(90deg, transparent, var(--teal), transparent); }
+  .how-card:nth-child(3)::before { background: linear-gradient(90deg, transparent, var(--indigo), transparent); }
+  .how-num { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; }
+  .how-card:nth-child(2) .how-num { color: var(--teal); }
+  .how-card:nth-child(3) .how-num { color: var(--indigo); }
+  .how-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.3px; }
+  .how-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+
+  /* CTA */
+  #book { padding: 96px 24px; background: var(--navy-mid); border-top: 1px solid var(--border); }
+  .cta-block {
+    text-align: center; background: var(--navy-card);
+    border: 1px solid var(--border-accent); border-radius: 16px; padding: 64px 40px;
+    max-width: 640px; margin: 0 auto; position: relative; overflow: hidden;
+  }
+  .cta-block::before {
+    content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(59,124,255,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-block h2 { margin-bottom: 16px; position: relative; }
+  .cta-block p { font-size: 16px; color: var(--text-secondary); margin-bottom: 36px; max-width: 440px; margin-left: auto; margin-right: auto; position: relative; }
+  .cta-block .btn-primary { display: inline-block; position: relative; }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 40px; border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .logo-sm { font-size: 15px; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+  footer p { font-size: 13px; color: var(--text-secondary); }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 120px 40px 64px; }
+    .hero-right { display: none; }
+    .problem-layout, .standards-intro, .timeline-cols { grid-template-columns: 1fr; gap: 32px; }
+    .how-grid { grid-template-columns: 1fr; }
+    .standards-grid { grid-template-columns: repeat(2, 1fr); }
+    .problem-left p { max-width: 100%; }
+  }
+  @media (max-width: 600px) {
+    nav { padding: 16px 20px; }
+    .hero { padding: 100px 24px 64px; }
+    footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+    .standards-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1">&lt;title&gt;Legio — Policy Management for Campus Safety&lt;/title&gt;</p>
-<p class="p1">&lt;meta name="description" content="Legio's Policy module gives campus safety teams a centralized, IACLEA-ready system for managing directives, tracking reviews, and proving compliance without the scramble."&gt;</p>
-<p class="p1">&lt;meta name="robots" content="index, follow"&gt;</p>
-<p class="p1">&lt;meta property="og:title" content="Legio — Policy Management for Campus Safety"&gt;</p>
-<p class="p1">&lt;meta property="og:type" content="website"&gt;</p>
-<p class="p1">&lt;link rel="canonical" href="https://yourcampusdomain.com/policy"&gt;</p>
-<p class="p1">&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--navy: #07090f;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--navy-mid: #0e1422;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--navy-card: #131929;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--navy-light: #1a2235;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--border: rgba(255,255,255,0.07);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--border-accent: rgba(59,124,255,0.3);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--text-primary: #eef2ff;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--text-secondary: #7a8ba8;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--accent: #3b7cff;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--accent-hover: #2d6aee;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--teal: #0d9488;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>--indigo: #6366f1;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>html { scroll-behavior: smooth; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Inter', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: var(--navy);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>color: var(--text-primary);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>-webkit-font-smoothing: antialiased;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.fade-in.visible { opacity: 1; transform: translateY(0); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* NAV */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>nav {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>position: fixed; top: 0; left: 0; right: 0; z-index: 100;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding: 20px 40px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: flex; align-items: center; justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: rgba(7,9,15,0.9);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>backdrop-filter: blur(14px);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-bottom: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.nav-left { display: flex; align-items: center; gap: 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.logo { font-size: 17px; font-weight: 600; color: var(--text-primary); text-decoration: none; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.nav-divider { width: 1px; height: 16px; background: var(--border); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.nav-page { font-size: 13px; color: var(--text-secondary); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.nav-cta {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: var(--accent); color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding: 9px 20px; border-radius: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 14px; font-weight: 500; text-decoration: none; transition: background 0.2s;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.nav-cta:hover { background: var(--accent-hover); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* HERO — SPLIT LAYOUT */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>min-height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>grid-template-columns: 1fr 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding: 120px 80px 80px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>position: relative; overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>gap: 64px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero::before {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>content: '';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>position: absolute; top: -100px; right: -100px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>width: 700px; height: 700px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: radial-gradient(circle, rgba(59,124,255,0.07) 0%, transparent 65%);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>pointer-events: none;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-left { position: relative; z-index: 1; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.eyebrow {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: inline-flex; align-items: center; gap: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 12px; font-weight: 500; letter-spacing: 1.5px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>text-transform: uppercase; color: var(--text-secondary);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 28px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.eyebrow a { color: var(--accent); text-decoration: none; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.eyebrow a:hover { text-decoration: underline; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.eyebrow-sep { color: var(--border); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>h1 {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: clamp(32px, 4vw, 52px); font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>h1 em { font-style: normal; color: var(--accent); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-sub {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 17px; color: var(--text-secondary);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>max-width: 440px; margin-bottom: 40px; line-height: 1.75;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.btn-primary {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: inline-block; background: var(--accent); color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding: 14px 28px; border-radius: 8px; font-size: 14px; font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>text-decoration: none; transition: background 0.2s, transform 0.15s;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* HERO RIGHT — STAT CARD CLUSTER */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-right {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>position: relative; z-index: 1;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: flex; flex-direction: column; gap: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-card {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: var(--navy-card); border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 12px; padding: 24px 28px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-card-label {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 11px; font-weight: 600; letter-spacing: 2px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>text-transform: uppercase; color: var(--text-secondary);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-card-value {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 28px; font-weight: 600; letter-spacing: -0.8px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>color: var(--text-primary); line-height: 1.1; margin-bottom: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-card-value span { font-size: 0.5em; color: var(--accent); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-card.accent-border { border-left: 3px solid var(--accent); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-card.teal-border { border-left: 3px solid var(--teal); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-card.indigo-border { border-left: 3px solid var(--indigo); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* SECTIONS */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>section { padding: 96px 24px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.container { max-width: 960px; margin: 0 auto; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.section-label {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 11px; font-weight: 600; letter-spacing: 2px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>text-transform: uppercase; color: var(--accent); margin-bottom: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>h2 {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: clamp(26px, 4vw, 38px); font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 48px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>h2 .muted { color: var(--text-secondary); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* PROBLEM */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.problem { background: var(--navy-mid); border-top: 1px solid var(--border); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.problem-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.problem-left h2 { margin-bottom: 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.problem-left p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; max-width: 380px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.problem-right { display: flex; flex-direction: column; gap: 16px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.problem-card {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: var(--navy-light); border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-left: 3px solid var(--accent); border-radius: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding: 22px 24px; display: flex; gap: 18px; align-items: flex-start;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.problem-card:nth-child(2) { border-left-color: var(--teal); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.problem-card:nth-child(3) { border-left-color: var(--indigo); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.problem-card .number {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 11px; font-weight: 600; letter-spacing: 1.5px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>color: var(--accent); text-transform: uppercase; flex-shrink: 0; padding-top: 2px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.problem-card:nth-child(2) .number { color: var(--teal); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.problem-card:nth-child(3) .number { color: var(--indigo); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.problem-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 5px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.problem-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* STANDARDS SECTION */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.standards { background: var(--navy); border-top: 1px solid var(--border); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.standards-intro {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: grid; grid-template-columns: 1fr 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>gap: 64px; align-items: start; margin-bottom: 48px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.standards-intro h2 { margin-bottom: 16px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.standards-intro p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.standards-grid {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.standard-pill {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: var(--navy-card); border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 8px; padding: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.standard-pill .pill-tag {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 10px; font-weight: 600; letter-spacing: 1.5px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>text-transform: uppercase; color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.standard-pill h4 { font-size: 12px; font-weight: 600; margin-bottom: 4px; line-height: 1.3; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.standard-pill p { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* TIMELINE */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.timeline-section { background: var(--navy-mid); border-top: 1px solid var(--border); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.timeline-header { margin-bottom: 56px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.timeline-header h2 { margin-bottom: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.timeline-cols {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: grid; grid-template-columns: 1fr 1fr; gap: 32px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.timeline-col h3 {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 13px; font-weight: 600; letter-spacing: 1.5px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>text-transform: uppercase; padding: 10px 16px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 6px; margin-bottom: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.timeline-col.before h3 { background: rgba(255,255,255,0.04); color: var(--text-secondary); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.timeline-col.after h3 { background: rgba(59,124,255,0.1); color: var(--accent); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.timeline-items { display: flex; flex-direction: column; gap: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.tl-item {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: flex; gap: 16px; align-items: flex-start;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding: 16px 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-bottom: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.tl-item:last-child { border-bottom: none; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.tl-dot {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>width: 8px; height: 8px; border-radius: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: var(--text-secondary); flex-shrink: 0; margin-top: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.timeline-col.after .tl-dot { background: var(--accent); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.tl-time {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 11px; font-weight: 600; letter-spacing: 1px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>text-transform: uppercase; color: var(--text-secondary);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>flex-shrink: 0; width: 64px; margin-top: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.timeline-col.after .tl-time { color: var(--accent); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.tl-content h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.tl-content p { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.timeline-col.before .tl-content h4 { color: var(--text-secondary); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* HOW IT WORKS */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.how { background: var(--navy); border-top: 1px solid var(--border); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.how-card {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: var(--navy-card); border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 10px; padding: 28px; position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.how-card::before {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>content: ''; position: absolute; top: 0; left: 0; right: 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>height: 2px; border-radius: 10px 10px 0 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.4;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.how-card:nth-child(2)::before { background: linear-gradient(90deg, transparent, var(--teal), transparent); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.how-card:nth-child(3)::before { background: linear-gradient(90deg, transparent, var(--indigo), transparent); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.how-num { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.how-card:nth-child(2) .how-num { color: var(--teal); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.how-card:nth-child(3) .how-num { color: var(--indigo); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.how-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.3px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.how-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* CTA */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>#book { padding: 96px 24px; background: var(--navy-mid); border-top: 1px solid var(--border); }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.cta-block {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>text-align: center; background: var(--navy-card);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>border: 1px solid var(--border-accent); border-radius: 16px; padding: 64px 40px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>max-width: 640px; margin: 0 auto; position: relative; overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.cta-block::before {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>width: 400px; height: 400px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>background: radial-gradient(circle, rgba(59,124,255,0.07) 0%, transparent 70%);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>pointer-events: none;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.cta-block h2 { margin-bottom: 16px; position: relative; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.cta-block p { font-size: 16px; color: var(--text-secondary); margin-bottom: 36px; max-width: 440px; margin-left: auto; margin-right: auto; position: relative; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.cta-block .btn-primary { display: inline-block; position: relative; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>/* FOOTER */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>footer {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding: 32px 40px; border-top: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>display: flex; align-items: center; justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>flex-wrap: wrap; gap: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.logo-sm { font-size: 15px; font-weight: 600; color: var(--text-primary); text-decoration: none; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>footer p { font-size: 13px; color: var(--text-secondary); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>@media (max-width: 900px) {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero { grid-template-columns: 1fr; padding: 120px 40px 64px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero-right { display: none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.problem-layout, .standards-intro, .timeline-cols { grid-template-columns: 1fr; gap: 32px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.how-grid { grid-template-columns: 1fr; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.standards-grid { grid-template-columns: repeat(2, 1fr); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.problem-left p { max-width: 100%; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>@media (max-width: 600px) {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>nav { padding: 16px 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero { padding: 100px 24px 64px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.standards-grid { grid-template-columns: 1fr 1fr; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-left"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="index.html" class="logo"&gt;legio&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="nav-divider"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="nav-page"&gt;Policy Management&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div style="display:flex;align-items:center;gap:20px;margin-right:auto;margin-left:24px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="index.html" style="font-size:13px;color:var(--text-secondary);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color 0.2s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;svg width="14" height="14" viewBox="0 0 14 14" fill="none"&gt;&lt;path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>Back to home</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;a href="https://calendly.com/darren-klasscapital/30min" target="_blank" class="nav-cta"&gt;Book a Walkthrough&lt;/a&gt;</p>
-<p class="p1">&lt;/nav&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- HERO — SPLIT --&gt;</p>
-<p class="p1">&lt;section class="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="hero-left fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="eyebrow"&gt;Policy Management&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Stop hunting for &lt;em&gt;signatures.&lt;/em&gt;&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="hero-sub"&gt;IACLEA accreditation requires a written directive for virtually every operational function. Most institutions can't prove compliance without weeks of manual assembly. Legio changes that.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://calendly.com/darren-klasscapital/30min" target="_blank" class="btn-primary"&gt;See It in Action&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="hero-right fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-card accent-border"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="hero-card-label"&gt;IACLEA Standards&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-card-value"&gt;100&lt;span&gt;+&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;individual written directives required across 17 chapters — each with specific elements, review schedules, and acknowledgment requirements.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-card teal-border"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="hero-card-label"&gt;The Reality&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-card-value" style="font-size:18px; letter-spacing: -0.3px;"&gt;Word docs. Shared drives. Binders.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;That's where most campus security policies live today — with no system tracking what exists, what's current, or who's seen it.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-card indigo-border"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="hero-card-label"&gt;The Gap&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-card-value" style="font-size:18px; letter-spacing: -0.3px;"&gt;No platform connects policies to operations.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;General tools manage documents. Legio manages policies in the context of the operations they govern.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- PROBLEM --&gt;</p>
-<p class="p1">&lt;section class="problem"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="problem-layout fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="problem-left"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="section-label"&gt;The Problem&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Accreditation shouldn't be &lt;span class="muted"&gt;a fire drill.&lt;/span&gt;&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;When assessors arrive, the scramble begins. Weeks of cross-referencing standards to documents, hunting down signatures, and rebuilding paper trails that should have been continuous.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="problem-right"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="problem-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="number"&gt;01&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;No single source of truth&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Policies are scattered across shared drives and institutional memory. There's no central record of what exists, what's been reviewed, or who approved it.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="problem-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="number"&gt;02&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Policies disconnected from operations&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;The policy that governs your patrol procedure lives in a separate system from your patrol data. There's no linkage — and accreditors notice.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="problem-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="number"&gt;03&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Compliance is reactive, not continuous&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Without ongoing tracking, every accreditation cycle is a manual rebuild. Weeks of effort that should have been minutes.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- TIMELINE --&gt;</p>
-<p class="p1">&lt;section class="timeline-section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="timeline-header fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="section-label"&gt;Before &amp; After&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;What accreditation prep &lt;span class="muted"&gt;actually looks like.&lt;/span&gt;&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="timeline-cols fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-col before"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Without Legio&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="timeline-items"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="tl-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-dot"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-time"&gt;Week 1&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-content"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4&gt;Locate all policy documents&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;p&gt;Dig through shared drives, email threads, and filing cabinets to find out what actually exists.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="tl-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-dot"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-time"&gt;Week 2&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-content"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4&gt;Cross-reference to IACLEA standards&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;p&gt;Manually map each document to the standard it satisfies — or discover the gaps.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="tl-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-dot"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-time"&gt;Week 3&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-content"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4&gt;Chase down acknowledgment signatures&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;p&gt;Hunt for officer sign-offs, some of which were never collected in the first place.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="tl-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-dot"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-time"&gt;Week 4&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-content"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4&gt;Assemble the paper trail&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;p&gt;Build the evidence package manually. Hope nothing's missing. Brace for assessor questions.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline-col after"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;With Legio&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="timeline-items"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="tl-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-dot"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-time"&gt;Always&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-content"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4&gt;Policies are continuously tracked&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;p&gt;Every directive, review date, approval, and acknowledgment is captured in real time — not assembled at crunch time.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="tl-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-dot"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-time"&gt;Always&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-content"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4&gt;Standards are mapped automatically&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;p&gt;Every policy is linked to its IACLEA standard from the moment it's created. Gaps surface immediately, not during assessment.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="tl-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-dot"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-time"&gt;Always&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-content"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4&gt;Officer acknowledgments are logged digitally&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;p&gt;Officers acknowledge policies in the same platform they use every day. No chasing. No paper.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="tl-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-dot"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-time"&gt;Day 1&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="tl-content"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4&gt;Compliance report generated in minutes&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;p&gt;When assessors arrive, the evidence package is already complete. One report. No scramble.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- HOW IT WORKS --&gt;</p>
-<p class="p1">&lt;section class="how"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="section-label fade-in"&gt;How It Works&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="fade-in"&gt;From directive to proof, &lt;span class="muted"&gt;without the manual work.&lt;/span&gt;&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="how-grid fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="how-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="how-num"&gt;01&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Create &amp; map directives&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Upload or author policies directly in Legio. Each directive is mapped to its IACLEA standard, assigned required elements, and given a review schedule.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="how-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="how-num"&gt;02&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Track reviews &amp; acknowledgments&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Review reminders fire automatically before deadlines. Officers acknowledge policies digitally in the same platform they use for everything else.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="how-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="how-num"&gt;03&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Prove compliance instantly&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Generate a complete accreditation evidence package — standards mapped, reviews logged, approvals recorded, acknowledgments confirmed — in minutes.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- CTA --&gt;</p>
-<p class="p1">&lt;section id="book"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="cta-block fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="section-label" style="margin-bottom:12px;"&gt;See It in Action&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;We could keep describing it. &lt;span class="muted"&gt;But it's much more fun to show you.&lt;/span&gt;&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Book a 30-minute walkthrough. We'll show you the Policy module and the rest of the platform — you tell us where we've got it right and where we haven't.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://calendly.com/darren-klasscapital/30min" target="_blank" class="btn-primary"&gt;Book a Walkthrough&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;a href="index.html" class="logo-sm"&gt;legio&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;© 2025 Legio. All rights reserved.&lt;/p&gt;</p>
-<p class="p1">&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const obs = new IntersectionObserver(entries =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>entries.forEach(e =&gt; { if (e.isIntersecting) e.target.classList.add('visible'); });</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}, { threshold: 0.1 });</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.fade-in').forEach(el =&gt; obs.observe(el));</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="logo">legio</a>
+    <div class="nav-divider"></div>
+    <span class="nav-page">Policy Management</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:20px;margin-right:auto;margin-left:24px;">
+    <a href="index.html" style="font-size:13px;color:var(--text-secondary);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color 0.2s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to home
+    </a>
+  </div>
+  <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" class="nav-cta">Book a Walkthrough</a>
+</nav>
+
+<!-- HERO — SPLIT -->
+<section class="hero">
+  <div class="hero-left fade-in">
+    <div class="eyebrow">Policy Management</div>
+    <h1>Stop hunting for <em>signatures.</em></h1>
+    <p class="hero-sub">IACLEA accreditation requires a written directive for virtually every operational function. Most institutions can't prove compliance without weeks of manual assembly. Legio changes that.</p>
+    <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" class="btn-primary">See It in Action</a>
+  </div>
+  <div class="hero-right fade-in">
+    <div class="hero-card accent-border">
+      <p class="hero-card-label">IACLEA Standards</p>
+      <div class="hero-card-value">100<span>+</span></div>
+      <p>individual written directives required across 17 chapters — each with specific elements, review schedules, and acknowledgment requirements.</p>
+    </div>
+    <div class="hero-card teal-border">
+      <p class="hero-card-label">The Reality</p>
+      <div class="hero-card-value" style="font-size:18px; letter-spacing: -0.3px;">Word docs. Shared drives. Binders.</div>
+      <p>That's where most campus security policies live today — with no system tracking what exists, what's current, or who's seen it.</p>
+    </div>
+    <div class="hero-card indigo-border">
+      <p class="hero-card-label">The Gap</p>
+      <div class="hero-card-value" style="font-size:18px; letter-spacing: -0.3px;">No platform connects policies to operations.</div>
+      <p>General tools manage documents. Legio manages policies in the context of the operations they govern.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <div class="problem-layout fade-in">
+      <div class="problem-left">
+        <p class="section-label">The Problem</p>
+        <h2>Accreditation shouldn't be <span class="muted">a fire drill.</span></h2>
+        <p>When assessors arrive, the scramble begins. Weeks of cross-referencing standards to documents, hunting down signatures, and rebuilding paper trails that should have been continuous.</p>
+      </div>
+      <div class="problem-right">
+        <div class="problem-card">
+          <span class="number">01</span>
+          <div>
+            <h3>No single source of truth</h3>
+            <p>Policies are scattered across shared drives and institutional memory. There's no central record of what exists, what's been reviewed, or who approved it.</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <span class="number">02</span>
+          <div>
+            <h3>Policies disconnected from operations</h3>
+            <p>The policy that governs your patrol procedure lives in a separate system from your patrol data. There's no linkage — and accreditors notice.</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <span class="number">03</span>
+          <div>
+            <h3>Compliance is reactive, not continuous</h3>
+            <p>Without ongoing tracking, every accreditation cycle is a manual rebuild. Weeks of effort that should have been minutes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <div class="container">
+    <div class="timeline-header fade-in">
+      <p class="section-label">Before & After</p>
+      <h2>What accreditation prep <span class="muted">actually looks like.</span></h2>
+    </div>
+    <div class="timeline-cols fade-in">
+      <div class="timeline-col before">
+        <h3>Without Legio</h3>
+        <div class="timeline-items">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">Week 1</div>
+            <div class="tl-content">
+              <h4>Locate all policy documents</h4>
+              <p>Dig through shared drives, email threads, and filing cabinets to find out what actually exists.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">Week 2</div>
+            <div class="tl-content">
+              <h4>Cross-reference to IACLEA standards</h4>
+              <p>Manually map each document to the standard it satisfies — or discover the gaps.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">Week 3</div>
+            <div class="tl-content">
+              <h4>Chase down acknowledgment signatures</h4>
+              <p>Hunt for officer sign-offs, some of which were never collected in the first place.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">Week 4</div>
+            <div class="tl-content">
+              <h4>Assemble the paper trail</h4>
+              <p>Build the evidence package manually. Hope nothing's missing. Brace for assessor questions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-col after">
+        <h3>With Legio</h3>
+        <div class="timeline-items">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">Always</div>
+            <div class="tl-content">
+              <h4>Policies are continuously tracked</h4>
+              <p>Every directive, review date, approval, and acknowledgment is captured in real time — not assembled at crunch time.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">Always</div>
+            <div class="tl-content">
+              <h4>Standards are mapped automatically</h4>
+              <p>Every policy is linked to its IACLEA standard from the moment it's created. Gaps surface immediately, not during assessment.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">Always</div>
+            <div class="tl-content">
+              <h4>Officer acknowledgments are logged digitally</h4>
+              <p>Officers acknowledge policies in the same platform they use every day. No chasing. No paper.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">Day 1</div>
+            <div class="tl-content">
+              <h4>Compliance report generated in minutes</h4>
+              <p>When assessors arrive, the evidence package is already complete. One report. No scramble.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="container">
+    <p class="section-label fade-in">How It Works</p>
+    <h2 class="fade-in">From directive to proof, <span class="muted">without the manual work.</span></h2>
+    <div class="how-grid fade-in">
+      <div class="how-card">
+        <p class="how-num">01</p>
+        <h3>Create & map directives</h3>
+        <p>Upload or author policies directly in Legio. Each directive is mapped to its IACLEA standard, assigned required elements, and given a review schedule.</p>
+      </div>
+      <div class="how-card">
+        <p class="how-num">02</p>
+        <h3>Track reviews & acknowledgments</h3>
+        <p>Review reminders fire automatically before deadlines. Officers acknowledge policies digitally in the same platform they use for everything else.</p>
+      </div>
+      <div class="how-card">
+        <p class="how-num">03</p>
+        <h3>Prove compliance instantly</h3>
+        <p>Generate a complete accreditation evidence package — standards mapped, reviews logged, approvals recorded, acknowledgments confirmed — in minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="book">
+  <div class="container">
+    <div class="cta-block fade-in">
+      <p class="section-label" style="margin-bottom:12px;">See It in Action</p>
+      <h2>We could keep describing it. <span class="muted">But it's much more fun to show you.</span></h2>
+      <p>Book a 30-minute walkthrough. We'll show you the Policy module and the rest of the platform — you tell us where we've got it right and where we haven't.</p>
+      <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" class="btn-primary">Book a Walkthrough</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="logo-sm">legio</a>
+  <p>© 2025 Legio. All rights reserved.</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
 </body>
 </html>
