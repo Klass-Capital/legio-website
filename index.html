@@ -10,313 +10,207 @@
 <meta property="og:description" content="Security software designed for outcomes, not paperwork. Built exclusively for higher education institutions.">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://www.campussafety.ai">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Legio",
-  "applicationCategory": "SecurityApplication",
-  "operatingSystem": "Web",
-  "description": "Campus safety software designed for outcomes, not paperwork. Built exclusively for higher education institutions.",
-  "url": "https://www.campussafety.ai",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "audience": {
-    "@type": "Audience",
-    "audienceType": "Higher Education Institutions"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Legio",
-  "url": "https://www.campussafety.ai",
-  "description": "Campus safety software built exclusively for higher education.",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "Sales",
-    "email": "hello@campussafety.ai"
-  }
-}
-</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Legio","applicationCategory":"SecurityApplication","operatingSystem":"Web","description":"Campus safety software designed for outcomes, not paperwork. Built exclusively for higher education institutions.","url":"https://www.campussafety.ai","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"audience":{"@type":"Audience","audienceType":"Higher Education Institutions"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Legio","url":"https://www.campussafety.ai","description":"Campus safety software built exclusively for higher education.","contactPoint":{"@type":"ContactPoint","contactType":"Sales","email":"hello@campussafety.ai"}}</script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --navy: #07090f;
-    --navy-mid: #0e1422;
-    --navy-card: #131929;
-    --navy-light: #1a2235;
-    --border: rgba(255,255,255,0.07);
-    --border-accent: rgba(59,124,255,0.3);
-    --text-primary: #eef2ff;
-    --text-secondary: #7a8ba8;
-    --accent: #3b7cff;
-    --accent-hover: #2d6aee;
-    --accent-glow: rgba(59,124,255,0.12);
-    --teal: #0d9488;
-  }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--navy);
-    color: var(--text-primary);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+html, body, div, span, h1, h2, h3, h4, p, a, nav, section, footer, button { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --white: #ffffff;
+  --off-white: #f7f6f3;
+  --warm-gray: #f0eeea;
+  --card: #ffffff;
+  --border: rgba(0,0,0,0.08);
+  --border-mid: rgba(0,0,0,0.12);
+  --text-primary: #0d1117;
+  --text-secondary: #4a5568;
+  --text-tertiary: #8a96a8;
+  --accent: #3b7cff;
+  --accent-hover: #2d6aee;
+  --accent-light: rgba(59,124,255,0.08);
+  --accent-mid: rgba(59,124,255,0.15);
+  --warm: #92400e;
+  --warm-light: rgba(146,64,14,0.06);
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
 
-  .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.logo { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; color: var(--text-primary); text-decoration: none; }
+.nav-right { display: flex; align-items: center; gap: 24px; }
+.nav-dropdown { position: relative; }
+.nav-dropdown-trigger {
+  background: none; border: none; cursor: pointer;
+  font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500;
+  color: var(--text-secondary); display: flex; align-items: center; gap: 6px; padding: 0; transition: color 0.2s;
+}
+.nav-dropdown-trigger:hover { color: var(--text-primary); }
+.nav-dropdown-trigger svg { transition: transform 0.2s; }
+.nav-dropdown.open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+.dropdown-menu {
+  position: absolute; top: calc(100% + 16px); right: 0;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 8px; width: 230px;
+  opacity: 0; pointer-events: none; transform: translateY(-6px);
+  transition: opacity 0.18s, transform 0.18s; display: flex; flex-direction: column;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+.nav-dropdown.open .dropdown-menu { opacity: 1; pointer-events: all; transform: translateY(0); }
+.module-chip {
+  font-size: 13px; font-weight: 400; color: var(--text-secondary);
+  padding: 10px 14px; border-radius: 6px; transition: background 0.15s, color 0.15s; cursor: default;
+}
+.module-chip:hover { background: var(--off-white); color: var(--text-primary); }
+.module-chip a { color: var(--accent); text-decoration: none; display: block; }
+.nav-cta {
+  background: var(--accent); color: #fff;
+  padding: 9px 20px; border-radius: 8px;
+  font-size: 14px; font-weight: 500; text-decoration: none; transition: background 0.2s, transform 0.15s;
+}
+.nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 20px 40px;
-    display: flex; align-items: center; justify-content: space-between;
-    background: rgba(7,9,15,0.9);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-  }
-  .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; color: var(--text-primary); }
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 120px 24px 80px;
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, #fdf6ee 0%, #f7f3ff 35%, #eef4ff 65%, #f0f7ff 100%);
+}
+.hero-glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 30%, rgba(251,191,100,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 80% 70%, rgba(59,124,255,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 60% 20%, rgba(139,92,246,0.05) 0%, transparent 50%);
+}
+.hero-inner { max-width: 740px; position: relative; z-index: 1; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 500; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 24px;
+  padding: 6px 14px; border: 1px solid var(--accent-mid); border-radius: 20px;
+  background: var(--accent-light);
+}
+h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 600; line-height: 1.08; letter-spacing: -2px; margin-bottom: 24px; color: var(--text-primary); }
+h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { font-size: 18px; color: var(--text-secondary); max-width: 520px; margin: 0 auto 40px; line-height: 1.7; }
+.hero-actions { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.btn-primary { display: inline-block; background: var(--accent); color: #fff; padding: 14px 28px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+.btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.btn-ghost { display: inline-block; background: transparent; color: var(--text-secondary); padding: 14px 28px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; border: 1px solid var(--border-mid); transition: all 0.2s; }
+.btn-ghost:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+.hero-note { margin-top: 20px; font-size: 13px; color: var(--text-tertiary); }
+.hero-ai { margin-top: 12px; font-size: 13px; color: var(--text-tertiary); }
+.hero-ai a { color: var(--accent); text-decoration: none; }
+.hero-ai a:hover { text-decoration: underline; }
 
-  .nav-right { display: flex; align-items: center; gap: 24px; }
-  .nav-dropdown { position: relative; }
-  .nav-dropdown-trigger {
-    background: none; border: none; cursor: pointer;
-    font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500;
-    color: var(--text-secondary);
-    display: flex; align-items: center; gap: 6px;
-    padding: 0; transition: color 0.2s;
-  }
-  .nav-dropdown-trigger:hover { color: var(--text-primary); }
-  .nav-dropdown-trigger svg { transition: transform 0.2s; }
-  .nav-dropdown.open .nav-dropdown-trigger svg { transform: rotate(180deg); }
-  .dropdown-menu {
-    position: absolute; top: calc(100% + 16px); right: 0;
-    background: var(--navy-card); border: 1px solid var(--border);
-    border-radius: 10px; padding: 8px; width: 220px;
-    opacity: 0; pointer-events: none; transform: translateY(-6px);
-    transition: opacity 0.18s, transform 0.18s; display: flex; flex-direction: column;
-  }
-  .nav-dropdown.open .dropdown-menu { opacity: 1; pointer-events: all; transform: translateY(0); }
-  .module-chip {
-    font-size: 13px; font-weight: 400; color: var(--text-secondary);
-    padding: 10px 14px; border-radius: 6px; transition: background 0.15s, color 0.15s; cursor: default;
-  }
-  .module-chip:hover { background: rgba(255,255,255,0.05); color: var(--text-primary); }
-  .nav-cta {
-    background: var(--accent); color: #fff;
-    padding: 9px 20px; border-radius: 6px;
-    font-size: 14px; font-weight: 500; text-decoration: none; transition: background 0.2s;
-  }
-  .nav-cta:hover { background: var(--accent-hover); }
+/* MANIFESTO */
+.manifesto {
+  padding: 80px 24px;
+  background: linear-gradient(180deg, #eef4ff 0%, #e8f0fe 100%);
+  text-align: center; position: relative; overflow: hidden;
+  border-top: 1px solid rgba(59,124,255,0.1);
+  border-bottom: 1px solid rgba(59,124,255,0.1);
+}
+.manifesto-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
+.manifesto p { font-size: clamp(20px, 3vw, 30px); font-weight: 500; letter-spacing: -0.5px; line-height: 1.45; color: var(--text-primary); }
+.manifesto p span { color: var(--text-secondary); }
 
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex; align-items: center; justify-content: center;
-    text-align: center; padding: 0 24px;
-    position: relative; overflow: hidden;
-    background: var(--navy);
-  }
-  .hero::after {
-    content: '';
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(59,124,255,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(59,124,255,0.04) 1px, transparent 1px);
-    background-size: 48px 48px;
-    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-    pointer-events: none;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
-    width: 900px; height: 900px;
-    background: radial-gradient(circle, rgba(59,124,255,0.1) 0%, transparent 65%);
-    pointer-events: none;
-  }
-  .hero-inner { max-width: 720px; position: relative; z-index: 1; }
-  .eyebrow {
-    display: inline-block; font-size: 12px; font-weight: 500; letter-spacing: 1.5px;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 24px;
-    padding: 6px 14px; border: 1px solid var(--border-accent); border-radius: 20px;
-  }
-  h1 {
-    font-size: clamp(36px, 6vw, 62px); font-weight: 600;
-    line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 24px;
-  }
-  h1 em { font-style: normal; color: var(--accent); }
-  .hero-sub {
-    font-size: 18px; color: var(--text-secondary);
-    max-width: 520px; margin: 0 auto 40px; line-height: 1.7;
-  }
-  .btn-primary {
-    display: inline-block; background: var(--accent); color: #fff;
-    padding: 15px 32px; border-radius: 8px; font-size: 15px; font-weight: 500;
-    text-decoration: none; transition: background 0.2s, transform 0.15s;
-  }
-  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
-  .hero-note { margin-top: 16px; font-size: 13px; color: var(--text-secondary); }
-  .hero-ai {
-    margin-top: 24px;
-    font-size: 13px; color: var(--text-secondary);
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    max-width: 380px; margin-left: auto; margin-right: auto;
-  }
-  .hero-ai a { color: var(--accent); text-decoration: none; }
-  .hero-ai a:hover { text-decoration: underline; }
+/* SCREENSHOT */
+.screenshot { background: var(--off-white); padding: 72px 24px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.screenshot-inner { max-width: 960px; margin: 0 auto; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-mid); box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+.screenshot-inner img { width: 100%; display: block; }
 
-  /* MANIFESTO */
-  .manifesto {
-    padding: 80px 24px;
-    background: linear-gradient(135deg, #0d1528 0%, #0a1020 40%, #0c1a1f 100%);
-    border-top: 1px solid rgba(59,124,255,0.2);
-    border-bottom: 1px solid rgba(13,148,136,0.2);
-    position: relative; overflow: hidden; text-align: center;
-  }
-  .manifesto::before {
-    content: '';
-    position: absolute; top: -60px; left: -60px;
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(59,124,255,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .manifesto::after {
-    content: '';
-    position: absolute; bottom: -60px; right: -60px;
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(13,148,136,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .manifesto p {
-    font-size: clamp(20px, 3vw, 30px); font-weight: 500;
-    letter-spacing: -0.5px; line-height: 1.45;
-    max-width: 780px; margin: 0 auto;
-    color: var(--text-primary); position: relative; z-index: 1;
-  }
-  .manifesto p span { color: var(--text-secondary); }
+/* SECTIONS */
+section { padding: 96px 24px; }
+.container { max-width: 960px; margin: 0 auto; }
+.section-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 600; letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 48px; }
+h2 .muted { color: var(--text-tertiary); }
 
-  /* SCREENSHOT */
-  .screenshot { background: var(--navy-mid); padding: 64px 24px; }
-  .screenshot-inner {
-    max-width: 960px; margin: 0 auto;
-    border-radius: 12px; overflow: hidden;
-    border: 1px solid var(--border);
-    box-shadow: 0 24px 64px rgba(0,0,0,0.4);
-  }
-  .screenshot-inner img { width: 100%; display: block; }
+/* PROBLEM */
+.problem { background: var(--white); border-top: 1px solid var(--border); }
+.problem-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.problem-left h2 { margin-bottom: 20px; }
+.problem-left p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; max-width: 380px; }
+.problem-right { display: flex; flex-direction: column; gap: 16px; }
+.problem-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-left: 3px solid var(--accent); border-radius: 12px;
+  padding: 24px 28px; display: flex; gap: 20px; align-items: flex-start;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.problem-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.problem-card:nth-child(2) { border-left-color: #0d9488; }
+.problem-card:nth-child(3) { border-left-color: #6366f1; }
+.problem-card .number { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: var(--accent); text-transform: uppercase; flex-shrink: 0; padding-top: 3px; }
+.problem-card:nth-child(2) .number { color: #0d9488; }
+.problem-card:nth-child(3) .number { color: #6366f1; }
+.problem-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.2px; }
+.problem-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
 
-  /* PROBLEM */
-  .problem { background: var(--navy); padding: 96px 24px; border-top: 1px solid var(--border); }
-  .container { max-width: 960px; margin: 0 auto; }
-  .section-label {
-    font-size: 11px; font-weight: 600; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
-  }
-  h2 {
-    font-size: clamp(26px, 4vw, 38px); font-weight: 600;
-    letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 48px;
-  }
-  h2 .muted { color: var(--text-secondary); }
-  .problem-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-  .problem-left h2 { margin-bottom: 20px; }
-  .problem-left p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; max-width: 380px; }
-  .problem-right { display: flex; flex-direction: column; gap: 16px; }
-  .problem-card {
-    background: var(--navy-card); border: 1px solid var(--border);
-    border-left: 3px solid var(--accent); border-radius: 10px;
-    padding: 24px 28px; display: flex; gap: 20px; align-items: flex-start;
-  }
-  .problem-card:nth-child(2) { border-left-color: var(--teal); }
-  .problem-card:nth-child(3) { border-left-color: #6366f1; }
-  .problem-card .number {
-    font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
-    color: var(--accent); text-transform: uppercase; flex-shrink: 0; padding-top: 3px;
-  }
-  .problem-card:nth-child(2) .number { color: var(--teal); }
-  .problem-card:nth-child(3) .number { color: #6366f1; }
-  .problem-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.2px; }
-  .problem-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+/* PURPOSE */
+.purpose { background: var(--off-white); border-top: 1px solid var(--border); }
+.purpose-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.purpose-left h2 { margin-bottom: 16px; }
+.purpose-left p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; }
+.purpose-right { display: flex; flex-direction: column; gap: 10px; }
+.purpose-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 18px; border-radius: 10px;
+  background: var(--white); border: 1px solid var(--border); font-size: 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.purpose-row.yes { border-left: 3px solid var(--accent); }
+.purpose-row.no { border-left: 3px solid rgba(0,0,0,0.1); }
+.purpose-row .label { color: var(--text-primary); font-weight: 500; font-size: 13px; }
+.tag { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; }
+.tag-yes { background: var(--accent-light); color: var(--accent); }
+.tag-no { background: rgba(0,0,0,0.04); color: var(--text-tertiary); }
 
-  /* PURPOSE */
-  .purpose { background: var(--navy-mid); padding: 96px 24px; border-top: 1px solid var(--border); }
-  .purpose-inner {
-    max-width: 960px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
-  }
-  .purpose-left h2 { margin-bottom: 16px; }
-  .purpose-left p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; }
-  .purpose-right { display: flex; flex-direction: column; gap: 10px; }
-  .purpose-row {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 14px 18px; border-radius: 8px;
-    background: var(--navy-light); border: 1px solid var(--border); font-size: 14px;
-  }
-  .purpose-row.yes { border-left: 3px solid var(--accent); }
-  .purpose-row.no { border-left: 3px solid rgba(255,255,255,0.1); }
-  .purpose-row .label { color: var(--text-primary); font-weight: 500; }
-  .tag {
-    font-size: 11px; font-weight: 600; letter-spacing: 1px;
-    text-transform: uppercase; padding: 3px 10px; border-radius: 20px;
-  }
-  .tag-yes { background: rgba(59,124,255,0.15); color: var(--accent); }
-  .tag-no { background: rgba(255,255,255,0.04); color: var(--text-secondary); }
+/* CTA */
+.cta-section { padding: 96px 24px; background: var(--white); border-top: 1px solid var(--border); }
+.cta-block {
+  text-align: center;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%);
+  border: 1px solid rgba(59,124,255,0.15);
+  border-radius: 20px; padding: 72px 40px;
+  max-width: 680px; margin: 0 auto; position: relative; overflow: hidden;
+}
+.cta-glow { position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 500px; height: 300px; background: radial-gradient(ellipse, rgba(59,124,255,0.1) 0%, transparent 70%); pointer-events: none; }
+.cta-block h2 { color: var(--text-primary); margin-bottom: 16px; position: relative; }
+.cta-block h2 .muted { color: var(--text-tertiary); }
+.cta-block p { font-size: 16px; color: var(--text-secondary); margin-bottom: 36px; max-width: 440px; margin-left: auto; margin-right: auto; position: relative; }
+.cta-block .btn-primary { position: relative; }
 
-  /* CTA */
-  #book { padding: 96px 24px; background: var(--navy); border-top: 1px solid var(--border); }
-  .cta-block {
-    text-align: center; background: var(--navy-card);
-    border: 1px solid var(--border-accent); border-radius: 16px; padding: 64px 40px;
-    max-width: 640px; margin: 0 auto; position: relative; overflow: hidden;
-  }
-  .cta-block::before {
-    content: '';
-    position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(59,124,255,0.07) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .cta-block h2 { margin-bottom: 16px; position: relative; }
-  .cta-block p {
-    font-size: 16px; color: var(--text-secondary);
-    margin-bottom: 36px; max-width: 440px;
-    margin-left: auto; margin-right: auto; position: relative;
-  }
-  .cta-block .btn-primary { display: inline-block; margin-bottom: 14px; position: relative; }
-  .cta-block .cta-note { font-size: 13px; color: var(--text-secondary); position: relative; }
+/* FOOTER */
+footer { padding: 32px 48px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: var(--white); }
+footer p { font-size: 13px; color: var(--text-tertiary); }
 
-  /* FOOTER */
-  footer {
-    padding: 32px 40px; border-top: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 12px;
-  }
-  footer .logo { font-size: 15px; }
-  footer p { font-size: 13px; color: var(--text-secondary); }
-
-  @media (max-width: 768px) {
-    .problem-layout, .purpose-inner { grid-template-columns: 1fr; gap: 32px; }
-    .stats-grid { grid-template-columns: 1fr; }
-    .problem-left p { max-width: 100%; }
-  }
-  @media (max-width: 600px) {
-    nav { padding: 16px 20px; }
-    footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
-  }
+@media (max-width: 768px) {
+  .problem-layout, .purpose-inner { grid-template-columns: 1fr; gap: 32px; }
+  .problem-left p { max-width: 100%; }
+  nav { padding: 16px 20px; }
+  footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo">legio</div>
+  <a href="index.html" class="logo">legio</a>
   <div class="nav-right">
     <div class="nav-dropdown" id="moduleDropdown">
       <button class="nav-dropdown-trigger" onclick="toggleDropdown()">
@@ -324,7 +218,7 @@
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="dropdown-menu">
-        <a href="policy.html" class="module-chip" style="text-decoration:none;display:block;border-bottom:1px solid var(--border);margin-bottom:6px;padding-bottom:14px;color:var(--accent);">Policy Management →</a>
+        <div class="module-chip" style="border-bottom:1px solid var(--border);margin-bottom:6px;padding-bottom:14px;"><a href="policy.html">Policy Management →</a></div>
         <span class="module-chip">Guard Tour</span>
         <span class="module-chip">Incident Management</span>
         <span class="module-chip">Parking</span>
@@ -338,27 +232,36 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
+  <div class="hero-glow"></div>
   <div class="hero-inner fade-in">
     <div class="eyebrow">Campus Safety Software</div>
     <h1>Security software designed for <em>outcomes,</em> not paperwork.</h1>
     <p class="hero-sub">Campus safety teams spend the majority of their time on administration. We're building software that changes that ratio.</p>
-    <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" class="btn-primary">Book a Walkthrough</a>
+    <div class="hero-actions">
+      <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" class="btn-primary">Book a Walkthrough</a>
+    </div>
     <p class="hero-note">No pitch. We're listening.</p>
     <p class="hero-ai">Curious what campus safety looks like in an AI-native world? <a href="https://calendly.com/darren-klasscapital/30min" target="_blank">So are we.</a></p>
   </div>
 </section>
 
+<!-- MANIFESTO -->
 <div class="manifesto fade-in">
-  <p>Campus safety is one of the most important services an institution provides. <span>It deserves software built with that same conviction.</span></p>
+  <div class="manifesto-inner">
+    <p>Campus safety is one of the most important services an institution provides. <span>It deserves software built with that same conviction.</span></p>
+  </div>
 </div>
 
+<!-- SCREENSHOT -->
 <div class="screenshot fade-in">
   <div class="screenshot-inner">
     <img src="https://raw.githubusercontent.com/Klass-Capital/legio-website/main/loop%20Legio%20-%201.png" alt="Legio platform screenshot">
   </div>
 </div>
 
+<!-- PROBLEM -->
 <section class="problem">
   <div class="container">
     <div class="problem-layout fade-in">
@@ -394,86 +297,54 @@
   </div>
 </section>
 
+<!-- PURPOSE -->
 <section class="purpose">
-  <div class="purpose-inner fade-in">
-    <div class="purpose-left">
-      <p class="section-label">Purpose Built</p>
-      <h2>Built for campus. <span class="muted">Only campus.</span></h2>
-      <p>Most security software is built for everyone — which means it's optimized for no one. Every decision we make is filtered through one question: does this make campus safety teams more effective?</p>
-    </div>
-    <div class="purpose-right">
-      <div class="purpose-row yes">
-        <span class="label">Campus-specific workflows</span>
-        <span class="tag tag-yes">Yes</span>
+  <div class="container">
+    <div class="purpose-inner fade-in">
+      <div class="purpose-left">
+        <p class="section-label">Purpose Built</p>
+        <h2>Built for campus. <span class="muted">Only campus.</span></h2>
+        <p>Most security software is built for everyone — which means it's optimized for no one. Every decision we make is filtered through one question: does this make campus safety teams more effective?</p>
       </div>
-      <div class="purpose-row yes">
-        <span class="label">Clery Act compliance built in</span>
-        <span class="tag tag-yes">Yes</span>
-      </div>
-      <div class="purpose-row yes">
-        <span class="label">Designed for higher education</span>
-        <span class="tag tag-yes">Yes</span>
-      </div>
-      <div class="purpose-row no">
-        <span class="label">Adapted from generic security software</span>
-        <span class="tag tag-no">No</span>
-      </div>
-      <div class="purpose-row no">
-        <span class="label">Built to serve 10 different industries</span>
-        <span class="tag tag-no">No</span>
+      <div class="purpose-right">
+        <div class="purpose-row yes"><span class="label">Campus-specific workflows</span><span class="tag tag-yes">Yes</span></div>
+        <div class="purpose-row yes"><span class="label">Clery Act compliance built in</span><span class="tag tag-yes">Yes</span></div>
+        <div class="purpose-row yes"><span class="label">Designed for higher education</span><span class="tag tag-yes">Yes</span></div>
+        <div class="purpose-row no"><span class="label">Adapted from generic security software</span><span class="tag tag-no">No</span></div>
+        <div class="purpose-row no"><span class="label">Built to serve 10 different industries</span><span class="tag tag-no">No</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="book">
+<!-- CTA -->
+<section class="cta-section">
   <div class="container">
     <div class="cta-block fade-in">
-      <p class="section-label" style="margin-bottom:12px;">See It in Action</p>
+      <div class="cta-glow"></div>
+      <p class="section-label" style="margin-bottom:12px;color:rgba(59,124,255,0.8);">See It in Action</p>
       <h2>We built it. <span class="muted">Now tell us everything wrong with it.</span></h2>
       <p>Book a 30-minute walkthrough with our team. We'll show you what we've built — you tell us where we've nailed it and where we haven't.</p>
       <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" class="btn-primary">Book a Walkthrough</a>
-      <p class="cta-note">Scheduling issues? Email us at <a href="mailto:hello@legio.com" style="color: var(--accent); text-decoration:none;">hello@legio.com</a></p>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="logo">leg<span>io</span></div>
-  <p>© 2025 Legio. All rights reserved.</p>
+  <a href="index.html" class="logo">legio</a>
+  <p>© 2026 Legio. All rights reserved.</p>
 </footer>
 
 <script>
-  function toggleDropdown() { document.getElementById('moduleDropdown').classList.toggle('open'); }
-  document.addEventListener('click', function(e) {
-    const d = document.getElementById('moduleDropdown');
-    if (!d.contains(e.target)) d.classList.remove('open');
-  });
-
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-
-  function animateCounter(el) {
-    const target = +el.dataset.target, dur = 1400, start = performance.now();
-    function tick(now) {
-      const p = Math.min((now - start) / dur, 1);
-      const ease = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.floor(ease * target);
-      if (p < 1) requestAnimationFrame(tick); else el.textContent = target;
-    }
-    requestAnimationFrame(tick);
-  }
-  const statsObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll('.counter').forEach(animateCounter);
-        statsObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('.stats-grid').forEach(el => statsObs.observe(el));
+function toggleDropdown() { document.getElementById('moduleDropdown').classList.toggle('open'); }
+document.addEventListener('click', function(e) {
+  var d = document.getElementById('moduleDropdown');
+  if (!d.contains(e.target)) d.classList.remove('open');
+});
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
 </script>
 </body>
 </html>
