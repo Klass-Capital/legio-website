@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Legio — Campus Safety Software Built for Higher Education</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Legio is campus safety software designed to reduce administrative burden and help security teams focus on what actually improves safety. Built exclusively for higher education.">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Legio — Campus Safety Software Built for Higher Education">
@@ -202,9 +203,25 @@ footer { padding: 32px 48px; border-top: 1px solid var(--border); display: flex;
 footer p { font-size: 13px; color: var(--text-tertiary); }
 
 @media (max-width: 768px) {
+  body { overflow-x: hidden; }
+  nav { padding: 14px 16px; }
+  .nav-right { gap: 12px; }
+  .nav-cta { padding: 8px 14px; font-size: 13px; }
+  .nav-dropdown-trigger { font-size: 13px; }
+  .dropdown-menu { width: 200px; right: 0; }
+  .hero { padding: 100px 20px 60px; }
+  h1 { font-size: clamp(28px, 8vw, 42px); letter-spacing: -1px; }
+  .hero-sub { font-size: 16px; }
+  .manifesto { padding: 48px 20px; }
+  .screenshot { padding: 40px 16px; }
+  .screenshot-inner img { width: 100%; height: auto; object-fit: contain; }
+  section { padding: 64px 20px; }
   .problem-layout, .purpose-inner { grid-template-columns: 1fr; gap: 32px; }
   .problem-left p { max-width: 100%; }
-  nav { padding: 16px 20px; }
+  .purpose-right { gap: 8px; }
+  .purpose-row { padding: 12px 14px; }
+  .purpose-row .label { font-size: 12px; }
+  .cta-block { padding: 40px 24px; }
   footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
 }
 </style>
