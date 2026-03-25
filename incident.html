@@ -92,7 +92,7 @@ h2 .muted { color: var(--text-tertiary); }
 .failures-intro h2 { margin-bottom: 16px; }
 .failures-intro p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; }
 .failures-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.failure-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.failure-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; flex-direction: column; }
 .failure-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 12px 12px 0 0; opacity: 0.5; }
 .failure-card:nth-child(1)::before { background: linear-gradient(90deg, transparent, var(--accent), transparent); }
 .failure-card:nth-child(2)::before { background: linear-gradient(90deg, transparent, var(--amber), transparent); }
@@ -102,7 +102,7 @@ h2 .muted { color: var(--text-tertiary); }
 .failure-card:nth-child(3) .failure-num { color: var(--indigo); }
 .failure-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.3px; }
 .failure-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
-.failure-stat { display: inline-block; margin-top: 14px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
+.failure-stat { display: inline-block; margin-top: auto; padding-top: 14px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; align-self: flex-start; margin-top: auto; }
 .failure-card:nth-child(1) .failure-stat { background: var(--accent-light); color: var(--accent); }
 .failure-card:nth-child(2) .failure-stat { background: rgba(217,119,6,0.08); color: var(--amber); }
 .failure-card:nth-child(3) .failure-stat { background: rgba(99,102,241,0.08); color: var(--indigo); }
