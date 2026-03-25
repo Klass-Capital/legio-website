@@ -1,602 +1,586 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legio — Incident Management for Campus Safety</title>
+<meta name="description" content="AI-native incident management for campus safety teams. The officer tells the story. The system does the work.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Legio — Incident Management for Campus Safety">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://www.campussafety.ai/incident.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+html, body, div, span, h1, h2, h3, h4, p, a, nav, section, footer, button { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --white: #ffffff;
+  --off-white: #f7f6f3;
+  --card: #ffffff;
+  --border: rgba(0,0,0,0.08);
+  --border-mid: rgba(0,0,0,0.12);
+  --text-primary: #0d1117;
+  --text-secondary: #4a5568;
+  --text-tertiary: #8a96a8;
+  --accent: #3b7cff;
+  --accent-hover: #2d6aee;
+  --accent-light: rgba(59,124,255,0.08);
+  --accent-mid: rgba(59,124,255,0.15);
+  --teal: #0d9488;
+  --indigo: #6366f1;
+  --amber: #d97706;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-left { display: flex; align-items: center; gap: 16px; }
+.logo { font-size: 17px; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+.nav-divider { width: 1px; height: 16px; background: var(--border-mid); }
+.nav-page { font-size: 13px; color: var(--text-tertiary); }
+.nav-back { font-size: 13px; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+.nav-back:hover { color: var(--text-primary); }
+.nav-cta { background: var(--accent); color: #fff; padding: 9px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+.nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; padding: 120px 80px 80px;
+  position: relative; overflow: hidden; gap: 64px;
+  background: linear-gradient(135deg, #fdf6ee 0%, #f7f3ff 35%, #eef4ff 65%, #f0f7ff 100%);
+}
+.hero-glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 30%, rgba(251,191,100,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 80% 70%, rgba(59,124,255,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 60% 20%, rgba(139,92,246,0.05) 0%, transparent 50%);
+}
+.hero-left { position: relative; z-index: 1; }
+.eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; display: inline-flex; align-items: center; padding: 6px 14px; border: 1px solid var(--accent-mid); border-radius: 20px; background: var(--accent-light); }
+h1 { font-size: clamp(32px, 4vw, 52px); font-weight: 600; line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 24px; color: var(--text-primary); }
+h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { font-size: 17px; color: var(--text-secondary); max-width: 440px; margin-bottom: 40px; line-height: 1.75; }
+.btn-primary { display: inline-block; background: var(--accent); color: #fff; padding: 14px 28px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+.btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.hero-right { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 16px; }
+.hero-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.hero-card.accent-border { border-left: 3px solid var(--accent); }
+.hero-card.teal-border { border-left: 3px solid var(--teal); }
+.hero-card.amber-border { border-left: 3px solid var(--amber); }
+.hero-card-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 8px; }
+.hero-card-value { font-size: 26px; font-weight: 600; letter-spacing: -0.8px; color: var(--text-primary); line-height: 1.2; margin-bottom: 6px; }
+.hero-card-value span { font-size: 0.55em; color: var(--accent); }
+.hero-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+
+section { padding: 96px 24px; }
+.container { max-width: 960px; margin: 0 auto; }
+.section-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 600; letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 48px; }
+h2 .muted { color: var(--text-tertiary); }
+
+.failures { background: var(--white); border-top: 1px solid var(--border); }
+.failures-intro { max-width: 640px; margin-bottom: 48px; }
+.failures-intro h2 { margin-bottom: 16px; }
+.failures-intro p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; }
+.failures-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.failure-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.failure-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 12px 12px 0 0; opacity: 0.5; }
+.failure-card:nth-child(1)::before { background: linear-gradient(90deg, transparent, var(--accent), transparent); }
+.failure-card:nth-child(2)::before { background: linear-gradient(90deg, transparent, var(--amber), transparent); }
+.failure-card:nth-child(3)::before { background: linear-gradient(90deg, transparent, var(--indigo), transparent); }
+.failure-num { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; }
+.failure-card:nth-child(2) .failure-num { color: var(--amber); }
+.failure-card:nth-child(3) .failure-num { color: var(--indigo); }
+.failure-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.3px; }
+.failure-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+.failure-stat { display: inline-block; margin-top: 14px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
+.failure-card:nth-child(1) .failure-stat { background: var(--accent-light); color: var(--accent); }
+.failure-card:nth-child(2) .failure-stat { background: rgba(217,119,6,0.08); color: var(--amber); }
+.failure-card:nth-child(3) .failure-stat { background: rgba(99,102,241,0.08); color: var(--indigo); }
+
+.link-analysis { background: var(--off-white); border-top: 1px solid var(--border); }
+.link-heading { max-width: 680px; margin-bottom: 40px; }
+.link-heading h2 { margin-bottom: 0; }
+.link-visual {
+  background: #07090f; border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.07);
+  overflow: hidden; position: relative;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.18);
+  margin-bottom: 32px;
+}
+.link-status {
+  position: absolute; top: 16px; right: 16px;
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(7,9,15,0.85); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px; padding: 8px 14px;
+}
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: #3b7cff; animation: sdot 2s ease-in-out infinite; }
+.status-dot.green { background: #10b981; animation: none; }
+@keyframes sdot { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.status-text { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.5); letter-spacing: 0.8px; text-transform: uppercase; }
+.pattern-alert {
+  position: absolute; bottom: 20px; left: 20px;
+  background: rgba(7,9,15,0.92);
+  border: 1px solid rgba(59,124,255,0.25);
+  border-radius: 10px; padding: 12px 18px;
+  display: flex; align-items: center; gap: 10px;
+  opacity: 0; transform: translateY(6px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  max-width: 380px;
+}
+.pattern-alert.visible { opacity: 1; transform: translateY(0); }
+.alert-dot { width: 7px; height: 7px; border-radius: 50%; background: #3b7cff; flex-shrink: 0; animation: sdot 1.8s ease-in-out infinite; }
+.alert-text { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+.alert-text strong { color: #fff; }
+.link-caption { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.link-caption-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
+.link-caption-item h4 { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.link-caption-item p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+.how { background: var(--white); border-top: 1px solid var(--border); }
+.how-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-bottom: 48px; }
+.how-intro h2 { margin-bottom: 0; }
+.how-intro p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; }
+.how-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.how-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: box-shadow 0.2s, transform 0.2s; }
+.how-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.how-card-top { height: 3px; border-radius: 12px 12px 0 0; position: absolute; top: 0; left: 0; right: 0; opacity: 0.5; }
+.how-card:nth-child(1) .how-card-top { background: linear-gradient(90deg, transparent, var(--accent), transparent); }
+.how-card:nth-child(2) .how-card-top { background: linear-gradient(90deg, transparent, var(--teal), transparent); }
+.how-card:nth-child(3) .how-card-top { background: linear-gradient(90deg, transparent, var(--indigo), transparent); }
+.how-card:nth-child(4) .how-card-top { background: linear-gradient(90deg, transparent, var(--amber), transparent); }
+.how-num { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; }
+.how-card:nth-child(2) .how-num { color: var(--teal); }
+.how-card:nth-child(3) .how-num { color: var(--indigo); }
+.how-card:nth-child(4) .how-num { color: var(--amber); }
+.how-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.3px; }
+.how-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+
+.metrics { background: var(--off-white); border-top: 1px solid var(--border); }
+.metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.metric-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.metric-value { font-size: 42px; font-weight: 600; letter-spacing: -2px; color: var(--text-primary); line-height: 1; margin-bottom: 8px; }
+.metric-value span { font-size: 0.5em; color: var(--accent); }
+.metric-label { font-size: 13px; color: var(--text-secondary); line-height: 1.5; max-width: 160px; margin: 0 auto; }
+
+.human-ai { background: var(--white); border-top: 1px solid var(--border); }
+.human-ai-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.human-ai-left h2 { margin-bottom: 20px; }
+.human-ai-left p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+.human-ai-right { display: flex; flex-direction: column; gap: 12px; }
+.ai-row { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+.ai-row .action { font-size: 13px; font-weight: 500; color: var(--text-primary); }
+.ai-row .who { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; }
+.ai-row .who.ai { background: var(--accent-light); color: var(--accent); }
+.ai-row .who.human { background: rgba(13,148,136,0.08); color: var(--teal); }
+
+.cta-section { padding: 96px 24px; background: var(--off-white); border-top: 1px solid var(--border); }
+.cta-block { text-align: center; background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%); border: 1px solid rgba(59,124,255,0.15); border-radius: 20px; padding: 72px 40px; max-width: 680px; margin: 0 auto; position: relative; overflow: hidden; }
+.cta-glow { position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 500px; height: 300px; background: radial-gradient(ellipse, rgba(59,124,255,0.1) 0%, transparent 70%); pointer-events: none; }
+.cta-block h2 { color: var(--text-primary); margin-bottom: 16px; position: relative; }
+.cta-block h2 .muted { color: var(--text-tertiary); }
+.cta-block p { font-size: 16px; color: var(--text-secondary); margin-bottom: 36px; max-width: 440px; margin-left: auto; margin-right: auto; position: relative; }
+.cta-block .btn-primary { position: relative; }
+
+footer { padding: 32px 48px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: var(--white); }
+footer p { font-size: 13px; color: var(--text-tertiary); }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding: 120px 40px 64px; }
+  .hero-right { display: none; }
+  .how-intro, .human-ai-inner { grid-template-columns: 1fr; gap: 32px; }
+  .failures-grid, .how-grid, .metrics-grid, .link-caption { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  nav { padding: 16px 20px; }
+  .hero { padding: 100px 24px 64px; }
+  footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+}
+</style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1">&lt;title&gt;Legio — Incident Management for Campus Safety&lt;/title&gt;</p>
-<p class="p1">&lt;meta name="description" content="AI-native incident management for campus safety teams. The officer tells the story. The system does the work."&gt;</p>
-<p class="p1">&lt;meta name="robots" content="index, follow"&gt;</p>
-<p class="p1">&lt;meta property="og:title" content="Legio — Incident Management for Campus Safety"&gt;</p>
-<p class="p1">&lt;meta property="og:type" content="website"&gt;</p>
-<p class="p1">&lt;link rel="canonical" href="https://www.campussafety.ai/incident.html"&gt;</p>
-<p class="p1">&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1">html, body, div, span, h1, h2, h3, h4, p, a, nav, section, footer, button { box-sizing: border-box; margin: 0; padding: 0; }</p>
-<p class="p1">:root {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--white: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--off-white: #f7f6f3;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--card: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--border: rgba(0,0,0,0.08);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--border-mid: rgba(0,0,0,0.12);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--text-primary: #0d1117;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--text-secondary: #4a5568;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--text-tertiary: #8a96a8;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--accent: #3b7cff;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--accent-hover: #2d6aee;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--accent-light: rgba(59,124,255,0.08);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--accent-mid: rgba(59,124,255,0.15);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--teal: #0d9488;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--indigo: #6366f1;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>--amber: #d97706;</p>
-<p class="p1">}</p>
-<p class="p1">html { scroll-behavior: smooth; }</p>
-<p class="p1">body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }</p>
-<p class="p1">.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }</p>
-<p class="p1">.fade-in.visible { opacity: 1; transform: translateY(0); }</p>
-<p class="p2"><br></p>
-<p class="p1">nav {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>position: fixed; top: 0; left: 0; right: 0; z-index: 100;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding: 18px 48px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display: flex; align-items: center; justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-bottom: 1px solid var(--border);</p>
-<p class="p1">}</p>
-<p class="p1">.nav-left { display: flex; align-items: center; gap: 16px; }</p>
-<p class="p1">.logo { font-size: 17px; font-weight: 600; color: var(--text-primary); text-decoration: none; }</p>
-<p class="p1">.nav-divider { width: 1px; height: 16px; background: var(--border-mid); }</p>
-<p class="p1">.nav-page { font-size: 13px; color: var(--text-tertiary); }</p>
-<p class="p1">.nav-back { font-size: 13px; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }</p>
-<p class="p1">.nav-back:hover { color: var(--text-primary); }</p>
-<p class="p1">.nav-cta { background: var(--accent); color: #fff; padding: 9px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; transition: background 0.2s, transform 0.15s; }</p>
-<p class="p1">.nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }</p>
-<p class="p2"><br></p>
-<p class="p1">.hero {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>min-height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display: grid; grid-template-columns: 1fr 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>align-items: center; padding: 120px 80px 80px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>position: relative; overflow: hidden; gap: 64px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: linear-gradient(135deg, #fdf6ee 0%, #f7f3ff 35%, #eef4ff 65%, #f0f7ff 100%);</p>
-<p class="p1">}</p>
-<p class="p1">.hero-glow {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>position: absolute; inset: 0; pointer-events: none;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:</p>
-<p class="p1"><span class="Apple-converted-space">    </span>radial-gradient(ellipse 60% 50% at 20% 30%, rgba(251,191,100,0.12) 0%, transparent 60%),</p>
-<p class="p1"><span class="Apple-converted-space">    </span>radial-gradient(ellipse 50% 60% at 80% 70%, rgba(59,124,255,0.08) 0%, transparent 60%),</p>
-<p class="p1"><span class="Apple-converted-space">    </span>radial-gradient(ellipse 40% 40% at 60% 20%, rgba(139,92,246,0.05) 0%, transparent 50%);</p>
-<p class="p1">}</p>
-<p class="p1">.hero-left { position: relative; z-index: 1; }</p>
-<p class="p1">.eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; display: inline-flex; align-items: center; padding: 6px 14px; border: 1px solid var(--accent-mid); border-radius: 20px; background: var(--accent-light); }</p>
-<p class="p1">h1 { font-size: clamp(32px, 4vw, 52px); font-weight: 600; line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 24px; color: var(--text-primary); }</p>
-<p class="p1">h1 em { font-style: normal; color: var(--accent); }</p>
-<p class="p1">.hero-sub { font-size: 17px; color: var(--text-secondary); max-width: 440px; margin-bottom: 40px; line-height: 1.75; }</p>
-<p class="p1">.btn-primary { display: inline-block; background: var(--accent); color: #fff; padding: 14px 28px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; transition: background 0.2s, transform 0.15s; }</p>
-<p class="p1">.btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }</p>
-<p class="p1">.hero-right { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 16px; }</p>
-<p class="p1">.hero-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }</p>
-<p class="p1">.hero-card.accent-border { border-left: 3px solid var(--accent); }</p>
-<p class="p1">.hero-card.teal-border { border-left: 3px solid var(--teal); }</p>
-<p class="p1">.hero-card.amber-border { border-left: 3px solid var(--amber); }</p>
-<p class="p1">.hero-card-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 8px; }</p>
-<p class="p1">.hero-card-value { font-size: 26px; font-weight: 600; letter-spacing: -0.8px; color: var(--text-primary); line-height: 1.2; margin-bottom: 6px; }</p>
-<p class="p1">.hero-card-value span { font-size: 0.55em; color: var(--accent); }</p>
-<p class="p1">.hero-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }</p>
-<p class="p2"><br></p>
-<p class="p1">section { padding: 96px 24px; }</p>
-<p class="p1">.container { max-width: 960px; margin: 0 auto; }</p>
-<p class="p1">.section-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }</p>
-<p class="p1">h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 600; letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 48px; }</p>
-<p class="p1">h2 .muted { color: var(--text-tertiary); }</p>
-<p class="p2"><br></p>
-<p class="p1">.failures { background: var(--white); border-top: 1px solid var(--border); }</p>
-<p class="p1">.failures-intro { max-width: 640px; margin-bottom: 48px; }</p>
-<p class="p1">.failures-intro h2 { margin-bottom: 16px; }</p>
-<p class="p1">.failures-intro p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; }</p>
-<p class="p1">.failures-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }</p>
-<p class="p1">.failure-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }</p>
-<p class="p1">.failure-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 12px 12px 0 0; opacity: 0.5; }</p>
-<p class="p1">.failure-card:nth-child(1)::before { background: linear-gradient(90deg, transparent, var(--accent), transparent); }</p>
-<p class="p1">.failure-card:nth-child(2)::before { background: linear-gradient(90deg, transparent, var(--amber), transparent); }</p>
-<p class="p1">.failure-card:nth-child(3)::before { background: linear-gradient(90deg, transparent, var(--indigo), transparent); }</p>
-<p class="p1">.failure-num { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; }</p>
-<p class="p1">.failure-card:nth-child(2) .failure-num { color: var(--amber); }</p>
-<p class="p1">.failure-card:nth-child(3) .failure-num { color: var(--indigo); }</p>
-<p class="p1">.failure-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.3px; }</p>
-<p class="p1">.failure-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }</p>
-<p class="p1">.failure-stat { display: inline-block; margin-top: 14px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; }</p>
-<p class="p1">.failure-card:nth-child(1) .failure-stat { background: var(--accent-light); color: var(--accent); }</p>
-<p class="p1">.failure-card:nth-child(2) .failure-stat { background: rgba(217,119,6,0.08); color: var(--amber); }</p>
-<p class="p1">.failure-card:nth-child(3) .failure-stat { background: rgba(99,102,241,0.08); color: var(--indigo); }</p>
-<p class="p2"><br></p>
-<p class="p1">.link-analysis { background: var(--off-white); border-top: 1px solid var(--border); }</p>
-<p class="p1">.link-heading { max-width: 680px; margin-bottom: 40px; }</p>
-<p class="p1">.link-heading h2 { margin-bottom: 0; }</p>
-<p class="p1">.link-visual {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: #07090f; border-radius: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border: 1px solid rgba(255,255,255,0.07);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>overflow: hidden; position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>box-shadow: 0 24px 80px rgba(0,0,0,0.18);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 32px;</p>
-<p class="p1">}</p>
-<p class="p1">.link-status {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>position: absolute; top: 16px; right: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display: flex; align-items: center; gap: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: rgba(7,9,15,0.85); backdrop-filter: blur(8px);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border: 1px solid rgba(255,255,255,0.07);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 8px; padding: 8px 14px;</p>
-<p class="p1">}</p>
-<p class="p1">.status-dot { width: 7px; height: 7px; border-radius: 50%; background: #3b7cff; animation: sdot 2s ease-in-out infinite; }</p>
-<p class="p1">.status-dot.green { background: #10b981; animation: none; }</p>
-<p class="p1">@keyframes sdot { 0%,100%{opacity:1} 50%{opacity:0.4} }</p>
-<p class="p1">.status-text { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.5); letter-spacing: 0.8px; text-transform: uppercase; }</p>
-<p class="p1">.pattern-alert {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>position: absolute; bottom: 20px; left: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: rgba(7,9,15,0.92);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border: 1px solid rgba(59,124,255,0.25);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 10px; padding: 12px 18px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display: flex; align-items: center; gap: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>opacity: 0; transform: translateY(6px);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transition: opacity 0.6s ease, transform 0.6s ease;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>max-width: 380px;</p>
-<p class="p1">}</p>
-<p class="p1">.pattern-alert.visible { opacity: 1; transform: translateY(0); }</p>
-<p class="p1">.alert-dot { width: 7px; height: 7px; border-radius: 50%; background: #3b7cff; flex-shrink: 0; animation: sdot 1.8s ease-in-out infinite; }</p>
-<p class="p1">.alert-text { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.5; }</p>
-<p class="p1">.alert-text strong { color: #fff; }</p>
-<p class="p1">.link-caption { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }</p>
-<p class="p1">.link-caption-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }</p>
-<p class="p1">.link-caption-item h4 { font-size: 14px; font-weight: 600; margin-bottom: 6px; }</p>
-<p class="p1">.link-caption-item p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }</p>
-<p class="p2"><br></p>
-<p class="p1">.how { background: var(--white); border-top: 1px solid var(--border); }</p>
-<p class="p1">.how-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-bottom: 48px; }</p>
-<p class="p1">.how-intro h2 { margin-bottom: 0; }</p>
-<p class="p1">.how-intro p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; }</p>
-<p class="p1">.how-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }</p>
-<p class="p1">.how-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: box-shadow 0.2s, transform 0.2s; }</p>
-<p class="p1">.how-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }</p>
-<p class="p1">.how-card-top { height: 3px; border-radius: 12px 12px 0 0; position: absolute; top: 0; left: 0; right: 0; opacity: 0.5; }</p>
-<p class="p1">.how-card:nth-child(1) .how-card-top { background: linear-gradient(90deg, transparent, var(--accent), transparent); }</p>
-<p class="p1">.how-card:nth-child(2) .how-card-top { background: linear-gradient(90deg, transparent, var(--teal), transparent); }</p>
-<p class="p1">.how-card:nth-child(3) .how-card-top { background: linear-gradient(90deg, transparent, var(--indigo), transparent); }</p>
-<p class="p1">.how-card:nth-child(4) .how-card-top { background: linear-gradient(90deg, transparent, var(--amber), transparent); }</p>
-<p class="p1">.how-num { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; }</p>
-<p class="p1">.how-card:nth-child(2) .how-num { color: var(--teal); }</p>
-<p class="p1">.how-card:nth-child(3) .how-num { color: var(--indigo); }</p>
-<p class="p1">.how-card:nth-child(4) .how-num { color: var(--amber); }</p>
-<p class="p1">.how-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.3px; }</p>
-<p class="p1">.how-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }</p>
-<p class="p2"><br></p>
-<p class="p1">.metrics { background: var(--off-white); border-top: 1px solid var(--border); }</p>
-<p class="p1">.metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }</p>
-<p class="p1">.metric-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }</p>
-<p class="p1">.metric-value { font-size: 42px; font-weight: 600; letter-spacing: -2px; color: var(--text-primary); line-height: 1; margin-bottom: 8px; }</p>
-<p class="p1">.metric-value span { font-size: 0.5em; color: var(--accent); }</p>
-<p class="p1">.metric-label { font-size: 13px; color: var(--text-secondary); line-height: 1.5; max-width: 160px; margin: 0 auto; }</p>
-<p class="p2"><br></p>
-<p class="p1">.human-ai { background: var(--white); border-top: 1px solid var(--border); }</p>
-<p class="p1">.human-ai-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }</p>
-<p class="p1">.human-ai-left h2 { margin-bottom: 20px; }</p>
-<p class="p1">.human-ai-left p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }</p>
-<p class="p1">.human-ai-right { display: flex; flex-direction: column; gap: 12px; }</p>
-<p class="p1">.ai-row { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }</p>
-<p class="p1">.ai-row .action { font-size: 13px; font-weight: 500; color: var(--text-primary); }</p>
-<p class="p1">.ai-row .who { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; }</p>
-<p class="p1">.ai-row .who.ai { background: var(--accent-light); color: var(--accent); }</p>
-<p class="p1">.ai-row .who.human { background: rgba(13,148,136,0.08); color: var(--teal); }</p>
-<p class="p2"><br></p>
-<p class="p1">.cta-section { padding: 96px 24px; background: var(--off-white); border-top: 1px solid var(--border); }</p>
-<p class="p1">.cta-block { text-align: center; background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%); border: 1px solid rgba(59,124,255,0.15); border-radius: 20px; padding: 72px 40px; max-width: 680px; margin: 0 auto; position: relative; overflow: hidden; }</p>
-<p class="p1">.cta-glow { position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 500px; height: 300px; background: radial-gradient(ellipse, rgba(59,124,255,0.1) 0%, transparent 70%); pointer-events: none; }</p>
-<p class="p1">.cta-block h2 { color: var(--text-primary); margin-bottom: 16px; position: relative; }</p>
-<p class="p1">.cta-block h2 .muted { color: var(--text-tertiary); }</p>
-<p class="p1">.cta-block p { font-size: 16px; color: var(--text-secondary); margin-bottom: 36px; max-width: 440px; margin-left: auto; margin-right: auto; position: relative; }</p>
-<p class="p1">.cta-block .btn-primary { position: relative; }</p>
-<p class="p2"><br></p>
-<p class="p1">footer { padding: 32px 48px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: var(--white); }</p>
-<p class="p1">footer p { font-size: 13px; color: var(--text-tertiary); }</p>
-<p class="p2"><br></p>
-<p class="p1">@media (max-width: 900px) {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero { grid-template-columns: 1fr; padding: 120px 40px 64px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero-right { display: none; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.how-intro, .human-ai-inner { grid-template-columns: 1fr; gap: 32px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.failures-grid, .how-grid, .metrics-grid, .link-caption { grid-template-columns: 1fr; }</p>
-<p class="p1">}</p>
-<p class="p1">@media (max-width: 600px) {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>nav { padding: 16px 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.hero { padding: 100px 24px 64px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }</p>
-<p class="p1">}</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-left"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="index.html" class="logo"&gt;legio&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="nav-divider"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="nav-page"&gt;Incident Management&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div style="display:flex;align-items:center;gap:20px;margin-right:auto;margin-left:24px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="index.html" class="nav-back"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;svg width="14" height="14" viewBox="0 0 14 14" fill="none"&gt;&lt;path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>Back to home</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;a href="https://calendly.com/darren-klasscapital/30min" target="_blank" class="nav-cta"&gt;Book a Walkthrough&lt;/a&gt;</p>
-<p class="p1">&lt;/nav&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="hero-glow"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="hero-left fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="eyebrow"&gt;Incident Management&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;The officer tells the story. &lt;em&gt;The system does the work.&lt;/em&gt;&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="hero-sub"&gt;Traditional incident software is a form to fill out. Legio is an intelligent partner — it listens, extracts, connects, and asks the right questions so your team can focus on what actually matters.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://calendly.com/darren-klasscapital/30min" target="_blank" class="btn-primary"&gt;See It in Action&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="hero-right fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-card accent-border"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="hero-card-label"&gt;Intake Speed&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-card-value"&gt;&amp;lt;2&lt;span&gt;min&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;From incident occurrence to complete record. Industry average is 15–30 minutes. Officers narrate once — the system handles the rest.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-card teal-border"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="hero-card-label"&gt;Unreported Incidents&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-card-value"&gt;40&lt;span&gt;%&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Of minor incidents go unreported due to form-filling friction, per IAHSS research. Zero-rekey intake eliminates that barrier entirely.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-card amber-border"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="hero-card-label"&gt;Pattern Detection&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-card-value"&gt;&amp;gt;60&lt;span&gt;%&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Of confirmed multi-incident patterns should be identified by the AI before a human notices. That's the target — and the bar we're building toward.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="failures"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="failures-intro fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="section-label"&gt;The Problem&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Three ways traditional incident software &lt;span class="muted"&gt;fails your team.&lt;/span&gt;&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Every incident management system built in the last 20 years was designed around the same assumption: officers should fill out forms. That assumption is wrong — and the failures that follow from it are predictable.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="failures-grid fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="failure-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="failure-num"&gt;01&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Data loss at intake&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Officers simplify narratives to fit forms. The smell of alcohol, a subject's demeanor, the exact sequence of events — context that matters gets discarded because there's no dropdown for it.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="failure-stat"&gt;Rich context → lost forever&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="failure-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="failure-num"&gt;02&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Delayed reporting&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;The cognitive burden of form-filling means reports get written hours later from memory — or not at all. An incident that isn't documented promptly is an investigation that starts cold.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="failure-stat"&gt;40% of minor incidents unreported&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="failure-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="failure-num"&gt;03&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Siloed intelligence&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Related incidents are never linked because systems can only match on exact field values. Ten thefts with the same MO across buildings go unnoticed because nothing connects them.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="failure-stat"&gt;Patterns invisible until it's too late&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="link-analysis"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="link-heading fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="section-label"&gt;Link Analysis&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Finding connections it would be &lt;span class="muted"&gt;impossible to find manually.&lt;/span&gt;&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="link-visual fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;canvas id="linkCanvas" width="800" height="460" style="width:100%;height:460px;display:block;"&gt;&lt;/canvas&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="link-status"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="status-dot" id="statusDot"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="status-text" id="statusText"&gt;Scanning incidents&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pattern-alert" id="patternAlert"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="alert-dot"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="alert-text"&gt;&lt;strong&gt;Pattern detected.&lt;/strong&gt; 6 bike thefts — evening timing, no forced entry, same MO. Confidence 91%.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="link-caption fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="link-caption-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Behavioral signature, not field matching&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;The engine analyzes MO, timing patterns, target selection, and suspect details — not just incident category. Six thefts with the same approach get flagged. Six random thefts don't.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="link-caption-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Frequency-adjusted confidence scoring&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Common incidents are penalized so they don't generate false clusters. Confidence only rises when the behavioral details are genuinely distinctive — a specific MO, recurring description, or timing pattern that defies coincidence.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="how"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="how-intro fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="section-label"&gt;How It Works&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;The model is inverted. &lt;span class="muted"&gt;The officer narrates. The system structures.&lt;/span&gt;&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Every traditional system asks officers to translate what happened into fields and dropdowns. Legio asks officers to describe what happened — and does the translation itself.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="how-grid fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="how-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="how-card-top"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="how-num"&gt;01&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Narrative-first intake&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;The officer speaks or types what happened — in plain language. The AI extracts every structured field: incident type, persons involved, location, timeline, property, demeanor. Confirmation takes 15–30 seconds, not 15–30 minutes.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="how-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="how-card-top"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="how-num"&gt;02&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Zero rekey from any source&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;If it's already been captured digitally — an email, a radio transcript, an alarm event, a witness statement PDF, a camera still — Legio ingests it and extracts the data. Officers never type something twice.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="how-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="how-card-top"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="how-num"&gt;03&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;AI as active investigator&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;The system identifies missing information and proactively fills the gap — prompting the officer, sending follow-up questions to the original reporter, or flagging for a supervisor. It doesn't wait for a human to notice a hole.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="how-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="how-card-top"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="how-num"&gt;04&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Behavioral link detection&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Every incident is vectorized by behavioral signature and compared against the full incident database. Related cases surface automatically — with confidence scores, shared MO details, and a clear reason for the connection.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="metrics"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="section-label fade-in"&gt;Performance Targets&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="fade-in"&gt;Numbers that matter &lt;span class="muted"&gt;to a security director.&lt;/span&gt;&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="metrics-grid fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="metric-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="metric-value"&gt;&amp;lt;2&lt;span&gt;min&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="metric-label"&gt;Officer-initiated incident to complete record. Industry average: 15–30 minutes.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="metric-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="metric-value"&gt;&amp;lt;20&lt;span&gt;%&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="metric-label"&gt;False link rate — AI-suggested connections rejected by investigators.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="metric-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="metric-value"&gt;&amp;lt;1&lt;span&gt;hr&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="metric-label"&gt;Time from incident occurrence to Clery-reportable flag for auto-classified incidents.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="human-ai"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="human-ai-inner fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="human-ai-left"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="section-label"&gt;Human Authority. AI Velocity.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;The system suggests. &lt;span class="muted"&gt;The officer decides.&lt;/span&gt;&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Every AI action is a suggestion that a human confirms or overrides. Legio never closes an incident, changes a classification, or links cases without a human in the loop.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;But it moves at machine speed to present the options — so your team makes better decisions faster, not different decisions.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="human-ai-right"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ai-row"&gt;&lt;span class="action"&gt;Extract structured fields from narrative&lt;/span&gt;&lt;span class="who ai"&gt;AI&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ai-row"&gt;&lt;span class="action"&gt;Confirm or correct extracted data&lt;/span&gt;&lt;span class="who human"&gt;Officer&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ai-row"&gt;&lt;span class="action"&gt;Detect gaps and generate follow-up questions&lt;/span&gt;&lt;span class="who ai"&gt;AI&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ai-row"&gt;&lt;span class="action"&gt;Approve or dismiss follow-up requests&lt;/span&gt;&lt;span class="who human"&gt;Officer&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ai-row"&gt;&lt;span class="action"&gt;Identify behavioral patterns across incidents&lt;/span&gt;&lt;span class="who ai"&gt;AI&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ai-row"&gt;&lt;span class="action"&gt;Accept, reject, or escalate suggested links&lt;/span&gt;&lt;span class="who human"&gt;Investigator&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ai-row"&gt;&lt;span class="action"&gt;Auto-compute Clery / NIBRS classification&lt;/span&gt;&lt;span class="who ai"&gt;AI&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="ai-row"&gt;&lt;span class="action"&gt;Final review and report approval&lt;/span&gt;&lt;span class="who human"&gt;Director&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;section class="cta-section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="cta-block fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cta-glow"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="section-label" style="margin-bottom:12px;"&gt;See It in Action&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;We could keep describing it. &lt;span class="muted"&gt;But it's much more fun to show you.&lt;/span&gt;&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Book a 30-minute walkthrough. We'll show you the Incident Management module and the rest of the platform — you tell us where we've got it right and where we haven't.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://calendly.com/darren-klasscapital/30min" target="_blank" class="btn-primary"&gt;Book a Walkthrough&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;a href="index.html" class="logo"&gt;legio&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;© 2026 Legio. All rights reserved.&lt;/p&gt;</p>
-<p class="p1">&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1">var obs = new IntersectionObserver(function(entries) {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });</p>
-<p class="p1">}, { threshold: 0.1 });</p>
-<p class="p1">document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });</p>
-<p class="p2"><br></p>
-<p class="p1">window.onload = function() {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var cv = document.getElementById('linkCanvas');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var cx = cv.getContext('2d');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var alertEl = document.getElementById('patternAlert');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var statusDot = document.getElementById('statusDot');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var statusText = document.getElementById('statusText');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var W = 800, H = 460;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function pill(x,y,w,h,r) {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.beginPath();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.moveTo(x+r,y); cx.lineTo(x+w-r,y);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.arcTo(x+w,y,x+w,y+r,r); cx.lineTo(x+w,y+h-r);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.arcTo(x+w,y+h,x+w-r,y+h,r); cx.lineTo(x+r,y+h);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.arcTo(x,y+h,x,y+h-r,r); cx.lineTo(x,y+r);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.arcTo(x,y,x+r,y,r); cx.closePath();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>var N = [</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ id:0,<span class="Apple-converted-space">  </span>label:'Pattern', <span class="Apple-converted-space">    </span>sub:'Evening / no lock cut',<span class="Apple-converted-space">  </span>r:28, col:'#5b8aff', c:true,<span class="Apple-converted-space">  </span>x:400, y:220 },</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ id:1,<span class="Apple-converted-space">  </span>label:'Bike Theft',<span class="Apple-converted-space">  </span>sub:'Lot C — Tue 9:12pm',<span class="Apple-converted-space">    </span>r:18, col:'#7ba3ff', c:true,<span class="Apple-converted-space">  </span>x:170, y:100 },</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ id:2,<span class="Apple-converted-space">  </span>label:'Bike Theft',<span class="Apple-converted-space">  </span>sub:'Science — Wed 8:55pm',<span class="Apple-converted-space">  </span>r:18, col:'#7ba3ff', c:true,<span class="Apple-converted-space">  </span>x:640, y:105 },</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ id:3,<span class="Apple-converted-space">  </span>label:'Bike Theft',<span class="Apple-converted-space">  </span>sub:'Lot C — Thu 9:31pm',<span class="Apple-converted-space">    </span>r:18, col:'#7ba3ff', c:true,<span class="Apple-converted-space">  </span>x:165, y:350 },</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ id:4,<span class="Apple-converted-space">  </span>label:'Bike Theft',<span class="Apple-converted-space">  </span>sub:'Admin — Fri 8:40pm',<span class="Apple-converted-space">    </span>r:18, col:'#7ba3ff', c:true,<span class="Apple-converted-space">  </span>x:638, y:348 },</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ id:5,<span class="Apple-converted-space">  </span>label:'Bike Theft',<span class="Apple-converted-space">  </span>sub:'Library — Mon 9:05pm',<span class="Apple-converted-space">  </span>r:15, col:'#7ba3ff', c:true,<span class="Apple-converted-space">  </span>x:400, y:60<span class="Apple-converted-space">  </span>},</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ id:6,<span class="Apple-converted-space">  </span>label:'Bike Theft',<span class="Apple-converted-space">  </span>sub:'Union — Wed 10:10pm', <span class="Apple-converted-space">  </span>r:14, col:'#7ba3ff', c:true,<span class="Apple-converted-space">  </span>x:400, y:388 },</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ id:7,<span class="Apple-converted-space">  </span>label:'Vandalism', <span class="Apple-converted-space">  </span>sub:'Gym', <span class="Apple-converted-space">                  </span>r:11, col:'#44446a', c:false, x:750, y:230 },</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ id:8,<span class="Apple-converted-space">  </span>label:'Trespass',<span class="Apple-converted-space">    </span>sub:'Dorm B',<span class="Apple-converted-space">                </span>r:10, col:'#44446a', c:false, x:55,<span class="Apple-converted-space">  </span>y:225 },</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ id:9,<span class="Apple-converted-space">  </span>label:'Assault', <span class="Apple-converted-space">    </span>sub:'Quad',<span class="Apple-converted-space">                  </span>r:10, col:'#44446a', c:false, x:700, y:400 },</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ id:10, label:'Drug',<span class="Apple-converted-space">        </span>sub:'Parking A', <span class="Apple-converted-space">            </span>r:10, col:'#44446a', c:false, x:100, y:420 },</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ id:11, label:'Trespass',<span class="Apple-converted-space">    </span>sub:'Science Hall',<span class="Apple-converted-space">          </span>r:9,<span class="Apple-converted-space">  </span>col:'#44446a', c:false, x:720, y:60<span class="Apple-converted-space">  </span>},</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ id:12, label:'Vandalism', <span class="Apple-converted-space">  </span>sub:'Athletic Ctr',<span class="Apple-converted-space">          </span>r:9,<span class="Apple-converted-space">  </span>col:'#44446a', c:false, x:80,<span class="Apple-converted-space">  </span>y:65<span class="Apple-converted-space">  </span>},</p>
-<p class="p1"><span class="Apple-converted-space">  </span>];</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>var E = [</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ a:1,<span class="Apple-converted-space">  </span>b:0, conf:0.93, s:true<span class="Apple-converted-space">  </span>},</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ a:2,<span class="Apple-converted-space">  </span>b:0, conf:0.91, s:true<span class="Apple-converted-space">  </span>},</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ a:3,<span class="Apple-converted-space">  </span>b:0, conf:0.88, s:true<span class="Apple-converted-space">  </span>},</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ a:4,<span class="Apple-converted-space">  </span>b:0, conf:0.84, s:true<span class="Apple-converted-space">  </span>},</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ a:5,<span class="Apple-converted-space">  </span>b:0, conf:0.79, s:true<span class="Apple-converted-space">  </span>},</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ a:6,<span class="Apple-converted-space">  </span>b:0, conf:0.76, s:true<span class="Apple-converted-space">  </span>},</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ a:7,<span class="Apple-converted-space">  </span>b:9, conf:0.31, s:false },</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ a:8,<span class="Apple-converted-space">  </span>b:10,conf:0.24, s:false },</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ a:11, b:7, conf:0.19, s:false },</p>
-<p class="p1"><span class="Apple-converted-space">    </span>{ a:12, b:8, conf:0.17, s:false },</p>
-<p class="p1"><span class="Apple-converted-space">  </span>];</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>var state='appear', tick=0, shown=false;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>var na=[], ep=[], ba=[];</p>
-<p class="p1"><span class="Apple-converted-space">  </span>for(var i=0;i&lt;N.length;i++) na.push(0);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>for(var i=0;i&lt;E.length;i++){ep.push(0);ba.push(0);}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function drawBg() {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.fillStyle='#07090f'; cx.fillRect(0,0,W,H);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var g=cx.createRadialGradient(400,220,0,400,220,280);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>g.addColorStop(0,'rgba(59,124,255,0.06)');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>g.addColorStop(1,'rgba(0,0,0,0)');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.fillStyle=g; cx.fillRect(0,0,W,H);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function drawEdge(e,prog,alpha) {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!alpha||!prog) return;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var a=N[e.a],b=N[e.b];</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var ex=a.x+(b.x-a.x)*prog, ey=a.y+(b.y-a.y)*prog;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.save();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.globalAlpha=alpha*(e.s?0.45:0.1);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.beginPath(); cx.moveTo(a.x,a.y); cx.lineTo(ex,ey);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.strokeStyle=e.s?'#5b8aff':'rgba(160,160,200,0.8)';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.lineWidth=e.s?1.5:0.8;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!e.s) cx.setLineDash([4,6]);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.stroke(); cx.setLineDash([]);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.restore();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function drawBadge(e,alpha) {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!alpha||!e.s) return;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var a=N[e.a],b=N[e.b];</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var mx=(a.x+b.x)/2, my=(a.y+b.y)/2;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var txt=Math.round(e.conf*100)+'%';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.save(); cx.globalAlpha=alpha;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.font='600 10px sans-serif';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var tw=cx.measureText(txt).width;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.fillStyle='#07090f';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>pill(mx-tw/2-7,my-9,tw+14,18,4); cx.fill();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.strokeStyle='rgba(91,138,255,0.4)'; cx.lineWidth=1;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>pill(mx-tw/2-7,my-9,tw+14,18,4); cx.stroke();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.fillStyle='#93b4ff'; cx.textAlign='center'; cx.textBaseline='middle';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.fillText(txt,mx,my);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.restore();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function drawNode(n,alpha,glow) {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!alpha) return;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.save(); cx.globalAlpha=alpha;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var glr=n.r*(n.c?4:2.5);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var g=cx.createRadialGradient(n.x,n.y,n.r*0.2,n.x,n.y,glr);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>g.addColorStop(0,n.col+(n.c?'28':'14'));</p>
-<p class="p1"><span class="Apple-converted-space">    </span>g.addColorStop(1,'rgba(0,0,0,0)');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.globalAlpha=alpha*(n.c?0.7+glow*0.3:0.3);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.beginPath(); cx.arc(n.x,n.y,glr,0,Math.PI*2);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.fillStyle=g; cx.fill();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.globalAlpha=alpha;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.beginPath(); cx.arc(n.x,n.y,n.r,0,Math.PI*2);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.fillStyle=n.col+(n.c?'1e':'12'); cx.fill();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.strokeStyle=n.col+(n.c?'bb':'44'); cx.lineWidth=n.c?1.5:1; cx.stroke();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(n.id===0){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cx.beginPath(); cx.arc(n.x,n.y,n.r*0.38,0,Math.PI*2);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cx.fillStyle=n.col+'99'; cx.fill();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(n.c){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cx.fillStyle=n.id===0?'#ffffff':'#c0d0ff';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cx.font=(n.id===0?'600 11px':'500 10px')+' sans-serif';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cx.textAlign='center'; cx.textBaseline='middle';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cx.fillText(n.label,n.x,n.y-4);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cx.fillStyle='rgba(255,255,255,0.36)';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cx.font='9px sans-serif';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cx.fillText(n.sub.split('—')[0].trim(),n.x,n.y+7);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.restore();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>function frame() {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>requestAnimationFrame(frame);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>cx.clearRect(0,0,W,H);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>drawBg();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>tick++;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var glow=(Math.sin(tick*0.04)+1)/2;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(state==='appear'){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>for(var i=0;i&lt;N.length;i++) na[i]=Math.min(1,Math.max(0,(tick-i*7)/22));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if(na[N.length-1]&gt;=1&amp;&amp;tick&gt;90){state='trace';tick=0;if(statusText)statusText.textContent='Analyzing patterns';}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>for(var i=0;i&lt;N.length;i++) drawNode(N[i],na[i],0);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>} else if(state==='trace'){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>for(var i=0;i&lt;E.length;i++){</p>
-<p class="p1"><span class="Apple-converted-space">        </span>var gate=i===0?1:ep[i-1];</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if(gate&gt;=0.5) ep[i]=Math.min(1,ep[i]+0.022);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if(ep[i]&gt;=1) ba[i]=Math.min(1,ba[i]+0.04);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>for(var i=0;i&lt;E.length;i++) drawEdge(E[i],ep[i],1);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>for(var i=0;i&lt;E.length;i++) drawBadge(E[i],ba[i]);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>for(var i=0;i&lt;N.length;i++) drawNode(N[i],1,glow);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if(ep[E.length-1]&gt;=1&amp;&amp;tick&gt;80){</p>
-<p class="p1"><span class="Apple-converted-space">        </span>state='highlight';tick=0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if(statusText)statusText.textContent='Pattern detected';</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if(statusDot)statusDot.classList.add('green');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if(!shown&amp;&amp;alertEl){shown=true;alertEl.classList.add('visible');}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>} else if(state==='highlight'){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>for(var i=0;i&lt;E.length;i++) drawEdge(E[i],1,E[i].s?1:0.2);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>for(var i=0;i&lt;E.length;i++) drawBadge(E[i],E[i].s?1:0);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>for(var i=0;i&lt;N.length;i++) drawNode(N[i],1,glow);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if(tick&gt;280){</p>
-<p class="p1"><span class="Apple-converted-space">        </span>state='appear';tick=0;shown=false;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>for(var i=0;i&lt;N.length;i++) na[i]=0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>for(var i=0;i&lt;E.length;i++){ep[i]=0;ba[i]=0;}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if(alertEl)alertEl.classList.remove('visible');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if(statusDot)statusDot.classList.remove('green');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if(statusText)statusText.textContent='Scanning incidents';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>frame();</p>
-<p class="p1">};</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="logo">legio</a>
+    <div class="nav-divider"></div>
+    <span class="nav-page">Incident Management</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:20px;margin-right:auto;margin-left:24px;">
+    <a href="index.html" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to home
+    </a>
+  </div>
+  <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" class="nav-cta">Book a Walkthrough</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-left fade-in">
+    <span class="eyebrow">Incident Management</span>
+    <h1>The officer tells the story. <em>The system does the work.</em></h1>
+    <p class="hero-sub">Traditional incident software is a form to fill out. Legio is an intelligent partner — it listens, extracts, connects, and asks the right questions so your team can focus on what actually matters.</p>
+    <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" class="btn-primary">See It in Action</a>
+  </div>
+  <div class="hero-right fade-in">
+    <div class="hero-card accent-border">
+      <p class="hero-card-label">Intake Speed</p>
+      <div class="hero-card-value">&lt;2<span>min</span></div>
+      <p>From incident occurrence to complete record. Industry average is 15–30 minutes. Officers narrate once — the system handles the rest.</p>
+    </div>
+    <div class="hero-card teal-border">
+      <p class="hero-card-label">Unreported Incidents</p>
+      <div class="hero-card-value">40<span>%</span></div>
+      <p>Of minor incidents go unreported due to form-filling friction, per IAHSS research. Zero-rekey intake eliminates that barrier entirely.</p>
+    </div>
+    <div class="hero-card amber-border">
+      <p class="hero-card-label">Pattern Detection</p>
+      <div class="hero-card-value">&gt;60<span>%</span></div>
+      <p>Of confirmed multi-incident patterns should be identified by the AI before a human notices. That's the target — and the bar we're building toward.</p>
+    </div>
+  </div>
+</section>
+
+<section class="failures">
+  <div class="container">
+    <div class="failures-intro fade-in">
+      <p class="section-label">The Problem</p>
+      <h2>Three ways traditional incident software <span class="muted">fails your team.</span></h2>
+      <p>Every incident management system built in the last 20 years was designed around the same assumption: officers should fill out forms. That assumption is wrong — and the failures that follow from it are predictable.</p>
+    </div>
+    <div class="failures-grid fade-in">
+      <div class="failure-card">
+        <p class="failure-num">01</p>
+        <h3>Data loss at intake</h3>
+        <p>Officers simplify narratives to fit forms. The smell of alcohol, a subject's demeanor, the exact sequence of events — context that matters gets discarded because there's no dropdown for it.</p>
+        <span class="failure-stat">Rich context → lost forever</span>
+      </div>
+      <div class="failure-card">
+        <p class="failure-num">02</p>
+        <h3>Delayed reporting</h3>
+        <p>The cognitive burden of form-filling means reports get written hours later from memory — or not at all. An incident that isn't documented promptly is an investigation that starts cold.</p>
+        <span class="failure-stat">40% of minor incidents unreported</span>
+      </div>
+      <div class="failure-card">
+        <p class="failure-num">03</p>
+        <h3>Siloed intelligence</h3>
+        <p>Related incidents are never linked because systems can only match on exact field values. Ten thefts with the same MO across buildings go unnoticed because nothing connects them.</p>
+        <span class="failure-stat">Patterns invisible until it's too late</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="link-analysis">
+  <div class="container">
+    <div class="link-heading fade-in">
+      <p class="section-label">Link Analysis</p>
+      <h2>Finding connections it would be <span class="muted">impossible to find manually.</span></h2>
+    </div>
+    <div class="link-visual fade-in">
+      <canvas id="linkCanvas" width="800" height="460" style="width:100%;height:460px;display:block;"></canvas>
+      <div class="link-status">
+        <div class="status-dot" id="statusDot"></div>
+        <span class="status-text" id="statusText">Scanning incidents</span>
+      </div>
+      <div class="pattern-alert" id="patternAlert">
+        <div class="alert-dot"></div>
+        <div class="alert-text"><strong>Pattern detected.</strong> 6 bike thefts — evening timing, no forced entry, same MO. Confidence 91%.</div>
+      </div>
+    </div>
+    <div class="link-caption fade-in">
+      <div class="link-caption-item">
+        <h4>Behavioral signature, not field matching</h4>
+        <p>The engine analyzes MO, timing patterns, target selection, and suspect details — not just incident category. Six thefts with the same approach get flagged. Six random thefts don't.</p>
+      </div>
+      <div class="link-caption-item">
+        <h4>Frequency-adjusted confidence scoring</h4>
+        <p>Common incidents are penalized so they don't generate false clusters. Confidence only rises when the behavioral details are genuinely distinctive — a specific MO, recurring description, or timing pattern that defies coincidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="container">
+    <div class="how-intro fade-in">
+      <div>
+        <p class="section-label">How It Works</p>
+        <h2>The model is inverted. <span class="muted">The officer narrates. The system structures.</span></h2>
+      </div>
+      <p>Every traditional system asks officers to translate what happened into fields and dropdowns. Legio asks officers to describe what happened — and does the translation itself.</p>
+    </div>
+    <div class="how-grid fade-in">
+      <div class="how-card">
+        <div class="how-card-top"></div>
+        <p class="how-num">01</p>
+        <h3>Narrative-first intake</h3>
+        <p>The officer speaks or types what happened — in plain language. The AI extracts every structured field: incident type, persons involved, location, timeline, property, demeanor. Confirmation takes 15–30 seconds, not 15–30 minutes.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-card-top"></div>
+        <p class="how-num">02</p>
+        <h3>Zero rekey from any source</h3>
+        <p>If it's already been captured digitally — an email, a radio transcript, an alarm event, a witness statement PDF, a camera still — Legio ingests it and extracts the data. Officers never type something twice.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-card-top"></div>
+        <p class="how-num">03</p>
+        <h3>AI as active investigator</h3>
+        <p>The system identifies missing information and proactively fills the gap — prompting the officer, sending follow-up questions to the original reporter, or flagging for a supervisor. It doesn't wait for a human to notice a hole.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-card-top"></div>
+        <p class="how-num">04</p>
+        <h3>Behavioral link detection</h3>
+        <p>Every incident is vectorized by behavioral signature and compared against the full incident database. Related cases surface automatically — with confidence scores, shared MO details, and a clear reason for the connection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="metrics">
+  <div class="container">
+    <p class="section-label fade-in">Performance Targets</p>
+    <h2 class="fade-in">Numbers that matter <span class="muted">to a security director.</span></h2>
+    <div class="metrics-grid fade-in">
+      <div class="metric-card">
+        <div class="metric-value">&lt;2<span>min</span></div>
+        <p class="metric-label">Officer-initiated incident to complete record. Industry average: 15–30 minutes.</p>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">&lt;20<span>%</span></div>
+        <p class="metric-label">False link rate — AI-suggested connections rejected by investigators.</p>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">&lt;1<span>hr</span></div>
+        <p class="metric-label">Time from incident occurrence to Clery-reportable flag for auto-classified incidents.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="human-ai">
+  <div class="container">
+    <div class="human-ai-inner fade-in">
+      <div class="human-ai-left">
+        <p class="section-label">Human Authority. AI Velocity.</p>
+        <h2>The system suggests. <span class="muted">The officer decides.</span></h2>
+        <p>Every AI action is a suggestion that a human confirms or overrides. Legio never closes an incident, changes a classification, or links cases without a human in the loop.</p>
+        <p>But it moves at machine speed to present the options — so your team makes better decisions faster, not different decisions.</p>
+      </div>
+      <div class="human-ai-right">
+        <div class="ai-row"><span class="action">Extract structured fields from narrative</span><span class="who ai">AI</span></div>
+        <div class="ai-row"><span class="action">Confirm or correct extracted data</span><span class="who human">Officer</span></div>
+        <div class="ai-row"><span class="action">Detect gaps and generate follow-up questions</span><span class="who ai">AI</span></div>
+        <div class="ai-row"><span class="action">Approve or dismiss follow-up requests</span><span class="who human">Officer</span></div>
+        <div class="ai-row"><span class="action">Identify behavioral patterns across incidents</span><span class="who ai">AI</span></div>
+        <div class="ai-row"><span class="action">Accept, reject, or escalate suggested links</span><span class="who human">Investigator</span></div>
+        <div class="ai-row"><span class="action">Auto-compute Clery / NIBRS classification</span><span class="who ai">AI</span></div>
+        <div class="ai-row"><span class="action">Final review and report approval</span><span class="who human">Director</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-block fade-in">
+      <div class="cta-glow"></div>
+      <p class="section-label" style="margin-bottom:12px;">See It in Action</p>
+      <h2>We could keep describing it. <span class="muted">But it's much more fun to show you.</span></h2>
+      <p>Book a 30-minute walkthrough. We'll show you the Incident Management module and the rest of the platform — you tell us where we've got it right and where we haven't.</p>
+      <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" class="btn-primary">Book a Walkthrough</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="logo">legio</a>
+  <p>© 2026 Legio. All rights reserved.</p>
+</footer>
+
+<script>
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
+
+window.onload = function() {
+  var cv = document.getElementById('linkCanvas');
+  var cx = cv.getContext('2d');
+  var alertEl = document.getElementById('patternAlert');
+  var statusDot = document.getElementById('statusDot');
+  var statusText = document.getElementById('statusText');
+  var W = 800, H = 460;
+
+  function pill(x,y,w,h,r) {
+    cx.beginPath();
+    cx.moveTo(x+r,y); cx.lineTo(x+w-r,y);
+    cx.arcTo(x+w,y,x+w,y+r,r); cx.lineTo(x+w,y+h-r);
+    cx.arcTo(x+w,y+h,x+w-r,y+h,r); cx.lineTo(x+r,y+h);
+    cx.arcTo(x,y+h,x,y+h-r,r); cx.lineTo(x,y+r);
+    cx.arcTo(x,y,x+r,y,r); cx.closePath();
+  }
+
+  var N = [
+    { id:0,  label:'Pattern',     sub:'Evening / no lock cut',  r:28, col:'#5b8aff', c:true,  x:400, y:220 },
+    { id:1,  label:'Bike Theft',  sub:'Lot C — Tue 9:12pm',    r:18, col:'#7ba3ff', c:true,  x:170, y:100 },
+    { id:2,  label:'Bike Theft',  sub:'Science — Wed 8:55pm',  r:18, col:'#7ba3ff', c:true,  x:640, y:105 },
+    { id:3,  label:'Bike Theft',  sub:'Lot C — Thu 9:31pm',    r:18, col:'#7ba3ff', c:true,  x:165, y:350 },
+    { id:4,  label:'Bike Theft',  sub:'Admin — Fri 8:40pm',    r:18, col:'#7ba3ff', c:true,  x:638, y:348 },
+    { id:5,  label:'Bike Theft',  sub:'Library — Mon 9:05pm',  r:15, col:'#7ba3ff', c:true,  x:400, y:60  },
+    { id:6,  label:'Bike Theft',  sub:'Union — Wed 10:10pm',   r:14, col:'#7ba3ff', c:true,  x:400, y:388 },
+    { id:7,  label:'Vandalism',   sub:'Gym',                   r:11, col:'#44446a', c:false, x:750, y:230 },
+    { id:8,  label:'Trespass',    sub:'Dorm B',                r:10, col:'#44446a', c:false, x:55,  y:225 },
+    { id:9,  label:'Assault',     sub:'Quad',                  r:10, col:'#44446a', c:false, x:700, y:400 },
+    { id:10, label:'Drug',        sub:'Parking A',             r:10, col:'#44446a', c:false, x:100, y:420 },
+    { id:11, label:'Trespass',    sub:'Science Hall',          r:9,  col:'#44446a', c:false, x:720, y:60  },
+    { id:12, label:'Vandalism',   sub:'Athletic Ctr',          r:9,  col:'#44446a', c:false, x:80,  y:65  },
+  ];
+
+  var E = [
+    { a:1,  b:0, conf:0.93, s:true  },
+    { a:2,  b:0, conf:0.91, s:true  },
+    { a:3,  b:0, conf:0.88, s:true  },
+    { a:4,  b:0, conf:0.84, s:true  },
+    { a:5,  b:0, conf:0.79, s:true  },
+    { a:6,  b:0, conf:0.76, s:true  },
+    { a:7,  b:9, conf:0.31, s:false },
+    { a:8,  b:10,conf:0.24, s:false },
+    { a:11, b:7, conf:0.19, s:false },
+    { a:12, b:8, conf:0.17, s:false },
+  ];
+
+  var state='appear', tick=0, shown=false;
+  var na=[], ep=[], ba=[];
+  for(var i=0;i<N.length;i++) na.push(0);
+  for(var i=0;i<E.length;i++){ep.push(0);ba.push(0);}
+
+  function drawBg() {
+    cx.fillStyle='#07090f'; cx.fillRect(0,0,W,H);
+    var g=cx.createRadialGradient(400,220,0,400,220,280);
+    g.addColorStop(0,'rgba(59,124,255,0.06)');
+    g.addColorStop(1,'rgba(0,0,0,0)');
+    cx.fillStyle=g; cx.fillRect(0,0,W,H);
+  }
+
+  function drawEdge(e,prog,alpha) {
+    if(!alpha||!prog) return;
+    var a=N[e.a],b=N[e.b];
+    var ex=a.x+(b.x-a.x)*prog, ey=a.y+(b.y-a.y)*prog;
+    cx.save();
+    cx.globalAlpha=alpha*(e.s?0.45:0.1);
+    cx.beginPath(); cx.moveTo(a.x,a.y); cx.lineTo(ex,ey);
+    cx.strokeStyle=e.s?'#5b8aff':'rgba(160,160,200,0.8)';
+    cx.lineWidth=e.s?1.5:0.8;
+    if(!e.s) cx.setLineDash([4,6]);
+    cx.stroke(); cx.setLineDash([]);
+    cx.restore();
+  }
+
+  function drawBadge(e,alpha) {
+    if(!alpha||!e.s) return;
+    var a=N[e.a],b=N[e.b];
+    var mx=(a.x+b.x)/2, my=(a.y+b.y)/2;
+    var txt=Math.round(e.conf*100)+'%';
+    cx.save(); cx.globalAlpha=alpha;
+    cx.font='600 10px sans-serif';
+    var tw=cx.measureText(txt).width;
+    cx.fillStyle='#07090f';
+    pill(mx-tw/2-7,my-9,tw+14,18,4); cx.fill();
+    cx.strokeStyle='rgba(91,138,255,0.4)'; cx.lineWidth=1;
+    pill(mx-tw/2-7,my-9,tw+14,18,4); cx.stroke();
+    cx.fillStyle='#93b4ff'; cx.textAlign='center'; cx.textBaseline='middle';
+    cx.fillText(txt,mx,my);
+    cx.restore();
+  }
+
+  function drawNode(n,alpha,glow) {
+    if(!alpha) return;
+    cx.save(); cx.globalAlpha=alpha;
+    var glr=n.r*(n.c?4:2.5);
+    var g=cx.createRadialGradient(n.x,n.y,n.r*0.2,n.x,n.y,glr);
+    g.addColorStop(0,n.col+(n.c?'28':'14'));
+    g.addColorStop(1,'rgba(0,0,0,0)');
+    cx.globalAlpha=alpha*(n.c?0.7+glow*0.3:0.3);
+    cx.beginPath(); cx.arc(n.x,n.y,glr,0,Math.PI*2);
+    cx.fillStyle=g; cx.fill();
+    cx.globalAlpha=alpha;
+    cx.beginPath(); cx.arc(n.x,n.y,n.r,0,Math.PI*2);
+    cx.fillStyle=n.col+(n.c?'1e':'12'); cx.fill();
+    cx.strokeStyle=n.col+(n.c?'bb':'44'); cx.lineWidth=n.c?1.5:1; cx.stroke();
+    if(n.id===0){
+      cx.beginPath(); cx.arc(n.x,n.y,n.r*0.38,0,Math.PI*2);
+      cx.fillStyle=n.col+'99'; cx.fill();
+    }
+    if(n.c){
+      cx.fillStyle=n.id===0?'#ffffff':'#c0d0ff';
+      cx.font=(n.id===0?'600 11px':'500 10px')+' sans-serif';
+      cx.textAlign='center'; cx.textBaseline='middle';
+      cx.fillText(n.label,n.x,n.y-4);
+      cx.fillStyle='rgba(255,255,255,0.36)';
+      cx.font='9px sans-serif';
+      cx.fillText(n.sub.split('—')[0].trim(),n.x,n.y+7);
+    }
+    cx.restore();
+  }
+
+  function frame() {
+    requestAnimationFrame(frame);
+    cx.clearRect(0,0,W,H);
+    drawBg();
+    tick++;
+    var glow=(Math.sin(tick*0.04)+1)/2;
+
+    if(state==='appear'){
+      for(var i=0;i<N.length;i++) na[i]=Math.min(1,Math.max(0,(tick-i*7)/22));
+      if(na[N.length-1]>=1&&tick>90){state='trace';tick=0;if(statusText)statusText.textContent='Analyzing patterns';}
+      for(var i=0;i<N.length;i++) drawNode(N[i],na[i],0);
+
+    } else if(state==='trace'){
+      for(var i=0;i<E.length;i++){
+        var gate=i===0?1:ep[i-1];
+        if(gate>=0.5) ep[i]=Math.min(1,ep[i]+0.022);
+        if(ep[i]>=1) ba[i]=Math.min(1,ba[i]+0.04);
+      }
+      for(var i=0;i<E.length;i++) drawEdge(E[i],ep[i],1);
+      for(var i=0;i<E.length;i++) drawBadge(E[i],ba[i]);
+      for(var i=0;i<N.length;i++) drawNode(N[i],1,glow);
+      if(ep[E.length-1]>=1&&tick>80){
+        state='highlight';tick=0;
+        if(statusText)statusText.textContent='Pattern detected';
+        if(statusDot)statusDot.classList.add('green');
+        if(!shown&&alertEl){shown=true;alertEl.classList.add('visible');}
+      }
+
+    } else if(state==='highlight'){
+      for(var i=0;i<E.length;i++) drawEdge(E[i],1,E[i].s?1:0.2);
+      for(var i=0;i<E.length;i++) drawBadge(E[i],E[i].s?1:0);
+      for(var i=0;i<N.length;i++) drawNode(N[i],1,glow);
+      if(tick>280){
+        state='appear';tick=0;shown=false;
+        for(var i=0;i<N.length;i++) na[i]=0;
+        for(var i=0;i<E.length;i++){ep[i]=0;ba[i]=0;}
+        if(alertEl)alertEl.classList.remove('visible');
+        if(statusDot)statusDot.classList.remove('green');
+        if(statusText)statusText.textContent='Scanning incidents';
+      }
+    }
+  }
+  frame();
+};
+</script>
 </body>
 </html>
