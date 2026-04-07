@@ -1,603 +1,586 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <!-- Google tag (gtag.js) — consent gated, must be first in <head> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-MTDN1L9RR5', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTDN1L9RR5"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Legio</title>
+  <meta name="description" content="Legio privacy policy. How we collect, use, and protect your information." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://getlegio.com/privacy" />
+  <meta name="theme-color" content="#162038" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --command:   #162038;
+      --coverage:  #2E618A;
+      --perimeter: #6B8FAE;
+      --white:     #FFFFFF;
+      --ice:       #F4F7FA;
+      --frost:     #E5EDF4;
+      --haze:      #C8D8E8;
+      --slate:     #4A6580;
+      --sp1: 4px; --sp2: 8px; --sp3: 12px; --sp4: 16px;
+      --sp6: 24px; --sp8: 32px; --sp12: 48px; --sp16: 64px; --sp20: 80px;
+      --r-sm: 4px; --r-md: 8px; --r-lg: 12px; --r-xl: 16px;
+      --max-w: 1200px; --gutter: 40px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px; line-height: 26px;
+      color: var(--command); background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--coverage); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); }
+
+    /* ─── BUTTONS ────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: var(--sp2);
+      font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600;
+      padding: 13px 24px; border-radius: var(--r-md);
+      cursor: pointer; border: none; transition: all 0.2s ease;
+      white-space: nowrap; text-decoration: none;
+    }
+    .btn-primary { background: var(--command); color: var(--white); }
+    .btn-primary:hover { background: #1e2e50; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(22,32,56,0.25); text-decoration: none; }
+
+    /* ─── MARK / LOGO ────────────────────────────────────────── */
+    .mark { display: inline-block; width: 28px; height: 28px; flex-shrink: 0; }
+    .mark svg { width: 100%; height: 100%; }
+    .wordmark { font-size: 16px; font-weight: 700; letter-spacing: 0.26em; color: var(--command); }
+    .wordmark-light { color: var(--white); }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo:hover { text-decoration: none; }
+
+    /* ─── NAV ────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--frost);
+    }
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter);
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-links { display: flex; align-items: center; gap: var(--sp8); list-style: none; }
+    .nav-links a { font-size: 15px; font-weight: 500; color: var(--slate); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--command); text-decoration: none; }
+    .nav-item { position: relative; }
+    .nav-item > a { display: flex; align-items: center; gap: 5px; }
+    .nav-item > a .chevron { width: 14px; height: 14px; color: var(--perimeter); transition: transform 0.2s; flex-shrink: 0; }
+    .nav-item:hover > a .chevron { transform: rotate(180deg); color: var(--command); }
+    .nav-item:hover > a { color: var(--command); }
+    .dropdown {
+      position: absolute; top: calc(100% + 8px); left: 50%;
+      transform: translateX(-50%);
+      background: var(--white); border: 1px solid var(--frost);
+      border-radius: var(--r-xl);
+      box-shadow: 0 16px 48px rgba(22,32,56,0.12), 0 0 0 1px rgba(22,32,56,0.04);
+      padding: var(--sp3); min-width: 200px; width: max-content;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transform: translateX(-50%) translateY(-8px);
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+      z-index: 200;
+    }
+    .dropdown::after { content: ''; position: absolute; top: -16px; left: 0; right: 0; height: 16px; }
+    .dropdown::before {
+      content: ''; position: absolute; top: -6px; left: 50%;
+      width: 12px; height: 12px; background: var(--white);
+      border-left: 1px solid var(--frost); border-top: 1px solid var(--frost);
+      transform: translateX(-50%) rotate(45deg);
+    }
+    .nav-item:hover .dropdown { opacity: 1; visibility: visible; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .dropdown-item {
+      display: flex; align-items: center; gap: var(--sp3);
+      padding: var(--sp2) var(--sp3); border-radius: var(--r-md);
+      text-decoration: none; transition: background 0.15s; color: var(--command);
+      white-space: nowrap;
+    }
+    .dropdown-item:hover { background: var(--ice); text-decoration: none; }
+    .dropdown-item:hover .dropdown-icon { background: var(--command); }
+    .dropdown-item:hover .dropdown-icon svg { color: var(--white); }
+    .dropdown-icon {
+      width: 28px; height: 28px; flex-shrink: 0; border-radius: var(--r-sm);
+      background: var(--frost); display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s;
+    }
+    .dropdown-icon svg { width: 13px; height: 13px; color: var(--coverage); transition: color 0.15s; }
+    .dropdown-title { font-size: 14px; font-weight: 500; color: var(--command); line-height: 18px; }
+
+    /* ─── HAMBURGER ──────────────────────────────────────────── */
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 36px; height: 36px; cursor: pointer;
+      background: none; border: none; padding: 4px; border-radius: var(--r-sm);
+    }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--command); border-radius: 2px; transition: all 0.25s ease; transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; top: 64px; left: 0; right: 0;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--frost);
+      padding: var(--sp6) var(--gutter) var(--sp8); z-index: 99;
+      flex-direction: column; gap: 0; box-shadow: 0 8px 32px rgba(22,32,56,0.1);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu li { list-style: none; border-bottom: 1px solid var(--frost); }
+    .mobile-menu li:last-child { border-bottom: none; }
+    .mobile-menu a { display: block; padding: var(--sp4) 0; font-size: 16px; font-weight: 500; color: var(--command); transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--coverage); text-decoration: none; }
+    .mobile-menu .mobile-cta { margin-top: var(--sp6); padding-top: var(--sp6); border-top: 1px solid var(--frost); }
+
+    /* ─── PAGE HEADER ────────────────────────────────────────── */
+    .page-header {
+      padding-top: 120px; padding-bottom: var(--sp12);
+      border-bottom: 1px solid var(--frost);
+    }
+    .page-header .label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--coverage);
+      display: block; margin-bottom: var(--sp3);
+    }
+    .page-header h1 { font-size: 40px; font-weight: 600; letter-spacing: -0.01em; line-height: 50px; margin-bottom: var(--sp4); }
+    .page-header .meta { font-size: 14px; color: var(--slate); }
+
+    /* ─── PRIVACY CONTENT ────────────────────────────────────── */
+    .privacy-layout {
+      display: grid; grid-template-columns: 220px 1fr;
+      gap: 80px; padding: var(--sp16) 0;
+      align-items: start;
+    }
+    .privacy-nav {
+      position: sticky; top: 96px;
+    }
+    .privacy-nav p {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--perimeter);
+      margin-bottom: var(--sp4);
+    }
+    .privacy-nav ul { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .privacy-nav ul li a {
+      display: block; font-size: 14px; font-weight: 500; color: var(--slate);
+      padding: var(--sp2) var(--sp3); border-radius: var(--r-md);
+      transition: all 0.15s; text-decoration: none;
+    }
+    .privacy-nav ul li a:hover { background: var(--ice); color: var(--command); }
+
+    .privacy-body { max-width: 680px; }
+    .privacy-section { margin-bottom: var(--sp16); }
+    .privacy-section:last-child { margin-bottom: 0; }
+    .privacy-section h2 {
+      font-size: 22px; font-weight: 600; color: var(--command);
+      margin-bottom: var(--sp6); padding-bottom: var(--sp4);
+      border-bottom: 1px solid var(--frost);
+    }
+    .privacy-section p {
+      font-size: 16px; color: var(--slate); line-height: 28px;
+      margin-bottom: var(--sp4);
+    }
+    .privacy-section p:last-child { margin-bottom: 0; }
+    .privacy-section ul {
+      margin: var(--sp4) 0; padding-left: var(--sp6);
+      display: flex; flex-direction: column; gap: var(--sp2);
+    }
+    .privacy-section ul li { font-size: 16px; color: var(--slate); line-height: 26px; }
+    .privacy-section a { color: var(--coverage); }
+    .privacy-section strong { color: var(--command); font-weight: 600; }
+
+    .highlight-box {
+      background: var(--ice); border: 1px solid var(--frost);
+      border-left: 3px solid var(--coverage);
+      border-radius: var(--r-md); padding: var(--sp6);
+      margin: var(--sp6) 0;
+    }
+    .highlight-box p { font-size: 15px; color: var(--slate); line-height: 26px; margin: 0; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      background: var(--command);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: var(--sp12) 0 var(--sp8);
+    }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--sp8); }
+    .footer-brand { display: flex; flex-direction: column; gap: var(--sp4); }
+    .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 22px; max-width: 280px; }
+    .footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: var(--sp4); }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: var(--sp2); }
+    .footer-col ul li a { font-size: 14px; color: rgba(255,255,255,0.55); transition: color 0.2s; text-decoration: none; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.9); }
+    .footer-bottom {
+      margin-top: var(--sp8); padding-top: var(--sp6);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    /* ─── COOKIE BANNER ──────────────────────────────────────── */
+    .cookie-banner {
+      position: fixed; bottom: var(--sp6); left: var(--sp6);
+      max-width: 420px; background: var(--command);
+      border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-xl);
+      padding: var(--sp6); box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+      z-index: 9999; display: flex; flex-direction: column; gap: var(--sp4);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .cookie-banner.hidden { opacity: 0; transform: translateY(12px); pointer-events: none; }
+    .cookie-banner p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 20px; margin: 0; }
+    .cookie-banner a { color: var(--perimeter); text-decoration: underline; }
+    .cookie-actions { display: flex; gap: var(--sp3); }
+    .cookie-accept { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: var(--r-md); background: var(--white); color: var(--command); border: none; cursor: pointer; transition: background 0.2s; }
+    .cookie-accept:hover { background: var(--ice); }
+    .cookie-decline { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: var(--r-md); background: transparent; color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.15); cursor: pointer; transition: all 0.2s; }
+    .cookie-decline:hover { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.75); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      :root { --gutter: 24px; }
+      .privacy-layout { grid-template-columns: 1fr; gap: 40px; }
+      .privacy-nav { position: relative; top: 0; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-cta { display: none; }
+    }
+    @media (max-width: 600px) {
+      .page-header h1 { font-size: 30px; line-height: 38px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .cookie-banner { left: var(--sp4); right: var(--sp4); bottom: var(--sp4); max-width: none; }
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Google tag (gtag.js) — consent gated, must be first in &lt;head&gt; --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>window.dataLayer = window.dataLayer || [];</p>
-<p class="p1"><span class="Apple-converted-space">    </span>function gtag(){dataLayer.push(arguments);}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>gtag('consent', 'default', {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>analytics_storage: 'denied',</p>
-<p class="p1"><span class="Apple-converted-space">      </span>ad_storage: 'denied',</p>
-<p class="p1"><span class="Apple-converted-space">      </span>wait_for_update: 500</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>gtag('js', new Date());</p>
-<p class="p1"><span class="Apple-converted-space">    </span>gtag('config', 'G-MTDN1L9RR5', { anonymize_ip: true });</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-MTDN1L9RR5"&gt;&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Privacy Policy — Legio&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Legio privacy policy. How we collect, use, and protect your information." /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="robots" content="index, follow" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="canonical" href="https://getlegio.com/privacy" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="theme-color" content="#162038" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="icon" type="image/svg+xml" href="/favicon.svg" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* ─── TOKENS ─────────────────────────────────────────────── */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--command: <span class="Apple-converted-space">  </span>#162038;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--coverage:<span class="Apple-converted-space">  </span>#2E618A;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--perimeter: #6B8FAE;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--white: <span class="Apple-converted-space">    </span>#FFFFFF;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--ice: <span class="Apple-converted-space">      </span>#F4F7FA;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--frost: <span class="Apple-converted-space">    </span>#E5EDF4;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--haze:<span class="Apple-converted-space">      </span>#C8D8E8;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--slate: <span class="Apple-converted-space">    </span>#4A6580;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--sp1: 4px; --sp2: 8px; --sp3: 12px; --sp4: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--sp6: 24px; --sp8: 32px; --sp12: 48px; --sp16: 64px; --sp20: 80px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--r-sm: 4px; --r-md: 8px; --r-lg: 12px; --r-xl: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--max-w: 1200px; --gutter: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>html { scroll-behavior: smooth; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Outfit', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px; line-height: 26px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--command); background: var(--white);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>-webkit-font-smoothing: antialiased;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>a { color: var(--coverage); text-decoration: none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>a:hover { text-decoration: underline; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* ─── BUTTONS ────────────────────────────────────────────── */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: inline-flex; align-items: center; gap: var(--sp2);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 13px 24px; border-radius: var(--r-md);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer; border: none; transition: all 0.2s ease;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>white-space: nowrap; text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn-primary { background: var(--command); color: var(--white); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn-primary:hover { background: #1e2e50; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(22,32,56,0.25); text-decoration: none; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* ─── MARK / LOGO ────────────────────────────────────────── */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.mark { display: inline-block; width: 28px; height: 28px; flex-shrink: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.mark svg { width: 100%; height: 100%; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.wordmark { font-size: 16px; font-weight: 700; letter-spacing: 0.26em; color: var(--command); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.wordmark-light { color: var(--white); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.logo:hover { text-decoration: none; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* ─── NAV ────────────────────────────────────────────────── */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>nav {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: fixed; top: 0; left: 0; right: 0; z-index: 100;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.92);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(12px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid var(--frost);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav-inner {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 64px; display: flex; align-items: center; justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav-links { display: flex; align-items: center; gap: var(--sp8); list-style: none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav-links a { font-size: 15px; font-weight: 500; color: var(--slate); transition: color 0.2s; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav-links a:hover { color: var(--command); text-decoration: none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav-item { position: relative; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav-item &gt; a { display: flex; align-items: center; gap: 5px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav-item &gt; a .chevron { width: 14px; height: 14px; color: var(--perimeter); transition: transform 0.2s; flex-shrink: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav-item:hover &gt; a .chevron { transform: rotate(180deg); color: var(--command); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav-item:hover &gt; a { color: var(--command); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.dropdown {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute; top: calc(100% + 8px); left: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: translateX(-50%);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--white); border: 1px solid var(--frost);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: var(--r-xl);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 16px 48px rgba(22,32,56,0.12), 0 0 0 1px rgba(22,32,56,0.04);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: var(--sp3); min-width: 200px; width: max-content;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0; visibility: hidden; pointer-events: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: translateX(-50%) translateY(-8px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index: 200;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.dropdown::after { content: ''; position: absolute; top: -16px; left: 0; right: 0; height: 16px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.dropdown::before {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>content: ''; position: absolute; top: -6px; left: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 12px; height: 12px; background: var(--white);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-left: 1px solid var(--frost); border-top: 1px solid var(--frost);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: translateX(-50%) rotate(45deg);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav-item:hover .dropdown { opacity: 1; visibility: visible; pointer-events: all; transform: translateX(-50%) translateY(0); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.dropdown-item {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex; align-items: center; gap: var(--sp3);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: var(--sp2) var(--sp3); border-radius: var(--r-md);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none; transition: background 0.15s; color: var(--command);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>white-space: nowrap;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.dropdown-item:hover { background: var(--ice); text-decoration: none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.dropdown-item:hover .dropdown-icon { background: var(--command); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.dropdown-item:hover .dropdown-icon svg { color: var(--white); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.dropdown-icon {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 28px; height: 28px; flex-shrink: 0; border-radius: var(--r-sm);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--frost); display: flex; align-items: center; justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: background 0.15s;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.dropdown-icon svg { width: 13px; height: 13px; color: var(--coverage); transition: color 0.15s; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.dropdown-title { font-size: 14px; font-weight: 500; color: var(--command); line-height: 18px; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* ─── HAMBURGER ──────────────────────────────────────────── */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hamburger {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: none; flex-direction: column; justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 5px; width: 36px; height: 36px; cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: none; border: none; padding: 4px; border-radius: var(--r-sm);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hamburger span { display: block; width: 22px; height: 2px; background: var(--command); border-radius: 2px; transition: all 0.25s ease; transform-origin: center; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.mobile-menu {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: none; position: fixed; top: 64px; left: 0; right: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid var(--frost);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: var(--sp6) var(--gutter) var(--sp8); z-index: 99;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column; gap: 0; box-shadow: 0 8px 32px rgba(22,32,56,0.1);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.mobile-menu.open { display: flex; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.mobile-menu li { list-style: none; border-bottom: 1px solid var(--frost); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.mobile-menu li:last-child { border-bottom: none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.mobile-menu a { display: block; padding: var(--sp4) 0; font-size: 16px; font-weight: 500; color: var(--command); transition: color 0.2s; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.mobile-menu a:hover { color: var(--coverage); text-decoration: none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.mobile-menu .mobile-cta { margin-top: var(--sp6); padding-top: var(--sp6); border-top: 1px solid var(--frost); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* ─── PAGE HEADER ────────────────────────────────────────── */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.page-header {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding-top: 120px; padding-bottom: var(--sp12);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid var(--frost);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.page-header .label {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px; font-weight: 600; letter-spacing: 0.1em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase; color: var(--coverage);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: block; margin-bottom: var(--sp3);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.page-header h1 { font-size: 40px; font-weight: 600; letter-spacing: -0.01em; line-height: 50px; margin-bottom: var(--sp4); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.page-header .meta { font-size: 14px; color: var(--slate); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* ─── PRIVACY CONTENT ────────────────────────────────────── */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-layout {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid; grid-template-columns: 220px 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 80px; padding: var(--sp16) 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: start;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-nav {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: sticky; top: 96px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-nav p {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px; font-weight: 600; letter-spacing: 0.08em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase; color: var(--perimeter);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: var(--sp4);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-nav ul { list-style: none; display: flex; flex-direction: column; gap: 2px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-nav ul li a {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: block; font-size: 14px; font-weight: 500; color: var(--slate);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: var(--sp2) var(--sp3); border-radius: var(--r-md);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: all 0.15s; text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-nav ul li a:hover { background: var(--ice); color: var(--command); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-body { max-width: 680px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-section { margin-bottom: var(--sp16); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-section:last-child { margin-bottom: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-section h2 {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 22px; font-weight: 600; color: var(--command);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: var(--sp6); padding-bottom: var(--sp4);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid var(--frost);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-section p {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px; color: var(--slate); line-height: 28px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: var(--sp4);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-section p:last-child { margin-bottom: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-section ul {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: var(--sp4) 0; padding-left: var(--sp6);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex; flex-direction: column; gap: var(--sp2);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-section ul li { font-size: 16px; color: var(--slate); line-height: 26px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-section a { color: var(--coverage); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.privacy-section strong { color: var(--command); font-weight: 600; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.highlight-box {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--ice); border: 1px solid var(--frost);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-left: 3px solid var(--coverage);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: var(--r-md); padding: var(--sp6);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: var(--sp6) 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.highlight-box p { font-size: 15px; color: var(--slate); line-height: 26px; margin: 0; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* ─── FOOTER ─────────────────────────────────────────────── */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>footer {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--command);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid rgba(255,255,255,0.07);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: var(--sp12) 0 var(--sp8);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--sp8); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.footer-brand { display: flex; flex-direction: column; gap: var(--sp4); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.footer-brand p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 22px; max-width: 280px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: var(--sp4); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: var(--sp2); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.footer-col ul li a { font-size: 14px; color: rgba(255,255,255,0.55); transition: color 0.2s; text-decoration: none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.footer-col ul li a:hover { color: rgba(255,255,255,0.9); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.footer-bottom {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: var(--sp8); padding-top: var(--sp6);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid rgba(255,255,255,0.07);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex; align-items: center; justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.3); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* ─── COOKIE BANNER ──────────────────────────────────────── */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cookie-banner {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: fixed; bottom: var(--sp6); left: var(--sp6);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 420px; background: var(--command);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-xl);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: var(--sp6); box-shadow: 0 16px 48px rgba(0,0,0,0.3);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index: 9999; display: flex; flex-direction: column; gap: var(--sp4);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: opacity 0.3s ease, transform 0.3s ease;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cookie-banner.hidden { opacity: 0; transform: translateY(12px); pointer-events: none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cookie-banner p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 20px; margin: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cookie-banner a { color: var(--perimeter); text-decoration: underline; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cookie-actions { display: flex; gap: var(--sp3); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cookie-accept { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: var(--r-md); background: var(--white); color: var(--command); border: none; cursor: pointer; transition: background 0.2s; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cookie-accept:hover { background: var(--ice); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cookie-decline { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: var(--r-md); background: transparent; color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.15); cursor: pointer; transition: all 0.2s; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cookie-decline:hover { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.75); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* ─── RESPONSIVE ─────────────────────────────────────────── */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 960px) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>:root { --gutter: 24px; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.privacy-layout { grid-template-columns: 1fr; gap: 40px; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.privacy-nav { position: relative; top: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.nav-links { display: none; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.hamburger { display: flex; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.nav-cta { display: none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 600px) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.page-header h1 { font-size: 30px; line-height: 38px; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.footer-inner { grid-template-columns: 1fr; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.cookie-banner { left: var(--sp4); right: var(--sp4); bottom: var(--sp4); max-width: none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- ─── NAV ───────────────────────────────────────────────────── --&gt;</p>
-<p class="p1">&lt;nav id="nav"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="/" class="logo" aria-label="Legio — Safety &amp;amp; Security Operations Platform"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="mark"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;circle cx="4"<span class="Apple-converted-space">  </span>cy="4"<span class="Apple-converted-space">  </span>r="2" <span class="Apple-converted-space">  </span>fill="#6B8FAE"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;circle cx="24" cy="4"<span class="Apple-converted-space">  </span>r="2" <span class="Apple-converted-space">  </span>fill="#6B8FAE"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;circle cx="4"<span class="Apple-converted-space">  </span>cy="24" r="2" <span class="Apple-converted-space">  </span>fill="#6B8FAE"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;circle cx="24" cy="24" r="2" <span class="Apple-converted-space">  </span>fill="#6B8FAE"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;circle cx="14" cy="4"<span class="Apple-converted-space">  </span>r="2.5" fill="#2E618A"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;circle cx="4"<span class="Apple-converted-space">  </span>cy="14" r="2.5" fill="#2E618A"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;circle cx="24" cy="14" r="2.5" fill="#2E618A"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;circle cx="14" cy="24" r="2.5" fill="#2E618A"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;circle cx="14" cy="14" r="4" <span class="Apple-converted-space">  </span>fill="#162038"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="wordmark"&gt;LEGIO&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/a&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;ul class="nav-links"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li class="nav-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="/index.html#industries"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>Industries</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"&gt;&lt;polyline points="6 9 12 15 18 9"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="dropdown"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="/index.html#industries" class="dropdown-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="dropdown-icon"&gt;&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/&gt;&lt;polyline points="9 22 9 12 15 12 15 22"/&gt;&lt;/svg&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="dropdown-title"&gt;Education&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="/index.html#industries" class="dropdown-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="dropdown-icon"&gt;&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;path d="M22 12h-4l-3 9L9 3l-3 9H2"/&gt;&lt;/svg&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="dropdown-title"&gt;Healthcare&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li class="nav-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="/index.html#modules"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>Platform</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"&gt;&lt;polyline points="6 9 12 15 18 9"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="dropdown"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="/index.html#modules" class="dropdown-item"&gt;&lt;div class="dropdown-icon"&gt;&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/&gt;&lt;polyline points="14 2 14 8 20 8"/&gt;&lt;line x1="16" y1="13" x2="8" y2="13"/&gt;&lt;line x1="16" y1="17" x2="8" y2="17"/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="dropdown-title"&gt;Incident Management&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="/index.html#modules" class="dropdown-item"&gt;&lt;div class="dropdown-icon"&gt;&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/&gt;&lt;circle cx="9" cy="7" r="4"/&gt;&lt;path d="M23 21v-2a4 4 0 0 0-3-3.87"/&gt;&lt;path d="M16 3.13a4 4 0 0 1 0 7.75"/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="dropdown-title"&gt;Guard Tour&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="/index.html#modules" class="dropdown-item"&gt;&lt;div class="dropdown-icon"&gt;&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="dropdown-title"&gt;Regulatory Compliance&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="/index.html#modules" class="dropdown-item"&gt;&lt;div class="dropdown-icon"&gt;&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;rect x="3" y="4" width="18" height="18" rx="2"/&gt;&lt;line x1="16" y1="2" x2="16" y2="6"/&gt;&lt;line x1="8" y1="2" x2="8" y2="6"/&gt;&lt;line x1="3" y1="10" x2="21" y2="10"/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="dropdown-title"&gt;Emergencies&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="/index.html#modules" class="dropdown-item"&gt;&lt;div class="dropdown-icon"&gt;&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/&gt;&lt;path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="dropdown-title"&gt;Policy Management&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="/index.html#modules" class="dropdown-item"&gt;&lt;div class="dropdown-icon"&gt;&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;rect x="1" y="3" width="15" height="13"/&gt;&lt;polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/&gt;&lt;circle cx="5.5" cy="18.5" r="2.5"/&gt;&lt;circle cx="18.5" cy="18.5" r="2.5"/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="dropdown-title"&gt;Parking&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="/index.html#modules" class="dropdown-item"&gt;&lt;div class="dropdown-icon"&gt;&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/&gt;&lt;circle cx="12" cy="10" r="3"/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="dropdown-title"&gt;Visitors&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="/index.html#modules" class="dropdown-item"&gt;&lt;div class="dropdown-icon"&gt;&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;polyline points="21 8 21 21 3 21 3 8"/&gt;&lt;rect x="1" y="3" width="22" height="5"/&gt;&lt;line x1="10" y1="12" x2="14" y2="12"/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class="dropdown-title"&gt;Asset Management&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li class="nav-item"&gt;&lt;a href="/index.html#about"&gt;About&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;li class="nav-item"&gt;&lt;a href="/index.html#resources"&gt;Resources&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/ul&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="nav-cta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:14px;padding:10px 20px;"&gt;Book 30 minutes →&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/nav&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;ul class="mobile-menu" id="mobile-menu"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;li&gt;&lt;a href="/index.html#industries" onclick="closeMobile()" style="font-weight:600;"&gt;Industries&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;li style="padding-left:16px;border-bottom:none;"&gt;&lt;a href="/index.html#industries" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;"&gt;Education&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;li style="padding-left:16px;"&gt;&lt;a href="/index.html#industries" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;"&gt;Healthcare&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;li&gt;&lt;a href="/index.html#modules" onclick="closeMobile()" style="font-weight:600;"&gt;Platform&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;li style="padding-left:16px;border-bottom:none;"&gt;&lt;a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;"&gt;Incident Management&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;li style="padding-left:16px;border-bottom:none;"&gt;&lt;a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;"&gt;Guard Tour&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;li style="padding-left:16px;border-bottom:none;"&gt;&lt;a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;"&gt;Regulatory Compliance&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;li style="padding-left:16px;border-bottom:none;"&gt;&lt;a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;"&gt;Emergencies&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;li style="padding-left:16px;border-bottom:none;"&gt;&lt;a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;"&gt;Policy Management&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;li style="padding-left:16px;border-bottom:none;"&gt;&lt;a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;"&gt;Parking&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;li style="padding-left:16px;border-bottom:none;"&gt;&lt;a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;"&gt;Visitors&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;li style="padding-left:16px;"&gt;&lt;a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;"&gt;Asset Management&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;li&gt;&lt;a href="/index.html#about" onclick="closeMobile()"&gt;About&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;li&gt;&lt;a href="/index.html#resources" onclick="closeMobile()"&gt;Resources&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;li class="mobile-cta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:14px;padding:10px 20px;color:#ffffff;display:inline-flex;"&gt;Book 30 minutes →&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/li&gt;</p>
-<p class="p1">&lt;/ul&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- ─── PAGE HEADER ──────────────────────────────────────────────── --&gt;</p>
-<p class="p1">&lt;div class="page-header"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="label"&gt;Legal&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Privacy Policy&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="meta"&gt;Last updated: April 2026 &amp;nbsp;·&amp;nbsp; getlegio.com&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- ─── CONTENT ─────────────────────────────────────────────────── --&gt;</p>
-<p class="p1">&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="privacy-layout"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Sticky sidebar nav --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;aside class="privacy-nav"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;On this page&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="#who-we-are"&gt;Who we are&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="#what-we-collect"&gt;What we collect&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="#why-we-collect"&gt;Why we collect it&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="#how-long"&gt;How long we keep it&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="#who-we-share"&gt;Who we share it with&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="#your-rights"&gt;Your rights&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="#cookies"&gt;Cookies&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="#changes"&gt;Changes to this policy&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/aside&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Main content --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="privacy-body"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="highlight-box"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;The short version: we collect your name and email when you fill out our design partner form, and we use Google Analytics to understand how people use this site. We don't sell your data. We don't share it with advertisers. You can ask us to delete it at any time.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="privacy-section" id="who-we-are"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;1. Who we are&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Legio is a safety and security operations platform developed by Klass Ventures. This privacy policy applies to the website at &lt;a href="https://getlegio.com"&gt;getlegio.com&lt;/a&gt; and any forms or services hosted on it.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;For privacy-related questions, contact us at &lt;a href="mailto:privacy@getlegio.com"&gt;privacy@getlegio.com&lt;/a&gt;.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="privacy-section" id="what-we-collect"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;2. What we collect&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;We collect two types of information:&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;Information you give us&lt;/strong&gt; — when you submit the design partner inquiry form, we collect your first name, last name, job title, organization name, work email address, and any optional message you include.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;Information collected automatically&lt;/strong&gt; — when you visit this site with analytics cookies enabled, Google Analytics collects your approximate location (country/city level), browser type, device type, pages visited, time spent on each page, and how you arrived at the site (e.g. search, direct, referral). Your IP address is anonymized before it is stored.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="privacy-section" id="why-we-collect"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;3. Why we collect it&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;Form submissions&lt;/strong&gt; — we use your contact information solely to follow up about the Legio design partner program. We will not add you to a marketing list or share your details with third parties for marketing purposes.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;Analytics data&lt;/strong&gt; — we use Google Analytics to understand which pages are most useful, where visitors come from, and how to improve the site. This data is aggregated and not used to identify individuals.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="privacy-section" id="how-long"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;4. How long we keep it&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;Form submissions&lt;/strong&gt; — we retain your contact details for as long as we have an active relationship with you or your organization. If you ask us to delete your information, we will do so within 30 days.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;Analytics data&lt;/strong&gt; — Google Analytics data is retained for 26 months, after which it is automatically deleted. You can adjust this in your browser or by declining analytics cookies.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="privacy-section" id="who-we-share"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;5. Who we share it with&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;We do not sell your personal data. We do not share it with advertisers or data brokers. The only third parties who may process your data are:&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;strong&gt;Google LLC&lt;/strong&gt; — for analytics via Google Analytics 4. Google processes data in accordance with its own privacy policy.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;strong&gt;Our internal team&lt;/strong&gt; — the Legio founding team reviews form submissions to follow up with prospective design partners.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;If we add additional service providers in future (for example, a CRM or email platform), we will update this policy accordingly.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="privacy-section" id="your-rights"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;6. Your rights&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Depending on where you are located, you may have the following rights regarding your personal data:&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;strong&gt;Access&lt;/strong&gt; — request a copy of the data we hold about you.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;strong&gt;Correction&lt;/strong&gt; — ask us to correct inaccurate information.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;strong&gt;Deletion&lt;/strong&gt; — ask us to delete your personal data.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;strong&gt;Opt-out of analytics&lt;/strong&gt; — decline analytics cookies using the cookie banner on this site at any time.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Visitors in Canada are protected under PIPEDA. Visitors in the European Economic Area and UK are protected under GDPR. Visitors in California are protected under CCPA.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;To exercise any of these rights, email &lt;a href="mailto:privacy@getlegio.com"&gt;privacy@getlegio.com&lt;/a&gt;. We will respond within 30 days.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="privacy-section" id="cookies"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;7. Cookies&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;This site uses cookies only for analytics purposes. No cookies are set until you accept via the cookie banner. If you decline, no cookies are placed and no analytics data is collected during your visit.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;If you previously accepted and wish to withdraw consent, clear your browser's cookies for this site — the banner will reappear on your next visit, allowing you to decline.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;We do not use advertising cookies, tracking pixels, or any cookies unrelated to analytics.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="privacy-section" id="changes"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;8. Changes to this policy&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;We may update this policy as the platform and its services evolve. The date at the top of this page reflects when the policy was last revised. Material changes will be noted here. Continued use of the site after changes are posted constitutes acceptance of the updated policy.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="privacy-section" id="contact"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;9. Contact&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;For any privacy-related questions, requests, or concerns, please contact us at:&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;strong&gt;Legio / Klass Ventures&lt;/strong&gt;&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="mailto:privacy@getlegio.com"&gt;privacy@getlegio.com&lt;/a&gt;&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="https://getlegio.com"&gt;getlegio.com&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- ─── FOOTER ───────────────────────────────────────────────────── --&gt;</p>
-<p class="p1">&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="footer-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="footer-brand"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="/" class="logo"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="mark"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg viewBox="0 0 28 28" fill="none"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;circle cx="4"<span class="Apple-converted-space">  </span>cy="4"<span class="Apple-converted-space">  </span>r="2" <span class="Apple-converted-space">  </span>fill="rgba(107,143,174,0.6)"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;circle cx="24" cy="4"<span class="Apple-converted-space">  </span>r="2" <span class="Apple-converted-space">  </span>fill="rgba(107,143,174,0.6)"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;circle cx="4"<span class="Apple-converted-space">  </span>cy="24" r="2" <span class="Apple-converted-space">  </span>fill="rgba(107,143,174,0.6)"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;circle cx="24" cy="24" r="2" <span class="Apple-converted-space">  </span>fill="rgba(107,143,174,0.6)"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;circle cx="14" cy="4"<span class="Apple-converted-space">  </span>r="2.5" fill="rgba(107,143,174,0.8)"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;circle cx="4"<span class="Apple-converted-space">  </span>cy="14" r="2.5" fill="rgba(107,143,174,0.8)"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;circle cx="24" cy="14" r="2.5" fill="rgba(107,143,174,0.8)"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;circle cx="14" cy="24" r="2.5" fill="rgba(107,143,174,0.8)"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;circle cx="14" cy="14" r="4" <span class="Apple-converted-space">  </span>fill="rgba(255,255,255,0.9)"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="wordmark wordmark-light"&gt;LEGIO&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Safety &amp; Security Operations Platform. Built to scale.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="font-size:12px;color:rgba(255,255,255,0.25);"&gt;getlegio.com · A Klass Ventures company&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="footer-col"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Platform&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/index.html#modules"&gt;Incident Management&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/index.html#modules"&gt;Guard Tour&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/index.html#modules"&gt;Regulatory Compliance&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/index.html#modules"&gt;Emergencies&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/index.html#modules"&gt;Policy Management&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/index.html#modules"&gt;Parking&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/index.html#modules"&gt;Visitors&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/index.html#modules"&gt;Asset Management&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="footer-col"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Company&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/index.html#partner"&gt;Design Partner Program&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer"&gt;Book a demo&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="footer-col"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h4&gt;Contact&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer"&gt;Book 30 minutes →&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/index.html#partner"&gt;Design Partner Inquiry&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="footer-bottom"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;© 2025 Legio · Klass Ventures · getlegio.com&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;&lt;a href="/privacy.html" style="color:rgba(255,255,255,0.5);"&gt;Privacy Policy&lt;/a&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;!-- ─── COOKIE BANNER ────────────────────────────────────────────── --&gt;</p>
-<p class="p1">&lt;div class="cookie-banner hidden" id="cookie-banner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;We use cookies to understand how visitors use this site. &lt;a href="/privacy.html"&gt;Privacy policy →&lt;/a&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cookie-actions"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cookie-accept" id="cookie-accept"&gt;Accept&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="cookie-decline" id="cookie-decline"&gt;Decline&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>// ── Hamburger</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const hamburger = document.getElementById('hamburger');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const mobileMenu = document.getElementById('mobile-menu');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>hamburger.addEventListener('click', () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const open = mobileMenu.classList.toggle('open');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>hamburger.classList.toggle('open', open);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>hamburger.setAttribute('aria-expanded', open);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function closeMobile() {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>mobileMenu.classList.remove('open');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>hamburger.classList.remove('open');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>hamburger.setAttribute('aria-expanded', false);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.addEventListener('click', (e) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if (!hamburger.contains(e.target) &amp;&amp; !mobileMenu.contains(e.target)) closeMobile();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// ── Cookie consent</p>
-<p class="p1"><span class="Apple-converted-space">  </span>(function() {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const banner<span class="Apple-converted-space">  </span>= document.getElementById('cookie-banner');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const consent = localStorage.getItem('legio_cookie_consent');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if (!consent) setTimeout(() =&gt; banner.classList.remove('hidden'), 800);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('cookie-accept').addEventListener('click', () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>localStorage.setItem('legio_cookie_consent', 'accepted');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gtag('consent', 'update', { analytics_storage: 'granted' });</p>
-<p class="p1"><span class="Apple-converted-space">      </span>banner.classList.add('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('cookie-decline').addEventListener('click', () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>localStorage.setItem('legio_cookie_consent', 'declined');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>banner.classList.add('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if (consent === 'accepted') gtag('consent', 'update', { analytics_storage: 'granted' });</p>
-<p class="p1"><span class="Apple-converted-space">  </span>})();</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+<!-- ─── NAV ───────────────────────────────────────────────────── -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="Legio — Safety &amp; Security Operations Platform">
+      <div class="mark">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="4"  cy="4"  r="2"   fill="#6B8FAE"/>
+          <circle cx="24" cy="4"  r="2"   fill="#6B8FAE"/>
+          <circle cx="4"  cy="24" r="2"   fill="#6B8FAE"/>
+          <circle cx="24" cy="24" r="2"   fill="#6B8FAE"/>
+          <circle cx="14" cy="4"  r="2.5" fill="#2E618A"/>
+          <circle cx="4"  cy="14" r="2.5" fill="#2E618A"/>
+          <circle cx="24" cy="14" r="2.5" fill="#2E618A"/>
+          <circle cx="14" cy="24" r="2.5" fill="#2E618A"/>
+          <circle cx="14" cy="14" r="4"   fill="#162038"/>
+        </svg>
+      </div>
+      <span class="wordmark">LEGIO</span>
+    </a>
+
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a href="/index.html#industries">
+          Industries
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="/index.html#industries" class="dropdown-item">
+            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+            <span class="dropdown-title">Education</span>
+          </a>
+          <a href="/index.html#industries" class="dropdown-item">
+            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <span class="dropdown-title">Healthcare</span>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/index.html#modules">
+          Platform
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><span class="dropdown-title">Incident Management</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span class="dropdown-title">Guard Tour</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="dropdown-title">Regulatory Compliance</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><span class="dropdown-title">Emergencies</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><span class="dropdown-title">Policy Management</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><span class="dropdown-title">Parking</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><span class="dropdown-title">Visitors</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></div><span class="dropdown-title">Asset Management</span></a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="/index.html#about">About</a></li>
+      <li class="nav-item"><a href="/index.html#resources">Resources</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:14px;padding:10px 20px;">Book 30 minutes →</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<ul class="mobile-menu" id="mobile-menu">
+  <li><a href="/index.html#industries" onclick="closeMobile()" style="font-weight:600;">Industries</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#industries" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Education</a></li>
+  <li style="padding-left:16px;"><a href="/index.html#industries" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Healthcare</a></li>
+  <li><a href="/index.html#modules" onclick="closeMobile()" style="font-weight:600;">Platform</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Incident Management</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Guard Tour</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Regulatory Compliance</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Emergencies</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Policy Management</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Parking</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Visitors</a></li>
+  <li style="padding-left:16px;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Asset Management</a></li>
+  <li><a href="/index.html#about" onclick="closeMobile()">About</a></li>
+  <li><a href="/index.html#resources" onclick="closeMobile()">Resources</a></li>
+  <li class="mobile-cta">
+    <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:14px;padding:10px 20px;color:#ffffff;display:inline-flex;">Book 30 minutes →</a>
+  </li>
+</ul>
+
+<!-- ─── PAGE HEADER ──────────────────────────────────────────────── -->
+<div class="page-header">
+  <div class="container">
+    <span class="label">Legal</span>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Last updated: April 2026 &nbsp;·&nbsp; getlegio.com</p>
+  </div>
+</div>
+
+<!-- ─── CONTENT ─────────────────────────────────────────────────── -->
+<div class="container">
+  <div class="privacy-layout">
+
+    <!-- Sticky sidebar nav -->
+    <aside class="privacy-nav">
+      <p>On this page</p>
+      <ul>
+        <li><a href="#who-we-are">Who we are</a></li>
+        <li><a href="#what-we-collect">What we collect</a></li>
+        <li><a href="#why-we-collect">Why we collect it</a></li>
+        <li><a href="#how-long">How long we keep it</a></li>
+        <li><a href="#who-we-share">Who we share it with</a></li>
+        <li><a href="#your-rights">Your rights</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <div class="privacy-body">
+
+      <div class="highlight-box">
+        <p>The short version: we collect your name and email when you fill out our design partner form, and we use Google Analytics to understand how people use this site. We don't sell your data. We don't share it with advertisers. You can ask us to delete it at any time.</p>
+      </div>
+
+      <div class="privacy-section" id="who-we-are">
+        <h2>1. Who we are</h2>
+        <p>Legio is a safety and security operations platform. This privacy policy applies to the website at <a href="https://getlegio.com">getlegio.com</a> and any forms or services hosted on it.</p>
+        <p>For privacy-related questions, contact us at <a href="mailto:privacy@getlegio.com">privacy@getlegio.com</a>.</p>
+      </div>
+
+      <div class="privacy-section" id="what-we-collect">
+        <h2>2. What we collect</h2>
+        <p>We collect two types of information:</p>
+        <p><strong>Information you give us</strong> — when you submit the design partner inquiry form, we collect your first name, last name, job title, organization name, work email address, and any optional message you include.</p>
+        <p><strong>Information collected automatically</strong> — when you visit this site with analytics cookies enabled, Google Analytics collects your approximate location (country/city level), browser type, device type, pages visited, time spent on each page, and how you arrived at the site (e.g. search, direct, referral). Your IP address is anonymized before it is stored.</p>
+      </div>
+
+      <div class="privacy-section" id="why-we-collect">
+        <h2>3. Why we collect it</h2>
+        <p><strong>Form submissions</strong> — we use your contact information solely to follow up about the Legio design partner program. We will not add you to a marketing list or share your details with third parties for marketing purposes.</p>
+        <p><strong>Analytics data</strong> — we use Google Analytics to understand which pages are most useful, where visitors come from, and how to improve the site. This data is aggregated and not used to identify individuals.</p>
+      </div>
+
+      <div class="privacy-section" id="how-long">
+        <h2>4. How long we keep it</h2>
+        <p><strong>Form submissions</strong> — we retain your contact details for as long as we have an active relationship with you or your organization. If you ask us to delete your information, we will do so within 30 days.</p>
+        <p><strong>Analytics data</strong> — Google Analytics data is retained for 26 months, after which it is automatically deleted. You can adjust this in your browser or by declining analytics cookies.</p>
+      </div>
+
+      <div class="privacy-section" id="who-we-share">
+        <h2>5. Who we share it with</h2>
+        <p>We do not sell your personal data. We do not share it with advertisers or data brokers. The only third parties who may process your data are:</p>
+        <ul>
+          <li><strong>Google LLC</strong> — for analytics via Google Analytics 4. Google processes data in accordance with its own privacy policy.</li>
+          <li><strong>Our internal team</strong> — the Legio founding team reviews form submissions to follow up with prospective design partners.</li>
+        </ul>
+        <p>If we add additional service providers in future (for example, a CRM or email platform), we will update this policy accordingly.</p>
+      </div>
+
+      <div class="privacy-section" id="your-rights">
+        <h2>6. Your rights</h2>
+        <p>Depending on where you are located, you may have the following rights regarding your personal data:</p>
+        <ul>
+          <li><strong>Access</strong> — request a copy of the data we hold about you.</li>
+          <li><strong>Correction</strong> — ask us to correct inaccurate information.</li>
+          <li><strong>Deletion</strong> — ask us to delete your personal data.</li>
+          <li><strong>Opt-out of analytics</strong> — decline analytics cookies using the cookie banner on this site at any time.</li>
+        </ul>
+        <p>Visitors in Canada are protected under PIPEDA. Visitors in the European Economic Area and UK are protected under GDPR. Visitors in California are protected under CCPA.</p>
+        <p>To exercise any of these rights, email <a href="mailto:privacy@getlegio.com">privacy@getlegio.com</a>. We will respond within 30 days.</p>
+      </div>
+
+      <div class="privacy-section" id="cookies">
+        <h2>7. Cookies</h2>
+        <p>This site uses cookies only for analytics purposes. No cookies are set until you accept via the cookie banner. If you decline, no cookies are placed and no analytics data is collected during your visit.</p>
+        <p>If you previously accepted and wish to withdraw consent, clear your browser's cookies for this site — the banner will reappear on your next visit, allowing you to decline.</p>
+        <p>We do not use advertising cookies, tracking pixels, or any cookies unrelated to analytics.</p>
+      </div>
+
+      <div class="privacy-section" id="changes">
+        <h2>8. Changes to this policy</h2>
+        <p>We may update this policy as the platform and its services evolve. The date at the top of this page reflects when the policy was last revised. Material changes will be noted here. Continued use of the site after changes are posted constitutes acceptance of the updated policy.</p>
+      </div>
+
+      <div class="privacy-section" id="contact">
+        <h2>9. Contact</h2>
+        <p>For any privacy-related questions, requests, or concerns, please contact us at:</p>
+        <p>
+          <strong>Legio</strong><br>
+          <a href="mailto:privacy@getlegio.com">privacy@getlegio.com</a><br>
+          <a href="https://getlegio.com">getlegio.com</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ───────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <div class="mark">
+            <svg viewBox="0 0 28 28" fill="none">
+              <circle cx="4"  cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="24" cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="4"  cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="24" cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="14" cy="4"  r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="4"  cy="14" r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="24" cy="14" r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="14" cy="24" r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="14" cy="14" r="4"   fill="rgba(255,255,255,0.9)"/>
+            </svg>
+          </div>
+          <span class="wordmark wordmark-light">LEGIO</span>
+        </a>
+        <p>Safety & Security Operations Platform. Built to scale.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="/index.html#modules">Incident Management</a></li>
+          <li><a href="/index.html#modules">Guard Tour</a></li>
+          <li><a href="/index.html#modules">Regulatory Compliance</a></li>
+          <li><a href="/index.html#modules">Emergencies</a></li>
+          <li><a href="/index.html#modules">Policy Management</a></li>
+          <li><a href="/index.html#modules">Parking</a></li>
+          <li><a href="/index.html#modules">Visitors</a></li>
+          <li><a href="/index.html#modules">Asset Management</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/index.html#partner">Design Partner Program</a></li>
+          <li><a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer">Book a demo</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer">Book 30 minutes →</a></li>
+          <li><a href="/index.html#partner">Design Partner Inquiry</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Legio · getlegio.com</p>
+      <p><a href="/privacy.html" style="color:rgba(255,255,255,0.5);">Privacy Policy</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── COOKIE BANNER ────────────────────────────────────────────── -->
+<div class="cookie-banner hidden" id="cookie-banner">
+  <p>We use cookies to understand how visitors use this site. <a href="/privacy.html">Privacy policy →</a></p>
+  <div class="cookie-actions">
+    <button class="cookie-accept" id="cookie-accept">Accept</button>
+    <button class="cookie-decline" id="cookie-decline">Decline</button>
+  </div>
+</div>
+
+<script>
+  // ── Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+  }
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMobile();
+  });
+
+  // ── Cookie consent
+  (function() {
+    const banner  = document.getElementById('cookie-banner');
+    const consent = localStorage.getItem('legio_cookie_consent');
+    if (!consent) setTimeout(() => banner.classList.remove('hidden'), 800);
+    document.getElementById('cookie-accept').addEventListener('click', () => {
+      localStorage.setItem('legio_cookie_consent', 'accepted');
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+      banner.classList.add('hidden');
+    });
+    document.getElementById('cookie-decline').addEventListener('click', () => {
+      localStorage.setItem('legio_cookie_consent', 'declined');
+      banner.classList.add('hidden');
+    });
+    if (consent === 'accepted') gtag('consent', 'update', { analytics_storage: 'granted' });
+  })();
+</script>
+
 </body>
 </html>
