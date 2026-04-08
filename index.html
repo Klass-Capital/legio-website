@@ -75,7 +75,6 @@
   <!-- Favicon (placeholder paths — swap once assets exist) -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -431,12 +430,12 @@
     .delta-warn { color: #FBBF24; }
     .db-incidents { margin-bottom: 14px; }
     .db-row-hdr {
-      display: grid; grid-template-columns: 76px 1fr 70px 70px;
+      display: grid; grid-template-columns: 70px 1fr 54px 80px;
       gap: 6px; padding: 0 10px 8px;
     }
     .db-row-hdr span { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
     .db-row {
-      display: grid; grid-template-columns: 76px 1fr 70px 70px;
+      display: grid; grid-template-columns: 70px 1fr 54px 80px;
       gap: 6px; padding: 9px 10px;
       border-radius: 6px;
       transition: background 0.15s;
@@ -445,9 +444,10 @@
     .db-row:hover { background: rgba(255,255,255,0.04); }
     .db-row:nth-child(even) { background: rgba(255,255,255,0.025); }
     .db-row span { font-size: 12px; color: rgba(255,255,255,0.7); display: flex; align-items: center; white-space: nowrap; overflow: hidden; }
-    .db-row .case { color: rgba(255,255,255,0.4); font-size: 11px; font-family: monospace; }
+    .db-row .case { color: rgba(255,255,255,0.4); font-size: 10px; font-family: monospace; }
     .db-row .type { color: rgba(255,255,255,0.85); font-weight: 500; overflow: hidden; text-overflow: ellipsis; }
     .db-row .time { color: rgba(255,255,255,0.4); font-size: 11px; }
+    .db-row .status-cell { justify-content: flex-end; }
     .mini-badge {
       display: inline-flex; align-items: center; gap: 4px;
       padding: 3px 8px; border-radius: 100px;
@@ -1000,31 +1000,31 @@
           </div>
           <div class="db-incidents">
             <div class="db-row-hdr">
-              <span>Case</span><span>Type</span><span>Opened</span><span>Status</span>
+              <span>Case</span><span>Type</span><span>Time</span><span style="text-align:right">Status</span>
             </div>
             <div class="db-row">
-              <span class="case">#2025-0841</span>
+              <span class="case">#0841</span>
               <span class="type">Theft — bicycle</span>
               <span class="time">2h ago</span>
-              <span><span class="mini-badge mb-pending">PENDING</span></span>
+              <span class="status-cell"><span class="mini-badge mb-pending">PENDING</span></span>
             </div>
             <div class="db-row">
-              <span class="case">#2025-0840</span>
+              <span class="case">#0840</span>
               <span class="type">Medical — minor</span>
               <span class="time">4h ago</span>
-              <span><span class="mini-badge mb-active">ACTIVE</span></span>
+              <span class="status-cell"><span class="mini-badge mb-active">ACTIVE</span></span>
             </div>
             <div class="db-row">
-              <span class="case">#2025-0839</span>
+              <span class="case">#0839</span>
               <span class="type">Vandalism</span>
-              <span class="time">Yesterday</span>
-              <span><span class="mini-badge mb-closed">CLOSED</span></span>
+              <span class="time">Yest.</span>
+              <span class="status-cell"><span class="mini-badge mb-closed">CLOSED</span></span>
             </div>
             <div class="db-row">
-              <span class="case">#2025-0838</span>
+              <span class="case">#0838</span>
               <span class="type">Aggravated assault</span>
-              <span class="time">Yesterday</span>
-              <span><span class="mini-badge mb-clery">REVIEW</span></span>
+              <span class="time">Yest.</span>
+              <span class="status-cell"><span class="mini-badge mb-clery">REVIEW</span></span>
             </div>
           </div>
         </div>
