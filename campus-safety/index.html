@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) — consent gated, must be first in <head> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-MTDN1L9RR5', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTDN1L9RR5"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Campus Safety & Security Operations Software — Legio</title>
+  <meta name="description" content="Legio is built for campus public safety departments. Guard tour, incident management, and Clery Act compliance in one platform. Less administration. More safety." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://getlegio.com/campus-safety/" />
+  <meta name="keywords" content="campus safety software, campus security operations, campus public safety platform, university safety management, Clery Act compliance software, campus incident management, higher education security software" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Legio" />
+  <meta property="og:title" content="Campus Safety & Security Operations Software — Legio" />
+  <meta property="og:description" content="Built for campus public safety departments. Guard tour, incident management, and Clery Act compliance in one platform." />
+  <meta property="og:url" content="https://getlegio.com/campus-safety" />
+  <meta property="og:image" content="https://getlegio.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Campus Safety & Security Operations Software — Legio" />
+  <meta name="twitter:description" content="Built for campus public safety departments. Guard tour, incident management, and Clery Act compliance in one platform." />
+  <meta name="theme-color" content="#162038" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Legio — Campus Safety & Security Operations",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Campus safety and security operations platform for universities and colleges. Incident management, guard tour, Clery Act compliance, and more in one system.",
+    "url": "https://getlegio.com/campus-safety",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Legio",
+      "url": "https://getlegio.com"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --command:   #162038;
+      --coverage:  #2E618A;
+      --perimeter: #6B8FAE;
+      --white:     #FFFFFF;
+      --ice:       #F4F7FA;
+      --frost:     #E5EDF4;
+      --haze:      #C8D8E8;
+      --slate:     #4A6580;
+      --success:   #0F6E56;
+      --warning:   #E09000;
+      --sp1: 4px; --sp2: 8px; --sp3: 12px; --sp4: 16px;
+      --sp6: 24px; --sp8: 32px; --sp12: 48px; --sp16: 64px; --sp20: 80px;
+      --r-sm: 4px; --r-md: 8px; --r-lg: 12px; --r-xl: 16px;
+      --max-w: 1200px; --gutter: 40px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px; line-height: 26px;
+      color: var(--command); background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); }
+
+    /* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+    .display { font-size: 52px; line-height: 60px; font-weight: 700; letter-spacing: -0.02em; }
+    .h1      { font-size: 40px; line-height: 50px; font-weight: 600; letter-spacing: -0.01em; }
+    .h2      { font-size: 28px; line-height: 36px; font-weight: 600; letter-spacing: -0.01em; }
+    .h3      { font-size: 20px; line-height: 28px; font-weight: 600; }
+    .label   { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coverage); }
+
+    /* ─── BUTTONS ────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: var(--sp2);
+      font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600;
+      padding: 13px 24px; border-radius: var(--r-md);
+      cursor: pointer; border: none; transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--command); color: var(--white); }
+    .btn-primary:hover { background: #1e2e50; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(22,32,56,0.25); }
+    .btn-outline { background: transparent; color: var(--command); border: 1.5px solid var(--command); }
+    .btn-outline:hover { background: var(--command); color: var(--white); }
+    .btn-white { background: var(--white); color: var(--command); }
+    .btn-white:hover { background: var(--ice); transform: translateY(-1px); }
+    .btn-outline-white { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.4); }
+    .btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+    /* ─── MARK / LOGO ────────────────────────────────────────── */
+    .mark { display: inline-block; width: 28px; height: 28px; flex-shrink: 0; }
+    .mark svg { width: 100%; height: 100%; }
+    .wordmark { font-size: 16px; font-weight: 700; letter-spacing: 0.26em; color: var(--command); }
+    .wordmark-light { color: var(--white); }
+    .logo { display: flex; align-items: center; gap: 10px; }
+
+    /* ─── NAV ────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--frost);
+      transition: box-shadow 0.3s;
+    }
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter);
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-links { display: flex; align-items: center; gap: var(--sp8); list-style: none; }
+    .nav-links a { font-size: 15px; font-weight: 500; color: var(--slate); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--command); }
+    .nav-item { position: relative; }
+    .nav-item > a { display: flex; align-items: center; gap: 5px; }
+    .nav-item > a .chevron { width: 14px; height: 14px; color: var(--perimeter); transition: transform 0.2s; flex-shrink: 0; }
+    .nav-item:hover > a .chevron { transform: rotate(180deg); color: var(--command); }
+    .nav-item:hover > a { color: var(--command); }
+    .dropdown {
+      position: absolute; top: calc(100% + 8px); left: 50%;
+      background: var(--white); border: 1px solid var(--frost);
+      border-radius: var(--r-xl);
+      box-shadow: 0 16px 48px rgba(22,32,56,0.12), 0 0 0 1px rgba(22,32,56,0.04);
+      padding: var(--sp3); min-width: 200px; width: max-content;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transform: translateX(-50%) translateY(-8px);
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+      z-index: 200;
+    }
+    .dropdown::after { content: ''; position: absolute; top: -16px; left: 0; right: 0; height: 16px; }
+    .dropdown::before {
+      content: ''; position: absolute; top: -6px; left: 50%;
+      width: 12px; height: 12px; background: var(--white);
+      border-left: 1px solid var(--frost); border-top: 1px solid var(--frost);
+      transform: translateX(-50%) rotate(45deg);
+    }
+    .nav-item:hover .dropdown { opacity: 1; visibility: visible; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .dropdown-item {
+      display: flex; align-items: center; gap: var(--sp3);
+      padding: var(--sp2) var(--sp3); border-radius: var(--r-md);
+      transition: background 0.15s; white-space: nowrap;
+    }
+    .dropdown-item:hover { background: var(--ice); }
+    .dropdown-item:hover .dropdown-icon { background: var(--command); }
+    .dropdown-item:hover .dropdown-icon svg { color: var(--white); }
+    .dropdown-icon {
+      width: 28px; height: 28px; flex-shrink: 0; border-radius: var(--r-sm);
+      background: var(--frost); display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s;
+    }
+    .dropdown-icon svg { width: 13px; height: 13px; color: var(--coverage); transition: color 0.15s; }
+    .dropdown-title { font-size: 14px; font-weight: 500; color: var(--command); line-height: 18px; }
+    .nav-cta { display: flex; align-items: center; gap: var(--sp4); }
+
+    /* ─── HAMBURGER ──────────────────────────────────────────── */
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 36px; height: 36px; cursor: pointer;
+      background: none; border: none; padding: 4px; border-radius: var(--r-sm);
+    }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--command); border-radius: 2px; transition: all 0.25s ease; transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; top: 64px; left: 0; right: 0;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--frost);
+      padding: var(--sp6) var(--gutter) var(--sp8); z-index: 99;
+      flex-direction: column; gap: 0; box-shadow: 0 8px 32px rgba(22,32,56,0.1);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu li { list-style: none; border-bottom: 1px solid var(--frost); }
+    .mobile-menu li:last-child { border-bottom: none; }
+    .mobile-menu a { display: block; padding: var(--sp4) 0; font-size: 16px; font-weight: 500; color: var(--command); transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--coverage); }
+    .mobile-menu .mobile-cta { margin-top: var(--sp6); padding-top: var(--sp6); border-top: 1px solid var(--frost); }
+
+    /* ─── SCROLL ANIMATIONS ──────────────────────────────────── */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-delay-1 { transition-delay: 0.1s; }
+    .fade-up-delay-2 { transition-delay: 0.2s; }
+    .fade-up-delay-3 { transition-delay: 0.3s; }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    .hero {
+      padding-top: 140px; padding-bottom: 80px;
+      background:
+        radial-gradient(ellipse 700px 500px at 80% -10%, rgba(46,97,138,0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 500px 400px at -5% 90%, rgba(22,32,56,0.05) 0%, transparent 50%),
+        var(--white);
+      border-bottom: 1px solid var(--frost);
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--frost); padding: 6px 14px; border-radius: 100px;
+      margin-bottom: var(--sp6);
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--coverage);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .hero-headline { margin-bottom: var(--sp6); }
+    .hero-headline em { font-style: normal; color: var(--coverage); }
+    .hero-sub { color: var(--slate); font-size: 18px; line-height: 28px; margin-bottom: var(--sp8); max-width: 500px; }
+    .hero-actions { display: flex; align-items: center; gap: var(--sp4); flex-wrap: wrap; }
+    .hero-right {
+      display: flex; flex-direction: column; gap: var(--sp4);
+    }
+    .hero-image-wrap {
+      position: relative; border-radius: var(--r-xl); overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--frost);
+      box-shadow: 0 24px 60px rgba(22,32,56,0.15);
+    }
+    .hero-img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .hero-img-placeholder {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: var(--sp4); color: var(--slate); font-size: 14px; text-align: center; padding: var(--sp8);
+    }
+    /* Hide placeholder when image loads */
+    .hero-img:not([src="hero-campus.jpg"]) + .hero-img-placeholder,
+    .hero-img[src="hero-campus.jpg"]:not(.broken) ~ .hero-img-placeholder { display: none; }
+    .hero-img-placeholder code { font-size: 13px; background: var(--white); padding: 3px 8px; border-radius: var(--r-sm); border: 1px solid var(--haze); color: var(--coverage); }
+
+    /* ─── PROBLEM ────────────────────────────────────────────── */
+    .problem { background: var(--command); padding: var(--sp20) 0; }
+    .problem-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .problem-copy .label { color: var(--perimeter); display: block; margin-bottom: var(--sp4); }
+    .problem-copy .h1 { color: var(--white); margin-bottom: var(--sp6); }
+    .problem-copy p { color: rgba(255,255,255,0.6); font-size: 17px; line-height: 28px; margin-bottom: var(--sp6); }
+    .problem-copy p:last-of-type { margin-bottom: 0; }
+    .pain-list { display: flex; flex-direction: column; gap: var(--sp3); }
+    .pain-item {
+      display: flex; align-items: flex-start; gap: var(--sp4);
+      padding: var(--sp5, 20px) var(--sp6);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--r-lg);
+    }
+    .pain-icon {
+      width: 36px; height: 36px; flex-shrink: 0; border-radius: var(--r-md);
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pain-icon svg { width: 16px; height: 16px; color: var(--perimeter); }
+    .pain-text h4 { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 4px; }
+    .pain-text p  { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 20px; }
+
+    /* ─── CLERY ──────────────────────────────────────────────── */
+    .clery { background: var(--ice); padding: var(--sp20) 0; }
+    .clery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .clery-copy .label { display: block; margin-bottom: var(--sp4); }
+    .clery-copy .h1 { margin-bottom: var(--sp6); }
+    .clery-copy p { color: var(--slate); font-size: 17px; line-height: 28px; margin-bottom: var(--sp6); }
+    .clery-reframe {
+      background: var(--command); border-radius: var(--r-xl);
+      padding: var(--sp8); margin-bottom: var(--sp8);
+    }
+    .clery-reframe .label { color: var(--perimeter); display: block; margin-bottom: var(--sp3); }
+    .clery-reframe p { font-size: 18px; font-weight: 600; color: var(--white); line-height: 28px; margin: 0; }
+    .clery-checks { display: flex; flex-direction: column; gap: var(--sp3); margin-bottom: var(--sp8); }
+    .clery-check { display: flex; align-items: center; gap: var(--sp3); }
+    .clery-check-dot {
+      width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%;
+      background: rgba(15,110,86,0.15);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .clery-check-dot svg { width: 11px; height: 11px; color: var(--success); }
+    .clery-check span { font-size: 15px; color: var(--slate); }
+    .clery-visual {
+      background: var(--command); border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(22,32,56,0.2);
+    }
+    .cv-header {
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .cv-title { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .cv-live {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 600; color: #34D399;
+    }
+    .cv-live-dot { width: 6px; height: 6px; border-radius: 50%; background: #34D399; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .cv-body { padding: 20px; }
+    .cv-year-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: var(--sp4);
+    }
+    .cv-year { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.5); }
+    .cv-progress-wrap { flex: 1; margin: 0 var(--sp4); height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+    .cv-progress { height: 100%; width: 73%; background: linear-gradient(90deg, var(--coverage), #34D399); border-radius: 2px; }
+    .cv-pct { font-size: 13px; font-weight: 600; color: #34D399; }
+    .cv-cats { display: flex; flex-direction: column; gap: 8px; margin-bottom: var(--sp6); }
+    .cv-cat {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.04); border-radius: var(--r-md);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .cv-cat-right { display: flex; align-items: center; gap: 10px; }
+    .cv-cat-left { display: flex; align-items: center; }
+    .cv-cat-name { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.8); }
+    .cv-cat-count { font-size: 11px; font-weight: 700; color: var(--white); background: rgba(255,255,255,0.1); border-radius: 100px; width: 30px; height: 20px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cv-cat-status { font-size: 11px; font-weight: 600; width: 110px; text-align: left; }
+    .cv-auto { color: #34D399; }
+    .cv-review { color: #FBBF24; }
+    .cv-note {
+      background: rgba(46,97,138,0.2); border: 1px solid rgba(46,97,138,0.3);
+      border-radius: var(--r-md); padding: var(--sp4);
+    }
+    .cv-note p { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 20px; }
+    .cv-note strong { color: #7BB8E0; }
+
+    /* ─── MODULES ────────────────────────────────────────────── */
+    .modules { padding: var(--sp20) 0; background: var(--white); }
+    .modules-header { max-width: 560px; margin-bottom: var(--sp12); }
+    .modules-header .label { display: block; margin-bottom: var(--sp3); }
+    .modules-header .h1 { margin-bottom: var(--sp4); }
+    .modules-header p { color: var(--slate); font-size: 17px; line-height: 28px; }
+    .mod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp4); }
+    .mod-card {
+      border: 1px solid var(--frost); border-radius: var(--r-xl);
+      padding: var(--sp8) var(--sp6); background: var(--white);
+      transition: all 0.25s ease; position: relative; overflow: hidden;
+    }
+    .mod-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--frost); transition: background 0.25s;
+    }
+    .mod-card:hover { border-color: var(--haze); box-shadow: 0 12px 40px rgba(22,32,56,0.07); transform: translateY(-3px); }
+    .mod-card:hover::before { background: var(--coverage); }
+    .mod-card:hover .mod-icon { background: var(--command); }
+    .mod-card:hover .mod-icon svg { color: var(--white); }
+    .mod-icon {
+      width: 44px; height: 44px; border-radius: var(--r-md);
+      background: var(--ice); display: flex; align-items: center; justify-content: center;
+      margin-bottom: var(--sp4); transition: all 0.25s;
+    }
+    .mod-icon svg { width: 20px; height: 20px; color: var(--coverage); transition: color 0.25s; }
+    .mod-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--perimeter); margin-bottom: var(--sp2); }
+    .mod-title { font-size: 17px; font-weight: 600; margin-bottom: var(--sp2); }
+    .mod-desc  { font-size: 14px; color: var(--slate); line-height: 22px; }
+
+    /* ─── FINAL CTA ──────────────────────────────────────────── */
+    .final-cta {
+      background: var(--command); text-align: center;
+      padding: var(--sp20) 0; position: relative; overflow: hidden;
+    }
+    .final-cta::before {
+      content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(46,97,138,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .final-cta .h1 { color: var(--white); margin-bottom: var(--sp4); position: relative; }
+    .final-cta p  { color: rgba(255,255,255,0.6); margin-bottom: var(--sp8); font-size: 18px; position: relative; }
+    .cta-actions  { display: flex; align-items: center; justify-content: center; gap: var(--sp4); flex-wrap: wrap; position: relative; }
+    .cta-note { font-size: 13px; color: rgba(255,255,255,0.35); margin-top: var(--sp4); position: relative; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      background: var(--command); border-top: 1px solid rgba(255,255,255,0.07);
+      padding: var(--sp12) 0 var(--sp8);
+    }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--sp8); }
+    .footer-brand { display: flex; flex-direction: column; gap: var(--sp4); }
+    .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 22px; max-width: 280px; }
+    .footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: var(--sp4); }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: var(--sp2); }
+    .footer-col ul li a { font-size: 14px; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.9); }
+    .footer-bottom {
+      margin-top: var(--sp8); padding-top: var(--sp6);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    /* ─── COOKIE BANNER ──────────────────────────────────────── */
+    .cookie-banner {
+      position: fixed; bottom: var(--sp6); left: var(--sp6); max-width: 420px;
+      background: var(--command); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--r-xl); padding: var(--sp6);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.3); z-index: 9999;
+      display: flex; flex-direction: column; gap: var(--sp4);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .cookie-banner.hidden { opacity: 0; transform: translateY(12px); pointer-events: none; }
+    .cookie-banner p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 20px; margin: 0; }
+    .cookie-banner a { color: var(--perimeter); text-decoration: underline; }
+    .cookie-actions { display: flex; gap: var(--sp3); }
+    .cookie-accept { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: var(--r-md); background: var(--white); color: var(--command); border: none; cursor: pointer; transition: background 0.2s; }
+    .cookie-accept:hover { background: var(--ice); }
+    .cookie-decline { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: var(--r-md); background: transparent; color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.15); cursor: pointer; transition: all 0.2s; }
+    .cookie-decline:hover { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.75); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      :root { --gutter: 24px; }
+      .display { font-size: 38px; line-height: 46px; }
+      .h1 { font-size: 30px; line-height: 40px; }
+      .hero-grid, .problem-inner, .clery-grid { grid-template-columns: 1fr; gap: 48px; }
+      .mod-grid { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .stat-row-two { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .display { font-size: 30px; line-height: 38px; }
+      .mod-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .stat-row-two { grid-template-columns: 1fr; }
+      .cookie-banner { left: var(--sp4); right: var(--sp4); bottom: var(--sp4); max-width: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ───────────────────────────────────────────────────── -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="Legio — Safety &amp; Security Operations Platform">
+      <div class="mark">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="4"  cy="4"  r="2"   fill="#6B8FAE"/>
+          <circle cx="24" cy="4"  r="2"   fill="#6B8FAE"/>
+          <circle cx="4"  cy="24" r="2"   fill="#6B8FAE"/>
+          <circle cx="24" cy="24" r="2"   fill="#6B8FAE"/>
+          <circle cx="14" cy="4"  r="2.5" fill="#2E618A"/>
+          <circle cx="4"  cy="14" r="2.5" fill="#2E618A"/>
+          <circle cx="24" cy="14" r="2.5" fill="#2E618A"/>
+          <circle cx="14" cy="24" r="2.5" fill="#2E618A"/>
+          <circle cx="14" cy="14" r="4"   fill="#162038"/>
+        </svg>
+      </div>
+      <span class="wordmark">LEGIO</span>
+    </a>
+
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a href="/index.html#industries">Industries
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="/campus-safety/" class="dropdown-item">
+            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+            <span class="dropdown-title">Education</span>
+          </a>
+          <a href="/index.html#industries" class="dropdown-item">
+            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <span class="dropdown-title">Healthcare</span>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/index.html#modules">Platform
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><span class="dropdown-title">Incident Management</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span class="dropdown-title">Guard Tour</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="dropdown-title">Regulatory Compliance</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><span class="dropdown-title">Emergencies</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><span class="dropdown-title">Policy Management</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><span class="dropdown-title">Parking</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><span class="dropdown-title">Visitors</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></div><span class="dropdown-title">Asset Management</span></a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="/index.html#about">About</a></li>
+      <li class="nav-item"><a href="/index.html#resources">Resources</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:14px;padding:10px 20px;">Book 30 minutes →</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<ul class="mobile-menu" id="mobile-menu">
+  <li><a href="/campus-safety/" onclick="closeMobile()" style="font-weight:600;">Education</a></li>
+  <li><a href="/index.html#industries" onclick="closeMobile()">Healthcare</a></li>
+  <li><a href="/index.html#modules" onclick="closeMobile()" style="font-weight:600;">Platform</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Incident Management</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Guard Tour</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Regulatory Compliance</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Emergencies</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Policy Management</a></li>
+  <li style="padding-left:16px;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Asset Management</a></li>
+  <li><a href="/index.html#about" onclick="closeMobile()">About</a></li>
+  <li><a href="/index.html#resources" onclick="closeMobile()">Resources</a></li>
+  <li class="mobile-cta">
+    <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:14px;padding:10px 20px;color:#ffffff;display:inline-flex;">Book 30 minutes →</a>
+  </li>
+</ul>
+
+<!-- ─── HERO ───────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="fade-up">
+        <div class="hero-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="3" fill="#2E618A"/><circle cx="6" cy="6" r="5.5" stroke="#2E618A" stroke-width="1"/></svg>
+          Campus Safety & Security
+        </div>
+        <h1 class="display hero-headline">
+          Built for campus<br>public safety.<br>
+          <em>Not adapted for it.</em>
+        </h1>
+        <p class="hero-sub">Safety and security leaders are running public safety departments on platforms built for generic enterprise. Legio is built for the operational reality of a campus — the incidents, the patrols, the Clery obligations, and the reporting that follows.</p>
+        <div class="hero-actions">
+          <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book 30 minutes →</a>
+          <a href="/index.html#partner" class="btn btn-outline">Become a design partner</a>
+        </div>
+      </div>
+
+      <div class="fade-up fade-up-delay-1">
+        <div class="hero-image-wrap">
+          <img src="hero-campus.jpg" alt="Campus safety and security operations" class="hero-img" />
+          <div class="hero-img-placeholder">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="48" height="48" rx="8" fill="rgba(46,97,138,0.15)"/>
+              <path d="M16 32l8-10 6 7 4-4 6 7" stroke="#2E618A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="18" cy="20" r="3" stroke="#2E618A" stroke-width="2"/>
+            </svg>
+            <p>Add <code>hero-campus.jpg</code> to your repo root</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROBLEM ─────────────────────────────────────────────────── -->
+<section class="problem">
+  <div class="container">
+    <div class="problem-inner">
+      <div class="problem-copy fade-up">
+        <span class="label">The reality on the ground</span>
+        <h2 class="h1">Less time proving safety happened.<br>More time making it happen.</h2>
+        <p>Campus public safety is operationally complex. Sworn officers, non-sworn staff, patrol routes, parking enforcement, emergency response, and federal reporting obligations — running simultaneously, across an environment where the population turns over every semester and no two days are the same.</p>
+        <p>The platforms your department is using weren't designed for that. They were designed for generic incident logging and bolted onto the rest.</p>
+      </div>
+      <div class="fade-up fade-up-delay-1">
+        <div class="pain-list">
+          <div class="pain-item">
+            <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+            <div class="pain-text">
+              <h4>The cost of administrative burden is missed incidents</h4>
+              <p>An officer completing paperwork isn't an officer on campus. Every hour spent on administration is an hour your team isn't visible, available, or present where it matters.</p>
+            </div>
+          </div>
+          <div class="pain-item">
+            <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg></div>
+            <div class="pain-text">
+              <h4>Clery classification is a manual exercise</h4>
+              <p>Someone has to go back through incident reports, apply Clery categories, and reconcile data from multiple sources. Every year. Before October.</p>
+            </div>
+          </div>
+          <div class="pain-item">
+            <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <div class="pain-text">
+              <h4>A digital filing cabinet still needs someone to read it</h4>
+              <p>Patterns don't surface themselves. Without something working across your data, analysis only happens when something has already gone wrong — and someone decides to go looking.</p>
+            </div>
+          </div>
+          <div class="pain-item">
+            <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="pain-text">
+              <h4>A static program in a dynamic environment isn't safety. It's routine.</h4>
+              <p>Most programs are built on experience, not evidence. The data to run a smarter operation already exists.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CLERY ─────────────────────────────────────────────────────── -->
+<section class="clery" id="clery">
+  <div class="container">
+    <div class="clery-grid">
+      <div class="clery-copy fade-up">
+        <span class="label">Clery Act Compliance</span>
+        <h2 class="h1">Compliance is what your operations produce. Not something you prepare separately.</h2>
+
+        <div class="clery-reframe">
+          <span class="label">The shift</span>
+          <p>"Legio doesn't help you do Clery. It means Clery is already done — because your team has been doing their jobs all year."</p>
+        </div>
+
+        <p>Every incident your team captures, every patrol your officers complete, every event your department logs — all of it feeds the compliance record automatically. Your Annual Security Report isn't assembled in October. It's been building since January.</p>
+
+        <div class="clery-checks">
+          <div class="clery-check">
+            <div class="clery-check-dot"><svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <span>Clery categories assigned at incident creation — not during annual review</span>
+          </div>
+          <div class="clery-check">
+            <div class="clery-check-dot"><svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <span>Annual Security Report data populated from live operations, not spreadsheets</span>
+          </div>
+          <div class="clery-check">
+            <div class="clery-check-dot"><svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <span>Timely Warning trigger logic built directly into incident workflows</span>
+          </div>
+          <div class="clery-check">
+            <div class="clery-check-dot"><svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <span>Geography-aware classification — on-campus, residential, non-campus, public property</span>
+          </div>
+          <div class="clery-check">
+            <div class="clery-check-dot"><svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <span>Audit-ready documentation available year-round — not assembled under pressure in fall</span>
+          </div>
+        </div>
+
+        <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">See Clery compliance in action →</a>
+      </div>
+
+      <div class="clery-visual fade-up fade-up-delay-1">
+        <div class="cv-header">
+          <div class="cv-title">Annual Security Report — Live</div>
+          <div class="cv-live"><div class="cv-live-dot"></div>Auto-building</div>
+        </div>
+        <div class="cv-body">
+          <div class="cv-year-bar">
+            <span class="cv-year">2025–2026 Academic Year</span>
+            <div class="cv-progress-wrap"><div class="cv-progress"></div></div>
+            <span class="cv-pct">73%</span>
+          </div>
+          <div class="cv-cats">
+            <div class="cv-cat">
+              <div class="cv-cat-left"><span class="cv-cat-name">Aggravated Assault</span></div>
+              <div class="cv-cat-right"><span class="cv-cat-count">3</span><span class="cv-cat-status cv-auto">Auto-classified ✓</span></div>
+            </div>
+            <div class="cv-cat">
+              <div class="cv-cat-left"><span class="cv-cat-name">Burglary</span></div>
+              <div class="cv-cat-right"><span class="cv-cat-count">7</span><span class="cv-cat-status cv-auto">Auto-classified ✓</span></div>
+            </div>
+            <div class="cv-cat">
+              <div class="cv-cat-left"><span class="cv-cat-name">Motor Vehicle Theft</span></div>
+              <div class="cv-cat-right"><span class="cv-cat-count">2</span><span class="cv-cat-status cv-review">CSO review</span></div>
+            </div>
+            <div class="cv-cat">
+              <div class="cv-cat-left"><span class="cv-cat-name">Drug Violations</span></div>
+              <div class="cv-cat-right"><span class="cv-cat-count">14</span><span class="cv-cat-status cv-auto">Auto-classified ✓</span></div>
+            </div>
+            <div class="cv-cat">
+              <div class="cv-cat-left"><span class="cv-cat-name">Liquor Law Violations</span></div>
+              <div class="cv-cat-right"><span class="cv-cat-count">9</span><span class="cv-cat-status cv-auto">Auto-classified ✓</span></div>
+            </div>
+            <div class="cv-cat">
+              <div class="cv-cat-left"><span class="cv-cat-name">Weapons Possession</span></div>
+              <div class="cv-cat-right"><span class="cv-cat-count">1</span><span class="cv-cat-status cv-auto">Auto-classified ✓</span></div>
+            </div>
+          </div>
+          <div class="cv-note">
+            <p><strong>5 of 6 categories</strong> auto-classified from operations data. 1 pending CSO review. No manual data entry required at year end.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MODULES ─────────────────────────────────────────────────── -->
+<section class="modules">
+  <div class="container">
+    <div class="modules-header fade-up">
+      <span class="label">The platform</span>
+      <h2 class="h1">Every function of campus public safety. One system.</h2>
+      <p>Each module is built for the campus environment — the incidents, locations, roles, and reporting obligations your department actually deals with.</p>
+    </div>
+    <div class="mod-grid">
+
+      <div class="mod-card fade-up">
+        <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="mod-label">Incident Management</div>
+        <div class="mod-title">Captured, routed, Clery-classified.</div>
+        <div class="mod-desc">Guided intake built for campus incident types. Every report feeds the compliance record automatically — no double entry, no year-end reconciliation.</div>
+      </div>
+
+      <div class="mod-card fade-up fade-up-delay-1">
+        <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="mod-label">Guard Tour</div>
+        <div class="mod-title">Every patrol. Accounted for.</div>
+        <div class="mod-desc">Real-time checkpoint visibility across your entire campus geography. Missed patrols flagged immediately — not discovered at the end of shift.</div>
+      </div>
+
+      <div class="mod-card fade-up fade-up-delay-2">
+        <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="mod-label">Clery Compliance</div>
+        <div class="mod-title">The ASR writes itself.</div>
+        <div class="mod-desc">Your Annual Security Report is built continuously from operations data. Review, verify, submit — not compile, reconcile, and scramble before the deadline.</div>
+      </div>
+
+      <div class="mod-card fade-up">
+        <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div class="mod-label">Emergencies</div>
+        <div class="mod-title">Coordinated response from the first call.</div>
+        <div class="mod-desc">Activate plans, assign roles, coordinate with local law enforcement. Your team knows exactly what to do — and the record captures every action taken.</div>
+      </div>
+
+      <div class="mod-card fade-up fade-up-delay-1">
+        <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <div class="mod-label">Parking</div>
+        <div class="mod-title">Permits, violations, appeals — all connected.</div>
+        <div class="mod-desc">Campus parking operations in one place, tied to your incident record. No separate system, no data reconciliation at the end of the semester.</div>
+      </div>
+
+      <div class="mod-card fade-up fade-up-delay-2">
+        <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div class="mod-label">Policy Management</div>
+        <div class="mod-title">Current policy. Always accessible.</div>
+        <div class="mod-desc">No binders, no version confusion. Officers acknowledge policy changes in the platform. Compliance is tracked automatically — useful if you ever need to demonstrate it.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ────────────────────────────────────────────────── -->
+<section class="final-cta">
+  <div class="container">
+    <h2 class="h1">Built for campus. Ready to show you.</h2>
+    <p>Book 30 minutes with the team. We'll walk through how Legio handles your department's operations — incident to ASR.</p>
+    <div class="cta-actions">
+      <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-white">Book 30 minutes →</a>
+      <a href="/index.html#partner" class="btn btn-outline-white">Become a design partner</a>
+    </div>
+    <p class="cta-note">No sales deck. A real conversation about your operations.</p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ───────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <div class="mark">
+            <svg viewBox="0 0 28 28" fill="none">
+              <circle cx="4"  cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="24" cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="4"  cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="24" cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="14" cy="4"  r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="4"  cy="14" r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="24" cy="14" r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="14" cy="24" r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="14" cy="14" r="4"   fill="rgba(255,255,255,0.9)"/>
+            </svg>
+          </div>
+          <span class="wordmark wordmark-light">LEGIO</span>
+        </a>
+        <p>Safety & Security Operations Platform. Built to scale.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="/index.html#modules">Incident Management</a></li>
+          <li><a href="/index.html#modules">Guard Tour</a></li>
+          <li><a href="/campus-safety/#clery">Clery Compliance</a></li>
+          <li><a href="/index.html#modules">Emergencies</a></li>
+          <li><a href="/index.html#modules">Policy Management</a></li>
+          <li><a href="/index.html#modules">Parking</a></li>
+          <li><a href="/index.html#modules">Visitors</a></li>
+          <li><a href="/index.html#modules">Asset Management</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="/campus-safety/">Education</a></li>
+          <li><a href="/index.html#industries">Healthcare</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer">Book 30 minutes →</a></li>
+          <li><a href="/index.html#partner">Design Partner Inquiry</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Legio · getlegio.com</p>
+      <p><a href="/privacy/" style="color:rgba(255,255,255,0.3);">Privacy Policy</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── COOKIE BANNER ────────────────────────────────────────────── -->
+<div class="cookie-banner hidden" id="cookie-banner">
+  <p>We use cookies to understand how visitors use this site. <a href="/privacy/">Privacy policy →</a></p>
+  <div class="cookie-actions">
+    <button class="cookie-accept" id="cookie-accept">Accept</button>
+    <button class="cookie-decline" id="cookie-decline">Decline</button>
+  </div>
+</div>
+
+<script>
+  // ── Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(22,32,56,0.08)' : 'none';
+  });
+
+  // ── Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+  }
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMobile();
+  });
+
+  // ── Scroll animations
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // ── Cookie consent
+  (function() {
+    const banner  = document.getElementById('cookie-banner');
+    const consent = localStorage.getItem('legio_cookie_consent');
+    if (!consent) setTimeout(() => banner.classList.remove('hidden'), 800);
+    document.getElementById('cookie-accept').addEventListener('click', () => {
+      localStorage.setItem('legio_cookie_consent', 'accepted');
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+      banner.classList.add('hidden');
+    });
+    document.getElementById('cookie-decline').addEventListener('click', () => {
+      localStorage.setItem('legio_cookie_consent', 'declined');
+      banner.classList.add('hidden');
+    });
+    if (consent === 'accepted') gtag('consent', 'update', { analytics_storage: 'granted' });
+  })();
+</script>
+
+</body>
+</html>
