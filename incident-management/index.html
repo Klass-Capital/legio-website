@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) — consent gated -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', wait_for_update: 500 });
+    gtag('js', new Date());
+    gtag('config', 'G-MTDN1L9RR5', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTDN1L9RR5"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Incident Management Software for Physical Security Operations — Legio</title>
+  <meta name="description" content="Incident management built for physical security operations. The officer tells the story. The system does the work. Zero re-entry, automatic classification, intelligent data mapping." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://getlegio.com/incident-management/" />
+  <meta name="keywords" content="incident management software, physical security incident management, security operations incident tracking, incident reporting platform, security incident management system" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Legio" />
+  <meta property="og:title" content="Incident Management Software for Physical Security Operations — Legio" />
+  <meta property="og:description" content="Incident management built for physical security operations. The officer tells the story. The system does the work." />
+  <meta property="og:url" content="https://getlegio.com/incident-management/" />
+  <meta property="og:image" content="https://getlegio.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#162038" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Legio Incident Management",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Incident management software for physical security operations. Zero re-keying, modern UX, pervasive data mapping across every input in the platform.",
+    "url": "https://getlegio.com/incident-management/",
+    "publisher": { "@type": "Organization", "name": "Legio", "url": "https://getlegio.com" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --command:   #162038;
+      --coverage:  #2E618A;
+      --perimeter: #6B8FAE;
+      --white:     #FFFFFF;
+      --ice:       #F4F7FA;
+      --frost:     #E5EDF4;
+      --haze:      #C8D8E8;
+      --slate:     #4A6580;
+      --success:   #0F6E56;
+      --warning:   #E09000;
+      --danger:    #9B2828;
+      --sp1: 4px; --sp2: 8px; --sp3: 12px; --sp4: 16px;
+      --sp6: 24px; --sp8: 32px; --sp12: 48px; --sp16: 64px; --sp20: 80px;
+      --r-sm: 4px; --r-md: 8px; --r-lg: 12px; --r-xl: 16px;
+      --max-w: 1200px; --gutter: 40px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px; line-height: 26px;
+      color: var(--command); background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); }
+
+    /* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+    .display { font-size: 52px; line-height: 60px; font-weight: 700; letter-spacing: -0.02em; }
+    .h1      { font-size: 40px; line-height: 50px; font-weight: 600; letter-spacing: -0.01em; }
+    .h2      { font-size: 28px; line-height: 36px; font-weight: 600; letter-spacing: -0.01em; }
+    .h3      { font-size: 20px; line-height: 28px; font-weight: 600; }
+    .label   { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coverage); }
+
+    /* ─── BUTTONS ────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: var(--sp2);
+      font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600;
+      padding: 13px 24px; border-radius: var(--r-md);
+      cursor: pointer; border: none; transition: all 0.2s ease;
+      white-space: nowrap; text-decoration: none;
+    }
+    .btn-primary { background: var(--command); color: var(--white); }
+    .btn-primary:hover { background: #1e2e50; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(22,32,56,0.25); text-decoration: none; }
+    .btn-outline { background: transparent; color: var(--command); border: 1.5px solid var(--command); }
+    .btn-outline:hover { background: var(--command); color: var(--white); }
+    .btn-white { background: var(--white); color: var(--command); }
+    .btn-white:hover { background: var(--ice); transform: translateY(-1px); }
+    .btn-outline-white { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.4); }
+    .btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+    /* ─── MARK / LOGO ────────────────────────────────────────── */
+    .mark { display: inline-block; width: 28px; height: 28px; flex-shrink: 0; }
+    .mark svg { width: 100%; height: 100%; }
+    .wordmark { font-size: 16px; font-weight: 700; letter-spacing: 0.26em; color: var(--command); }
+    .wordmark-light { color: var(--white); }
+    .logo { display: flex; align-items: center; gap: 10px; }
+
+    /* ─── NAV ────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--frost);
+    }
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter);
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-left { display: flex; align-items: center; gap: var(--sp6); }
+    .nav-divider { width: 1px; height: 20px; background: var(--haze); }
+    .nav-page { font-size: 14px; font-weight: 500; color: var(--slate); }
+    .nav-back {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 500; color: var(--perimeter);
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--command); }
+
+    /* ─── FADE-IN ANIMATION ──────────────────────────────────── */
+    .fade-up {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-delay-1 { transition-delay: 0.1s; }
+    .fade-up-delay-2 { transition-delay: 0.2s; }
+    .fade-up-delay-3 { transition-delay: 0.3s; }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    .hero {
+      padding: 140px 0 var(--sp20);
+      background: var(--white);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 440px;
+      gap: var(--sp12);
+      align-items: center;
+    }
+    .hero-content { }
+    .hero-content .label { margin-bottom: var(--sp4); display: block; }
+    .hero-content .display { margin-bottom: var(--sp6); }
+    .hero-content .display em {
+      font-style: normal; color: var(--coverage);
+    }
+    .hero-sub {
+      font-size: 18px; line-height: 30px; color: var(--slate);
+      max-width: 520px; margin-bottom: var(--sp8);
+    }
+    .hero-actions { display: flex; gap: var(--sp4); flex-wrap: wrap; }
+
+    .hero-screenshot {
+      background: var(--ice); border: 1px solid var(--frost);
+      border-radius: var(--r-xl); overflow: hidden;
+      aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 16px 48px rgba(22,32,56,0.1);
+    }
+    .hero-screenshot img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-screenshot-placeholder {
+      display: flex; flex-direction: column; align-items: center; gap: var(--sp3);
+      color: var(--perimeter);
+    }
+    .hero-screenshot-placeholder svg { opacity: 0.4; }
+    .hero-screenshot-placeholder span { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; }
+
+    /* ─── PROBLEM SECTION ────────────────────────────────────── */
+    .problem {
+      padding: var(--sp20) 0;
+      background: var(--ice);
+      border-top: 1px solid var(--frost);
+      border-bottom: 1px solid var(--frost);
+    }
+    .problem-intro {
+      text-align: center; max-width: 640px; margin: 0 auto var(--sp12);
+    }
+    .problem-intro .label { margin-bottom: var(--sp3); display: block; }
+    .problem-intro .h2 { margin-bottom: var(--sp4); }
+    .problem-intro .h2 .muted { color: var(--perimeter); }
+    .problem-intro p { color: var(--slate); font-size: 16px; }
+
+    .problem-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto 1fr auto;
+      gap: var(--sp6);
+    }
+    .problem-card {
+      background: var(--white); border: 1px solid var(--frost);
+      border-radius: var(--r-lg); padding: var(--sp8);
+      display: grid;
+      grid-row: span 3;
+      grid-template-rows: subgrid;
+      row-gap: 0;
+    }
+    .problem-card h3 {
+      font-size: 18px; font-weight: 600; margin-bottom: var(--sp3);
+    }
+    .problem-card p {
+      font-size: 15px; line-height: 24px; color: var(--slate);
+      margin-bottom: var(--sp4);
+    }
+    .problem-stat {
+      display: inline-block; font-size: 13px; font-weight: 600;
+      color: var(--danger); background: #FAEAEA;
+      padding: 4px 10px; border-radius: 100px;
+      white-space: nowrap;
+      align-self: end; justify-self: start;
+    }
+
+    /* ─── LINK ANALYSIS ──────────────────────────────────────── */
+    .link-analysis {
+      padding: var(--sp20) 0;
+      background: var(--white);
+    }
+    .link-intro {
+      text-align: center; max-width: 600px; margin: 0 auto var(--sp12);
+    }
+    .link-intro .label { display: block; margin-bottom: var(--sp3); }
+    .link-intro .h2 { margin-bottom: var(--sp4); }
+    .link-intro p { color: var(--slate); font-size: 16px; line-height: 26px; }
+
+    .link-canvas-wrap {
+      background: var(--command); border-radius: var(--r-xl);
+      overflow: hidden; position: relative;
+      box-shadow: 0 24px 64px rgba(22,32,56,0.18), 0 0 0 1px rgba(22,32,56,0.08);
+      max-width: 900px; margin: 0 auto;
+    }
+    .link-canvas-header {
+      position: absolute; top: 0; left: 0; right: 0; z-index: 2;
+      padding: 14px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(22,32,56,0.6);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .link-canvas-title {
+      font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.45);
+      letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    .link-canvas-badge {
+      font-size: 11px; font-weight: 600; color: var(--perimeter);
+      background: rgba(107,143,174,0.15);
+      padding: 3px 10px; border-radius: 100px;
+      border: 1px solid rgba(107,143,174,0.2);
+      transition: all 0.5s ease;
+    }
+    .link-canvas-badge.detected {
+      color: var(--success); background: rgba(15,110,86,0.15);
+      border-color: rgba(15,110,86,0.3);
+    }
+    #linkCanvas { display: block; width: 100%; }
+
+    .pattern-alert {
+      position: absolute; bottom: 16px; left: 16px; right: 16px;
+      background: rgba(22,32,56,0.85);
+      border: 1px solid rgba(15,110,86,0.3);
+      border-radius: var(--r-md);
+      padding: 12px 16px;
+      display: flex; align-items: center; gap: 10px;
+      backdrop-filter: blur(8px);
+      opacity: 0; transform: translateY(8px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      z-index: 2;
+    }
+    .pattern-alert.visible { opacity: 1; transform: translateY(0); }
+    .pattern-alert-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--success); flex-shrink: 0;
+      box-shadow: 0 0 8px rgba(15,110,86,0.6);
+    }
+    .pattern-alert-text {
+      font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.85);
+    }
+    .pattern-alert-text strong { color: var(--white); }
+
+    .link-caption {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp6); max-width: 900px; margin: var(--sp8) auto 0;
+    }
+    .link-caption-item {
+      text-align: center;
+    }
+    .link-caption-num {
+      font-size: 28px; font-weight: 700; color: var(--command);
+      margin-bottom: var(--sp1);
+    }
+    .link-caption-text {
+      font-size: 14px; color: var(--slate); line-height: 20px;
+    }
+
+    /* ─── HOW IT WORKS ───────────────────────────────────────── */
+    .how-it-works {
+      padding: var(--sp20) 0;
+      background: var(--ice);
+      border-top: 1px solid var(--frost);
+      border-bottom: 1px solid var(--frost);
+    }
+    .how-intro {
+      text-align: center; max-width: 640px; margin: 0 auto var(--sp12);
+    }
+    .how-intro .label { display: block; margin-bottom: var(--sp3); }
+    .how-intro .h2 { margin-bottom: var(--sp4); }
+    .how-intro p { color: var(--slate); }
+
+    .how-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .how-step-item {
+      text-align: center; padding: 0 var(--sp6);
+      border-left: 1px solid var(--haze);
+    }
+    .how-step-item:first-child { border-left: none; }
+    .how-step-item h3 {
+      font-size: 18px; font-weight: 600; margin-bottom: var(--sp2);
+    }
+    .how-step-item p {
+      font-size: 15px; line-height: 24px; color: var(--slate);
+      max-width: 320px; margin: 0 auto;
+    }
+
+    /* ─── HUMAN + AI ─────────────────────────────────────────── */
+    .authority {
+      padding: var(--sp20) 0;
+      background: var(--white);
+    }
+    .authority-intro {
+      text-align: center; max-width: 600px; margin: 0 auto var(--sp12);
+    }
+    .authority-intro .label { display: block; margin-bottom: var(--sp3); }
+    .authority-intro .h2 { margin-bottom: var(--sp4); }
+    .authority-intro p { color: var(--slate); }
+
+    .authority-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp6); max-width: 880px; margin: 0 auto;
+    }
+    .authority-col-header {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding-bottom: var(--sp4);
+      margin-bottom: var(--sp4);
+      border-bottom: 2px solid var(--frost);
+    }
+    .authority-col-header.ai { color: var(--coverage); }
+    .authority-col-header.human { color: var(--command); }
+
+    .authority-row {
+      background: var(--ice); border: 1px solid var(--frost);
+      border-radius: var(--r-md); padding: var(--sp4) var(--sp6);
+      margin-bottom: var(--sp3);
+    }
+    .authority-row-label {
+      font-size: 12px; font-weight: 600; color: var(--perimeter);
+      letter-spacing: 0.04em; text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .authority-row-text {
+      font-size: 15px; font-weight: 500; color: var(--command);
+    }
+
+    /* ─── FINAL CTA ──────────────────────────────────────────── */
+    .final-cta {
+      padding: var(--sp20) 0;
+      background: var(--command);
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .final-cta .h1 { color: var(--white); margin-bottom: var(--sp4); }
+    .final-cta p { color: var(--perimeter); font-size: 18px; max-width: 480px; margin: 0 auto var(--sp8); line-height: 28px; }
+    .cta-actions { display: flex; gap: var(--sp4); justify-content: center; flex-wrap: wrap; margin-bottom: var(--sp4); }
+    .cta-note { font-size: 14px; color: rgba(107,143,174,0.6); }
+
+    /* ─── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      padding: var(--sp8) 0;
+      background: var(--command);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 10px; }
+    .footer-copy { font-size: 13px; color: rgba(107,143,174,0.5); }
+    .footer-links { display: flex; gap: var(--sp6); }
+    .footer-links a {
+      font-size: 13px; color: var(--perimeter); transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      :root { --gutter: 24px; }
+      .display { font-size: 36px; line-height: 44px; }
+      .h1 { font-size: 30px; line-height: 38px; }
+      .h2 { font-size: 24px; line-height: 32px; }
+      .hero { padding-top: 100px; }
+      .hero-grid { grid-template-columns: 1fr; gap: var(--sp8); }
+      .hero-screenshot { max-width: 480px; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .how-grid { grid-template-columns: 1fr; gap: var(--sp8); }
+      .how-step-item { border-left: none; border-top: 1px solid var(--haze); padding-top: var(--sp6); }
+      .how-step-item:first-child { border-top: none; padding-top: 0; }
+      .authority-grid { grid-template-columns: 1fr; }
+      .link-caption { grid-template-columns: 1fr; gap: var(--sp4); }
+    }
+    @media (max-width: 600px) {
+      .nav-back-text { display: none; }
+      .footer-inner { flex-direction: column; gap: var(--sp4); text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/" class="logo">
+        <div class="mark">
+          <svg viewBox="0 0 28 28" fill="none">
+            <circle cx="4"  cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+            <circle cx="24" cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+            <circle cx="4"  cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+            <circle cx="24" cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+            <circle cx="14" cy="4"  r="2.5" fill="rgba(46,97,138,0.8)"/>
+            <circle cx="4"  cy="14" r="2.5" fill="rgba(46,97,138,0.8)"/>
+            <circle cx="24" cy="14" r="2.5" fill="rgba(46,97,138,0.8)"/>
+            <circle cx="14" cy="24" r="2.5" fill="rgba(46,97,138,0.8)"/>
+            <circle cx="14" cy="14" r="4"   fill="#162038"/>
+          </svg>
+        </div>
+        <span class="wordmark">LEGIO</span>
+      </a>
+      <div class="nav-divider"></div>
+      <span class="nav-page">Incident Management</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:var(--sp6);">
+      <a href="/" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="nav-back-text">Back to home</span>
+      </a>
+      <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding:9px 18px;font-size:14px;">Book 30 minutes →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content fade-up">
+        <span class="label">Incident Management</span>
+        <h1 class="display">The officer tells the story. <em>The system does the work.</em></h1>
+        <p class="hero-sub">Traditional incident software is a form to fill out. Legio is an intelligent partner — it listens, extracts, connects, and asks the right questions so your team can focus on what actually matters.</p>
+        <div class="hero-actions">
+          <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">See it in action →</a>
+          <a href="/#partner" class="btn btn-outline">Become a design partner</a>
+        </div>
+      </div>
+      <div class="hero-screenshot fade-up fade-up-delay-1">
+        <!-- Replace with product screenshot: <img src="incident-screenshot.png" alt="Legio incident management interface" /> -->
+        <div class="hero-screenshot-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+          <span>Product screenshot</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── THE PROBLEM ──────────────────────────────────────────────── -->
+<section class="problem">
+  <div class="container">
+    <div class="problem-intro fade-up">
+      <span class="label">The Problem</span>
+      <h2 class="h2">Three ways traditional incident software <span class="muted">fails your team.</span></h2>
+      <p>Every incident management system built in the last 20 years was designed around one assumption: officers should fill out forms. That assumption is wrong.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card fade-up">
+        <h3>Data loss at intake</h3>
+        <p>Officers simplify narratives to fit forms. The smell of alcohol, a subject's demeanor, the exact sequence of events — context that matters gets discarded because there's no dropdown for it.</p>
+        <span class="problem-stat">Rich context → lost forever</span>
+      </div>
+      <div class="problem-card fade-up fade-up-delay-1">
+        <h3>Manual at every step</h3>
+        <p>Once an incident is filed, someone has to route it, notify stakeholders, escalate if needed, track follow-ups, and close it out. Every step depends on a person remembering to do it — and every missed step is a gap in your record.</p>
+        <span class="problem-stat">Process runs on memory</span>
+      </div>
+      <div class="problem-card fade-up fade-up-delay-2">
+        <h3>Siloed intelligence</h3>
+        <p>Related incidents are never linked because systems can only match on exact field values. A serial pattern across buildings with slightly different descriptions? Invisible to every legacy platform.</p>
+        <span class="problem-stat">Patterns go undetected</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LINK ANALYSIS ────────────────────────────────────────────── -->
+<section class="link-analysis">
+  <div class="container">
+    <div class="link-intro fade-up">
+      <span class="label">Intelligence Engine</span>
+      <h2 class="h2">Connections that would be impossible to find manually.</h2>
+      <p>Legio's link analysis engine continuously scans every incident for behavioral signatures, location patterns, and temporal correlations — surfacing connections with confidence scores that a human investigator would take weeks to identify.</p>
+    </div>
+
+    <div class="link-canvas-wrap fade-up">
+      <div class="link-canvas-header">
+        <span class="link-canvas-title">Link Analysis Engine</span>
+        <span class="link-canvas-badge" id="statusBadge">Scanning...</span>
+      </div>
+      <canvas id="linkCanvas" width="900" height="480"></canvas>
+      <div class="pattern-alert" id="patternAlert">
+        <div class="pattern-alert-dot"></div>
+        <span class="pattern-alert-text"><strong>Pattern detected:</strong> 5 bike thefts across 4 buildings, 18:00–22:00 window, similar MO. Confidence 91%.</span>
+      </div>
+    </div>
+
+    <div class="link-caption fade-up">
+      <div class="link-caption-item">
+        <div class="link-caption-num">91%</div>
+        <div class="link-caption-text">Average confidence on<br/>confirmed pattern clusters</div>
+      </div>
+      <div class="link-caption-item">
+        <div class="link-caption-num">5→1</div>
+        <div class="link-caption-text">Separate reports resolved<br/>into a single investigation</div>
+      </div>
+      <div class="link-caption-item">
+        <div class="link-caption-num">&lt;2min</div>
+        <div class="link-caption-text">From new incident to<br/>pattern match notification</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ─────────────────────────────────────────────── -->
+<section class="how-it-works">
+  <div class="container">
+    <div class="how-intro fade-up">
+      <span class="label">How It Works</span>
+      <h2 class="h2">From scene to closed record. No forms.</h2>
+      <p>Legio inverts the incident workflow. The officer narrates what happened. The system does everything else.</p>
+    </div>
+    <div class="how-grid fade-up">
+      <div class="how-step-item">
+        <h3>Narrative intake</h3>
+        <p>The officer speaks or types what happened. No dropdowns, no structured entry screens. The platform extracts every data element — people, locations, times, incident type, severity.</p>
+      </div>
+      <div class="how-step-item">
+        <h3>Zero re-entry</h3>
+        <p>Every element permeates everywhere it needs to go: the incident record, daily activity report, compliance datasets. Enter once, propagate everywhere.</p>
+      </div>
+      <div class="how-step-item">
+        <h3>Intelligent follow-through</h3>
+        <p>Legio doesn't just store data — it works it. Link analysis runs continuously. Gaps generate follow-up prompts. An active partner, not a filing cabinet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HUMAN AUTHORITY / PLATFORM VELOCITY ───────────────────────── -->
+<section class="authority">
+  <div class="container">
+    <div class="authority-intro fade-up">
+      <span class="label">Your Authority, Platform Velocity</span>
+      <h2 class="h2">Every decision stays with your team.</h2>
+      <p>Legio accelerates the work. Your officers make the calls. This is the line the platform never crosses.</p>
+    </div>
+    <div class="authority-grid fade-up">
+      <div>
+        <div class="authority-col-header ai">Legio Does</div>
+        <div class="authority-row">
+          <div class="authority-row-label">Intake</div>
+          <div class="authority-row-text">Extracts structured data from natural language</div>
+        </div>
+        <div class="authority-row">
+          <div class="authority-row-label">Classification</div>
+          <div class="authority-row-text">Suggests incident category and severity tier</div>
+        </div>
+        <div class="authority-row">
+          <div class="authority-row-label">Link Analysis</div>
+          <div class="authority-row-text">Detects cross-incident patterns with confidence scores</div>
+        </div>
+        <div class="authority-row">
+          <div class="authority-row-label">Gaps</div>
+          <div class="authority-row-text">Identifies missing information and prompts follow-up</div>
+        </div>
+        <div class="authority-row">
+          <div class="authority-row-label">Reporting</div>
+          <div class="authority-row-text">Populates compliance datasets and daily logs automatically</div>
+        </div>
+      </div>
+      <div>
+        <div class="authority-col-header human">Your Team Decides</div>
+        <div class="authority-row">
+          <div class="authority-row-label">Intake</div>
+          <div class="authority-row-text">Confirms extracted details are accurate</div>
+        </div>
+        <div class="authority-row">
+          <div class="authority-row-label">Classification</div>
+          <div class="authority-row-text">Approves or overrides the classification</div>
+        </div>
+        <div class="authority-row">
+          <div class="authority-row-label">Link Analysis</div>
+          <div class="authority-row-text">Accepts, rejects, or escalates detected patterns</div>
+        </div>
+        <div class="authority-row">
+          <div class="authority-row-label">Investigation</div>
+          <div class="authority-row-text">Determines response and resource allocation</div>
+        </div>
+        <div class="authority-row">
+          <div class="authority-row-label">Reporting</div>
+          <div class="authority-row-text">Reviews and signs off before submission</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ────────────────────────────────────────────────── -->
+<section class="final-cta">
+  <div class="container">
+    <h2 class="h1">See what incident management should look like.</h2>
+    <p>Book 30 minutes with the team. We'll walk through narrative intake, link analysis, and how the platform handles the work after every incident — on your data, not a demo dataset.</p>
+    <div class="cta-actions">
+      <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-white">Book 30 minutes →</a>
+      <a href="/#partner" class="btn btn-outline-white">Become a design partner</a>
+    </div>
+    <p class="cta-note">No sales deck. A real conversation about your operations.</p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <div class="mark">
+            <svg viewBox="0 0 28 28" fill="none">
+              <circle cx="4"  cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="24" cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="4"  cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="24" cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="14" cy="4"  r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="4"  cy="14" r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="24" cy="14" r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="14" cy="24" r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="14" cy="14" r="4"   fill="rgba(255,255,255,0.9)"/>
+            </svg>
+          </div>
+          <span class="wordmark wordmark-light">LEGIO</span>
+        </a>
+      </div>
+      <span class="footer-copy">&copy; 2026 Legio. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="mailto:hello@getlegio.com">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── SCRIPTS ──────────────────────────────────────────────────── -->
+<script>
+// Intersection Observer for fade-up animations
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
+
+// ─── LINK ANALYSIS CANVAS ──────────────────────────────────────
+(function() {
+  var cv = document.getElementById('linkCanvas');
+  if (!cv) return;
+  var cx = cv.getContext('2d');
+  var alertEl = document.getElementById('patternAlert');
+  var badgeEl = document.getElementById('statusBadge');
+  var W = 900, H = 480;
+  var dpr = window.devicePixelRatio || 1;
+
+  cv.width = W * dpr;
+  cv.height = H * dpr;
+  cv.style.width = W + 'px';
+  cv.style.height = H + 'px';
+  cx.scale(dpr, dpr);
+
+  // Hub node (center of the pattern)
+  var hub = { id: 0, label: 'Bike Theft', sub: 'Library — Tue 8:15pm', x: 400, y: 240, r: 24, col: '#5B9BD5', cluster: true };
+
+  // Cluster nodes (connected to hub)
+  var cluster = [
+    { id: 1, label: 'Bike Theft',  sub: 'Sci Bldg — Mon 7:45pm',  x: 195, y: 120, r: 18, col: '#5B9BD5', cluster: true },
+    { id: 2, label: 'Bike Theft',  sub: 'Union — Wed 9:10pm',      x: 618, y: 110, r: 18, col: '#5B9BD5', cluster: true },
+    { id: 3, label: 'Bike Theft',  sub: 'Lot C — Thu 9:31pm',      x: 175, y: 365, r: 18, col: '#5B9BD5', cluster: true },
+    { id: 4, label: 'Bike Theft',  sub: 'Admin — Fri 8:40pm',      x: 625, y: 355, r: 18, col: '#5B9BD5', cluster: true },
+  ];
+
+  // Peripheral nodes (not part of pattern)
+  var peripheral = [
+    { id: 5, label: 'Vandalism',   sub: 'Gym',            x: 760, y: 205, r: 11, col: '#4A6580', cluster: false },
+    { id: 6, label: 'Trespass',    sub: 'Dorm B',         x: 68,  y: 240, r: 10, col: '#4A6580', cluster: false },
+    { id: 7, label: 'Assault',     sub: 'Quad',           x: 400, y: 440, r: 10, col: '#4A6580', cluster: false },
+    { id: 8, label: 'Drug',        sub: 'Parking A',      x: 400, y: 42,  r: 10, col: '#4A6580', cluster: false },
+    { id: 9, label: 'Trespass',    sub: 'Science Hall',   x: 800, y: 400, r: 10, col: '#4A6580', cluster: false },
+    { id: 10, label: 'Vandalism',  sub: 'Athletic Ctr',   x: 100, y: 430, r: 10, col: '#4A6580', cluster: false },
+  ];
+
+  var allNodes = [hub].concat(cluster, peripheral);
+
+  // Cluster links (hub ↔ each cluster node)
+  var clusterLinks = cluster.map(function(n) {
+    return { a: hub, b: n, conf: (0.84 + Math.random() * 0.09).toFixed(2) };
+  });
+
+  // Weak peripheral links
+  var weakLinks = [
+    { a: peripheral[0], b: peripheral[4], conf: '0.28' },
+    { a: peripheral[1], b: peripheral[5], conf: '0.21' },
+  ];
+
+  var phase = 0; // 0=nodes fade in, 1=links draw, 2=pattern glow, 3=hold
+  var tick = 0;
+  var nodeAlpha = allNodes.map(function() { return 0; });
+  var linkProgress = clusterLinks.concat(weakLinks).map(function() { return 0; });
+  var allLinks = clusterLinks.concat(weakLinks);
+
+  function drawNode(n, alpha, glowAmount) {
+    cx.save();
+    cx.globalAlpha = alpha;
+
+    // Glow
+    if (glowAmount > 0) {
+      cx.beginPath();
+      cx.arc(n.x, n.y, n.r + 12 + glowAmount * 4, 0, Math.PI * 2);
+      cx.fillStyle = n.cluster ? 'rgba(91,155,213,0.12)' : 'rgba(74,101,128,0.06)';
+      cx.fill();
+    }
+
+    // Circle
+    cx.beginPath();
+    cx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+    cx.fillStyle = n.cluster ? 'rgba(91,155,213,0.15)' : 'rgba(74,101,128,0.08)';
+    cx.fill();
+    cx.strokeStyle = n.col;
+    cx.lineWidth = n.cluster ? 2 : 1;
+    cx.stroke();
+
+    // Inner dot
+    cx.beginPath();
+    cx.arc(n.x, n.y, n.cluster ? 5 : 3, 0, Math.PI * 2);
+    cx.fillStyle = n.col;
+    cx.fill();
+
+    // Label
+    cx.font = '600 11px Outfit, sans-serif';
+    cx.fillStyle = 'rgba(255,255,255,0.85)';
+    cx.textAlign = 'center';
+    cx.fillText(n.label, n.x, n.y - n.r - 12);
+
+    // Sub label
+    cx.font = '400 10px Outfit, sans-serif';
+    cx.fillStyle = 'rgba(255,255,255,0.4)';
+    cx.fillText(n.sub, n.x, n.y - n.r - 1);
+
+    cx.restore();
+  }
+
+  function drawLink(link, progress, isCluster) {
+    if (progress <= 0) return;
+    var a = link.a, b = link.b;
+    var ex = a.x + (b.x - a.x) * Math.min(progress, 1);
+    var ey = a.y + (b.y - a.y) * Math.min(progress, 1);
+
+    cx.save();
+    cx.beginPath();
+    cx.moveTo(a.x, a.y);
+    cx.lineTo(ex, ey);
+
+    if (isCluster) {
+      cx.strokeStyle = 'rgba(91,155,213,0.5)';
+      cx.lineWidth = 2;
+    } else {
+      cx.setLineDash([4, 6]);
+      cx.strokeStyle = 'rgba(74,101,128,0.25)';
+      cx.lineWidth = 1;
+    }
+    cx.stroke();
+
+    // Confidence badge on cluster links
+    if (isCluster && progress >= 1) {
+      var mx = (a.x + b.x) / 2;
+      var my = (a.y + b.y) / 2;
+      var text = Math.round(link.conf * 100) + '%';
+
+      cx.font = '700 10px Outfit, sans-serif';
+      var tw = cx.measureText(text).width;
+      var pw = tw + 12;
+      var ph = 18;
+
+      // Pill background
+      cx.beginPath();
+      var pr = 9;
+      cx.moveTo(mx - pw/2 + pr, my - ph/2);
+      cx.lineTo(mx + pw/2 - pr, my - ph/2);
+      cx.arcTo(mx + pw/2, my - ph/2, mx + pw/2, my, pr);
+      cx.arcTo(mx + pw/2, my + ph/2, mx + pw/2 - pr, my + ph/2, pr);
+      cx.lineTo(mx - pw/2 + pr, my + ph/2);
+      cx.arcTo(mx - pw/2, my + ph/2, mx - pw/2, my, pr);
+      cx.arcTo(mx - pw/2, my - ph/2, mx - pw/2 + pr, my - ph/2, pr);
+      cx.closePath();
+      cx.fillStyle = 'rgba(22,32,56,0.9)';
+      cx.fill();
+      cx.strokeStyle = 'rgba(91,155,213,0.4)';
+      cx.lineWidth = 1;
+      cx.stroke();
+
+      cx.fillStyle = '#5B9BD5';
+      cx.textAlign = 'center';
+      cx.textBaseline = 'middle';
+      cx.fillText(text, mx, my);
+    }
+    cx.restore();
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    cx.clearRect(0, 0, W, H);
+    tick++;
+
+    // Phase 0: Fade in nodes
+    if (phase === 0) {
+      for (var i = 0; i < allNodes.length; i++) {
+        var target = (tick > i * 12) ? 1 : 0;
+        nodeAlpha[i] += (target - nodeAlpha[i]) * 0.08;
+      }
+      if (tick > allNodes.length * 12 + 30) { phase = 1; tick = 0; }
+    }
+
+    // Phase 1: Draw links progressively
+    if (phase === 1) {
+      for (var j = 0; j < allLinks.length; j++) {
+        var startTick = j * 25;
+        if (tick > startTick) {
+          linkProgress[j] = Math.min(linkProgress[j] + 0.035, 1);
+        }
+      }
+      if (tick > allLinks.length * 25 + 40) { phase = 2; tick = 0; }
+    }
+
+    // Phase 2: Pattern detected glow
+    if (phase === 2) {
+      if (tick === 1) {
+        alertEl.classList.add('visible');
+        badgeEl.textContent = 'Pattern Detected';
+        badgeEl.classList.add('detected');
+      }
+      if (tick > 200) {
+        phase = 3;
+        tick = 0;
+        // Reset
+        alertEl.classList.remove('visible');
+        badgeEl.textContent = 'Scanning...';
+        badgeEl.classList.remove('detected');
+        nodeAlpha = allNodes.map(function() { return 0; });
+        linkProgress = allLinks.map(function() { return 0; });
+      }
+    }
+
+    // Phase 3: Brief pause before restart
+    if (phase === 3) {
+      if (tick > 60) { phase = 0; tick = 0; }
+    }
+
+    // Glow calculation for cluster nodes during phase 2
+    var glow = 0;
+    if (phase === 2) {
+      glow = Math.sin(tick * 0.06) * 0.5 + 0.5;
+    }
+
+    // Draw weak links first (behind everything)
+    for (var wl = clusterLinks.length; wl < allLinks.length; wl++) {
+      drawLink(allLinks[wl], linkProgress[wl], false);
+    }
+
+    // Draw cluster links
+    for (var cl = 0; cl < clusterLinks.length; cl++) {
+      drawLink(allLinks[cl], linkProgress[cl], true);
+    }
+
+    // Draw all nodes
+    for (var ni = 0; ni < allNodes.length; ni++) {
+      drawNode(allNodes[ni], nodeAlpha[ni], glow);
+    }
+  }
+
+  animate();
+</script>
+
+</body>
+</html>
