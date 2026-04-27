@@ -16,16 +16,16 @@
 
   <!-- SEO -->
   <title>Incident Management Software for Physical Security Operations — Legio</title>
-  <meta name="description" content="Incident management built for physical security operations. The officer tells the story. The system does the work. Zero re-entry, automatic classification, intelligent data mapping." />
+  <meta name="description" content="Guard tour built for physical security operations. Dynamic patrol management, real-time officer visibility, and connected data that drives better decisions." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://getlegio.com/incident-management/" />
+  <link rel="canonical" href="https://getlegio.com/guard-tour/" />
   <meta name="keywords" content="incident management software, physical security incident management, security operations incident tracking, incident reporting platform, security incident management system" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Legio" />
-  <meta property="og:title" content="Incident Management Software for Physical Security Operations — Legio" />
-  <meta property="og:description" content="Incident management built for physical security operations. The officer tells the story. The system does the work." />
+  <meta property="og:title" content="Guard Tour Software for Physical Security Operations — Legio" />
+  <meta property="og:description" content="Dynamic guard tour for physical security operations. Real-time visibility, connected data, modern UX." />
   <meta property="og:url" content="https://getlegio.com/incident-management/" />
   <meta property="og:image" content="https://getlegio.com/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -37,10 +37,10 @@
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Legio Incident Management",
+    "name": "Legio Guard Tour",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "Incident management software for physical security operations. Zero re-keying, modern UX, pervasive data mapping across every input in the platform.",
+    "description": "Guard tour software for physical security operations. Dynamic patrol management, real-time visibility, connected to the data that drives decisions.",
     "url": "https://getlegio.com/incident-management/",
     "publisher": { "@type": "Organization", "name": "Legio", "url": "https://getlegio.com" }
   }
@@ -150,7 +150,7 @@
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 440px;
+      grid-template-columns: 1fr 1fr;
       gap: var(--sp12);
       align-items: center;
     }
@@ -167,13 +167,12 @@
     .hero-actions { display: flex; gap: var(--sp4); flex-wrap: wrap; }
 
     .hero-screenshot {
-      background: var(--ice); border: 1px solid var(--frost);
       border-radius: var(--r-xl); overflow: hidden;
-      aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 16px 48px rgba(22,32,56,0.1);
+      box-shadow: 0 16px 48px rgba(22,32,56,0.12);
     }
     .hero-screenshot img {
-      width: 100%; height: 100%; object-fit: cover;
+      width: 100%; height: auto; display: block;
+      border-radius: var(--r-xl);
     }
     .hero-screenshot-placeholder {
       display: flex; flex-direction: column; align-items: center; gap: var(--sp3);
@@ -468,169 +467,219 @@
     <div class="hero-grid">
       <div class="hero-content fade-up">
         <span class="label">Incident Management</span>
-        <h1 class="display">The officer tells the story. <em>The system does the work.</em></h1>
-        <p class="hero-sub">Traditional incident software is a form to fill out. Legio is an intelligent partner — it listens, extracts, connects, and asks the right questions so your team can focus on what actually matters.</p>
+        <h1 class="display">The officer tells the story. <em>Legio handles what follows.</em></h1>
+        <p class="hero-sub">Structured intake. Automatic classification. Regulatory obligations that close themselves out. One record from first report to final disposition — without the administrative tail.</p>
         <div class="hero-actions">
-          <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">See it in action →</a>
-          <a href="/#partner" class="btn btn-outline">Become a design partner</a>
+          <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book 30 minutes →</a>
         </div>
       </div>
       <div class="hero-screenshot fade-up fade-up-delay-1">
-        <!-- Replace with product screenshot: <img src="incident-screenshot.png" alt="Legio incident management interface" /> -->
-        <div class="hero-screenshot-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-          <span>Product screenshot</span>
-        </div>
+        <img src="incident-screenshot.png" alt="Legio incident management — incident detail view" style="width:100%;height:auto;display:block;border-radius:var(--r-xl);box-shadow:0 24px 64px rgba(22,32,56,0.18);" />
       </div>
     </div>
   </div>
 </section>
 
 <!-- ─── THE PROBLEM ──────────────────────────────────────────────── -->
-<section class="problem">
+<section style="padding:var(--sp20) 0;background:var(--white);">
   <div class="container">
-    <div class="problem-intro fade-up">
-      <span class="label">The Problem</span>
-      <h2 class="h2">Three ways traditional incident software <span class="muted">fails your team.</span></h2>
-      <p>Every incident management system built in the last 20 years was designed around one assumption: officers should fill out forms. That assumption is wrong.</p>
-    </div>
-    <div class="problem-grid">
-      <div class="problem-card fade-up">
-        <h3>Data loss at intake</h3>
-        <p>Officers simplify narratives to fit forms. The smell of alcohol, a subject's demeanor, the exact sequence of events — context that matters gets discarded because there's no dropdown for it.</p>
-        <span class="problem-stat">Rich context → lost forever</span>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <div class="fade-up">
+        <span class="label">The problem</span>
+        <h2 style="font-size:40px;line-height:50px;font-weight:600;letter-spacing:-0.01em;margin:var(--sp3) 0 var(--sp6);">Every incident generates work that has nothing to do with safety.</h2>
+        <p style="font-size:17px;color:var(--slate);line-height:28px;margin-bottom:var(--sp6);">Reports to write. Classifications to apply. Notifications to send. Regulatory boxes to tick. Legacy platforms digitized that work — they didn't eliminate it.</p>
+        <p style="font-size:17px;color:var(--slate);line-height:28px;">Officers still carry the administrative tail from every event they respond to. That time comes from somewhere — and it comes from safety.</p>
       </div>
-      <div class="problem-card fade-up fade-up-delay-1">
-        <h3>Manual at every step</h3>
-        <p>Once an incident is filed, someone has to route it, notify stakeholders, escalate if needed, track follow-ups, and close it out. Every step depends on a person remembering to do it — and every missed step is a gap in your record.</p>
-        <span class="problem-stat">Process runs on memory</span>
-      </div>
-      <div class="problem-card fade-up fade-up-delay-2">
-        <h3>Siloed intelligence</h3>
-        <p>Related incidents are never linked because systems can only match on exact field values. A serial pattern across buildings with slightly different descriptions? Invisible to every legacy platform.</p>
-        <span class="problem-stat">Patterns go undetected</span>
+      <div class="fade-up fade-up-delay-1" style="display:flex;flex-direction:column;gap:var(--sp4);">
+        <div style="padding:var(--sp6);background:var(--ice);border-radius:var(--r-xl);border-left:3px solid var(--coverage);">
+          <div style="font-size:13px;font-weight:600;color:var(--coverage);margin-bottom:var(--sp2);">Reports written twice</div>
+          <div style="font-size:15px;color:var(--slate);line-height:23px;">Officers narrate the event in the field, then re-enter it into a system. Same information, entered twice, in different formats.</div>
+        </div>
+        <div style="padding:var(--sp6);background:var(--ice);border-radius:var(--r-xl);border-left:3px solid var(--coverage);">
+          <div style="font-size:13px;font-weight:600;color:var(--coverage);margin-bottom:var(--sp2);">Classification done manually</div>
+          <div style="font-size:15px;color:var(--slate);line-height:23px;">Someone has to decide what category an incident falls into, whether it's reportable, and who needs to know. That logic should run automatically.</div>
+        </div>
+        <div style="padding:var(--sp6);background:var(--ice);border-radius:var(--r-xl);border-left:3px solid var(--coverage);">
+          <div style="font-size:13px;font-weight:600;color:var(--coverage);margin-bottom:var(--sp2);">Compliance compiled at year end</div>
+          <div style="font-size:15px;color:var(--slate);line-height:23px;">Required reports are assembled from operational data that was never structured to feed them. It takes weeks. It shouldn't take minutes.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── LINK ANALYSIS ────────────────────────────────────────────── -->
-<section class="link-analysis">
+<!-- ─── PULL QUOTE ────────────────────────────────────────────────── -->
+<section style="background:var(--ice);padding:var(--sp16) 0;border-top:1px solid var(--frost);border-bottom:1px solid var(--frost);">
   <div class="container">
-    <div class="link-intro fade-up">
-      <span class="label">Intelligence Engine</span>
-      <h2 class="h2">Connections that would be impossible to find manually.</h2>
-      <p>Legio's link analysis engine continuously scans every incident for behavioral signatures, location patterns, and temporal correlations — surfacing connections with confidence scores that a human investigator would take weeks to identify.</p>
-    </div>
-
-    <div class="link-canvas-wrap fade-up">
-      <div class="link-canvas-header">
-        <span class="link-canvas-title">Link Analysis Engine</span>
-        <span class="link-canvas-badge" id="statusBadge">Scanning...</span>
-      </div>
-      <canvas id="linkCanvas" width="900" height="480"></canvas>
-      <div class="pattern-alert" id="patternAlert">
-        <div class="pattern-alert-dot"></div>
-        <span class="pattern-alert-text"><strong>Pattern detected:</strong> 5 bike thefts across 4 buildings, 18:00–22:00 window, similar MO. Confidence 91%.</span>
-      </div>
-    </div>
-
-    <div class="link-caption fade-up">
-      <div class="link-caption-item">
-        <div class="link-caption-num">91%</div>
-        <div class="link-caption-text">Average confidence on<br/>confirmed pattern clusters</div>
-      </div>
-      <div class="link-caption-item">
-        <div class="link-caption-num">5→1</div>
-        <div class="link-caption-text">Separate reports resolved<br/>into a single investigation</div>
-      </div>
-      <div class="link-caption-item">
-        <div class="link-caption-num">&lt;2min</div>
-        <div class="link-caption-text">From new incident to<br/>pattern match notification</div>
-      </div>
+    <div style="max-width:800px;margin:0 auto;text-align:center;" class="fade-up">
+      <p style="font-size:28px;line-height:42px;font-weight:400;color:var(--command);letter-spacing:-0.01em;">"The administrative burden that follows every safety event is the biggest tax on safety operations. The best teams aren't the ones who do more paperwork faster. They're the ones who don't do it at all."</p>
     </div>
   </div>
 </section>
 
 <!-- ─── HOW IT WORKS ─────────────────────────────────────────────── -->
-<section class="how-it-works">
+<section style="background:var(--command);padding:var(--sp20) 0;">
   <div class="container">
-    <div class="how-intro fade-up">
-      <span class="label">How It Works</span>
-      <h2 class="h2">From scene to closed record. No forms.</h2>
-      <p>Legio inverts the incident workflow. The officer narrates what happened. The system does everything else.</p>
+    <div style="max-width:600px;margin-bottom:var(--sp12);" class="fade-up">
+      <span class="label" style="color:var(--perimeter);">How it works</span>
+      <h2 style="font-size:40px;line-height:50px;font-weight:600;letter-spacing:-0.01em;color:var(--white);margin-top:var(--sp3);">One record. From first report to final disposition.</h2>
     </div>
-    <div class="how-grid fade-up">
-      <div class="how-step-item">
-        <h3>Narrative intake</h3>
-        <p>The officer speaks or types what happened. No dropdowns, no structured entry screens. The platform extracts every data element — people, locations, times, incident type, severity.</p>
+
+    <!-- Step 1 — text left, visual right -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:var(--sp12) 0;border-bottom:1px solid rgba(255,255,255,0.07);" class="fade-up">
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:var(--sp3);">Step 1 — Capture</div>
+        <h3 style="font-size:24px;font-weight:600;color:var(--white);margin-bottom:var(--sp4);line-height:32px;">Structured intake. The officer fills in what matters.</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:26px;">Guided, incident-specific fields mean officers capture the right information the first time. No generic forms. No missing fields to chase down later. The record is complete before the officer leaves the scene.</p>
       </div>
-      <div class="how-step-item">
-        <h3>Zero re-entry</h3>
-        <p>Every element permeates everywhere it needs to go: the incident record, daily activity report, compliance datasets. Enter once, propagate everywhere.</p>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-xl);padding:var(--sp6);">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:var(--sp4);">Incident intake</div>
+        <div style="display:flex;flex-direction:column;gap:var(--sp3);">
+          <div style="background:rgba(255,255,255,0.05);border-radius:var(--r-md);padding:10px 14px;">
+            <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-bottom:4px;">INCIDENT TYPE</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.85);">Robbery · Critical</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.05);border-radius:var(--r-md);padding:10px 14px;">
+            <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-bottom:4px;">LOCATION</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.85);">Mac Lot M3 — Stewart</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.05);border-radius:var(--r-md);padding:10px 14px;">
+            <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-bottom:4px;">SOURCE</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.85);">Camera alert</div>
+          </div>
+          <div style="display:flex;gap:var(--sp2);margin-top:var(--sp2);">
+            <div style="padding:6px 12px;background:rgba(46,97,138,0.4);border-radius:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);">Clery reportable</div>
+            <div style="padding:6px 12px;background:rgba(46,97,138,0.4);border-radius:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);">Auto-flagged</div>
+          </div>
+        </div>
       </div>
-      <div class="how-step-item">
-        <h3>Intelligent follow-through</h3>
-        <p>Legio doesn't just store data — it works it. Link analysis runs continuously. Gaps generate follow-up prompts. An active partner, not a filing cabinet.</p>
+    </div>
+
+    <!-- Step 2 — visual left, text right -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:var(--sp12) 0;border-bottom:1px solid rgba(255,255,255,0.07);" class="fade-up fade-up-delay-1">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-xl);padding:var(--sp6);">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:var(--sp4);">Automatic routing</div>
+        <div style="display:flex;flex-direction:column;gap:var(--sp2);">
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div style="width:6px;height:6px;border-radius:50%;background:#34D399;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:rgba(255,255,255,0.7);">Classified as Clery reportable</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div style="width:6px;height:6px;border-radius:50%;background:#34D399;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:rgba(255,255,255,0.7);">Supervisor notified automatically</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div style="width:6px;height:6px;border-radius:50%;background:#34D399;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:rgba(255,255,255,0.7);">Follow-up task created</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;">
+            <div style="width:6px;height:6px;border-radius:50%;background:#34D399;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:rgba(255,255,255,0.7);">ASR record updated</span>
+          </div>
+        </div>
+        <p style="font-size:12px;color:rgba(255,255,255,0.2);margin-top:var(--sp4);font-style:italic;">All automatic. No one had to remember.</p>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:var(--sp3);">Step 2 — Route</div>
+        <h3 style="font-size:24px;font-weight:600;color:var(--white);margin-bottom:var(--sp4);line-height:32px;">Classification and routing run on the rules you set — not on memory.</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:26px;">Incident type determines what happens next. Reportable events get flagged. Supervisors get notified. Tasks get created. The right people know — based on logic you defined once, not based on whether an officer remembered to call someone.</p>
+      </div>
+    </div>
+
+    <!-- Step 3 & 4 — two columns -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;padding:var(--sp12) 0;" class="fade-up fade-up-delay-2">
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:var(--sp3);">Step 3 — Notify</div>
+        <h3 style="font-size:24px;font-weight:600;color:var(--white);margin-bottom:var(--sp4);line-height:32px;">The right people know immediately.</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:26px;">Tiered notification logic means your chain of command gets informed based on incident severity and type — not because an officer remembered to make a call.</p>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:var(--sp3);">Step 4 — Close out</div>
+        <h3 style="font-size:24px;font-weight:600;color:var(--white);margin-bottom:var(--sp4);line-height:32px;">Regulatory obligations handled. Automatically.</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:26px;">Required reports aren't something you prepare. They're something Legio has been building all year from your operational data. Review, sign, submit.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── HUMAN AUTHORITY / PLATFORM VELOCITY ───────────────────────── -->
-<section class="authority">
+<!-- ─── FEATURES ─────────────────────────────────────────────────── -->
+<section style="padding:var(--sp20) 0;background:var(--ice);">
   <div class="container">
-    <div class="authority-intro fade-up">
-      <span class="label">Your Authority, Platform Velocity</span>
-      <h2 class="h2">Every decision stays with your team.</h2>
-      <p>Legio accelerates the work. Your officers make the calls. This is the line the platform never crosses.</p>
-    </div>
-    <div class="authority-grid fade-up">
-      <div>
-        <div class="authority-col-header ai">Legio Does</div>
-        <div class="authority-row">
-          <div class="authority-row-label">Intake</div>
-          <div class="authority-row-text">Extracts structured data from natural language</div>
-        </div>
-        <div class="authority-row">
-          <div class="authority-row-label">Classification</div>
-          <div class="authority-row-text">Suggests incident category and severity tier</div>
-        </div>
-        <div class="authority-row">
-          <div class="authority-row-label">Link Analysis</div>
-          <div class="authority-row-text">Detects cross-incident patterns with confidence scores</div>
-        </div>
-        <div class="authority-row">
-          <div class="authority-row-label">Gaps</div>
-          <div class="authority-row-text">Identifies missing information and prompts follow-up</div>
-        </div>
-        <div class="authority-row">
-          <div class="authority-row-label">Reporting</div>
-          <div class="authority-row-text">Populates compliance datasets and daily logs automatically</div>
-        </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+      <div class="fade-up" style="position:sticky;top:100px;">
+        <span class="label">What's included</span>
+        <h2 style="font-size:40px;line-height:50px;font-weight:600;letter-spacing:-0.01em;margin:var(--sp3) 0 var(--sp4);">Every capability your incident program needs.</h2>
+        <p style="color:var(--slate);font-size:17px;line-height:28px;margin-bottom:var(--sp8);">Built for physical security operations — not adapted from a generic case management tool.</p>
+        <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book 30 minutes →</a>
       </div>
-      <div>
-        <div class="authority-col-header human">Your Team Decides</div>
-        <div class="authority-row">
-          <div class="authority-row-label">Intake</div>
-          <div class="authority-row-text">Confirms extracted details are accurate</div>
+      <div style="display:flex;flex-direction:column;gap:0;">
+
+        <div class="fade-up" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;border-bottom:1px solid var(--frost);">
+          <div style="width:48px;height:48px;flex-shrink:0;border-radius:var(--r-md);background:var(--command);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Structured intake</div>
+            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">Guided forms for every incident type</div>
+            <div style="font-size:14px;color:var(--slate);line-height:22px;">Officers see only the fields relevant to the incident in front of them. Mobile-first. Incident-specific. Complete before they leave the scene.</div>
+          </div>
         </div>
-        <div class="authority-row">
-          <div class="authority-row-label">Classification</div>
-          <div class="authority-row-text">Approves or overrides the classification</div>
+
+        <div class="fade-up fade-up-delay-1" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;border-bottom:1px solid var(--frost);">
+          <div style="width:48px;height:48px;flex-shrink:0;border-radius:var(--r-md);background:var(--command);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Automatic classification</div>
+            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">Reportable events flagged without manual review</div>
+            <div style="font-size:14px;color:var(--slate);line-height:22px;">Clery-reportable incidents classified automatically. No supervisor manually reviewing every report to decide what needs to go where.</div>
+          </div>
         </div>
-        <div class="authority-row">
-          <div class="authority-row-label">Link Analysis</div>
-          <div class="authority-row-text">Accepts, rejects, or escalates detected patterns</div>
+
+        <div class="fade-up fade-up-delay-2" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;border-bottom:1px solid var(--frost);">
+          <div style="width:48px;height:48px;flex-shrink:0;border-radius:var(--r-md);background:var(--command);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Notification routing</div>
+            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">The right people notified. Every time.</div>
+            <div style="font-size:14px;color:var(--slate);line-height:22px;">Tiered notification rules route alerts to supervisors, leadership, and legal based on incident type and severity — configured once, runs automatically.</div>
+          </div>
         </div>
-        <div class="authority-row">
-          <div class="authority-row-label">Investigation</div>
-          <div class="authority-row-text">Determines response and resource allocation</div>
+
+        <div class="fade-up" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;border-bottom:1px solid var(--frost);">
+          <div style="width:48px;height:48px;flex-shrink:0;border-radius:var(--r-md);background:var(--command);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Narrative management</div>
+            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">Every statement, note, and update in one record</div>
+            <div style="font-size:14px;color:var(--slate);line-height:22px;">Officer narratives, witness statements, supervisor notes, and follow-up actions all captured in a single chronological record tied to the incident.</div>
+          </div>
         </div>
-        <div class="authority-row">
-          <div class="authority-row-label">Reporting</div>
-          <div class="authority-row-text">Reviews and signs off before submission</div>
+
+        <div class="fade-up fade-up-delay-1" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;border-bottom:1px solid var(--frost);">
+          <div style="width:48px;height:48px;flex-shrink:0;border-radius:var(--r-md);background:var(--command);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Regulatory compliance</div>
+            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">Clery data built from operations, not assembled at year end</div>
+            <div style="font-size:14px;color:var(--slate);line-height:22px;">Every classified incident feeds the Annual Security Report automatically. The report is ready because the data was always structured to produce it.</div>
+          </div>
         </div>
+
+        <div class="fade-up fade-up-delay-2" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;">
+          <div style="width:48px;height:48px;flex-shrink:0;border-radius:var(--r-md);background:var(--command);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Audit trail</div>
+            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">Every action logged. Nothing missing.</div>
+            <div style="font-size:14px;color:var(--slate);line-height:22px;">A complete, tamper-evident record of every change, notification, and action taken on every incident — always current, always ready.</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -639,13 +688,12 @@
 <!-- ─── FINAL CTA ────────────────────────────────────────────────── -->
 <section class="final-cta">
   <div class="container">
-    <h2 class="h1">See what incident management should look like.</h2>
-    <p>Book 30 minutes with the team. We'll walk through narrative intake, link analysis, and how the platform handles the work after every incident — on your data, not a demo dataset.</p>
+    <h2 class="h1">See what incident management looks like without the administrative tail.</h2>
+    <p>Book 30 minutes. We'll walk through how Legio handles your operations end to end.</p>
     <div class="cta-actions">
       <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-white">Book 30 minutes →</a>
-      <a href="/#partner" class="btn btn-outline-white">Become a design partner</a>
     </div>
-    <p class="cta-note">No sales deck. A real conversation about your operations.</p>
+    <p class="cta-note">A real conversation about your operations — not a scripted demo.</p>
   </div>
 </section>
 
@@ -674,7 +722,7 @@
       <span class="footer-copy">&copy; 2026 Legio. All rights reserved.</span>
       <div class="footer-links">
         <a href="/privacy/">Privacy</a>
-        <a href="https://www.linkedin.com/company/legiosoftware" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;color:rgba(255,255,255,0.3);transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.6)'" onmouseout="this.style.color='rgba(255,255,255,0.3)'" aria-label="Legio on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://www.linkedin.com/company/legiosoftware" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;color:rgba(255,255,255,0.3);transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.6)'" onmouseout="this.style.color='rgba(255,255,255,0.3)'" aria-label="Legio on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="/terms/">Terms</a>
         <a href="mailto:hello@getlegio.com">Contact</a>
       </div>
@@ -689,233 +737,6 @@ var obs = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
-
-// ─── LINK ANALYSIS CANVAS ──────────────────────────────────────
-(function() {
-  var cv = document.getElementById('linkCanvas');
-  if (!cv) return;
-  var cx = cv.getContext('2d');
-  var alertEl = document.getElementById('patternAlert');
-  var badgeEl = document.getElementById('statusBadge');
-  var W = 900, H = 480;
-  var dpr = window.devicePixelRatio || 1;
-
-  cv.width = W * dpr;
-  cv.height = H * dpr;
-  cv.style.width = W + 'px';
-  cv.style.height = H + 'px';
-  cx.scale(dpr, dpr);
-
-  // Hub node (center of the pattern)
-  var hub = { id: 0, label: 'Bike Theft', sub: 'Library — Tue 8:15pm', x: 400, y: 240, r: 24, col: '#5B9BD5', cluster: true };
-
-  // Cluster nodes (connected to hub)
-  var cluster = [
-    { id: 1, label: 'Bike Theft',  sub: 'Sci Bldg — Mon 7:45pm',  x: 195, y: 120, r: 18, col: '#5B9BD5', cluster: true },
-    { id: 2, label: 'Bike Theft',  sub: 'Union — Wed 9:10pm',      x: 618, y: 110, r: 18, col: '#5B9BD5', cluster: true },
-    { id: 3, label: 'Bike Theft',  sub: 'Lot C — Thu 9:31pm',      x: 175, y: 365, r: 18, col: '#5B9BD5', cluster: true },
-    { id: 4, label: 'Bike Theft',  sub: 'Admin — Fri 8:40pm',      x: 625, y: 355, r: 18, col: '#5B9BD5', cluster: true },
-  ];
-
-  // Peripheral nodes (not part of pattern)
-  var peripheral = [
-    { id: 5, label: 'Vandalism',   sub: 'Gym',            x: 760, y: 205, r: 11, col: '#4A6580', cluster: false },
-    { id: 6, label: 'Trespass',    sub: 'Dorm B',         x: 68,  y: 240, r: 10, col: '#4A6580', cluster: false },
-    { id: 7, label: 'Assault',     sub: 'Quad',           x: 400, y: 440, r: 10, col: '#4A6580', cluster: false },
-    { id: 8, label: 'Drug',        sub: 'Parking A',      x: 400, y: 42,  r: 10, col: '#4A6580', cluster: false },
-    { id: 9, label: 'Trespass',    sub: 'Science Hall',   x: 800, y: 400, r: 10, col: '#4A6580', cluster: false },
-    { id: 10, label: 'Vandalism',  sub: 'Athletic Ctr',   x: 100, y: 430, r: 10, col: '#4A6580', cluster: false },
-  ];
-
-  var allNodes = [hub].concat(cluster, peripheral);
-
-  // Cluster links (hub ↔ each cluster node)
-  var clusterLinks = cluster.map(function(n) {
-    return { a: hub, b: n, conf: (0.84 + Math.random() * 0.09).toFixed(2) };
-  });
-
-  // Weak peripheral links
-  var weakLinks = [
-    { a: peripheral[0], b: peripheral[4], conf: '0.28' },
-    { a: peripheral[1], b: peripheral[5], conf: '0.21' },
-  ];
-
-  var phase = 0; // 0=nodes fade in, 1=links draw, 2=pattern glow, 3=hold
-  var tick = 0;
-  var nodeAlpha = allNodes.map(function() { return 0; });
-  var linkProgress = clusterLinks.concat(weakLinks).map(function() { return 0; });
-  var allLinks = clusterLinks.concat(weakLinks);
-
-  function drawNode(n, alpha, glowAmount) {
-    cx.save();
-    cx.globalAlpha = alpha;
-
-    // Glow
-    if (glowAmount > 0) {
-      cx.beginPath();
-      cx.arc(n.x, n.y, n.r + 12 + glowAmount * 4, 0, Math.PI * 2);
-      cx.fillStyle = n.cluster ? 'rgba(91,155,213,0.12)' : 'rgba(74,101,128,0.06)';
-      cx.fill();
-    }
-
-    // Circle
-    cx.beginPath();
-    cx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-    cx.fillStyle = n.cluster ? 'rgba(91,155,213,0.15)' : 'rgba(74,101,128,0.08)';
-    cx.fill();
-    cx.strokeStyle = n.col;
-    cx.lineWidth = n.cluster ? 2 : 1;
-    cx.stroke();
-
-    // Inner dot
-    cx.beginPath();
-    cx.arc(n.x, n.y, n.cluster ? 5 : 3, 0, Math.PI * 2);
-    cx.fillStyle = n.col;
-    cx.fill();
-
-    // Label
-    cx.font = '600 11px Outfit, sans-serif';
-    cx.fillStyle = 'rgba(255,255,255,0.85)';
-    cx.textAlign = 'center';
-    cx.fillText(n.label, n.x, n.y - n.r - 12);
-
-    // Sub label
-    cx.font = '400 10px Outfit, sans-serif';
-    cx.fillStyle = 'rgba(255,255,255,0.4)';
-    cx.fillText(n.sub, n.x, n.y - n.r - 1);
-
-    cx.restore();
-  }
-
-  function drawLink(link, progress, isCluster) {
-    if (progress <= 0) return;
-    var a = link.a, b = link.b;
-    var ex = a.x + (b.x - a.x) * Math.min(progress, 1);
-    var ey = a.y + (b.y - a.y) * Math.min(progress, 1);
-
-    cx.save();
-    cx.beginPath();
-    cx.moveTo(a.x, a.y);
-    cx.lineTo(ex, ey);
-
-    if (isCluster) {
-      cx.strokeStyle = 'rgba(91,155,213,0.5)';
-      cx.lineWidth = 2;
-    } else {
-      cx.setLineDash([4, 6]);
-      cx.strokeStyle = 'rgba(74,101,128,0.25)';
-      cx.lineWidth = 1;
-    }
-    cx.stroke();
-
-    // Confidence badge on cluster links
-    if (isCluster && progress >= 1) {
-      var mx = (a.x + b.x) / 2;
-      var my = (a.y + b.y) / 2;
-      var text = Math.round(link.conf * 100) + '%';
-
-      cx.font = '700 10px Outfit, sans-serif';
-      var tw = cx.measureText(text).width;
-      var pw = tw + 12;
-      var ph = 18;
-
-      // Pill background
-      cx.beginPath();
-      var pr = 9;
-      cx.moveTo(mx - pw/2 + pr, my - ph/2);
-      cx.lineTo(mx + pw/2 - pr, my - ph/2);
-      cx.arcTo(mx + pw/2, my - ph/2, mx + pw/2, my, pr);
-      cx.arcTo(mx + pw/2, my + ph/2, mx + pw/2 - pr, my + ph/2, pr);
-      cx.lineTo(mx - pw/2 + pr, my + ph/2);
-      cx.arcTo(mx - pw/2, my + ph/2, mx - pw/2, my, pr);
-      cx.arcTo(mx - pw/2, my - ph/2, mx - pw/2 + pr, my - ph/2, pr);
-      cx.closePath();
-      cx.fillStyle = 'rgba(22,32,56,0.9)';
-      cx.fill();
-      cx.strokeStyle = 'rgba(91,155,213,0.4)';
-      cx.lineWidth = 1;
-      cx.stroke();
-
-      cx.fillStyle = '#5B9BD5';
-      cx.textAlign = 'center';
-      cx.textBaseline = 'middle';
-      cx.fillText(text, mx, my);
-    }
-    cx.restore();
-  }
-
-  function animate() {
-    requestAnimationFrame(animate);
-    cx.clearRect(0, 0, W, H);
-    tick++;
-
-    // Phase 0: Fade in nodes
-    if (phase === 0) {
-      for (var i = 0; i < allNodes.length; i++) {
-        var target = (tick > i * 12) ? 1 : 0;
-        nodeAlpha[i] += (target - nodeAlpha[i]) * 0.08;
-      }
-      if (tick > allNodes.length * 12 + 30) { phase = 1; tick = 0; }
-    }
-
-    // Phase 1: Draw links progressively
-    if (phase === 1) {
-      for (var j = 0; j < allLinks.length; j++) {
-        var startTick = j * 25;
-        if (tick > startTick) {
-          linkProgress[j] = Math.min(linkProgress[j] + 0.035, 1);
-        }
-      }
-      if (tick > allLinks.length * 25 + 40) { phase = 2; tick = 0; }
-    }
-
-    // Phase 2: Pattern detected glow
-    if (phase === 2) {
-      if (tick === 1) {
-        alertEl.classList.add('visible');
-        badgeEl.textContent = 'Pattern Detected';
-        badgeEl.classList.add('detected');
-      }
-      if (tick > 200) {
-        phase = 3;
-        tick = 0;
-        // Reset
-        alertEl.classList.remove('visible');
-        badgeEl.textContent = 'Scanning...';
-        badgeEl.classList.remove('detected');
-        nodeAlpha = allNodes.map(function() { return 0; });
-        linkProgress = allLinks.map(function() { return 0; });
-      }
-    }
-
-    // Phase 3: Brief pause before restart
-    if (phase === 3) {
-      if (tick > 60) { phase = 0; tick = 0; }
-    }
-
-    // Glow calculation for cluster nodes during phase 2
-    var glow = 0;
-    if (phase === 2) {
-      glow = Math.sin(tick * 0.06) * 0.5 + 0.5;
-    }
-
-    // Draw weak links first (behind everything)
-    for (var wl = clusterLinks.length; wl < allLinks.length; wl++) {
-      drawLink(allLinks[wl], linkProgress[wl], false);
-    }
-
-    // Draw cluster links
-    for (var cl = 0; cl < clusterLinks.length; cl++) {
-      drawLink(allLinks[cl], linkProgress[cl], true);
-    }
-
-    // Draw all nodes
-    for (var ni = 0; ni < allNodes.length; ni++) {
-      drawNode(allNodes[ni], nodeAlpha[ni], glow);
-    }
-  }
-
-  animate();
 </script>
 
 </body>
