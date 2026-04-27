@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) — consent gated, must be first in <head> -->
+  <!-- Google tag (gtag.js) — consent gated -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      analytics_storage: 'denied',
-      ad_storage: 'denied',
-      wait_for_update: 500
-    });
+    gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', wait_for_update: 500 });
     gtag('js', new Date());
     gtag('config', 'G-MTDN1L9RR5', { anonymize_ip: true });
   </script>
@@ -18,204 +14,103 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Primary SEO -->
-  <title>Legio — Safety & Security Operations Software | getlegio.com</title>
-  <meta name="description" content="Legio is a safety and security operations platform that eliminates the administrative burden following every safety event. Guard tour, incident management, regulatory compliance — one system." />
+  <!-- SEO -->
+  <title>Incident Management Software for Physical Security Operations — Legio</title>
+  <meta name="description" content="Guard tour built for physical security operations. Dynamic patrol management, real-time officer visibility, and connected data that drives better decisions." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://getlegio.com/" />
+  <link rel="canonical" href="https://getlegio.com/guard-tour/" />
+  <meta name="keywords" content="incident management software, physical security incident management, security operations incident tracking, incident reporting platform, security incident management system" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Legio" />
-  <meta property="og:title" content="Legio — Safety & Security Operations Software" />
-  <meta property="og:description" content="Officers handle safety. Legio handles everything else — the paperwork, the reports, the administrative tail. Done before the shift ends." />
-  <meta property="og:url" content="https://getlegio.com/" />
+  <meta property="og:title" content="Guard Tour Software for Physical Security Operations — Legio" />
+  <meta property="og:description" content="Dynamic guard tour for physical security operations. Real-time visibility, connected data, modern UX." />
+  <meta property="og:url" content="https://getlegio.com/incident-management/" />
   <meta property="og:image" content="https://getlegio.com/og-image.png" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Legio — Safety & Security Operations Software" />
-  <meta name="twitter:description" content="Officers handle safety. Legio handles everything else — the paperwork, the reports, the administrative tail. Done before the shift ends." />
-  <meta name="twitter:image" content="https://getlegio.com/og-image.png" />
+  <meta name="theme-color" content="#162038" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Legio",
+    "name": "Legio Guard Tour",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "Safety and security operations platform. Eliminates the administrative burden following every safety event — guard tour, incident management, regulatory compliance, and more in one system.",
-    "url": "https://getlegio.com",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "description": "Contact for pricing"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Legio",
-      "url": "https://getlegio.com",
-      "logo": "https://getlegio.com/logo.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "sales",
-        "url": "https://calendly.com/darren-klasscapital/30min"
-      }
-    }
+    "description": "Guard tour software for physical security operations. Dynamic patrol management, real-time visibility, connected to the data that drives decisions.",
+    "url": "https://getlegio.com/incident-management/",
+    "publisher": { "@type": "Organization", "name": "Legio", "url": "https://getlegio.com" }
   }
   </script>
-
-  <meta name="keywords" content="safety operations software, security operations platform, incident management software, guard tour software, safety compliance software, security management system, officer management platform, safety reporting software" />
-  <meta name="theme-color" content="#162038" />
-  <meta name="author" content="Legio" />
-
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
-  <link rel="apple-touch-icon" href="/favicon-192.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
   <style>
     /* ─── TOKENS ─────────────────────────────────────────────── */
     :root {
-      --command:    #162038;
-      --coverage:   #2E618A;
-      --perimeter:  #6B8FAE;
-      --white:      #FFFFFF;
-      --ice:        #F4F7FA;
-      --frost:      #E5EDF4;
-      --haze:       #C8D8E8;
-      --slate:      #4A6580;
-
-      --success:    #0F6E56;
-      --warning:    #E09000;
-      --danger:     #9B2828;
-      --info:       #2E618A;
-
+      --command:   #162038;
+      --coverage:  #2E618A;
+      --perimeter: #6B8FAE;
+      --white:     #FFFFFF;
+      --ice:       #F4F7FA;
+      --frost:     #E5EDF4;
+      --haze:      #C8D8E8;
+      --slate:     #4A6580;
+      --success:   #0F6E56;
+      --warning:   #E09000;
+      --danger:    #9B2828;
       --sp1: 4px; --sp2: 8px; --sp3: 12px; --sp4: 16px;
       --sp6: 24px; --sp8: 32px; --sp12: 48px; --sp16: 64px; --sp20: 80px;
-
       --r-sm: 4px; --r-md: 8px; --r-lg: 12px; --r-xl: 16px;
-
-      --max-w: 1200px;
-      --gutter: 40px;
+      --max-w: 1200px; --gutter: 40px;
     }
 
-    /* ─── RESET ──────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Outfit', sans-serif;
-      font-size: 16px;
-      line-height: 26px;
-      color: var(--command);
-      background: var(--white);
+      font-size: 16px; line-height: 26px;
+      color: var(--command); background: var(--white);
       -webkit-font-smoothing: antialiased;
     }
     a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-
-    /* ─── LAYOUT ─────────────────────────────────────────────── */
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--gutter);
-    }
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp8); }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp6); }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); }
 
     /* ─── TYPOGRAPHY ─────────────────────────────────────────── */
-    .display { font-size: 56px; line-height: 64px; font-weight: 700; letter-spacing: -0.02em; }
+    .display { font-size: 52px; line-height: 60px; font-weight: 700; letter-spacing: -0.02em; }
     .h1      { font-size: 40px; line-height: 50px; font-weight: 600; letter-spacing: -0.01em; }
     .h2      { font-size: 28px; line-height: 36px; font-weight: 600; letter-spacing: -0.01em; }
-    .h3      { font-size: 22px; line-height: 30px; font-weight: 500; }
-    .body-lg { font-size: 18px; line-height: 28px; font-weight: 400; }
-    .body    { font-size: 16px; line-height: 26px; font-weight: 400; }
-    .small   { font-size: 14px; line-height: 22px; font-weight: 400; }
-    .label   { font-size: 11px; line-height: 18px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+    .h3      { font-size: 20px; line-height: 28px; font-weight: 600; }
+    .label   { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coverage); }
 
     /* ─── BUTTONS ────────────────────────────────────────────── */
     .btn {
       display: inline-flex; align-items: center; gap: var(--sp2);
-      font-family: 'Outfit', sans-serif;
-      font-size: 15px; font-weight: 600;
-      padding: 13px 24px;
-      border-radius: var(--r-md);
-      cursor: pointer; border: none;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-      text-decoration: none;
+      font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600;
+      padding: 13px 24px; border-radius: var(--r-md);
+      cursor: pointer; border: none; transition: all 0.2s ease;
+      white-space: nowrap; text-decoration: none;
     }
-    .btn-primary {
-      background: var(--command); color: var(--white);
-    }
-    .btn-primary:hover { background: #1e2e50; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(22,32,56,0.25); }
-    .btn-outline {
-      background: transparent; color: var(--command);
-      border: 1.5px solid var(--command);
-    }
+    .btn-primary { background: var(--command); color: var(--white); }
+    .btn-primary:hover { background: #1e2e50; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(22,32,56,0.25); text-decoration: none; }
+    .btn-outline { background: transparent; color: var(--command); border: 1.5px solid var(--command); }
     .btn-outline:hover { background: var(--command); color: var(--white); }
-    .btn-ghost {
-      background: transparent; color: var(--coverage);
-      padding: 13px 0;
-    }
-    .btn-ghost:hover { color: var(--command); }
-    .btn-ghost .arrow { transition: transform 0.2s; }
-    .btn-ghost:hover .arrow { transform: translateX(4px); }
-
-    .btn-white {
-      background: var(--white); color: var(--command);
-    }
+    .btn-white { background: var(--white); color: var(--command); }
     .btn-white:hover { background: var(--ice); transform: translateY(-1px); }
-
-    .btn-outline-white {
-      background: transparent; color: var(--white);
-      border: 1.5px solid rgba(255,255,255,0.4);
-    }
+    .btn-outline-white { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.4); }
     .btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
 
-    /* ─── BADGE ──────────────────────────────────────────────── */
-    .badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 5px 12px;
-      border-radius: 100px;
-      font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
-    }
-    .badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; }
-    .badge-active   { background: #E6F5F1; color: var(--success); }
-    .badge-active::before { background: var(--success); }
-    .badge-pending  { background: #FEF3E0; color: var(--warning); }
-    .badge-pending::before { background: var(--warning); }
-    .badge-critical { background: #FAEAEA; color: var(--danger); }
-    .badge-critical::before { background: var(--danger); }
-    .badge-closed   { background: var(--frost); color: var(--slate); }
-    .badge-closed::before { background: var(--slate); }
-    .badge-clery    { background: #EAF1F8; color: var(--coverage); }
-    .badge-clery::before { background: var(--coverage); }
-
     /* ─── MARK / LOGO ────────────────────────────────────────── */
-    .mark {
-      display: inline-block;
-      width: 28px; height: 28px;
-      flex-shrink: 0;
-    }
+    .mark { display: inline-block; width: 28px; height: 28px; flex-shrink: 0; }
     .mark svg { width: 100%; height: 100%; }
-
-    .wordmark {
-      font-size: 16px; font-weight: 700;
-      letter-spacing: 0.26em;
-      color: var(--command);
-    }
+    .wordmark { font-size: 16px; font-weight: 700; letter-spacing: 0.26em; color: var(--command); }
     .wordmark-light { color: var(--white); }
-
-    .logo {
-      display: flex; align-items: center; gap: 10px;
-    }
+    .logo { display: flex; align-items: center; gap: 10px; }
 
     /* ─── NAV ────────────────────────────────────────────────── */
     nav {
@@ -223,599 +118,22 @@
       background: rgba(255,255,255,0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--frost);
-      transition: all 0.3s;
     }
     .nav-inner {
       max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter);
-      height: 64px;
-      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
     }
-    .nav-links {
-      display: flex; align-items: center; gap: var(--sp8);
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 15px; font-weight: 500; color: var(--slate);
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--command); }
-    .nav-cta { display: flex; align-items: center; gap: var(--sp4); }
-
-    /* ─── DROPDOWN ───────────────────────────────────────────── */
-    .nav-item { position: relative; }
-    .nav-item > a {
-      display: flex; align-items: center; gap: 5px; cursor: pointer;
-    }
-    .nav-item > a .chevron {
-      width: 14px; height: 14px; color: var(--perimeter);
-      transition: transform 0.2s;
-      flex-shrink: 0;
-    }
-    .nav-item:hover > a .chevron { transform: rotate(180deg); color: var(--command); }
-    .nav-item:hover > a { color: var(--command); }
-
-    .dropdown {
-      position: absolute; top: calc(100% + 8px); left: 50%;
-      transform: translateX(-50%);
-      background: var(--white);
-      border: 1px solid var(--frost);
-      border-radius: var(--r-xl);
-      box-shadow: 0 16px 48px rgba(22,32,56,0.12), 0 0 0 1px rgba(22,32,56,0.04);
-      padding: var(--sp3);
-      min-width: 200px;
-      width: max-content;
-      opacity: 0; visibility: hidden; pointer-events: none;
-      transform: translateX(-50%) translateY(-8px);
-      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-      z-index: 200;
-    }
-    /* Bridge fills the gap so mouse travel doesn't break hover */
-    .dropdown::after {
-      content: ''; position: absolute;
-      top: -16px; left: 0; right: 0; height: 16px;
-    }
-    .dropdown::before {
-      content: ''; position: absolute;
-      top: -6px; left: 50%; transform: translateX(-50%);
-      width: 12px; height: 12px;
-      background: var(--white);
-      border-left: 1px solid var(--frost);
-      border-top: 1px solid var(--frost);
-      transform: translateX(-50%) rotate(45deg);
-    }
-    .nav-item:hover .dropdown {
-      opacity: 1; visibility: visible; pointer-events: all;
-      transform: translateX(-50%) translateY(0);
-    }
-    .dropdown-item {
-      display: flex; align-items: center; gap: var(--sp3);
-      padding: var(--sp2) var(--sp3);
-      border-radius: var(--r-md);
-      text-decoration: none;
-      transition: background 0.15s;
-      color: var(--command);
-      white-space: nowrap;
-    }
-    .dropdown-item:hover { background: var(--ice); }
-    .dropdown-item:hover .dropdown-icon { background: var(--command); }
-    .dropdown-item:hover .dropdown-icon svg { color: var(--white); }
-    .dropdown-icon {
-      width: 28px; height: 28px; flex-shrink: 0;
-      border-radius: var(--r-sm);
-      background: var(--frost);
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.15s;
-    }
-    .dropdown-icon svg { width: 13px; height: 13px; color: var(--coverage); transition: color 0.15s; }
-    .dropdown-text { display: flex; flex-direction: column; gap: 1px; }
-    .dropdown-title { font-size: 14px; font-weight: 500; color: var(--command); line-height: 18px; }
-    .dropdown-desc  { display: none; }
-    .dropdown-divider { display: none; }
-
-    /* ─── HAMBURGER ──────────────────────────────────────────── */
-    .hamburger {
-      display: none; flex-direction: column; justify-content: center;
-      gap: 5px; width: 36px; height: 36px; cursor: pointer;
-      background: none; border: none; padding: 4px;
-      border-radius: var(--r-sm);
-    }
-    .hamburger span {
-      display: block; width: 22px; height: 2px;
-      background: var(--command); border-radius: 2px;
-      transition: all 0.25s ease;
-      transform-origin: center;
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    .mobile-menu {
-      display: none; position: fixed;
-      top: 64px; left: 0; right: 0;
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--frost);
-      padding: var(--sp6) var(--gutter) var(--sp8);
-      z-index: 99;
-      flex-direction: column; gap: 0;
-      box-shadow: 0 8px 32px rgba(22,32,56,0.1);
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu li { list-style: none; border-bottom: 1px solid var(--frost); }
-    .mobile-menu li:last-child { border-bottom: none; }
-    .mobile-menu a {
-      display: block; padding: var(--sp4) 0;
-      font-size: 16px; font-weight: 500; color: var(--command);
-      transition: color 0.2s;
-    }
-    .mobile-menu a:hover { color: var(--coverage); }
-    .mobile-menu .mobile-cta {
-      margin-top: var(--sp6); padding-top: var(--sp6);
-      border-top: 1px solid var(--frost);
-    }
-
-    /* ─── HERO ───────────────────────────────────────────────── */
-    .hero {
-      padding-top: 160px; padding-bottom: 100px;
-      background:
-        radial-gradient(ellipse 800px 600px at 70% -10%, rgba(46,97,138,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 600px 400px at -10% 80%, rgba(22,32,56,0.06) 0%, transparent 50%),
-        var(--white);
-      overflow: hidden;
-      position: relative;
-    }
-    .hero::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0; right: 0;
-      height: 1px; background: var(--frost);
-    }
-    .hero-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 48px; align-items: center;
-    }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--frost); padding: 6px 14px;
-      border-radius: 100px; margin-bottom: var(--sp6);
-      font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--coverage);
-    }
-    .hero-headline { margin-bottom: var(--sp6); }
-    .hero-headline em {
-      font-style: normal; color: var(--coverage);
-    }
-    .hero-sub { color: var(--slate); margin-bottom: var(--sp8); max-width: 480px; }
-    .hero-actions { display: flex; align-items: center; gap: var(--sp4); flex-wrap: wrap; }
-    .hero-proof {
-      margin-top: var(--sp8);
-      display: flex; align-items: center; gap: var(--sp6);
-      padding-top: var(--sp6); border-top: 1px solid var(--frost);
-    }
-    .hero-proof-item {
-      display: flex; flex-direction: column;
-    }
-    .proof-number { font-size: 40px; font-weight: 700; color: var(--command); line-height: 1; }
-    .proof-label  { font-size: 14px; color: var(--slate); max-width: 360px; margin-top: 6px; line-height: 22px; }
-
-    /* ─── DASHBOARD PREVIEW ──────────────────────────────────── */
-    .dashboard-preview {
-      background: var(--command);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 32px 80px rgba(22,32,56,0.3), 0 0 0 1px rgba(255,255,255,0.08);
-      transform: perspective(1000px) rotateY(-3deg) rotateX(2deg);
-      transition: transform 0.5s ease;
-    }
-    .dashboard-preview:hover {
-      transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-    }
-    .db-topbar {
-      background: rgba(255,255,255,0.05);
-      padding: 12px 20px;
-      display: flex; align-items: center; justify-content: space-between;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .db-dots { display: flex; gap: 6px; }
-    .db-dot  { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.15); }
-    .db-title { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; }
-    .db-body { padding: 20px; }
-    .db-stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
-    .db-stat {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 8px; padding: 14px;
-    }
-    .db-stat-val { font-size: 24px; font-weight: 700; color: var(--white); line-height: 1; margin-bottom: 4px; }
-    .db-stat-lbl { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.05em; text-transform: uppercase; }
-    .db-stat-delta { font-size: 11px; margin-top: 6px; }
-    .delta-up   { color: #34D399; }
-    .delta-warn { color: #FBBF24; }
-    .db-incidents { margin-bottom: 14px; }
-    .db-row-hdr {
-      display: grid; grid-template-columns: 70px 1fr 54px 80px;
-      gap: 6px; padding: 0 10px 8px;
-    }
-    .db-row-hdr span { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
-    .db-row {
-      display: grid; grid-template-columns: 70px 1fr 54px 80px;
-      gap: 6px; padding: 9px 10px;
-      border-radius: 6px;
-      transition: background 0.15s;
-      cursor: default;
-    }
-    .db-row:hover { background: rgba(255,255,255,0.04); }
-    .db-row:nth-child(even) { background: rgba(255,255,255,0.025); }
-    .db-row span { font-size: 12px; color: rgba(255,255,255,0.7); display: flex; align-items: center; white-space: nowrap; overflow: hidden; }
-    .db-row .case { color: rgba(255,255,255,0.4); font-size: 10px; font-family: monospace; }
-    .db-row .type { color: rgba(255,255,255,0.85); font-weight: 500; overflow: hidden; text-overflow: ellipsis; }
-    .db-row .time { color: rgba(255,255,255,0.4); font-size: 11px; }
-    .db-row .status-cell { justify-content: flex-end; }
-    .mini-badge {
-      display: inline-flex; align-items: center; gap: 4px;
-      padding: 3px 8px; border-radius: 100px;
-      font-size: 10px; font-weight: 600; letter-spacing: 0.04em;
-    }
-    .mini-badge::before { content: ''; width: 5px; height: 5px; border-radius: 50%; }
-    .mb-active   { background: rgba(15,110,86,0.25); color: #34D399; }
-    .mb-active::before { background: #34D399; }
-    .mb-pending  { background: rgba(224,144,0,0.2); color: #FBBF24; }
-    .mb-pending::before { background: #FBBF24; }
-    .mb-closed   { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); }
-    .mb-closed::before { background: rgba(255,255,255,0.3); }
-    .mb-clery    { background: rgba(46,97,138,0.3); color: #7BB8E0; }
-    .mb-clery::before { background: #7BB8E0; }
-    .db-footer {
-      padding: 12px 20px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .db-footer-txt { font-size: 11px; color: rgba(255,255,255,0.3); }
-    .clery-pill {
+    .nav-left { display: flex; align-items: center; gap: var(--sp6); }
+    .nav-divider { width: 1px; height: 20px; background: var(--haze); }
+    .nav-page { font-size: 14px; font-weight: 500; color: var(--slate); }
+    .nav-back {
       display: flex; align-items: center; gap: 6px;
-      background: rgba(46,97,138,0.2); border: 1px solid rgba(46,97,138,0.3);
-      padding: 5px 12px; border-radius: 100px;
-      font-size: 11px; font-weight: 600; color: #7BB8E0;
+      font-size: 14px; font-weight: 500; color: var(--perimeter);
+      transition: color 0.2s;
     }
-    .clery-dot { width: 6px; height: 6px; border-radius: 50%; background: #7BB8E0; animation: pulse 2s infinite; }
+    .nav-back:hover { color: var(--command); }
 
-    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-
-    /* ─── SECTION SHARED ─────────────────────────────────────── */
-    section { padding: var(--sp20) 0; }
-    .section-label {
-      display: inline-block;
-      font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--coverage); margin-bottom: var(--sp4);
-    }
-
-    /* ─── STATEMENT ──────────────────────────────────────────── */
-    .statement {
-      background: var(--command);
-      padding: var(--sp20) 0;
-      position: relative; overflow: hidden;
-    }
-    .statement::before {
-      content: '';
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      width: 900px; height: 600px; border-radius: 50%;
-      background: radial-gradient(ellipse, rgba(46,97,138,0.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .statement-inner {
-      max-width: 860px; margin: 0 auto; text-align: center; position: relative;
-    }
-    .statement-inner p {
-      font-size: 26px; line-height: 40px; font-weight: 400;
-      color: rgba(255,255,255,0.9);
-      letter-spacing: -0.01em;
-    }
-    .statement-inner p em {
-      font-style: normal; color: #7BB8E0;
-    }
-    @media (max-width: 960px) { .statement-inner p { font-size: 20px; line-height: 32px; } }
-    @media (max-width: 600px) { .statement-inner p { font-size: 17px; line-height: 28px; } }
-
-    /* ─── PROBLEM ────────────────────────────────────────────── */
-    .problem { background: var(--ice); }
-    .problem-inner { max-width: 760px; margin: 0 auto; text-align: center; }
-    .problem-inner .h1 { margin-bottom: var(--sp6); }
-    .problem-inner .body-lg { color: var(--slate); margin-bottom: var(--sp12); }
-    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp6); margin-top: var(--sp12); }
-    .stat-card {
-      background: var(--white); border: 1px solid var(--frost);
-      border-radius: var(--r-lg); padding: var(--sp8) var(--sp6);
-      text-align: left; position: relative; overflow: hidden;
-    }
-    .stat-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0;
-      height: 3px; background: var(--coverage);
-    }
-    .stat-card:nth-child(2)::before { background: var(--warning); }
-    .stat-card:nth-child(3)::before { background: var(--success); }
-    .stat-number { font-size: 48px; font-weight: 700; color: var(--command); line-height: 1; margin-bottom: var(--sp2); }
-    .stat-desc { font-size: 14px; color: var(--slate); line-height: 22px; }
-    .stat-source { font-size: 11px; color: var(--perimeter); margin-top: var(--sp3); letter-spacing: 0.03em; }
-
-    /* ─── HOW IT WORKS ───────────────────────────────────────── */
-    .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: var(--sp12); }
-    .how-steps { display: flex; flex-direction: column; gap: 0; }
-    .how-step {
-      display: flex; gap: var(--sp6); padding: var(--sp6) 0;
-      border-bottom: 1px solid var(--frost);
-      cursor: pointer; transition: all 0.2s;
-    }
-    .how-step:last-child { border-bottom: none; }
-    .how-step.active .step-content h3 { color: var(--coverage); }
-    .step-num {
-      width: 36px; height: 36px; flex-shrink: 0;
-      border-radius: 50%; background: var(--frost);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 13px; font-weight: 700; color: var(--slate);
-      transition: all 0.2s;
-    }
-    .how-step.active .step-num { background: var(--coverage); color: var(--white); }
-    .step-content h3 { font-size: 17px; font-weight: 600; margin-bottom: 4px; transition: color 0.2s; }
-    .step-content p  { font-size: 14px; color: var(--slate); line-height: 22px; }
-    .how-visual {
-      position: sticky; top: 100px;
-    }
-    .how-panel {
-      background: var(--command); border-radius: var(--r-xl);
-      padding: var(--sp8); min-height: 340px;
-      display: none; flex-direction: column; justify-content: space-between;
-      box-shadow: 0 24px 60px rgba(22,32,56,0.25);
-    }
-    .how-panel.visible { display: flex; }
-    .how-panel-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: var(--sp6); }
-    .how-panel h3 { font-size: 22px; font-weight: 600; color: var(--white); margin-bottom: var(--sp4); }
-    .how-panel p  { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 24px; }
-    .how-panel-items { display: flex; flex-direction: column; gap: var(--sp3); margin-top: var(--sp8); }
-    .how-item {
-      display: flex; align-items: center; gap: var(--sp3);
-      font-size: 14px; color: rgba(255,255,255,0.75);
-    }
-    .how-item-dot { width: 20px; height: 20px; border-radius: 50%; background: rgba(255,255,255,0.08); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-    .how-item-dot svg { width: 10px; height: 10px; }
-
-    /* ─── MODULES ────────────────────────────────────────────── */
-    .modules { background: var(--white); }
-    .modules-header { max-width: 560px; margin-bottom: var(--sp12); }
-    .modules-header .section-label { margin-bottom: var(--sp3); display: block; }
-    .modules-header .h1 { margin-bottom: var(--sp4); }
-    .modules-header p { color: var(--slate); font-size: 17px; line-height: 28px; }
-    .modules-editorial { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp6); }
-    .mod-card {
-      border: 1px solid var(--frost);
-      border-radius: var(--r-xl);
-      padding: var(--sp8);
-      background: var(--white);
-      transition: all 0.25s ease;
-      position: relative; overflow: hidden;
-    }
-    .mod-card::before {
-      content: ''; position: absolute;
-      top: 0; left: 0; right: 0; height: 2px;
-      background: var(--frost);
-      transition: background 0.25s;
-    }
-    .mod-card:hover { border-color: var(--haze); box-shadow: 0 12px 40px rgba(22,32,56,0.07); transform: translateY(-3px); }
-    .mod-card:hover::before { background: var(--coverage); }
-    .mod-card-icon {
-      width: 48px; height: 48px;
-      border-radius: var(--r-md);
-      background: var(--ice);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: var(--sp5, 20px);
-      transition: background 0.25s;
-    }
-    .mod-card:hover .mod-card-icon { background: var(--command); }
-    .mod-card-icon svg { width: 22px; height: 22px; color: var(--coverage); transition: color 0.25s; }
-    .mod-card:hover .mod-card-icon svg { color: var(--white); }
-    .mod-card-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--perimeter); margin-bottom: var(--sp2); }
-    .mod-card-title { font-size: 20px; font-weight: 600; color: var(--command); margin-bottom: var(--sp3); line-height: 28px; }
-    .mod-card-desc  { font-size: 15px; color: var(--slate); line-height: 24px; }
-    .mod-card.wide { grid-column: span 2; display: grid; grid-template-columns: auto 1fr; gap: var(--sp8); align-items: start; }
-    .mod-card.wide .mod-card-icon { margin-bottom: 0; flex-shrink: 0; width: 56px; height: 56px; }
-    .mod-card.wide .mod-card-icon svg { width: 26px; height: 26px; }
-    .modules-cta {
-      margin-top: var(--sp8);
-      padding: var(--sp6) var(--sp8);
-      background: var(--ice);
-      border: 1px solid var(--frost);
-      border-radius: var(--r-lg);
-      display: flex; align-items: center; justify-content: space-between; gap: var(--sp8);
-    }
-    .modules-cta-copy h3 { font-size: 17px; font-weight: 600; margin-bottom: 4px; }
-    .modules-cta-copy p  { font-size: 14px; color: var(--slate); }
-    @media (max-width: 960px) { .modules-editorial { grid-template-columns: 1fr; } .mod-card.wide { grid-column: span 1; grid-template-columns: 1fr; } }
-    @media (max-width: 600px) { .modules-cta { flex-direction: column; align-items: flex-start; } }
-
-    /* ─── COMPLIANCE ─────────────────────────────────────────── */
-    .compliance { background: var(--command); overflow: hidden; position: relative; }
-    .compliance::before {
-      content: '';
-      position: absolute; top: -200px; right: -200px;
-      width: 600px; height: 600px;
-      border-radius: 50%; background: rgba(46,97,138,0.15);
-    }
-    .compliance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; }
-    .compliance-copy .section-label { color: var(--perimeter); }
-    .compliance-copy .h1 { color: var(--white); margin-bottom: var(--sp6); }
-    .compliance-copy p { color: rgba(255,255,255,0.65); margin-bottom: var(--sp8); line-height: 28px; }
-    .compliance-list { display: flex; flex-direction: column; gap: var(--sp4); margin-bottom: var(--sp8); }
-    .comp-item { display: flex; gap: var(--sp4); align-items: flex-start; }
-    .comp-check {
-      width: 24px; height: 24px; flex-shrink: 0; border-radius: 50%;
-      background: rgba(15,110,86,0.25); display: flex; align-items: center; justify-content: center;
-    }
-    .comp-check svg { width: 12px; height: 12px; color: #34D399; }
-    .comp-item span { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 24px; }
-    .clery-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--r-xl); padding: var(--sp8);
-    }
-    .clery-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp6); }
-    .clery-card-title { font-size: 15px; font-weight: 600; color: var(--white); }
-    .clery-rows { display: flex; flex-direction: column; gap: var(--sp3); }
-    .clery-row {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: var(--sp3) var(--sp4);
-      background: rgba(255,255,255,0.04); border-radius: var(--r-md);
-    }
-    .clery-row-left { display: flex; flex-direction: column; gap: 2px; }
-    .clery-row-type { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.85); }
-    .clery-row-loc  { font-size: 11px; color: rgba(255,255,255,0.4); }
-    .clery-row-status { font-size: 11px; font-weight: 600; }
-    .auto-tag { color: #34D399; }
-    .review-tag { color: #FBBF24; }
-    .clery-summary {
-      margin-top: var(--sp4); padding: var(--sp4);
-      background: rgba(46,97,138,0.2); border-radius: var(--r-md);
-      border: 1px solid rgba(46,97,138,0.3);
-    }
-    .clery-summary p { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 20px; }
-    .clery-summary strong { color: #7BB8E0; }
-
-    /* ─── DESIGN PARTNER ─────────────────────────────────────── */
-    .design-partner {
-      background: var(--white);
-      border-top: 1px solid var(--frost);
-    }
-    .dp-inner {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-    }
-    .dp-copy .h1 { margin-bottom: var(--sp6); }
-    .dp-copy p { color: var(--slate); margin-bottom: var(--sp6); }
-    .dp-list { display: flex; flex-direction: column; gap: var(--sp3); margin-bottom: var(--sp8); }
-    .dp-item { display: flex; gap: var(--sp3); align-items: flex-start; }
-    .dp-bullet {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--coverage); flex-shrink: 0; margin-top: 9px;
-    }
-    .dp-item span { font-size: 15px; color: var(--slate); line-height: 26px; }
-    .dp-form {
-      background: var(--ice); border: 1px solid var(--frost);
-      border-radius: var(--r-xl); padding: var(--sp8);
-    }
-    .dp-form h3 { font-size: 20px; font-weight: 600; margin-bottom: var(--sp2); }
-    .dp-form > p { font-size: 14px; color: var(--slate); margin-bottom: var(--sp6); }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp4); }
-    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: var(--sp4); }
-    .form-group label { font-size: 13px; font-weight: 600; color: var(--command); }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      font-family: 'Outfit', sans-serif;
-      font-size: 15px; color: var(--command);
-      background: var(--white); border: 1.5px solid var(--haze);
-      border-radius: var(--r-md); padding: 11px 14px;
-      transition: border-color 0.2s;
-      outline: none; width: 100%;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus { border-color: var(--coverage); }
-    .form-group textarea { resize: vertical; min-height: 90px; }
-    .form-group input::placeholder { color: var(--perimeter); }
-    .form-note { font-size: 12px; color: var(--perimeter); margin-top: var(--sp3); }
-    .form-success {
-      display: none; text-align: center; padding: var(--sp8);
-    }
-    .form-success-icon { font-size: 40px; margin-bottom: var(--sp4); }
-    .form-success h3 { margin-bottom: var(--sp2); }
-    .form-success p { color: var(--slate); font-size: 15px; }
-
-    /* ─── TRUST BAR ──────────────────────────────────────────── */
-    .trust {
-      padding: var(--sp12) 0;
-      background: var(--frost);
-      border-top: 1px solid var(--haze);
-      border-bottom: 1px solid var(--haze);
-    }
-    .trust-inner { display: flex; align-items: center; gap: var(--sp12); flex-wrap: wrap; }
-    .trust-label { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--perimeter); white-space: nowrap; }
-    .trust-items { display: flex; align-items: center; gap: var(--sp8); flex-wrap: wrap; flex: 1; }
-    .trust-item { display: flex; align-items: center; gap: var(--sp3); }
-    .trust-icon { color: var(--coverage); }
-    .trust-text { font-size: 14px; font-weight: 500; color: var(--slate); }
-    .trust-sep { color: var(--haze); font-size: 16px; }
-
-    /* ─── FINAL CTA ──────────────────────────────────────────── */
-    .final-cta {
-      background: var(--command);
-      text-align: center; padding: var(--sp20) 0;
-      position: relative; overflow: hidden;
-    }
-    .final-cta::before {
-      content: '';
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-      width: 800px; height: 800px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(46,97,138,0.25) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .final-cta .h1 { color: var(--white); margin-bottom: var(--sp4); position: relative; }
-    .final-cta p { color: rgba(255,255,255,0.65); margin-bottom: var(--sp8); font-size: 18px; position: relative; }
-    .cta-actions { display: flex; align-items: center; justify-content: center; gap: var(--sp4); flex-wrap: wrap; position: relative; }
-    .cta-note { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: var(--sp4); position: relative; }
-
-    /* ─── FOOTER ─────────────────────────────────────────────── */
-    footer {
-      background: var(--command);
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding: var(--sp12) 0 var(--sp8);
-    }
-    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--sp8); }
-    .footer-brand { display: flex; flex-direction: column; gap: var(--sp4); }
-    .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 22px; max-width: 280px; }
-    .footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: var(--sp4); }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: var(--sp2); }
-    .footer-col ul li a { font-size: 14px; color: rgba(255,255,255,0.55); transition: color 0.2s; }
-    .footer-col ul li a:hover { color: rgba(255,255,255,0.9); }
-    .footer-bottom {
-      margin-top: var(--sp8); padding-top: var(--sp6);
-      border-top: 1px solid rgba(255,255,255,0.07);
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.3); }
-
-    /* ─── COOKIE BANNER ──────────────────────────────────────── */
-    .cookie-banner {
-      position: fixed; bottom: var(--sp6); left: var(--sp6);
-      max-width: 420px;
-      background: var(--command);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--r-xl);
-      padding: var(--sp6);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.3);
-      z-index: 9999;
-      display: flex; flex-direction: column; gap: var(--sp4);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    .cookie-banner.hidden { opacity: 0; transform: translateY(12px); pointer-events: none; }
-    .cookie-banner p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 20px; margin: 0; }
-    .cookie-banner a { color: var(--perimeter); text-decoration: underline; }
-    .cookie-actions { display: flex; gap: var(--sp3); }
-    .cookie-accept {
-      font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600;
-      padding: 8px 18px; border-radius: var(--r-md);
-      background: var(--white); color: var(--command);
-      border: none; cursor: pointer; transition: background 0.2s;
-    }
-    .cookie-accept:hover { background: var(--ice); }
-    .cookie-decline {
-      font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 500;
-      padding: 8px 16px; border-radius: var(--r-md);
-      background: transparent; color: rgba(255,255,255,0.45);
-      border: 1px solid rgba(255,255,255,0.15); cursor: pointer;
-      transition: all 0.2s;
-    }
-    .cookie-decline:hover { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.75); }
-    @media (max-width: 600px) {
-      .cookie-banner { left: var(--sp4); right: var(--sp4); bottom: var(--sp4); max-width: none; }
-    }
-
-    /* ─── SCROLL ANIMATIONS ──────────────────────────────────── */
+    /* ─── FADE-IN ANIMATION ──────────────────────────────────── */
     .fade-up {
       opacity: 0; transform: translateY(24px);
       transition: opacity 0.6s ease, transform 0.6s ease;
@@ -824,470 +142,558 @@
     .fade-up-delay-1 { transition-delay: 0.1s; }
     .fade-up-delay-2 { transition-delay: 0.2s; }
     .fade-up-delay-3 { transition-delay: 0.3s; }
-    .fade-up-delay-4 { transition-delay: 0.4s; }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    .hero {
+      padding: 140px 0 var(--sp20);
+      background: var(--white);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp12);
+      align-items: center;
+    }
+    .hero-content { }
+    .hero-content .label { margin-bottom: var(--sp4); display: block; }
+    .hero-content .display { margin-bottom: var(--sp6); }
+    .hero-content .display em {
+      font-style: normal; color: var(--coverage);
+    }
+    .hero-sub {
+      font-size: 18px; line-height: 30px; color: var(--slate);
+      max-width: 560px; margin: 0 auto var(--sp8); text-align: center;
+    }
+    .hero-actions { display: flex; gap: var(--sp4); flex-wrap: wrap; }
+
+    .hero-screenshot {
+      border-radius: var(--r-xl); overflow: hidden;
+      box-shadow: 0 16px 48px rgba(22,32,56,0.12);
+    }
+    .hero-screenshot img {
+      width: 100%; height: auto; display: block;
+      border-radius: var(--r-xl);
+    }
+    .hero-screenshot-placeholder {
+      display: flex; flex-direction: column; align-items: center; gap: var(--sp3);
+      color: var(--perimeter);
+    }
+    .hero-screenshot-placeholder svg { opacity: 0.4; }
+    .hero-screenshot-placeholder span { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; }
+
+    /* ─── PROBLEM SECTION ────────────────────────────────────── */
+    .problem {
+      padding: var(--sp20) 0;
+      background: var(--ice);
+      border-top: 1px solid var(--frost);
+      border-bottom: 1px solid var(--frost);
+    }
+    .problem-intro {
+      text-align: center; max-width: 640px; margin: 0 auto var(--sp12);
+    }
+    .problem-intro .label { margin-bottom: var(--sp3); display: block; }
+    .problem-intro .h2 { margin-bottom: var(--sp4); }
+    .problem-intro .h2 .muted { color: var(--perimeter); }
+    .problem-intro p { color: var(--slate); font-size: 16px; }
+
+    .problem-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto 1fr auto;
+      gap: var(--sp6);
+    }
+    .problem-card {
+      background: var(--white); border: 1px solid var(--frost);
+      border-radius: var(--r-lg); padding: var(--sp8);
+      display: grid;
+      grid-row: span 3;
+      grid-template-rows: subgrid;
+      row-gap: 0;
+    }
+    .problem-card h3 {
+      font-size: 18px; font-weight: 600; margin-bottom: var(--sp3);
+    }
+    .problem-card p {
+      font-size: 15px; line-height: 24px; color: var(--slate);
+      margin-bottom: var(--sp4);
+    }
+    .problem-stat {
+      display: inline-block; font-size: 13px; font-weight: 600;
+      color: var(--danger); background: #FAEAEA;
+      padding: 4px 10px; border-radius: 100px;
+      white-space: nowrap;
+      align-self: end; justify-self: start;
+    }
+
+    /* ─── LINK ANALYSIS ──────────────────────────────────────── */
+    .link-analysis {
+      padding: var(--sp20) 0;
+      background: var(--white);
+    }
+    .link-intro {
+      text-align: center; max-width: 600px; margin: 0 auto var(--sp12);
+    }
+    .link-intro .label { display: block; margin-bottom: var(--sp3); }
+    .link-intro .h2 { margin-bottom: var(--sp4); }
+    .link-intro p { color: var(--slate); font-size: 16px; line-height: 26px; }
+
+    .link-canvas-wrap {
+      background: var(--command); border-radius: var(--r-xl);
+      overflow: hidden; position: relative;
+      box-shadow: 0 24px 64px rgba(22,32,56,0.18), 0 0 0 1px rgba(22,32,56,0.08);
+      max-width: 900px; margin: 0 auto;
+    }
+    .link-canvas-header {
+      position: absolute; top: 0; left: 0; right: 0; z-index: 2;
+      padding: 14px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(22,32,56,0.6);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .link-canvas-title {
+      font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.45);
+      letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    .link-canvas-badge {
+      font-size: 11px; font-weight: 600; color: var(--perimeter);
+      background: rgba(107,143,174,0.15);
+      padding: 3px 10px; border-radius: 100px;
+      border: 1px solid rgba(107,143,174,0.2);
+      transition: all 0.5s ease;
+    }
+    .link-canvas-badge.detected {
+      color: var(--success); background: rgba(15,110,86,0.15);
+      border-color: rgba(15,110,86,0.3);
+    }
+    #linkCanvas { display: block; width: 100%; }
+
+    .pattern-alert {
+      position: absolute; bottom: 16px; left: 16px; right: 16px;
+      background: rgba(22,32,56,0.85);
+      border: 1px solid rgba(15,110,86,0.3);
+      border-radius: var(--r-md);
+      padding: 12px 16px;
+      display: flex; align-items: center; gap: 10px;
+      backdrop-filter: blur(8px);
+      opacity: 0; transform: translateY(8px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      z-index: 2;
+    }
+    .pattern-alert.visible { opacity: 1; transform: translateY(0); }
+    .pattern-alert-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--success); flex-shrink: 0;
+      box-shadow: 0 0 8px rgba(15,110,86,0.6);
+    }
+    .pattern-alert-text {
+      font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.85);
+    }
+    .pattern-alert-text strong { color: var(--white); }
+
+    .link-caption {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp6); max-width: 900px; margin: var(--sp8) auto 0;
+    }
+    .link-caption-item {
+      text-align: center;
+    }
+    .link-caption-num {
+      font-size: 28px; font-weight: 700; color: var(--command);
+      margin-bottom: var(--sp1);
+    }
+    .link-caption-text {
+      font-size: 14px; color: var(--slate); line-height: 20px;
+    }
+
+    /* ─── HOW IT WORKS ───────────────────────────────────────── */
+    .how-it-works {
+      padding: var(--sp20) 0;
+      background: var(--ice);
+      border-top: 1px solid var(--frost);
+      border-bottom: 1px solid var(--frost);
+    }
+    .how-intro {
+      text-align: center; max-width: 640px; margin: 0 auto var(--sp12);
+    }
+    .how-intro .label { display: block; margin-bottom: var(--sp3); }
+    .how-intro .h2 { margin-bottom: var(--sp4); }
+    .how-intro p { color: var(--slate); }
+
+    .how-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .how-step-item {
+      text-align: center; padding: 0 var(--sp6);
+      border-left: 1px solid var(--haze);
+    }
+    .how-step-item:first-child { border-left: none; }
+    .how-step-item h3 {
+      font-size: 18px; font-weight: 600; margin-bottom: var(--sp2);
+    }
+    .how-step-item p {
+      font-size: 15px; line-height: 24px; color: var(--slate);
+      max-width: 320px; margin: 0 auto;
+    }
+
+    /* ─── HUMAN + AI ─────────────────────────────────────────── */
+    .authority {
+      padding: var(--sp20) 0;
+      background: var(--white);
+    }
+    .authority-intro {
+      text-align: center; max-width: 600px; margin: 0 auto var(--sp12);
+    }
+    .authority-intro .label { display: block; margin-bottom: var(--sp3); }
+    .authority-intro .h2 { margin-bottom: var(--sp4); }
+    .authority-intro p { color: var(--slate); }
+
+    .authority-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp6); max-width: 880px; margin: 0 auto;
+    }
+    .authority-col-header {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding-bottom: var(--sp4);
+      margin-bottom: var(--sp4);
+      border-bottom: 2px solid var(--frost);
+    }
+    .authority-col-header.ai { color: var(--coverage); }
+    .authority-col-header.human { color: var(--command); }
+
+    .authority-row {
+      background: var(--ice); border: 1px solid var(--frost);
+      border-radius: var(--r-md); padding: var(--sp4) var(--sp6);
+      margin-bottom: var(--sp3);
+    }
+    .authority-row-label {
+      font-size: 12px; font-weight: 600; color: var(--perimeter);
+      letter-spacing: 0.04em; text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .authority-row-text {
+      font-size: 15px; font-weight: 500; color: var(--command);
+    }
+
+    /* ─── FINAL CTA ──────────────────────────────────────────── */
+    .final-cta {
+      padding: var(--sp20) 0;
+      background: var(--command);
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .final-cta .h1 { color: var(--white); margin-bottom: var(--sp4); }
+    .final-cta p { color: var(--perimeter); font-size: 18px; max-width: 480px; margin: 0 auto var(--sp8); line-height: 28px; }
+    .cta-actions { display: flex; gap: var(--sp4); justify-content: center; flex-wrap: wrap; margin-bottom: var(--sp4); }
+    .cta-note { font-size: 14px; color: rgba(107,143,174,0.6); }
+
+    /* ─── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      padding: var(--sp8) 0;
+      background: var(--command);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 10px; }
+    .footer-copy { font-size: 13px; color: rgba(107,143,174,0.5); }
+    .footer-links { display: flex; gap: var(--sp6); }
+    .footer-links a {
+      font-size: 13px; color: var(--perimeter); transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
 
     /* ─── RESPONSIVE ─────────────────────────────────────────── */
-    @media (max-width: 960px) {
+    @media (max-width: 900px) {
       :root { --gutter: 24px; }
-      .display { font-size: 42px; line-height: 50px; }
-      .h1 { font-size: 32px; line-height: 42px; }
-      .hero-grid, .how-grid, .compliance-grid, .dp-inner { grid-template-columns: 1fr; gap: 48px; }
-      .modules-grid { grid-template-columns: 1fr 1fr; }
-      .stat-row { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .nav-cta { display: none; }
-      .hero { padding-top: 120px; }
-      .dashboard-preview { transform: none; }
-      .how-visual { position: relative; top: 0; }
-      .form-row { grid-template-columns: 1fr; }
+      .display { font-size: 36px; line-height: 44px; }
+      .h1 { font-size: 30px; line-height: 38px; }
+      .h2 { font-size: 24px; line-height: 32px; }
+      .hero { padding-top: 100px; }
+      .hero-grid { grid-template-columns: 1fr; gap: var(--sp8); }
+      .hero-screenshot { max-width: 480px; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .how-grid { grid-template-columns: 1fr; gap: var(--sp8); }
+      .how-step-item { border-left: none; border-top: 1px solid var(--haze); padding-top: var(--sp6); }
+      .how-step-item:first-child { border-top: none; padding-top: 0; }
+      .authority-grid { grid-template-columns: 1fr; }
+      .link-caption { grid-template-columns: 1fr; gap: var(--sp4); }
     }
     @media (max-width: 600px) {
-      .display { font-size: 34px; line-height: 42px; }
-      .modules-grid { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .hero-proof { flex-direction: column; gap: 16px; align-items: flex-start; }
-      .trust-items { flex-direction: column; align-items: flex-start; }
+      .nav-back-text { display: none; }
+      .footer-inner { flex-direction: column; gap: var(--sp4); text-align: center; }
     }
   </style>
 </head>
 <body>
 
-<!-- ─── NAV ───────────────────────────────────────────────────── -->
-<nav id="nav">
+<!-- ─── NAV ─────────────────────────────────────────────────────── -->
+<nav>
   <div class="nav-inner">
-    <a href="#" class="logo" aria-label="Legio — Safety &amp; Security Operations Platform">
-      <div class="mark">
-        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- 3×3 dot grid with size hierarchy: command centre, coverage cardinal, perimeter corners -->
-          <!-- corners (perimeter) -->
-          <circle cx="4"  cy="4"  r="2"   fill="#6B8FAE"/>
-          <circle cx="24" cy="4"  r="2"   fill="#6B8FAE"/>
-          <circle cx="4"  cy="24" r="2"   fill="#6B8FAE"/>
-          <circle cx="24" cy="24" r="2"   fill="#6B8FAE"/>
-          <!-- cardinals (coverage) -->
-          <circle cx="14" cy="4"  r="2.5" fill="#2E618A"/>
-          <circle cx="4"  cy="14" r="2.5" fill="#2E618A"/>
-          <circle cx="24" cy="14" r="2.5" fill="#2E618A"/>
-          <circle cx="14" cy="24" r="2.5" fill="#2E618A"/>
-          <!-- command centre -->
-          <circle cx="14" cy="14" r="4"   fill="#162038"/>
-        </svg>
-      </div>
-      <span class="wordmark">LEGIO</span>
-    </a>
-
-    <ul class="nav-links">
-      <li class="nav-item">
-        <a href="#industries">
-          Industries
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
-        <div class="dropdown">
-          <a href="/campus-safety/" class="dropdown-item">
-            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-            <span class="dropdown-title">Education</span>
-          </a>
-          <a href="#industries" class="dropdown-item">
-            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-            <span class="dropdown-title">Healthcare</span>
-          </a>
+    <div class="nav-left">
+      <a href="/" class="logo">
+        <div class="mark">
+          <svg viewBox="0 0 28 28" fill="none">
+            <circle cx="4"  cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+            <circle cx="24" cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+            <circle cx="4"  cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+            <circle cx="24" cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+            <circle cx="14" cy="4"  r="2.5" fill="rgba(46,97,138,0.8)"/>
+            <circle cx="4"  cy="14" r="2.5" fill="rgba(46,97,138,0.8)"/>
+            <circle cx="24" cy="14" r="2.5" fill="rgba(46,97,138,0.8)"/>
+            <circle cx="14" cy="24" r="2.5" fill="rgba(46,97,138,0.8)"/>
+            <circle cx="14" cy="14" r="4"   fill="#162038"/>
+          </svg>
         </div>
-      </li>
-      <li class="nav-item">
-        <a href="#modules">
-          Platform
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
-        <div class="dropdown">
-          <a href="/incident-management/" class="dropdown-item">
-            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-            <div class="dropdown-text"><span class="dropdown-title">Incident Management</span><span class="dropdown-desc">Captured, routed, closed</span></div>
-          </a>
-          <a href="/guard-tour/" class="dropdown-item">
-            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <div class="dropdown-text"><span class="dropdown-title">Guard Tour</span><span class="dropdown-desc">Real-time patrol visibility</span></div>
-          </a>
-          <a href="#modules" class="dropdown-item">
-            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg></div>
-            <div class="dropdown-text"><span class="dropdown-title">Dispatch</span><span class="dropdown-desc">Officers dispatched. Response tracked.</span></div>
-          </a>
-          <a href="#modules" class="dropdown-item">
-            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <div class="dropdown-text"><span class="dropdown-title">Regulatory Compliance</span><span class="dropdown-desc">Reports write themselves</span></div>
-          </a>
-          <a href="#modules" class="dropdown-item">
-            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></div>
-            <div class="dropdown-text"><span class="dropdown-title">Asset Management</span><span class="dropdown-desc">Equipment tracked, always</span></div>
-          </a>
-        </div>
-      </li>
-      <li class="nav-item"><a href="#about">About</a></li>
-      <li class="nav-item"><a href="#resources">Resources</a></li>
-    </ul>
-
-    <div class="nav-cta">
-      <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:14px;padding:10px 20px;">Book 30 minutes →</a>
+        <span class="wordmark">LEGIO</span>
+      </a>
+      <div class="nav-divider"></div>
+      <span class="nav-page">Incident Management</span>
     </div>
-
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div style="display:flex;align-items:center;gap:var(--sp6);">
+      <a href="/" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="nav-back-text">Back to home</span>
+      </a>
+      <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding:9px 18px;font-size:14px;">Book 30 minutes →</a>
+    </div>
   </div>
 </nav>
 
-<ul class="mobile-menu" id="mobile-menu">
-  <li><a href="#industries" onclick="closeMobile()" style="font-weight:600;">Industries</a></li>
-  <li style="padding-left:16px;border-bottom:none;"><a href="/campus-safety/" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Education</a></li>
-  <li style="padding-left:16px;"><a href="#industries" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Healthcare</a></li>
-  <li><a href="#modules" onclick="closeMobile()" style="font-weight:600;">Platform</a></li>
-  <li style="padding-left:16px;border-bottom:none;"><a href="/incident-management/" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Incident Management</a></li>
-  <li style="padding-left:16px;border-bottom:none;"><a href="/guard-tour/" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Guard Tour</a></li>
-  <li style="padding-left:16px;border-bottom:none;"><a href="#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Dispatch</a></li>
-  <li style="padding-left:16px;border-bottom:none;"><a href="#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Regulatory Compliance</a></li>
-  <li style="padding-left:16px;"><a href="#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Asset Management</a></li>
-  <li><a href="#about" onclick="closeMobile()">About</a></li>
-  <li><a href="#resources" onclick="closeMobile()">Resources</a></li>
-  <li class="mobile-cta">
-    <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:14px;padding:10px 20px;color:#ffffff;display:inline-flex;">Book 30 minutes →</a>
-  </li>
-</ul>
-
-<!-- ─── HERO ───────────────────────────────────────────────────── -->
-<section class="hero">
+<!-- ─── HERO ─────────────────────────────────────────────────────── -->
+<section class="hero" style="padding-bottom:0;">
   <div class="container">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <div class="hero-eyebrow">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="3" fill="#2E618A"/><circle cx="6" cy="6" r="5.5" stroke="#2E618A" stroke-width="1"/></svg>
-          Safety & Security Operations
-        </div>
-        <h1 class="display hero-headline">
-          Your team handles safety.<br>
-          <em>Legio handles<br>everything else.</em>
-        </h1>
-        <p class="body-lg hero-sub">
-          The paperwork, the reports, the administrative tail — done before the shift ends. One platform built for safety and security operations teams.
-        </p>
-        <div class="hero-actions">
-          <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book 30 minutes →</a>
-          <a href="#partner" class="btn btn-outline">Become a design partner</a>
-        </div>
-        <div class="hero-proof">
-          <div class="hero-proof-item">
-            <span class="proof-number">40%</span>
-            <span class="proof-label">of an officer's shift is spent on administration — even with your current set of tools.</span>
-          </div>
-        </div>
-      </div>
 
-      <div class="dashboard-preview">
-        <div class="db-topbar">
-          <div class="db-dots">
-            <div class="db-dot"></div><div class="db-dot"></div><div class="db-dot"></div>
-          </div>
-          <div class="db-title">LEGIO OPERATIONS</div>
-          <div class="clery-pill">
-            <div class="clery-dot"></div>
-            Regulatory sync active
-          </div>
+    <!-- Copy row -->
+    <div style="max-width:760px;margin:0 auto var(--sp12);text-align:center;display:flex;flex-direction:column;align-items:center;" class="fade-up">
+      <span class="label">Incident Management</span>
+      <h1 class="display" style="margin-top:var(--sp3);">The officer tells the story. <em>Legio handles what follows.</em></h1>
+      <p class="hero-sub" style="margin:var(--sp5) auto var(--sp8);max-width:560px;text-align:center;display:block;width:100%;">Structured intake. Automatic classification. Regulatory obligations that close themselves out. One record from first report to final disposition — without the administrative tail.</p>
+      <div class="hero-actions" style="justify-content:center;width:100%;display:flex;">
+        <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book 30 minutes →</a>
+      </div>
+    </div>
+
+    <!-- Screenshot — centred, measured -->
+    <div class="fade-up fade-up-delay-1" style="margin:0 auto;max-width:820px;">
+      <img src="incident-screenshot.png" alt="Legio incident management — incident detail view" style="width:100%;height:auto;display:block;border-radius:var(--r-xl);box-shadow:0 24px 60px rgba(22,32,56,0.15);" />
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── THE PROBLEM ──────────────────────────────────────────────── -->
+<section style="padding:var(--sp20) 0;background:var(--white);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <div class="fade-up">
+        <span class="label">The problem</span>
+        <h2 style="font-size:40px;line-height:50px;font-weight:600;letter-spacing:-0.01em;margin:var(--sp3) 0 var(--sp6);">Every incident generates work that has nothing to do with safety.</h2>
+        <p style="font-size:17px;color:var(--slate);line-height:28px;margin-bottom:var(--sp6);">Reports to write. Classifications to apply. Notifications to send. Regulatory boxes to tick. Legacy platforms digitized that work — they didn't eliminate it.</p>
+        <p style="font-size:17px;color:var(--slate);line-height:28px;">Officers still carry the administrative tail from every event they respond to. That time comes from somewhere — and it comes from safety.</p>
+      </div>
+      <div class="fade-up fade-up-delay-1" style="display:flex;flex-direction:column;gap:var(--sp4);">
+        <div style="padding:var(--sp6);background:var(--ice);border-radius:var(--r-xl);border-left:3px solid var(--coverage);">
+          <div style="font-size:13px;font-weight:600;color:var(--coverage);margin-bottom:var(--sp2);">Reports written twice</div>
+          <div style="font-size:15px;color:var(--slate);line-height:23px;">Officers narrate the event in the field, then re-enter it into a system. Same information, entered twice, in different formats.</div>
         </div>
-        <div class="db-body">
-          <div class="db-stat-row">
-            <div class="db-stat">
-              <div class="db-stat-val">24</div>
-              <div class="db-stat-lbl">Active incidents</div>
-              <div class="db-stat-delta delta-up">↓ 3 from yesterday</div>
-            </div>
-            <div class="db-stat">
-              <div class="db-stat-val">12</div>
-              <div class="db-stat-lbl">Tours running</div>
-              <div class="db-stat-delta delta-up">All on schedule</div>
-            </div>
-            <div class="db-stat">
-              <div class="db-stat-val">0</div>
-              <div class="db-stat-lbl">Regulatory gaps</div>
-              <div class="db-stat-delta delta-up">ASR current</div>
-            </div>
-          </div>
-          <div class="db-incidents">
-            <div class="db-row-hdr">
-              <span>Case</span><span>Type</span><span>Time</span><span style="text-align:right">Status</span>
-            </div>
-            <div class="db-row">
-              <span class="case">#0841</span>
-              <span class="type">Theft — bicycle</span>
-              <span class="time">2h ago</span>
-              <span class="status-cell"><span class="mini-badge mb-pending">PENDING</span></span>
-            </div>
-            <div class="db-row">
-              <span class="case">#0840</span>
-              <span class="type">Medical — minor</span>
-              <span class="time">4h ago</span>
-              <span class="status-cell"><span class="mini-badge mb-active">ACTIVE</span></span>
-            </div>
-            <div class="db-row">
-              <span class="case">#0839</span>
-              <span class="type">Vandalism</span>
-              <span class="time">Yest.</span>
-              <span class="status-cell"><span class="mini-badge mb-closed">CLOSED</span></span>
-            </div>
-            <div class="db-row">
-              <span class="case">#0838</span>
-              <span class="type">Aggravated assault</span>
-              <span class="time">Yest.</span>
-              <span class="status-cell"><span class="mini-badge mb-clery">REVIEW</span></span>
-            </div>
-          </div>
+        <div style="padding:var(--sp6);background:var(--ice);border-radius:var(--r-xl);border-left:3px solid var(--coverage);">
+          <div style="font-size:13px;font-weight:600;color:var(--coverage);margin-bottom:var(--sp2);">Classification done manually</div>
+          <div style="font-size:15px;color:var(--slate);line-height:23px;">Someone has to decide what category an incident falls into, whether it's reportable, and who needs to know. That logic should run automatically.</div>
         </div>
-        <div class="db-footer">
-          <div class="db-footer-txt">4 incidents flagged for regulatory review · Classification pending</div>
-          <div style="font-size:11px;color:#7BB8E0;font-weight:600;">View ASR →</div>
+        <div style="padding:var(--sp6);background:var(--ice);border-radius:var(--r-xl);border-left:3px solid var(--coverage);">
+          <div style="font-size:13px;font-weight:600;color:var(--coverage);margin-bottom:var(--sp2);">Compliance compiled at year end</div>
+          <div style="font-size:15px;color:var(--slate);line-height:23px;">Required reports are assembled from operational data that was never structured to feed them. It takes weeks. It shouldn't take minutes.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
-
-<!-- ─── PROBLEM ─────────────────────────────────────────────────── -->
-<section class="problem">
+<!-- ─── PULL QUOTE ────────────────────────────────────────────────── -->
+<section style="background:var(--ice);padding:var(--sp16) 0;border-top:1px solid var(--frost);border-bottom:1px solid var(--frost);">
   <div class="container">
-    <div class="problem-inner">
-      <span class="section-label fade-up">The problem</span>
-      <h2 class="h1 fade-up fade-up-delay-1">Your team are doing two jobs.<br>Only one of them is safety.</h2>
-      <p class="body-lg fade-up fade-up-delay-2">Every incident generates a trail of reports, classifications, notifications, and regulatory obligations. Legacy platforms didn't eliminate that trail — they digitized it. Officers still carry it.</p>
+    <div style="max-width:800px;margin:0 auto;text-align:center;" class="fade-up">
+      <p style="font-size:28px;line-height:42px;font-weight:400;color:var(--command);letter-spacing:-0.01em;">"The administrative burden that follows every safety event is the biggest tax on safety operations. The best teams aren't the ones who do more paperwork faster. They're the ones who don't do it at all."</p>
     </div>
   </div>
 </section>
 
-<!-- ─── STATEMENT ───────────────────────────────────────────────── -->
-<section class="statement">
+<!-- ─── HOW IT WORKS ─────────────────────────────────────────────── -->
+<section style="background:var(--command);padding:var(--sp20) 0;">
   <div class="container">
-    <div class="statement-inner fade-up">
-      <p>Legio automates the outcomes that can be automated — <em>documentation, compliance, reporting</em> — so your team can focus on the outcomes that cannot be automated — <em>physical presence, judgment, response.</em></p>
+    <div style="max-width:600px;margin-bottom:var(--sp12);" class="fade-up">
+      <span class="label" style="color:var(--perimeter);">How it works</span>
+      <h2 style="font-size:40px;line-height:50px;font-weight:600;letter-spacing:-0.01em;color:var(--white);margin-top:var(--sp3);">One record. From first report to final disposition.</h2>
     </div>
-  </div>
-</section>
 
-<!-- ─── HOW IT WORKS ────────────────────────────────────────────── -->
-<section id="how">
-  <div class="container">
-    <span class="section-label fade-up">How Legio works</span>
-    <h2 class="h1 fade-up fade-up-delay-1" style="max-width:560px;margin-bottom:0;">Your officers stay in charge.<br>Legio handles what follows.</h2>
-    <div class="how-grid">
-      <div class="how-steps">
-        <div class="how-step active" onclick="setStep(0)">
-          <div class="step-num">1</div>
-          <div class="step-content">
-            <h3>Officer reports the event</h3>
-            <p>Structured, guided intake on mobile or desktop. The right fields, for the right incident type — nothing more.</p>
+    <!-- Step 1 — text left, visual right -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:var(--sp12) 0;border-bottom:1px solid rgba(255,255,255,0.07);" class="fade-up">
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:var(--sp3);">Step 1 — Capture</div>
+        <h3 style="font-size:24px;font-weight:600;color:var(--white);margin-bottom:var(--sp4);line-height:32px;">Structured intake. The officer fills in what matters.</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:26px;">Guided, incident-specific fields mean officers capture the right information the first time. No generic forms. No missing fields to chase down later. The record is complete before the officer leaves the scene.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-xl);padding:var(--sp6);">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:var(--sp4);">Incident intake</div>
+        <div style="display:flex;flex-direction:column;gap:var(--sp3);">
+          <div style="background:rgba(255,255,255,0.05);border-radius:var(--r-md);padding:10px 14px;">
+            <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-bottom:4px;">INCIDENT TYPE</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.85);">Robbery · Critical</div>
           </div>
-        </div>
-        <div class="how-step" onclick="setStep(1)">
-          <div class="step-num">2</div>
-          <div class="step-content">
-            <h3>Legio routes and classifies automatically</h3>
-            <p>Incident type determines workflow. Reportable events are flagged, categorized, and queued.</p>
+          <div style="background:rgba(255,255,255,0.05);border-radius:var(--r-md);padding:10px 14px;">
+            <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-bottom:4px;">LOCATION</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.85);">Mac Lot M3 — Stewart</div>
           </div>
-        </div>
-        <div class="how-step" onclick="setStep(2)">
-          <div class="step-num">3</div>
-          <div class="step-content">
-            <h3>Notifications go to the right people</h3>
-            <p>Supervisors, leadership, legal — whoever needs to know, gets notified. Based on rules you set once.</p>
+          <div style="background:rgba(255,255,255,0.05);border-radius:var(--r-md);padding:10px 14px;">
+            <div style="font-size:10px;color:rgba(255,255,255,0.35);margin-bottom:4px;">SOURCE</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.85);">Camera alert</div>
           </div>
-        </div>
-        <div class="how-step" onclick="setStep(3)">
-          <div class="step-num">4</div>
-          <div class="step-content">
-            <h3>Regulatory obligations close out automatically</h3>
-            <p>ASR data populates from operations, not memory. Your annual security report writes itself from the events your team already captured.</p>
+          <div style="display:flex;gap:var(--sp2);margin-top:var(--sp2);">
+            <div style="padding:6px 12px;background:rgba(46,97,138,0.4);border-radius:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);">Regulatory reportable</div>
+            <div style="padding:6px 12px;background:rgba(46,97,138,0.4);border-radius:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);">Auto-flagged</div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="how-visual">
-        <div class="how-panel visible" id="panel-0">
+    <!-- Step 2 — visual left, text right -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:var(--sp12) 0;border-bottom:1px solid rgba(255,255,255,0.07);" class="fade-up fade-up-delay-1">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-xl);padding:var(--sp6);">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:var(--sp4);">Automatic routing</div>
+        <div style="display:flex;flex-direction:column;gap:var(--sp2);">
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div style="width:6px;height:6px;border-radius:50%;background:#34D399;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:rgba(255,255,255,0.7);">Classified as regulatory reportable</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div style="width:6px;height:6px;border-radius:50%;background:#34D399;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:rgba(255,255,255,0.7);">Supervisor notified automatically</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div style="width:6px;height:6px;border-radius:50%;background:#34D399;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:rgba(255,255,255,0.7);">Follow-up task created</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;">
+            <div style="width:6px;height:6px;border-radius:50%;background:#34D399;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:rgba(255,255,255,0.7);">ASR record updated</span>
+          </div>
+        </div>
+        <p style="font-size:12px;color:rgba(255,255,255,0.2);margin-top:var(--sp4);font-style:italic;">All automatic. No one had to remember.</p>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:var(--sp3);">Step 2 — Route</div>
+        <h3 style="font-size:24px;font-weight:600;color:var(--white);margin-bottom:var(--sp4);line-height:32px;">Classification and routing run on the rules you set — not on memory.</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:26px;">Incident type determines what happens next. Reportable events get flagged. Supervisors get notified. Tasks get created. The right people know — based on logic you defined once, not based on whether an officer remembered to call someone.</p>
+      </div>
+    </div>
+
+    <!-- Step 3 & 4 — two columns -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;padding:var(--sp12) 0;" class="fade-up fade-up-delay-2">
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:var(--sp3);">Step 3 — Notify</div>
+        <h3 style="font-size:24px;font-weight:600;color:var(--white);margin-bottom:var(--sp4);line-height:32px;">The right people know immediately.</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:26px;">Tiered notification logic means your chain of command gets informed based on incident severity and type — not because an officer remembered to make a call.</p>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:var(--sp3);">Step 4 — Close out</div>
+        <h3 style="font-size:24px;font-weight:600;color:var(--white);margin-bottom:var(--sp4);line-height:32px;">Regulatory obligations handled. Automatically.</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:26px;">Required reports aren't something you prepare. They're something Legio has been building all year from your operational data. Review, sign, submit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURES ─────────────────────────────────────────────────── -->
+<section style="padding:var(--sp20) 0;background:var(--ice);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+      <div class="fade-up" style="position:sticky;top:100px;">
+        <span class="label">What's included</span>
+        <h2 style="font-size:40px;line-height:50px;font-weight:600;letter-spacing:-0.01em;margin:var(--sp3) 0 var(--sp4);">Every capability your incident program needs.</h2>
+        <p style="color:var(--slate);font-size:17px;line-height:28px;margin-bottom:var(--sp8);">Built for physical security operations — not adapted from a generic case management tool.</p>
+        <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book 30 minutes →</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0;">
+
+        <div class="fade-up" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;border-bottom:1px solid var(--frost);">
+          <div style="width:48px;height:48px;flex-shrink:0;border-radius:var(--r-md);background:var(--command);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          </div>
           <div>
-            <div class="how-panel-label">Step 1 — Capture</div>
-            <h3>Guided intake. Zero ambiguity.</h3>
-            <p>Officers see exactly what to fill in for the incident in front of them. Location-aware. Incident-specific. No generic forms.</p>
-          </div>
-          <div class="how-panel-items">
-            <div class="how-item"><div class="how-item-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/></svg></div>Mobile-first officer interface</div>
-            <div class="how-item"><div class="how-item-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/></svg></div>Location database pre-loaded</div>
-            <div class="how-item"><div class="how-item-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/></svg></div>Incident type taxonomy built in</div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Structured intake</div>
+            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">Guided forms for every incident type</div>
+            <div style="font-size:14px;color:var(--slate);line-height:22px;">Officers see only the fields relevant to the incident in front of them. Mobile-first. Incident-specific. Complete before they leave the scene.</div>
           </div>
         </div>
-        <div class="how-panel" id="panel-1">
+
+        <div class="fade-up fade-up-delay-1" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;border-bottom:1px solid var(--frost);">
+          <div style="width:48px;height:48px;flex-shrink:0;border-radius:var(--r-md);background:var(--command);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+          </div>
           <div>
-            <div class="how-panel-label">Step 2 — Route</div>
-            <h3>Your rules run. No one has to remember them.</h3>
-            <p>Classification and routing follow the logic you define. Reportable events get flagged. Supervisors get notified. Tasks get created. All based on what you set up — not what an officer remembered to do.</p>
-          </div>
-          <div class="how-panel-items">
-            <div class="how-item"><div class="how-item-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/></svg></div>Automatic event classification</div>
-            <div class="how-item"><div class="how-item-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/></svg></div>Configurable routing rules</div>
-            <div class="how-item"><div class="how-item-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/></svg></div>Zero duplicate entry</div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Automatic classification</div>
+            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">Reportable events flagged without manual review</div>
+            <div style="font-size:14px;color:var(--slate);line-height:22px;">Reportable incidents classified automatically. No supervisor manually reviewing every report to decide what needs to go where.</div>
           </div>
         </div>
-        <div class="how-panel" id="panel-2">
+
+        <div class="fade-up fade-up-delay-2" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;border-bottom:1px solid var(--frost);">
+          <div style="width:48px;height:48px;flex-shrink:0;border-radius:var(--r-md);background:var(--command);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
           <div>
-            <div class="how-panel-label">Step 3 — Notify</div>
-            <h3>The right people know, immediately.</h3>
-            <p>Configurable notification trees mean your chain of command gets informed based on incident severity and type — not because an officer remembered to call someone.</p>
-          </div>
-          <div class="how-panel-items">
-            <div class="how-item"><div class="how-item-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/></svg></div>Tiered notification rules</div>
-            <div class="how-item"><div class="how-item-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/></svg></div>Cross-department routing</div>
-            <div class="how-item"><div class="how-item-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/></svg></div>Full audit trail, always</div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Notification routing</div>
+            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">The right people notified. Every time.</div>
+            <div style="font-size:14px;color:var(--slate);line-height:22px;">Tiered notification rules route alerts to supervisors, leadership, and legal based on incident type and severity — configured once, runs automatically.</div>
           </div>
         </div>
-        <div class="how-panel" id="panel-3">
+
+        <div class="fade-up" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;border-bottom:1px solid var(--frost);">
+          <div style="width:48px;height:48px;flex-shrink:0;border-radius:var(--r-md);background:var(--command);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
           <div>
-            <div class="how-panel-label">Step 4 — Close out</div>
-            <h3>Regulatory obligations handled. Automatically.</h3>
-            <p>Required reports aren't something you prepare. They're something Legio has been building all year from your operational data. Review, sign, submit.</p>
-          </div>
-          <div class="how-panel-items">
-            <div class="how-item"><div class="how-item-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/></svg></div>Reports auto-populated from operations</div>
-            <div class="how-item"><div class="how-item-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/></svg></div>Notification trigger logic built in</div>
-            <div class="how-item"><div class="how-item-dot"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#34D399" stroke-width="1.5" stroke-linecap="round"/></svg></div>Audit-ready documentation always current</div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Narrative management</div>
+            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">Every statement, note, and update in one record</div>
+            <div style="font-size:14px;color:var(--slate);line-height:22px;">Officer narratives, witness statements, supervisor notes, and follow-up actions all captured in a single chronological record tied to the incident.</div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ─── MODULES ─────────────────────────────────────────────────── -->
-<section id="modules" class="modules">
-  <div class="container">
-
-    <div class="modules-header fade-up">
-      <span class="section-label">The platform</span>
-      <h2 class="h1">Every function of safety and security operations. One system.</h2>
-      <p>Legio replaces the disconnected tools most departments are running today — each module tied to the same operational record.</p>
-    </div>
-
-    <div class="modules-editorial">
-
-      <div class="mod-card fade-up">
-        <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-        <div class="mod-card-label">Incident Management</div>
-        <div class="mod-card-title">Captured, routed, and closed.</div>
-        <div class="mod-card-desc">From first report to final classification. Every incident handled end to end — without manual follow-up from your team.</div>
-      </div>
-
-      <div class="mod-card fade-up fade-up-delay-1">
-        <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <div class="mod-card-label">Guard Tour</div>
-        <div class="mod-card-title">Real-time patrol visibility</div>
-        <div class="mod-card-desc">Every checkpoint hit. Every missed patrol flagged. Supervisors see the full picture as it happens — not at the end of shift.</div>
-      </div>
-
-      <div class="mod-card fade-up">
-        <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg></div>
-        <div class="mod-card-label">Dispatch</div>
-        <div class="mod-card-title">Officers dispatched. Response tracked.</div>
-        <div class="mod-card-desc">Assign officers, log response times, and track outcomes. Every dispatch creates a record — so you always know who went, when, and what happened.</div>
-      </div>
-
-      <div class="mod-card fade-up fade-up-delay-1">
-        <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div class="mod-card-label">Regulatory Compliance</div>
-        <div class="mod-card-title">Reports write themselves.</div>
-        <div class="mod-card-desc">Classify correctly once. Required report data populates from your operations — not from memory, not at year end.</div>
-      </div>
-
-      <div class="mod-card fade-up">
-        <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></div>
-        <div class="mod-card-label">Asset Management</div>
-        <div class="mod-card-title">Equipment tracked, always.</div>
-        <div class="mod-card-desc">Radios, vehicles, gear — assigned, tracked, maintained. No more losing track of what's where.</div>
-      </div>
-
-      <div class="mod-card fade-up fade-up-delay-1">
-        <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-        <div class="mod-card-label">Investigations</div>
-        <div class="mod-card-title">From incident to investigation, in one record.</div>
-        <div class="mod-card-desc">When an incident requires follow-up, the record is already built. Assign investigators, track tasks, log findings — tied to the original event.</div>
-      </div>
-
-    </div>
-
-    <div class="modules-cta fade-up">
-      <div class="modules-cta-copy">
-        <h3>Built with design partners</h3>
-        <p>Your department's priorities on the roadmap.</p>
-      </div>
-      <a href="#partner" class="btn btn-primary" style="white-space:nowrap;">Join the program →</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ─── DESIGN PARTNER ──────────────────────────────────────────── -->
-<section id="partner" class="design-partner">
-  <div class="container">
-    <div class="dp-inner">
-      <div class="dp-copy fade-up">
-        <span class="section-label">Design partner program</span>
-        <h2 class="h1">Build this with us.<br>Shape what safety operations looks like.</h2>
-        <p>Legio is in active development. A small number of organizations will join as design partners — shaping core functionality and getting direct access to the founding team.</p>
-        <p>This isn't a beta program. Design partners influence the product architecture, not just the UI. If your department has problems that current platforms refuse to solve, this is how those get fixed.</p>
-        <div class="dp-list">
-          <div class="dp-item"><div class="dp-bullet"></div><span>Direct line to the founding team — not a support queue</span></div>
-          <div class="dp-item"><div class="dp-bullet"></div><span>Priority access to new modules as they launch</span></div>
-          <div class="dp-item"><div class="dp-bullet"></div><span>Your department's priorities on the product roadmap</span></div>
-          <div class="dp-item"><div class="dp-bullet"></div><span>Shape core functionality before it ships to everyone else</span></div>
-        </div>
-        <p style="font-size:14px;color:var(--perimeter);">We're selecting a limited number of design partner organizations for the initial cohort.</p>
-      </div>
-
-      <div class="dp-form fade-up fade-up-delay-2">
-        <h3>Request a conversation</h3>
-        <p>Tell us a bit about your department. We'll reach out within one business day.</p>
-        <div id="form-wrap">
-          <form id="partner-form" onsubmit="submitForm(event)">
-            <div class="form-row">
-              <div class="form-group">
-                <label>First name</label>
-                <input type="text" placeholder="First name" required />
-              </div>
-              <div class="form-group">
-                <label>Last name</label>
-                <input type="text" placeholder="Last name" required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Institution</label>
-              <input type="text" placeholder="Organization name" required />
-            </div>
-            <div class="form-group">
-              <label>Your role</label>
-              <input type="text" placeholder="e.g. Chief Safety Officer" required />
-            </div>
-            <div class="form-group">
-              <label>Work email</label>
-              <input type="email" placeholder="you@organization.com" required />
-            </div>
-            <div class="form-group">
-              <label>What's the biggest problem you're trying to solve? <span style="font-weight:400;color:var(--perimeter)">(optional)</span></label>
-              <textarea placeholder="Guard tour visibility, incident documentation, regulatory reporting — tell us what's broken."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Request a conversation →</button>
-            <p class="form-note">Or, skip the form and <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" style="color:var(--coverage);">book 30 minutes directly →</a></p>
-          </form>
-          <div class="form-success" id="form-success">
-            <div class="form-success-icon">✓</div>
-            <h3>Request received.</h3>
-            <p>We'll be in touch within one business day. In the meantime, feel free to <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" style="color:var(--coverage);">book time directly →</a></p>
+        <div class="fade-up fade-up-delay-1" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;border-bottom:1px solid var(--frost);">
+          <div style="width:48px;height:48px;flex-shrink:0;border-radius:var(--r-md);background:var(--command);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Regulatory compliance</div>
+            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">Compliance data built from operations, not assembled at year end</div>
+            <div style="font-size:14px;color:var(--slate);line-height:22px;">Every classified incident feeds the Annual Security Report automatically. The report is ready because the data was always structured to produce it.</div>
           </div>
         </div>
+
+        <div class="fade-up fade-up-delay-2" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;border-bottom:1px solid var(--frost);">
+          <div style="width:48px;height:48px;flex-shrink:0;border-radius:var(--r-md);background:var(--command);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M10 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/><path d="M14 3v4a2 2 0 0 0 2 2h4"/><path d="M16 11h6"/><path d="M19 8v6"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Investigations</div>
+            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">Incidents that need more get the structure to support it</div>
+            <div style="font-size:14px;color:var(--slate);line-height:22px;">When an incident requires follow-up investigation, the record is already built. Assign investigators, track tasks, log findings — all tied to the original event.</div>
+          </div>
+        </div>
+
+        <div class="fade-up" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;">
+          <div style="width:48px;height:48px;flex-shrink:0;border-radius:var(--r-md);background:var(--command);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Audit trail</div>
+            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">Every action logged. Nothing missing.</div>
+            <div style="font-size:14px;color:var(--slate);line-height:22px;">A complete, tamper-evident record of every change, notification, and action taken on every incident — always current, always ready.</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -1296,22 +702,21 @@
 <!-- ─── FINAL CTA ────────────────────────────────────────────────── -->
 <section class="final-cta">
   <div class="container">
-    <h2 class="h1">Ready to see it working?</h2>
-    <p>Book 30 minutes. We'll show you exactly how Legio handles your department's operations — end to end.</p>
+    <h2 class="h1">See what incident management looks like without the administrative tail.</h2>
+    <p>Book 30 minutes. We'll walk through how Legio handles your operations end to end.</p>
     <div class="cta-actions">
       <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-white">Book 30 minutes →</a>
-      <a href="#partner" class="btn btn-outline-white">Become a design partner</a>
     </div>
-    <p class="cta-note">No sales deck. No demo environment. A real conversation about your operations.</p>
+    <p class="cta-note">A real conversation about your operations — not a scripted demo.</p>
   </div>
 </section>
 
-<!-- ─── FOOTER ───────────────────────────────────────────────────── -->
+<!-- ─── FOOTER ────────────────────────────────────────────────────── -->
 <footer>
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="#" class="logo">
+        <a href="/" class="logo">
           <div class="mark">
             <svg viewBox="0 0 28 28" fill="none">
               <circle cx="4"  cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
@@ -1327,142 +732,25 @@
           </div>
           <span class="wordmark wordmark-light">LEGIO</span>
         </a>
-        <p>Safety & Security Operations Platform. Built to scale.</p>
       </div>
-
-      <div class="footer-col">
-        <h4>Platform</h4>
-        <ul>
-          <li><a href="/incident-management/">Incident Management</a></li>
-          <li><a href="/guard-tour/">Guard Tour</a></li>
-          <li><a href="#modules">Regulatory Compliance</a></li>
-          <li><a href="#modules">Dispatch</a></li>
-          <li><a href="#modules">Policy Management</a></li>
-          <li><a href="#modules">Parking</a></li>
-          <li><a href="#modules">Visitors</a></li>
-          <li><a href="#modules">Asset Management</a></li>
-        </ul>
+      <span class="footer-copy">&copy; 2026 Legio. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="/privacy/">Privacy</a>
+        <a href="https://www.linkedin.com/company/legiosoftware" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;color:rgba(255,255,255,0.3);transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.6)'" onmouseout="this.style.color='rgba(255,255,255,0.3)'" aria-label="Legio on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="/terms/">Terms</a>
+        <a href="mailto:hello@getlegio.com">Contact</a>
       </div>
-
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#partner">Design Partner Program</a></li>
-          <li><a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer">Book a demo</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer">Book 30 minutes →</a></li>
-          <li><a href="#partner">Design Partner Inquiry</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2026 Legio · getlegio.com</p>
-      <div style="display:flex;align-items:center;gap:16px;"><a href="https://www.linkedin.com/company/legiosoftware" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;color:rgba(255,255,255,0.3);transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.6)'" onmouseout="this.style.color='rgba(255,255,255,0.3)'" aria-label="Legio on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="/privacy/" style="color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s;font-size:12px;" onmouseover="this.style.color='rgba(255,255,255,0.6)'" onmouseout="this.style.color='rgba(255,255,255,0.3)'">Privacy Policy</a></div>
-      <p>Safety & Security Operations Platform</p>
     </div>
   </div>
 </footer>
 
+<!-- ─── SCRIPTS ──────────────────────────────────────────────────── -->
 <script>
-  // ── Hamburger menu
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  hamburger.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('open');
-    hamburger.classList.toggle('open', open);
-    hamburger.setAttribute('aria-expanded', open);
-  });
-  function closeMobile() {
-    mobileMenu.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', false);
-  }
-  // Close on outside click
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMobile();
-  });
-
-  // ── Scroll animations
-  const fadeEls = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  fadeEls.forEach(el => observer.observe(el));
-
-  // ── Nav scroll state
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(22,32,56,0.08)' : 'none';
-  });
-
-  // ── How it works steps
-  function setStep(i) {
-    document.querySelectorAll('.how-step').forEach((s, idx) => {
-      s.classList.toggle('active', idx === i);
-    });
-    document.querySelectorAll('.how-panel').forEach((p, idx) => {
-      p.classList.toggle('visible', idx === i);
-    });
-  }
-
-  // ── Form submit
-  function submitForm(e) {
-    e.preventDefault();
-    document.getElementById('partner-form').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-  }
-
-  // ── Auto-cycle how steps
-  let currentStep = 0;
-  setInterval(() => {
-    currentStep = (currentStep + 1) % 4;
-    setStep(currentStep);
-  }, 7000);
-</script>
-
-<!-- ─── COOKIE BANNER ────────────────────────────────────────────── -->
-<div class="cookie-banner hidden" id="cookie-banner">
-  <p>We use cookies to understand how visitors use this site. <a href="/privacy/">Privacy policy →</a></p>
-  <div class="cookie-actions">
-    <button class="cookie-accept" id="cookie-accept">Accept</button>
-    <button class="cookie-decline" id="cookie-decline">Decline</button>
-  </div>
-</div>
-
-<script>
-  (function() {
-    const banner   = document.getElementById('cookie-banner');
-    const consent  = localStorage.getItem('legio_cookie_consent');
-
-    // Show banner if no decision stored
-    if (!consent) {
-      setTimeout(() => banner.classList.remove('hidden'), 800);
-    }
-
-    // Accept — update GA consent and store decision
-    document.getElementById('cookie-accept').addEventListener('click', () => {
-      localStorage.setItem('legio_cookie_consent', 'accepted');
-      gtag('consent', 'update', { analytics_storage: 'granted' });
-      banner.classList.add('hidden');
-    });
-
-    // Decline — store decision, GA stays denied
-    document.getElementById('cookie-decline').addEventListener('click', () => {
-      localStorage.setItem('legio_cookie_consent', 'declined');
-      banner.classList.add('hidden');
-    });
-
-    // If previously accepted, grant on load
-    if (consent === 'accepted') {
-      gtag('consent', 'update', { analytics_storage: 'granted' });
-    }
-  })();
+// Intersection Observer for fade-up animations
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
 </script>
 
 </body>
