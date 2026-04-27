@@ -243,16 +243,16 @@
 
     /* ─── DROPDOWN ───────────────────────────────────────────── */
     .nav-item { position: relative; }
-    .nav-item > a {
+    .nav-item > a, .nav-item > span {
       display: flex; align-items: center; gap: 5px; cursor: pointer;
     }
-    .nav-item > a .chevron {
+    .nav-item > a .chevron, .nav-item > span .chevron {
       width: 14px; height: 14px; color: var(--perimeter);
       transition: transform 0.2s;
       flex-shrink: 0;
     }
-    .nav-item:hover > a .chevron { transform: rotate(180deg); color: var(--command); }
-    .nav-item:hover > a { color: var(--command); }
+    .nav-item:hover > a .chevron, .nav-item:hover > span .chevron { transform: rotate(180deg); color: var(--command); }
+    .nav-item:hover > a, .nav-item:hover > span { color: var(--command); }
 
     .dropdown {
       position: absolute; top: calc(100% + 8px); left: 50%;
@@ -896,10 +896,10 @@
         </div>
       </li>
       <li class="nav-item">
-        <a href="#modules">
+        <span style="cursor:default;">
           Platform
           <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
+        </span>
         <div class="dropdown">
           <a href="/incident-management/" class="dropdown-item">
             <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
@@ -910,25 +910,12 @@
             <div class="dropdown-text"><span class="dropdown-title">Guard Tour</span><span class="dropdown-desc">Real-time patrol visibility</span></div>
           </a>
           <a href="#modules" class="dropdown-item">
-            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <div class="dropdown-text"><span class="dropdown-title">Regulatory Compliance</span><span class="dropdown-desc">Reports write themselves</span></div>
-          </a>
-          <a href="#modules" class="dropdown-item">
-            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg></div>
             <div class="dropdown-text"><span class="dropdown-title">Dispatch</span><span class="dropdown-desc">Officers dispatched. Response tracked.</span></div>
           </a>
-          <div class="dropdown-divider"></div>
           <a href="#modules" class="dropdown-item">
-            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-            <div class="dropdown-text"><span class="dropdown-title">Policy Management</span><span class="dropdown-desc">Policies officers actually follow</span></div>
-          </a>
-          <a href="#modules" class="dropdown-item">
-            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-            <div class="dropdown-text"><span class="dropdown-title">Parking</span><span class="dropdown-desc">Operations end to end</span></div>
-          </a>
-          <a href="#modules" class="dropdown-item">
-            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div class="dropdown-text"><span class="dropdown-title">Visitors</span><span class="dropdown-desc">Know who's on site</span></div>
+            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="dropdown-text"><span class="dropdown-title">Regulatory Compliance</span><span class="dropdown-desc">Reports write themselves</span></div>
           </a>
           <a href="#modules" class="dropdown-item">
             <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></div>
@@ -957,11 +944,8 @@
   <li><a href="#modules" onclick="closeMobile()" style="font-weight:600;">Platform</a></li>
   <li style="padding-left:16px;border-bottom:none;"><a href="/incident-management/" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Incident Management</a></li>
   <li style="padding-left:16px;border-bottom:none;"><a href="/guard-tour/" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Guard Tour</a></li>
-  <li style="padding-left:16px;border-bottom:none;"><a href="#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Regulatory Compliance</a></li>
   <li style="padding-left:16px;border-bottom:none;"><a href="#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Dispatch</a></li>
-  <li style="padding-left:16px;border-bottom:none;"><a href="#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Policy Management</a></li>
-  <li style="padding-left:16px;border-bottom:none;"><a href="#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Parking</a></li>
-  <li style="padding-left:16px;border-bottom:none;"><a href="#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Visitors</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Regulatory Compliance</a></li>
   <li style="padding-left:16px;"><a href="#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Asset Management</a></li>
   <li><a href="#about" onclick="closeMobile()">About</a></li>
   <li><a href="#resources" onclick="closeMobile()">Resources</a></li>
@@ -1192,59 +1176,45 @@
     <div class="modules-editorial">
 
       <div class="mod-card fade-up">
-        <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <div class="mod-card-label">Guard Tour</div>
-        <div class="mod-card-title">Real-time patrol visibility</div>
-        <div class="mod-card-desc">Every checkpoint hit. Every missed patrol flagged. Supervisors see the full picture as it happens — not at the end of shift.</div>
-      </div>
-
-      <div class="mod-card fade-up fade-up-delay-1">
         <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
         <div class="mod-card-label">Incident Management</div>
         <div class="mod-card-title">Captured, routed, and closed.</div>
         <div class="mod-card-desc">From first report to final classification. Every incident handled end to end — without manual follow-up from your team.</div>
       </div>
 
+      <div class="mod-card fade-up fade-up-delay-1">
+        <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="mod-card-label">Guard Tour</div>
+        <div class="mod-card-title">Real-time patrol visibility</div>
+        <div class="mod-card-desc">Every checkpoint hit. Every missed patrol flagged. Supervisors see the full picture as it happens — not at the end of shift.</div>
+      </div>
+
       <div class="mod-card fade-up">
+        <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg></div>
+        <div class="mod-card-label">Dispatch</div>
+        <div class="mod-card-title">Officers dispatched. Response tracked.</div>
+        <div class="mod-card-desc">Assign officers, log response times, and track outcomes. Every dispatch creates a record — so you always know who went, when, and what happened.</div>
+      </div>
+
+      <div class="mod-card fade-up fade-up-delay-1">
         <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <div class="mod-card-label">Regulatory Compliance</div>
         <div class="mod-card-title">Reports write themselves.</div>
         <div class="mod-card-desc">Classify correctly once. Required report data populates from your operations — not from memory, not at year end.</div>
       </div>
 
-      <div class="mod-card fade-up fade-up-delay-1">
-        <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-        <div class="mod-card-label">Dispatch</div>
-        <div class="mod-card-title">Officers dispatched. Response tracked.</div>
-        <div class="mod-card-desc">Assign officers, log response times, and track outcomes. Every dispatch creates a record — so you always know who went, when, and what happened.</div>
-      </div>
-
       <div class="mod-card fade-up">
-        <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-        <div class="mod-card-label">Policy Management</div>
-        <div class="mod-card-title">Policies officers actually follow.</div>
-        <div class="mod-card-desc">Current policy always accessible. Acknowledgement tracked. No printing, no binders, no guessing what version is live.</div>
-      </div>
-
-      <div class="mod-card fade-up fade-up-delay-1">
-        <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-        <div class="mod-card-label">Parking</div>
-        <div class="mod-card-title">Parking operations, end to end.</div>
-        <div class="mod-card-desc">Permits, violations, appeals — managed in one place. Tied to your safety record, not a separate system.</div>
-      </div>
-
-      <div class="mod-card fade-up">
-        <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <div class="mod-card-label">Visitors</div>
-        <div class="mod-card-title">Know who's on site.</div>
-        <div class="mod-card-desc">Sign-in, screening, and host notification. A full visitor log tied to your safety record from day one.</div>
-      </div>
-
-      <div class="mod-card fade-up fade-up-delay-1">
         <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></div>
         <div class="mod-card-label">Asset Management</div>
         <div class="mod-card-title">Equipment tracked, always.</div>
         <div class="mod-card-desc">Radios, vehicles, gear — assigned, tracked, maintained. No more losing track of what's where.</div>
+      </div>
+
+      <div class="mod-card fade-up fade-up-delay-1">
+        <div class="mod-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div class="mod-card-label">Investigations</div>
+        <div class="mod-card-title">From incident to investigation, in one record.</div>
+        <div class="mod-card-desc">When an incident requires follow-up, the record is already built. Assign investigators, track tasks, log findings — tied to the original event.</div>
       </div>
 
     </div>
