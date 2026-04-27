@@ -462,21 +462,24 @@
 </nav>
 
 <!-- ─── HERO ─────────────────────────────────────────────────────── -->
-<section class="hero">
+<section class="hero" style="padding-bottom:0;">
   <div class="container">
-    <div class="hero-grid">
-      <div class="hero-content fade-up">
-        <span class="label">Incident Management</span>
-        <h1 class="display">The officer tells the story. <em>Legio handles what follows.</em></h1>
-        <p class="hero-sub">Structured intake. Automatic classification. Regulatory obligations that close themselves out. One record from first report to final disposition — without the administrative tail.</p>
-        <div class="hero-actions">
-          <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book 30 minutes →</a>
-        </div>
-      </div>
-      <div class="hero-screenshot fade-up fade-up-delay-1">
-        <img src="incident-screenshot.png" alt="Legio incident management — incident detail view" style="width:100%;height:auto;display:block;border-radius:var(--r-xl);box-shadow:0 24px 64px rgba(22,32,56,0.18);" />
+
+    <!-- Copy row -->
+    <div style="max-width:760px;margin:0 auto var(--sp12);text-align:center;" class="fade-up">
+      <span class="label">Incident Management</span>
+      <h1 class="display" style="margin-top:var(--sp3);">The officer tells the story. <em>Legio handles what follows.</em></h1>
+      <p class="hero-sub" style="margin:var(--sp5) auto;max-width:600px;">Structured intake. Automatic classification. Regulatory obligations that close themselves out. One record from first report to final disposition — without the administrative tail.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book 30 minutes →</a>
       </div>
     </div>
+
+    <!-- Screenshot — full width, front and centre -->
+    <div class="fade-up fade-up-delay-1" style="margin:0 auto;max-width:1100px;">
+      <img src="incident-screenshot.png" alt="Legio incident management — incident detail view" style="width:100%;height:auto;display:block;border-radius:var(--r-xl);box-shadow:0 32px 80px rgba(22,32,56,0.2);" />
+    </div>
+
   </div>
 </section>
 
@@ -548,7 +551,7 @@
             <div style="font-size:13px;color:rgba(255,255,255,0.85);">Camera alert</div>
           </div>
           <div style="display:flex;gap:var(--sp2);margin-top:var(--sp2);">
-            <div style="padding:6px 12px;background:rgba(46,97,138,0.4);border-radius:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);">Clery reportable</div>
+            <div style="padding:6px 12px;background:rgba(46,97,138,0.4);border-radius:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);">Regulatory reportable</div>
             <div style="padding:6px 12px;background:rgba(46,97,138,0.4);border-radius:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);">Auto-flagged</div>
           </div>
         </div>
@@ -562,7 +565,7 @@
         <div style="display:flex;flex-direction:column;gap:var(--sp2);">
           <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
             <div style="width:6px;height:6px;border-radius:50%;background:#34D399;flex-shrink:0;"></div>
-            <span style="font-size:13px;color:rgba(255,255,255,0.7);">Classified as Clery reportable</span>
+            <span style="font-size:13px;color:rgba(255,255,255,0.7);">Classified as regulatory reportable</span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
             <div style="width:6px;height:6px;border-radius:50%;background:#34D399;flex-shrink:0;"></div>
@@ -632,7 +635,7 @@
           <div>
             <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Automatic classification</div>
             <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">Reportable events flagged without manual review</div>
-            <div style="font-size:14px;color:var(--slate);line-height:22px;">Clery-reportable incidents classified automatically. No supervisor manually reviewing every report to decide what needs to go where.</div>
+            <div style="font-size:14px;color:var(--slate);line-height:22px;">Reportable incidents classified automatically. No supervisor manually reviewing every report to decide what needs to go where.</div>
           </div>
         </div>
 
@@ -664,12 +667,23 @@
           </div>
           <div>
             <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Regulatory compliance</div>
-            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">Clery data built from operations, not assembled at year end</div>
+            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">Compliance data built from operations, not assembled at year end</div>
             <div style="font-size:14px;color:var(--slate);line-height:22px;">Every classified incident feeds the Annual Security Report automatically. The report is ready because the data was always structured to produce it.</div>
           </div>
         </div>
 
-        <div class="fade-up fade-up-delay-2" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;">
+        <div class="fade-up fade-up-delay-2" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;border-bottom:1px solid var(--frost);">
+          <div style="width:48px;height:48px;flex-shrink:0;border-radius:var(--r-md);background:var(--command);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M10 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/><path d="M14 3v4a2 2 0 0 0 2 2h4"/><path d="M16 11h6"/><path d="M19 8v6"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:6px;">Investigations</div>
+            <div style="font-size:17px;font-weight:600;color:var(--command);margin-bottom:6px;">Incidents that need more get the structure to support it</div>
+            <div style="font-size:14px;color:var(--slate);line-height:22px;">When an incident requires follow-up investigation, the record is already built. Assign investigators, track tasks, log findings — all tied to the original event.</div>
+          </div>
+        </div>
+
+        <div class="fade-up" style="display:flex;gap:var(--sp6);padding:var(--sp6) 0;">
           <div style="width:48px;height:48px;flex-shrink:0;border-radius:var(--r-md);background:var(--command);display:flex;align-items:center;justify-content:center;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </div>
