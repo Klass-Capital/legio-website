@@ -677,11 +677,7 @@
     .clery-summary p { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 20px; }
     .clery-summary strong { color: #7BB8E0; }
 
-    /* ─── DESIGN PARTNER ─────────────────────────────────────── */
-    .design-partner {
-      background: var(--white);
-      border-top: 1px solid var(--frost);
-    }
+  
     .dp-inner {
       display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
     }
@@ -972,7 +968,6 @@
         </p>
         <div class="hero-actions">
           <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book 30 minutes →</a>
-          <a href="#partner" class="btn btn-outline">Become a design partner</a>
         </div>
         <div class="hero-proof">
           <div class="hero-proof-item">
@@ -1221,77 +1216,14 @@
 
     <div class="modules-cta fade-up">
       <div class="modules-cta-copy">
-        <h3>Built with design partners</h3>
-        <p>Your department's priorities on the roadmap.</p>
+        <p>Your department's priorities are the roadmap.</p>
       </div>
-      <a href="#partner" class="btn btn-primary" style="white-space:nowrap;">Join the program →</a>
+      <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a demo →</a>
     </div>
 
   </div>
 </section>
 
-<!-- ─── DESIGN PARTNER ──────────────────────────────────────────── -->
-<section id="partner" class="design-partner">
-  <div class="container">
-    <div class="dp-inner">
-      <div class="dp-copy fade-up">
-        <span class="section-label">Design partner program</span>
-        <h2 class="h1">Build this with us.<br>Shape what safety operations looks like.</h2>
-        <p>Legio is in active development. A small number of organizations will join as design partners — shaping core functionality and getting direct access to the founding team.</p>
-        <p>This isn't a beta program. Design partners influence the product architecture, not just the UI. If your department has problems that current platforms refuse to solve, this is how those get fixed.</p>
-        <div class="dp-list">
-          <div class="dp-item"><div class="dp-bullet"></div><span>Direct line to the founding team — not a support queue</span></div>
-          <div class="dp-item"><div class="dp-bullet"></div><span>Priority access to new modules as they launch</span></div>
-          <div class="dp-item"><div class="dp-bullet"></div><span>Your department's priorities on the product roadmap</span></div>
-          <div class="dp-item"><div class="dp-bullet"></div><span>Shape core functionality before it ships to everyone else</span></div>
-        </div>
-        <p style="font-size:14px;color:var(--perimeter);">We're selecting a limited number of design partner organizations for the initial cohort.</p>
-      </div>
-
-      <div class="dp-form fade-up fade-up-delay-2">
-        <h3>Request a conversation</h3>
-        <p>Tell us a bit about your department. We'll reach out within one business day.</p>
-        <div id="form-wrap">
-          <form id="partner-form" onsubmit="submitForm(event)">
-            <div class="form-row">
-              <div class="form-group">
-                <label>First name</label>
-                <input type="text" placeholder="First name" required />
-              </div>
-              <div class="form-group">
-                <label>Last name</label>
-                <input type="text" placeholder="Last name" required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Institution</label>
-              <input type="text" placeholder="Organization name" required />
-            </div>
-            <div class="form-group">
-              <label>Your role</label>
-              <input type="text" placeholder="e.g. Chief Safety Officer" required />
-            </div>
-            <div class="form-group">
-              <label>Work email</label>
-              <input type="email" placeholder="you@organization.com" required />
-            </div>
-            <div class="form-group">
-              <label>What's the biggest problem you're trying to solve? <span style="font-weight:400;color:var(--perimeter)">(optional)</span></label>
-              <textarea placeholder="Guard tour visibility, incident documentation, regulatory reporting — tell us what's broken."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Request a conversation →</button>
-            <p class="form-note">Or, skip the form and <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" style="color:var(--coverage);">book 30 minutes directly →</a></p>
-          </form>
-          <div class="form-success" id="form-success">
-            <div class="form-success-icon">✓</div>
-            <h3>Request received.</h3>
-            <p>We'll be in touch within one business day. In the meantime, feel free to <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" style="color:var(--coverage);">book time directly →</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ─── FINAL CTA ────────────────────────────────────────────────── -->
 <section class="final-cta">
@@ -1300,9 +1232,23 @@
     <p>Book 30 minutes. We'll show you exactly how Legio handles your department's operations — end to end.</p>
     <div class="cta-actions">
       <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-white">Book 30 minutes →</a>
-      <a href="#partner" class="btn btn-outline-white">Become a design partner</a>
     </div>
     <p class="cta-note">No sales deck. No demo environment. A real conversation about your operations.</p>
+  </div>
+</section>
+
+
+<!-- ─── DESIGN PARTNER ──────────────────────────────────────────── -->
+<section style="background:var(--ice);padding:var(--sp20) 0;border-top:1px solid var(--frost);">
+  <div class="container">
+    <div style="max-width:640px;margin:0 auto;text-align:center;" class="fade-up">
+      <span class="label">Design partner program</span>
+      <h2 style="font-size:36px;line-height:46px;font-weight:600;letter-spacing:-0.01em;color:var(--command);margin:var(--sp3) 0 var(--sp4);">Shape the platform. Don't just use it.</h2>
+      <p style="font-size:17px;color:var(--slate);line-height:28px;margin-bottom:var(--sp4);">Legio is in active development. A small number of organizations will join as design partners — shaping core functionality and getting direct access to the founding team.</p>
+      <p style="font-size:17px;color:var(--slate);line-height:28px;margin-bottom:var(--sp8);">This isn't a beta program. Design partners influence the product architecture, not just the UI. If your department has problems that current platforms refuse to solve, this is how those get fixed.</p>
+      <a href="mailto:darren@getlegio.com?subject=Design Partner Inquiry" class="btn btn-primary">Get in touch →</a>
+      <p style="font-size:14px;color:var(--perimeter);margin-top:var(--sp4);">We're selecting a limited number of design partner organizations for the initial cohort.</p>
+    </div>
   </div>
 </section>
 
@@ -1347,7 +1293,6 @@
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="#partner">Design Partner Program</a></li>
           <li><a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer">Book a demo</a></li>
         </ul>
       </div>
@@ -1356,7 +1301,6 @@
         <h4>Contact</h4>
         <ul>
           <li><a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer">Book 30 minutes →</a></li>
-          <li><a href="#partner">Design Partner Inquiry</a></li>
         </ul>
       </div>
     </div>
@@ -1414,7 +1358,6 @@
   // ── Form submit
   function submitForm(e) {
     e.preventDefault();
-    document.getElementById('partner-form').style.display = 'none';
     document.getElementById('form-success').style.display = 'block';
   }
 
