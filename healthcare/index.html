@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) — consent gated, must be first in <head> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-MTDN1L9RR5', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTDN1L9RR5"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Campus Safety & Security Operations Software — Legio</title>
+  <meta name="description" content="Legio is built for campus public safety departments. Guard tour, incident management, and Clery Act compliance in one platform. Less administration. More safety." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://getlegio.com/campus-safety/" />
+  <meta name="keywords" content="campus safety software, campus security operations, campus public safety platform, university safety management, Clery Act compliance software, campus incident management, higher education security software" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Legio" />
+  <meta property="og:title" content="Campus Safety & Security Operations Software — Legio" />
+  <meta property="og:description" content="Built for campus public safety departments. Guard tour, incident management, and Clery Act compliance in one platform." />
+  <meta property="og:url" content="https://getlegio.com/campus-safety" />
+  <meta property="og:image" content="https://getlegio.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Campus Safety & Security Operations Software — Legio" />
+  <meta name="twitter:description" content="Built for campus public safety departments. Guard tour, incident management, and Clery Act compliance in one platform." />
+  <meta name="theme-color" content="#162038" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Legio — Campus Safety & Security Operations",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Campus safety and security operations platform for universities and colleges. Incident management, guard tour, Clery Act compliance, and more in one system.",
+    "url": "https://getlegio.com/campus-safety",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Legio",
+      "url": "https://getlegio.com"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --command:   #162038;
+      --coverage:  #2E618A;
+      --perimeter: #6B8FAE;
+      --white:     #FFFFFF;
+      --ice:       #F4F7FA;
+      --frost:     #E5EDF4;
+      --haze:      #C8D8E8;
+      --slate:     #4A6580;
+      --success:   #0F6E56;
+      --warning:   #E09000;
+      --sp1: 4px; --sp2: 8px; --sp3: 12px; --sp4: 16px;
+      --sp6: 24px; --sp8: 32px; --sp12: 48px; --sp16: 64px; --sp20: 80px;
+      --r-sm: 4px; --r-md: 8px; --r-lg: 12px; --r-xl: 16px;
+      --max-w: 1200px; --gutter: 40px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px; line-height: 26px;
+      color: var(--command); background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); }
+
+    /* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+    .display { font-size: 52px; line-height: 60px; font-weight: 700; letter-spacing: -0.02em; }
+    .h1      { font-size: 40px; line-height: 50px; font-weight: 600; letter-spacing: -0.01em; }
+    .h2      { font-size: 28px; line-height: 36px; font-weight: 600; letter-spacing: -0.01em; }
+    .h3      { font-size: 20px; line-height: 28px; font-weight: 600; }
+    .label   { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coverage); }
+
+    /* ─── BUTTONS ────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: var(--sp2);
+      font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600;
+      padding: 13px 24px; border-radius: var(--r-md);
+      cursor: pointer; border: none; transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--command); color: var(--white); }
+    .btn-primary:hover { background: #1e2e50; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(22,32,56,0.25); }
+    .btn-outline { background: transparent; color: var(--command); border: 1.5px solid var(--command); }
+    .btn-outline:hover { background: var(--command); color: var(--white); }
+    .btn-white { background: var(--white); color: var(--command); }
+    .btn-white:hover { background: var(--ice); transform: translateY(-1px); }
+    .btn-outline-white { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.4); }
+    .btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+    /* ─── MARK / LOGO ────────────────────────────────────────── */
+    .mark { display: inline-block; width: 28px; height: 28px; flex-shrink: 0; }
+    .mark svg { width: 100%; height: 100%; }
+    .wordmark { font-size: 16px; font-weight: 700; letter-spacing: 0.26em; color: var(--command); }
+    .wordmark-light { color: var(--white); }
+    .logo { display: flex; align-items: center; gap: 10px; }
+
+    /* ─── NAV ────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--frost);
+      transition: box-shadow 0.3s;
+    }
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter);
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-links { display: flex; align-items: center; gap: var(--sp8); list-style: none; }
+    .nav-links a { font-size: 15px; font-weight: 500; color: var(--slate); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--command); }
+    .nav-item { position: relative; }
+    .nav-item > a { display: flex; align-items: center; gap: 5px; }
+    .nav-item > a .chevron { width: 14px; height: 14px; color: var(--perimeter); transition: transform 0.2s; flex-shrink: 0; }
+    .nav-item:hover > a .chevron { transform: rotate(180deg); color: var(--command); }
+    .nav-item:hover > a { color: var(--command); }
+    .dropdown {
+      position: absolute; top: calc(100% + 8px); left: 50%;
+      background: var(--white); border: 1px solid var(--frost);
+      border-radius: var(--r-xl);
+      box-shadow: 0 16px 48px rgba(22,32,56,0.12), 0 0 0 1px rgba(22,32,56,0.04);
+      padding: var(--sp3); min-width: 200px; width: max-content;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transform: translateX(-50%) translateY(-8px);
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+      z-index: 200;
+    }
+    .dropdown::after { content: ''; position: absolute; top: -16px; left: 0; right: 0; height: 16px; }
+    .dropdown::before {
+      content: ''; position: absolute; top: -6px; left: 50%;
+      width: 12px; height: 12px; background: var(--white);
+      border-left: 1px solid var(--frost); border-top: 1px solid var(--frost);
+      transform: translateX(-50%) rotate(45deg);
+    }
+    .nav-item:hover .dropdown { opacity: 1; visibility: visible; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .dropdown-item {
+      display: flex; align-items: center; gap: var(--sp3);
+      padding: var(--sp2) var(--sp3); border-radius: var(--r-md);
+      transition: background 0.15s; white-space: nowrap;
+    }
+    .dropdown-item:hover { background: var(--ice); }
+    .dropdown-item:hover .dropdown-icon { background: var(--command); }
+    .dropdown-item:hover .dropdown-icon svg { color: var(--white); }
+    .dropdown-icon {
+      width: 28px; height: 28px; flex-shrink: 0; border-radius: var(--r-sm);
+      background: var(--frost); display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s;
+    }
+    .dropdown-icon svg { width: 13px; height: 13px; color: var(--coverage); transition: color 0.15s; }
+    .dropdown-title { font-size: 14px; font-weight: 500; color: var(--command); line-height: 18px; }
+    .nav-cta { display: flex; align-items: center; gap: var(--sp4); }
+
+    /* ─── HAMBURGER ──────────────────────────────────────────── */
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 36px; height: 36px; cursor: pointer;
+      background: none; border: none; padding: 4px; border-radius: var(--r-sm);
+    }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--command); border-radius: 2px; transition: all 0.25s ease; transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; top: 64px; left: 0; right: 0;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--frost);
+      padding: var(--sp6) var(--gutter) var(--sp8); z-index: 99;
+      flex-direction: column; gap: 0; box-shadow: 0 8px 32px rgba(22,32,56,0.1);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu li { list-style: none; border-bottom: 1px solid var(--frost); }
+    .mobile-menu li:last-child { border-bottom: none; }
+    .mobile-menu a { display: block; padding: var(--sp4) 0; font-size: 16px; font-weight: 500; color: var(--command); transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--coverage); }
+    .mobile-menu .mobile-cta { margin-top: var(--sp6); padding-top: var(--sp6); border-top: 1px solid var(--frost); }
+
+    /* ─── SCROLL ANIMATIONS ──────────────────────────────────── */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-delay-1 { transition-delay: 0.1s; }
+    .fade-up-delay-2 { transition-delay: 0.2s; }
+    .fade-up-delay-3 { transition-delay: 0.3s; }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    .hero {
+      padding-top: 140px; padding-bottom: 80px;
+      background:
+        radial-gradient(ellipse 700px 500px at 80% -10%, rgba(46,97,138,0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 500px 400px at -5% 90%, rgba(22,32,56,0.05) 0%, transparent 50%),
+        var(--white);
+      border-bottom: 1px solid var(--frost);
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--frost); padding: 6px 14px; border-radius: 100px;
+      margin-bottom: var(--sp6);
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--coverage);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .hero-headline { margin-bottom: var(--sp6); }
+    .hero-headline em { font-style: normal; color: var(--coverage); }
+    .hero-sub { color: var(--slate); font-size: 18px; line-height: 28px; margin-bottom: var(--sp8); max-width: 500px; }
+    .hero-actions { display: flex; align-items: center; gap: var(--sp4); flex-wrap: wrap; }
+    .hero-right {
+      display: flex; flex-direction: column; gap: var(--sp4);
+    }
+    .hero-image-wrap {
+      position: relative; border-radius: var(--r-xl); overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--frost);
+      box-shadow: 0 24px 60px rgba(22,32,56,0.15);
+    }
+    .hero-img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .hero-img-placeholder {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: var(--sp4); color: var(--slate); font-size: 14px; text-align: center; padding: var(--sp8);
+    }
+    /* Hide placeholder when image loads */
+    .hero-img:not([src="hero-campus.jpg"]) + .hero-img-placeholder,
+    .hero-img[src="hero-campus.jpg"]:not(.broken) ~ .hero-img-placeholder { display: none; }
+    .hero-img-placeholder code { font-size: 13px; background: var(--white); padding: 3px 8px; border-radius: var(--r-sm); border: 1px solid var(--haze); color: var(--coverage); }
+
+    /* ─── PROBLEM ────────────────────────────────────────────── */
+    .problem { background: var(--command); padding: var(--sp20) 0; }
+    .problem-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .problem-copy .label { color: var(--perimeter); display: block; margin-bottom: var(--sp4); }
+    .problem-copy .h1 { color: var(--white); margin-bottom: var(--sp6); }
+    .problem-copy p { color: rgba(255,255,255,0.6); font-size: 17px; line-height: 28px; margin-bottom: var(--sp6); }
+    .problem-copy p:last-of-type { margin-bottom: 0; }
+    .pain-list { display: flex; flex-direction: column; gap: var(--sp3); }
+    .pain-item {
+      display: flex; align-items: flex-start; gap: var(--sp4);
+      padding: var(--sp5, 20px) var(--sp6);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--r-lg);
+    }
+    .pain-icon {
+      width: 36px; height: 36px; flex-shrink: 0; border-radius: var(--r-md);
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pain-icon svg { width: 16px; height: 16px; color: var(--perimeter); }
+    .pain-text h4 { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 4px; }
+    .pain-text p  { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 20px; }
+
+    /* ─── CLERY ──────────────────────────────────────────────── */
+    .clery { background: var(--ice); padding: var(--sp20) 0; }
+    .clery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .clery-copy .label { display: block; margin-bottom: var(--sp4); }
+    .clery-copy .h1 { margin-bottom: var(--sp6); }
+    .clery-copy p { color: var(--slate); font-size: 17px; line-height: 28px; margin-bottom: var(--sp6); }
+    .clery-reframe {
+      background: var(--command); border-radius: var(--r-xl);
+      padding: var(--sp8); margin-bottom: var(--sp8);
+    }
+    .clery-reframe .label { color: var(--perimeter); display: block; margin-bottom: var(--sp3); }
+    .clery-reframe p { font-size: 18px; font-weight: 600; color: var(--white); line-height: 28px; margin: 0; }
+    .clery-checks { display: flex; flex-direction: column; gap: var(--sp3); margin-bottom: var(--sp8); }
+    .clery-check { display: flex; align-items: center; gap: var(--sp3); }
+    .clery-check-dot {
+      width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%;
+      background: rgba(15,110,86,0.15);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .clery-check-dot svg { width: 11px; height: 11px; color: var(--success); }
+    .clery-check span { font-size: 15px; color: var(--slate); }
+    .clery-visual {
+      background: var(--command); border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(22,32,56,0.2);
+    }
+    .cv-header {
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .cv-title { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .cv-live {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 600; color: #34D399;
+    }
+    .cv-live-dot { width: 6px; height: 6px; border-radius: 50%; background: #34D399; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .cv-body { padding: 20px; }
+    .cv-year-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: var(--sp4);
+    }
+    .cv-year { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.5); }
+    .cv-progress-wrap { flex: 1; margin: 0 var(--sp4); height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+    .cv-progress { height: 100%; width: 73%; background: linear-gradient(90deg, var(--coverage), #34D399); border-radius: 2px; }
+    .cv-pct { font-size: 13px; font-weight: 600; color: #34D399; }
+    .cv-cats { display: flex; flex-direction: column; gap: 8px; margin-bottom: var(--sp6); }
+    .cv-cat {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.04); border-radius: var(--r-md);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .cv-cat-right { display: flex; align-items: center; gap: 10px; }
+    .cv-cat-left { display: flex; align-items: center; }
+    .cv-cat-name { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.8); }
+    .cv-cat-count { font-size: 11px; font-weight: 700; color: var(--white); background: rgba(255,255,255,0.1); border-radius: 100px; width: 30px; height: 20px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cv-cat-status { font-size: 11px; font-weight: 600; width: 110px; text-align: left; }
+    .cv-auto { color: #34D399; }
+    .cv-review { color: #FBBF24; }
+    .cv-note {
+      background: rgba(46,97,138,0.2); border: 1px solid rgba(46,97,138,0.3);
+      border-radius: var(--r-md); padding: var(--sp4);
+    }
+    .cv-note p { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 20px; }
+    .cv-note strong { color: #7BB8E0; }
+
+    /* ─── MODULES ────────────────────────────────────────────── */
+    .modules { padding: var(--sp20) 0; background: var(--white); }
+    .modules-header { max-width: 560px; margin-bottom: var(--sp12); }
+    .modules-header .label { display: block; margin-bottom: var(--sp3); }
+    .modules-header .h1 { margin-bottom: var(--sp4); }
+    .modules-header p { color: var(--slate); font-size: 17px; line-height: 28px; }
+    .mod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp4); }
+    .mod-card {
+      border: 1px solid var(--frost); border-radius: var(--r-xl);
+      padding: var(--sp8) var(--sp6); background: var(--white);
+      transition: all 0.25s ease; position: relative; overflow: hidden;
+    }
+    .mod-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--frost); transition: background 0.25s;
+    }
+    .mod-card:hover { border-color: var(--haze); box-shadow: 0 12px 40px rgba(22,32,56,0.07); transform: translateY(-3px); }
+    .mod-card:hover::before { background: var(--coverage); }
+    .mod-card:hover .mod-icon { background: var(--command); }
+    .mod-card:hover .mod-icon svg { color: var(--white); }
+    .mod-icon {
+      width: 44px; height: 44px; border-radius: var(--r-md);
+      background: var(--ice); display: flex; align-items: center; justify-content: center;
+      margin-bottom: var(--sp4); transition: all 0.25s;
+    }
+    .mod-icon svg { width: 20px; height: 20px; color: var(--coverage); transition: color 0.25s; }
+    .mod-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--perimeter); margin-bottom: var(--sp2); }
+    .mod-title { font-size: 17px; font-weight: 600; margin-bottom: var(--sp2); }
+    .mod-desc  { font-size: 14px; color: var(--slate); line-height: 22px; }
+
+    /* ─── FINAL CTA ──────────────────────────────────────────── */
+    .final-cta {
+      background: var(--command); text-align: center;
+      padding: var(--sp20) 0; position: relative; overflow: hidden;
+    }
+    .final-cta::before {
+      content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(46,97,138,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .final-cta .h1 { color: var(--white); margin-bottom: var(--sp4); position: relative; }
+    .final-cta p  { color: rgba(255,255,255,0.6); margin-bottom: var(--sp8); font-size: 18px; position: relative; }
+    .cta-actions  { display: flex; align-items: center; justify-content: center; gap: var(--sp4); flex-wrap: wrap; position: relative; }
+    .cta-note { font-size: 13px; color: rgba(255,255,255,0.35); margin-top: var(--sp4); position: relative; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      background: var(--command); border-top: 1px solid rgba(255,255,255,0.07);
+      padding: var(--sp12) 0 var(--sp8);
+    }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--sp8); }
+    .footer-brand { display: flex; flex-direction: column; gap: var(--sp4); }
+    .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 22px; max-width: 280px; }
+    .footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: var(--sp4); }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: var(--sp2); }
+    .footer-col ul li a { font-size: 14px; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.9); }
+    .footer-bottom {
+      margin-top: var(--sp8); padding-top: var(--sp6);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    /* ─── COOKIE BANNER ──────────────────────────────────────── */
+    .cookie-banner {
+      position: fixed; bottom: var(--sp6); left: var(--sp6); max-width: 420px;
+      background: var(--command); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--r-xl); padding: var(--sp6);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.3); z-index: 9999;
+      display: flex; flex-direction: column; gap: var(--sp4);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .cookie-banner.hidden { opacity: 0; transform: translateY(12px); pointer-events: none; }
+    .cookie-banner p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 20px; margin: 0; }
+    .cookie-banner a { color: var(--perimeter); text-decoration: underline; }
+    .cookie-actions { display: flex; gap: var(--sp3); }
+    .cookie-accept { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: var(--r-md); background: var(--white); color: var(--command); border: none; cursor: pointer; transition: background 0.2s; }
+    .cookie-accept:hover { background: var(--ice); }
+    .cookie-decline { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: var(--r-md); background: transparent; color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.15); cursor: pointer; transition: all 0.2s; }
+    .cookie-decline:hover { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.75); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      :root { --gutter: 24px; }
+      .display { font-size: 38px; line-height: 46px; }
+      .h1 { font-size: 30px; line-height: 40px; }
+      .hero-grid, .problem-inner, .clery-grid { grid-template-columns: 1fr; gap: 48px; }
+      .mod-grid { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .stat-row-two { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .display { font-size: 30px; line-height: 38px; }
+      .mod-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .stat-row-two { grid-template-columns: 1fr; }
+      .cookie-banner { left: var(--sp4); right: var(--sp4); bottom: var(--sp4); max-width: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ───────────────────────────────────────────────────── -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="Legio — Safety &amp; Security Operations Platform">
+      <div class="mark">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="4"  cy="4"  r="2"   fill="#6B8FAE"/>
+          <circle cx="24" cy="4"  r="2"   fill="#6B8FAE"/>
+          <circle cx="4"  cy="24" r="2"   fill="#6B8FAE"/>
+          <circle cx="24" cy="24" r="2"   fill="#6B8FAE"/>
+          <circle cx="14" cy="4"  r="2.5" fill="#2E618A"/>
+          <circle cx="4"  cy="14" r="2.5" fill="#2E618A"/>
+          <circle cx="24" cy="14" r="2.5" fill="#2E618A"/>
+          <circle cx="14" cy="24" r="2.5" fill="#2E618A"/>
+          <circle cx="14" cy="14" r="4"   fill="#162038"/>
+        </svg>
+      </div>
+      <span class="wordmark">LEGIO</span>
+    </a>
+
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a href="/index.html#industries">Industries
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="/campus-safety/" class="dropdown-item">
+            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+            <span class="dropdown-title">Education</span>
+          </a>
+          <a href="/index.html#industries" class="dropdown-item">
+            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <span class="dropdown-title">Healthcare</span>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/index.html#modules">Platform
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><span class="dropdown-title">Incident Management</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span class="dropdown-title">Guard Tour</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="dropdown-title">Regulatory Compliance</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><span class="dropdown-title">Emergencies</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><span class="dropdown-title">Policy Management</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><span class="dropdown-title">Parking</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><span class="dropdown-title">Visitors</span></a>
+          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></div><span class="dropdown-title">Asset Management</span></a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="/index.html#about">About</a></li>
+      <li class="nav-item"><a href="/index.html#resources">Resources</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:14px;padding:10px 20px;">Book 30 minutes →</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<ul class="mobile-menu" id="mobile-menu">
+  <li><a href="/campus-safety/" onclick="closeMobile()" style="font-weight:600;">Education</a></li>
+  <li><a href="/index.html#industries" onclick="closeMobile()">Healthcare</a></li>
+  <li><a href="/index.html#modules" onclick="closeMobile()" style="font-weight:600;">Platform</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Incident Management</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Guard Tour</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Regulatory Compliance</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Emergencies</a></li>
+  <li style="padding-left:16px;border-bottom:none;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Policy Management</a></li>
+  <li style="padding-left:16px;"><a href="/index.html#modules" onclick="closeMobile()" style="font-size:14px;color:var(--slate);padding:8px 0;">Asset Management</a></li>
+  <li><a href="/index.html#about" onclick="closeMobile()">About</a></li>
+  <li><a href="/index.html#resources" onclick="closeMobile()">Resources</a></li>
+  <li class="mobile-cta">
+    <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:14px;padding:10px 20px;color:#ffffff;display:inline-flex;">Book 30 minutes →</a>
+  </li>
+</ul>
+
+<!-- ─── HERO ───────────────────────────────────────────────────── -->
+<section class="hero" style="padding-bottom:var(--sp16);">
+  <div class="container">
+    <div style="max-width:760px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;" class="fade-up">
+      <span class="label">Healthcare Security</span>
+      <h1 class="display" style="margin-top:var(--sp3);">Your team manages risk that most security programs never see. <em>Legio is built for that.</em></h1>
+      <p class="hero-sub" style="margin:var(--sp5) auto var(--sp8);max-width:580px;text-align:center;display:block;width:100%;">Healthcare security teams operate in one of the most demanding environments in the world. High incident volume, elevated risk, and regulatory obligations that don't stop. Legio eliminates the administrative burden so your team can focus on the floor.</p>
+      <div class="hero-actions" style="justify-content:center;width:100%;display:flex;">
+        <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book 30 minutes →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── THE PROBLEM ──────────────────────────────────────────────── -->
+<section style="padding:var(--sp20) 0;background:var(--white);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+
+      <div class="fade-up">
+        <span class="label">The environment</span>
+        <h2 style="font-size:40px;line-height:50px;font-weight:600;letter-spacing:-0.01em;margin:var(--sp3) 0 var(--sp6);">Your team manages risk that most security programs never see.</h2>
+        <p style="font-size:17px;color:var(--slate);line-height:28px;margin-bottom:var(--sp6);">Healthcare security officers deal with a different category of threat — patients in crisis, visitors under stress, high-stakes environments where incidents escalate quickly. The administrative burden that follows every event compounds the pressure.</p>
+        <p style="font-size:17px;color:var(--slate);line-height:28px;">Legio eliminates the paperwork without changing the protocol. Your officers focus on the environment. The documentation is taken care of.</p>
+      </div>
+
+      <div class="fade-up fade-up-delay-1" style="display:flex;flex-direction:column;gap:var(--sp4);">
+        <div style="padding:var(--sp6);background:var(--ice);border-radius:var(--r-xl);border-left:3px solid var(--coverage);">
+          <div style="font-size:13px;font-weight:600;color:var(--coverage);margin-bottom:var(--sp2);">Higher violence risk</div>
+          <div style="font-size:15px;color:var(--slate);line-height:23px;">Healthcare workers face a disproportionate share of workplace violence incidents. The security program needs to document, respond to, and prevent them — simultaneously.</div>
+        </div>
+        <div style="padding:var(--sp6);background:var(--ice);border-radius:var(--r-xl);border-left:3px solid var(--coverage);">
+          <div style="font-size:13px;font-weight:600;color:var(--coverage);margin-bottom:var(--sp2);">Regulatory obligations that don't pause</div>
+          <div style="font-size:15px;color:var(--slate);line-height:23px;">Joint Commission standards require documentation that most security teams are still producing manually. The survey doesn't wait for a convenient time.</div>
+        </div>
+        <div style="padding:var(--sp6);background:var(--ice);border-radius:var(--r-xl);border-left:3px solid var(--coverage);">
+          <div style="font-size:13px;font-weight:600;color:var(--coverage);margin-bottom:var(--sp2);">Administrative burden follows every event</div>
+          <div style="font-size:15px;color:var(--slate);line-height:23px;">Every incident creates reporting work. In an environment where incidents happen daily, that burden accumulates fast — and it comes directly from time that should be spent on the floor.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PULL QUOTE ────────────────────────────────────────────────── -->
+<section style="background:var(--command);padding:var(--sp16) 0;">
+  <div class="container">
+    <div style="max-width:800px;margin:0 auto;text-align:center;" class="fade-up">
+      <p style="font-size:28px;line-height:42px;font-weight:400;color:white;letter-spacing:-0.01em;">"Healthcare security teams are doing two jobs. The job of keeping people safe, and the job of documenting that they did. Only one of those jobs should exist."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHAT LEGIO DOES ──────────────────────────────────────────── -->
+<section style="padding:var(--sp20) 0;background:var(--ice);">
+  <div class="container">
+    <div style="max-width:600px;margin-bottom:var(--sp12);" class="fade-up">
+      <span class="label">What Legio does</span>
+      <h2 style="font-size:40px;line-height:50px;font-weight:600;letter-spacing:-0.01em;margin-top:var(--sp3);">Less administration. More security.</h2>
+      <p style="font-size:17px;color:var(--slate);line-height:28px;margin-top:var(--sp4);">Purpose-built for the demands of healthcare security. Incident management, compliance, and operations that work the way your team works.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:0;">
+
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:var(--sp12);padding:var(--sp8) 0;border-bottom:1px solid var(--frost);align-items:start;" class="fade-up">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);padding-top:4px;">Incident Management</div>
+        <div>
+          <h3 style="font-size:22px;font-weight:600;color:var(--command);margin-bottom:var(--sp3);line-height:30px;">Every incident captured completely. No re-entry. No follow-up paperwork.</h3>
+          <p style="font-size:15px;color:var(--slate);line-height:26px;max-width:600px;">Structured intake for the full range of healthcare security events — assaults, patient behavioural incidents, elopements, code situations. Officers capture it once. Classification, routing, and documentation run automatically from there.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:var(--sp12);padding:var(--sp8) 0;border-bottom:1px solid var(--frost);align-items:start;" class="fade-up fade-up-delay-1">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);padding-top:4px;">Workplace Violence</div>
+        <div>
+          <h3 style="font-size:22px;font-weight:600;color:var(--command);margin-bottom:var(--sp3);line-height:30px;">The documentation your WPV program requires — built from operations, not from memory.</h3>
+          <p style="font-size:15px;color:var(--slate);line-height:26px;max-width:600px;">Workplace violence incidents classified and documented at point of entry. Trends visible in real time. The reporting your prevention program depends on is produced automatically — without a separate workflow.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:var(--sp12);padding:var(--sp8) 0;border-bottom:1px solid var(--frost);align-items:start;" class="fade-up fade-up-delay-2">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);padding-top:4px;">Joint Commission</div>
+        <div>
+          <h3 style="font-size:22px;font-weight:600;color:var(--command);margin-bottom:var(--sp3);line-height:30px;">Survey-ready without a preparation sprint.</h3>
+          <p style="font-size:15px;color:var(--slate);line-height:26px;max-width:600px;">Environment of Care documentation, patrol records, sentinel event logs — structured continuously from daily operations. When a survey is scheduled, the record is already there. No scramble, no reconstruction, no gaps.</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:var(--sp12);padding:var(--sp8) 0;align-items:start;" class="fade-up">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);padding-top:4px;">Investigations</div>
+        <div>
+          <h3 style="font-size:22px;font-weight:600;color:var(--command);margin-bottom:var(--sp3);line-height:30px;">Incidents that need follow-up get the structure to support it.</h3>
+          <p style="font-size:15px;color:var(--slate);line-height:26px;max-width:600px;">When an incident requires investigation, the record is already built. Assign investigators, track findings, log actions — all connected to the original event without starting over in a separate system.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── MODULE CARDS ─────────────────────────────────────────────── -->
+<section style="padding:var(--sp20) 0;background:var(--white);">
+  <div class="container">
+    <div style="max-width:560px;margin-bottom:var(--sp12);" class="fade-up">
+      <span class="label">The platform</span>
+      <h2 style="font-size:40px;line-height:50px;font-weight:600;letter-spacing:-0.01em;margin-top:var(--sp3);">Everything your security program needs. Connected.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp6);">
+
+      <div style="padding:var(--sp8) var(--sp6);border:1px solid var(--frost);border-radius:var(--r-xl);transition:all 0.25s;" class="fade-up mod-card">
+        <div class="mod-card-icon" style="width:40px;height:40px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="mod-card-label">Incident Management</div>
+        <div class="mod-card-title">Captured, routed, and closed.</div>
+        <div class="mod-card-desc">Structured intake for every incident type. Classification and routing run automatically from the first report.</div>
+      </div>
+
+      <div style="padding:var(--sp8) var(--sp6);border:1px solid var(--frost);border-radius:var(--r-xl);transition:all 0.25s;" class="fade-up fade-up-delay-1 mod-card">
+        <div class="mod-card-icon" style="width:40px;height:40px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="mod-card-label">Regulatory Compliance</div>
+        <div class="mod-card-title">Joint Commission, handled.</div>
+        <div class="mod-card-desc">EC documentation, WPV records, and patrol logs built continuously from operations. Survey-ready at all times.</div>
+      </div>
+
+      <div style="padding:var(--sp8) var(--sp6);border:1px solid var(--frost);border-radius:var(--r-xl);transition:all 0.25s;" class="fade-up fade-up-delay-2 mod-card">
+        <div class="mod-card-icon" style="width:40px;height:40px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg></div>
+        <div class="mod-card-label">Dispatch</div>
+        <div class="mod-card-title">Response tracked end to end.</div>
+        <div class="mod-card-desc">Officers assigned, response times logged, outcomes documented. Every dispatch tied to the operational record.</div>
+      </div>
+
+      <div style="padding:var(--sp8) var(--sp6);border:1px solid var(--frost);border-radius:var(--r-xl);transition:all 0.25s;" class="fade-up mod-card">
+        <div class="mod-card-icon" style="width:40px;height:40px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div class="mod-card-label">Investigations</div>
+        <div class="mod-card-title">From incident to resolution.</div>
+        <div class="mod-card-desc">When incidents require follow-up, the record is already built. Tasks, findings, and actions connected to the original event.</div>
+      </div>
+
+      <div style="padding:var(--sp8) var(--sp6);border:1px solid var(--frost);border-radius:var(--r-xl);transition:all 0.25s;" class="fade-up fade-up-delay-1 mod-card">
+        <div class="mod-card-icon" style="width:40px;height:40px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></div>
+        <div class="mod-card-label">Asset Management</div>
+        <div class="mod-card-title">Equipment tracked, always.</div>
+        <div class="mod-card-desc">Radios, equipment, and gear assigned and tracked. No more losing track of what's where across a large facility.</div>
+      </div>
+
+      <div style="padding:var(--sp8) var(--sp6);border:1px solid var(--frost);border-radius:var(--r-xl);transition:all 0.25s;" class="fade-up fade-up-delay-2 mod-card">
+        <div class="mod-card-icon" style="width:40px;height:40px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="mod-card-label">Guard Tour</div>
+        <div class="mod-card-title">Patrol visibility, in real time.</div>
+        <div class="mod-card-desc">Officer rounds logged and verified. Supervisors see coverage across the facility as it happens — not after the shift.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ────────────────────────────────────────────────── -->
+<section class="final-cta">
+  <div class="container">
+    <h2 class="h1">See what healthcare security looks like without the administrative burden.</h2>
+    <p>Book 30 minutes. We'll walk through how Legio handles your operations end to end.</p>
+    <div class="cta-actions">
+      <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-white">Book 30 minutes →</a>
+    </div>
+    <p class="cta-note">A real conversation about your operations — not a scripted demo.</p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ───────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <div class="mark">
+            <svg viewBox="0 0 28 28" fill="none">
+              <circle cx="4"  cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="24" cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="4"  cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="24" cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="14" cy="4"  r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="4"  cy="14" r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="24" cy="14" r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="14" cy="24" r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="14" cy="14" r="4"   fill="rgba(255,255,255,0.9)"/>
+            </svg>
+          </div>
+          <span class="wordmark wordmark-light">LEGIO</span>
+        </a>
+        <p>Safety & Security Operations Platform. Built to scale.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="/incident-management/">Incident Management</a></li>
+          <li><a href="/index.html#modules">Guard Tour</a></li>
+          <li><a href="/campus-safety/#clery">Clery Compliance</a></li>
+          <li><a href="/index.html#modules">Emergencies</a></li>
+          <li><a href="/index.html#modules">Policy Management</a></li>
+          <li><a href="/index.html#modules">Parking</a></li>
+          <li><a href="/index.html#modules">Visitors</a></li>
+          <li><a href="/index.html#modules">Asset Management</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="/campus-safety/">Education</a></li>
+          <li><a href="/index.html#industries">Healthcare</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer">Book 30 minutes →</a></li>
+          <li><a href="/index.html#partner">Design Partner Inquiry</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Legio · getlegio.com</p>
+      <div style="display:flex;align-items:center;gap:16px;"><a href="https://www.linkedin.com/company/legiosoftware" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;color:rgba(255,255,255,0.3);transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.6)'" onmouseout="this.style.color='rgba(255,255,255,0.3)'" aria-label="Legio on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="/privacy/" style="color:rgba(255,255,255,0.3);font-size:12px;">Privacy Policy</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── COOKIE BANNER ────────────────────────────────────────────── -->
+<div class="cookie-banner hidden" id="cookie-banner">
+  <p>We use cookies to understand how visitors use this site. <a href="/privacy/">Privacy policy →</a></p>
+  <div class="cookie-actions">
+    <button class="cookie-accept" id="cookie-accept">Accept</button>
+    <button class="cookie-decline" id="cookie-decline">Decline</button>
+  </div>
+</div>
+
+<script>
+  // ── Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(22,32,56,0.08)' : 'none';
+  });
+
+  // ── Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+  }
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMobile();
+  });
+
+  // ── Scroll animations
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // ── Cookie consent
+  (function() {
+    const banner  = document.getElementById('cookie-banner');
+    const consent = localStorage.getItem('legio_cookie_consent');
+    if (!consent) setTimeout(() => banner.classList.remove('hidden'), 800);
+    document.getElementById('cookie-accept').addEventListener('click', () => {
+      localStorage.setItem('legio_cookie_consent', 'accepted');
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+      banner.classList.add('hidden');
+    });
+    document.getElementById('cookie-decline').addEventListener('click', () => {
+      localStorage.setItem('legio_cookie_consent', 'declined');
+      banner.classList.add('hidden');
+    });
+    if (consent === 'accepted') gtag('consent', 'update', { analytics_storage: 'granted' });
+  })();
+</script>
+
+</body>
+</html>
