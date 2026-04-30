@@ -136,10 +136,10 @@
     .nav-links a { font-size: 15px; font-weight: 500; color: var(--slate); transition: color 0.2s; }
     .nav-links a:hover { color: var(--command); }
     .nav-item { position: relative; }
-    .nav-item > a { display: flex; align-items: center; gap: 5px; }
-    .nav-item > a .chevron { width: 14px; height: 14px; color: var(--perimeter); transition: transform 0.2s; flex-shrink: 0; }
-    .nav-item:hover > a .chevron { transform: rotate(180deg); color: var(--command); }
-    .nav-item:hover > a { color: var(--command); }
+    .nav-item > a, .nav-item > span { display: flex; align-items: center; gap: 5px; cursor: pointer; }
+    .nav-item > a .chevron, .nav-item > span .chevron { width: 14px; height: 14px; color: var(--perimeter); transition: transform 0.2s; flex-shrink: 0; }
+    .nav-item:hover > a .chevron, .nav-item:hover > span .chevron { transform: rotate(180deg); color: var(--command); }
+    .nav-item:hover > a, .nav-item:hover > span { color: var(--command); }
     .dropdown {
       position: absolute; top: calc(100% + 8px); left: 50%;
       background: var(--white); border: 1px solid var(--frost);
@@ -469,39 +469,36 @@
       <span class="wordmark">LEGIO</span>
     </a>
 
-    <ul class="nav-links">
+        <ul class="nav-links">
       <li class="nav-item">
-        <a href="/index.html#industries">Industries
+        <a href="/#industries">Industries
           <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
         <div class="dropdown">
-          <a href="/campus-safety/" class="dropdown-item">
-            <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <a href="/campus-safety/" class="dropdown-item" style="background:var(--ice);">
+            <div class="dropdown-icon" style="background:var(--command);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
             <span class="dropdown-title">Education</span>
           </a>
-          <a href="/index.html#industries" class="dropdown-item">
+          <a href="/healthcare/" class="dropdown-item">
             <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
             <span class="dropdown-title">Healthcare</span>
           </a>
         </div>
       </li>
       <li class="nav-item">
-        <a href="/index.html#modules">Platform
+        <span style="cursor:default;">Platform
           <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
+        </span>
         <div class="dropdown">
-          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><span class="dropdown-title">Incident Management</span></a>
-          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span class="dropdown-title">Guard Tour</span></a>
-          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="dropdown-title">Regulatory Compliance</span></a>
-          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><span class="dropdown-title">Emergencies</span></a>
-          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><span class="dropdown-title">Policy Management</span></a>
-          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><span class="dropdown-title">Parking</span></a>
-          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><span class="dropdown-title">Visitors</span></a>
-          <a href="/index.html#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></div><span class="dropdown-title">Asset Management</span></a>
+          <a href="/incident-management/" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><span class="dropdown-title">Incident Management</span></a>
+          <a href="/guard-tour/" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span class="dropdown-title">Guard Tour</span></a>
+          <a href="#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg></div><span class="dropdown-title">Dispatch</span></a>
+          <a href="/regulatory-compliance/" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="dropdown-title">Regulatory Compliance</span></a>
+          <a href="#modules" class="dropdown-item"><div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></div><span class="dropdown-title">Asset Management</span></a>
         </div>
       </li>
-      <li class="nav-item"><a href="/index.html#about">About</a></li>
-      <li class="nav-item"><a href="/index.html#resources">Resources</a></li>
+      <li class="nav-item"><a href="/#about">About</a></li>
+      <li class="nav-item"><a href="/#resources">Resources</a></li>
     </ul>
 
     <div class="nav-cta">
