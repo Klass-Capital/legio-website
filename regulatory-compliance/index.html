@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) — consent gated -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', wait_for_update: 500 });
+    gtag('js', new Date());
+    gtag('config', 'G-MTDN1L9RR5', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTDN1L9RR5"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Regulatory Compliance Software for Campus Safety and Healthcare Security — Legio</title>
+  <meta name="description" content="Guard tour built for physical security operations. Dynamic patrol management, real-time officer visibility, and connected data that drives better decisions." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://getlegio.com/guard-tour/" />
+  <meta name="keywords" content="Clery Act compliance software, Joint Commission security compliance, campus safety compliance, regulatory compliance security operations, Clery compliance platform, campus security reporting" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Legio" />
+  <meta property="og:title" content="Guard Tour Software for Physical Security Operations — Legio" />
+  <meta property="og:description" content="Dynamic guard tour for physical security operations. Real-time visibility, connected data, modern UX." />
+  <meta property="og:url" content="https://getlegio.com/regulatory-compliance/" />
+  <meta property="og:image" content="https://getlegio.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#162038" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Legio Guard Tour",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Guard tour software for physical security operations. Dynamic patrol management, real-time visibility, connected to the data that drives decisions.",
+    "url": "https://getlegio.com/regulatory-compliance/",
+    "publisher": { "@type": "Organization", "name": "Legio", "url": "https://getlegio.com" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --command:   #162038;
+      --coverage:  #2E618A;
+      --perimeter: #6B8FAE;
+      --white:     #FFFFFF;
+      --ice:       #F4F7FA;
+      --frost:     #E5EDF4;
+      --haze:      #C8D8E8;
+      --slate:     #4A6580;
+      --success:   #0F6E56;
+      --warning:   #E09000;
+      --danger:    #9B2828;
+      --sp1: 4px; --sp2: 8px; --sp3: 12px; --sp4: 16px;
+      --sp6: 24px; --sp8: 32px; --sp12: 48px; --sp16: 64px; --sp20: 80px;
+      --r-sm: 4px; --r-md: 8px; --r-lg: 12px; --r-xl: 16px;
+      --max-w: 1200px; --gutter: 40px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px; line-height: 26px;
+      color: var(--command); background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); }
+
+    /* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+    .display { font-size: 52px; line-height: 60px; font-weight: 700; letter-spacing: -0.02em; }
+    .h1      { font-size: 40px; line-height: 50px; font-weight: 600; letter-spacing: -0.01em; }
+    .h2      { font-size: 28px; line-height: 36px; font-weight: 600; letter-spacing: -0.01em; }
+    .h3      { font-size: 20px; line-height: 28px; font-weight: 600; }
+    .label   { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coverage); }
+
+    /* ─── BUTTONS ────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: var(--sp2);
+      font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600;
+      padding: 13px 24px; border-radius: var(--r-md);
+      cursor: pointer; border: none; transition: all 0.2s ease;
+      white-space: nowrap; text-decoration: none;
+    }
+    .btn-primary { background: var(--command); color: var(--white); }
+    .btn-primary:hover { background: #1e2e50; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(22,32,56,0.25); text-decoration: none; }
+    .btn-outline { background: transparent; color: var(--command); border: 1.5px solid var(--command); }
+    .btn-outline:hover { background: var(--command); color: var(--white); }
+    .btn-white { background: var(--white); color: var(--command); }
+    .btn-white:hover { background: var(--ice); transform: translateY(-1px); }
+    .btn-outline-white { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.4); }
+    .btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+    /* ─── MARK / LOGO ────────────────────────────────────────── */
+    .mark { display: inline-block; width: 28px; height: 28px; flex-shrink: 0; }
+    .mark svg { width: 100%; height: 100%; }
+    .wordmark { font-size: 16px; font-weight: 700; letter-spacing: 0.26em; color: var(--command); }
+    .wordmark-light { color: var(--white); }
+    .logo { display: flex; align-items: center; gap: 10px; }
+
+    /* ─── NAV ────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--frost);
+    }
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter);
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-left { display: flex; align-items: center; gap: var(--sp6); }
+    .nav-divider { width: 1px; height: 20px; background: var(--haze); }
+    .nav-page { font-size: 14px; font-weight: 500; color: var(--slate); }
+    .nav-back {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 500; color: var(--perimeter);
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--command); }
+
+    /* ─── FADE-IN ANIMATION ──────────────────────────────────── */
+    .fade-up {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-delay-1 { transition-delay: 0.1s; }
+    .fade-up-delay-2 { transition-delay: 0.2s; }
+    .fade-up-delay-3 { transition-delay: 0.3s; }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    .hero {
+      padding: 140px 0 var(--sp20);
+      background: var(--white);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp12);
+      align-items: center;
+    }
+    .hero-content { }
+    .hero-content .label { margin-bottom: var(--sp4); display: block; }
+    .hero-content .display { margin-bottom: var(--sp6); }
+    .hero-content .display em {
+      font-style: normal; color: var(--coverage);
+    }
+    .hero-sub {
+      font-size: 18px; line-height: 30px; color: var(--slate);
+      max-width: 520px; margin-bottom: var(--sp8);
+    }
+    .hero-actions { display: flex; gap: var(--sp4); flex-wrap: wrap; }
+
+    .hero-screenshot {
+      border-radius: var(--r-xl); overflow: hidden;
+      box-shadow: 0 16px 48px rgba(22,32,56,0.12);
+    }
+    .hero-screenshot img {
+      width: 100%; height: auto; display: block;
+      border-radius: var(--r-xl);
+    }
+    .hero-screenshot-placeholder {
+      display: flex; flex-direction: column; align-items: center; gap: var(--sp3);
+      color: var(--perimeter);
+    }
+    .hero-screenshot-placeholder svg { opacity: 0.4; }
+    .hero-screenshot-placeholder span { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; }
+
+    /* ─── PROBLEM SECTION ────────────────────────────────────── */
+    .problem {
+      padding: var(--sp20) 0;
+      background: var(--ice);
+      border-top: 1px solid var(--frost);
+      border-bottom: 1px solid var(--frost);
+    }
+    .problem-intro {
+      text-align: center; max-width: 640px; margin: 0 auto var(--sp12);
+    }
+    .problem-intro .label { margin-bottom: var(--sp3); display: block; }
+    .problem-intro .h2 { margin-bottom: var(--sp4); }
+    .problem-intro .h2 .muted { color: var(--perimeter); }
+    .problem-intro p { color: var(--slate); font-size: 16px; }
+
+    .problem-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto 1fr auto;
+      gap: var(--sp6);
+    }
+    .problem-card {
+      background: var(--white); border: 1px solid var(--frost);
+      border-radius: var(--r-lg); padding: var(--sp8);
+      display: grid;
+      grid-row: span 3;
+      grid-template-rows: subgrid;
+      row-gap: 0;
+    }
+    .problem-card h3 {
+      font-size: 18px; font-weight: 600; margin-bottom: var(--sp3);
+    }
+    .problem-card p {
+      font-size: 15px; line-height: 24px; color: var(--slate);
+      margin-bottom: var(--sp4);
+    }
+    .problem-stat {
+      display: inline-block; font-size: 13px; font-weight: 600;
+      color: var(--danger); background: #FAEAEA;
+      padding: 4px 10px; border-radius: 100px;
+      white-space: nowrap;
+      align-self: end; justify-self: start;
+    }
+
+    /* ─── LINK ANALYSIS ──────────────────────────────────────── */
+    .link-analysis {
+      padding: var(--sp20) 0;
+      background: var(--white);
+    }
+    .link-intro {
+      text-align: center; max-width: 600px; margin: 0 auto var(--sp12);
+    }
+    .link-intro .label { display: block; margin-bottom: var(--sp3); }
+    .link-intro .h2 { margin-bottom: var(--sp4); }
+    .link-intro p { color: var(--slate); font-size: 16px; line-height: 26px; }
+
+    .link-canvas-wrap {
+      background: var(--command); border-radius: var(--r-xl);
+      overflow: hidden; position: relative;
+      box-shadow: 0 24px 64px rgba(22,32,56,0.18), 0 0 0 1px rgba(22,32,56,0.08);
+      max-width: 900px; margin: 0 auto;
+    }
+    .link-canvas-header {
+      position: absolute; top: 0; left: 0; right: 0; z-index: 2;
+      padding: 14px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(22,32,56,0.6);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .link-canvas-title {
+      font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.45);
+      letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    .link-canvas-badge {
+      font-size: 11px; font-weight: 600; color: var(--perimeter);
+      background: rgba(107,143,174,0.15);
+      padding: 3px 10px; border-radius: 100px;
+      border: 1px solid rgba(107,143,174,0.2);
+      transition: all 0.5s ease;
+    }
+    .link-canvas-badge.detected {
+      color: var(--success); background: rgba(15,110,86,0.15);
+      border-color: rgba(15,110,86,0.3);
+    }
+    #linkCanvas { display: block; width: 100%; }
+
+    .pattern-alert {
+      position: absolute; bottom: 16px; left: 16px; right: 16px;
+      background: rgba(22,32,56,0.85);
+      border: 1px solid rgba(15,110,86,0.3);
+      border-radius: var(--r-md);
+      padding: 12px 16px;
+      display: flex; align-items: center; gap: 10px;
+      backdrop-filter: blur(8px);
+      opacity: 0; transform: translateY(8px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      z-index: 2;
+    }
+    .pattern-alert.visible { opacity: 1; transform: translateY(0); }
+    .pattern-alert-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--success); flex-shrink: 0;
+      box-shadow: 0 0 8px rgba(15,110,86,0.6);
+    }
+    .pattern-alert-text {
+      font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.85);
+    }
+    .pattern-alert-text strong { color: var(--white); }
+
+    .link-caption {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp6); max-width: 900px; margin: var(--sp8) auto 0;
+    }
+    .link-caption-item {
+      text-align: center;
+    }
+    .link-caption-num {
+      font-size: 28px; font-weight: 700; color: var(--command);
+      margin-bottom: var(--sp1);
+    }
+    .link-caption-text {
+      font-size: 14px; color: var(--slate); line-height: 20px;
+    }
+
+    /* ─── HOW IT WORKS ───────────────────────────────────────── */
+    .how-it-works {
+      padding: var(--sp20) 0;
+      background: var(--ice);
+      border-top: 1px solid var(--frost);
+      border-bottom: 1px solid var(--frost);
+    }
+    .how-intro {
+      text-align: center; max-width: 640px; margin: 0 auto var(--sp12);
+    }
+    .how-intro .label { display: block; margin-bottom: var(--sp3); }
+    .how-intro .h2 { margin-bottom: var(--sp4); }
+    .how-intro p { color: var(--slate); }
+
+    .how-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .how-step-item {
+      text-align: center; padding: 0 var(--sp6);
+      border-left: 1px solid var(--haze);
+    }
+    .how-step-item:first-child { border-left: none; }
+    .how-step-item h3 {
+      font-size: 18px; font-weight: 600; margin-bottom: var(--sp2);
+    }
+    .how-step-item p {
+      font-size: 15px; line-height: 24px; color: var(--slate);
+      max-width: 320px; margin: 0 auto;
+    }
+
+    /* ─── HUMAN + AI ─────────────────────────────────────────── */
+    .authority {
+      padding: var(--sp20) 0;
+      background: var(--white);
+    }
+    .authority-intro {
+      text-align: center; max-width: 600px; margin: 0 auto var(--sp12);
+    }
+    .authority-intro .label { display: block; margin-bottom: var(--sp3); }
+    .authority-intro .h2 { margin-bottom: var(--sp4); }
+    .authority-intro p { color: var(--slate); }
+
+    .authority-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp6); max-width: 880px; margin: 0 auto;
+    }
+    .authority-col-header {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding-bottom: var(--sp4);
+      margin-bottom: var(--sp4);
+      border-bottom: 2px solid var(--frost);
+    }
+    .authority-col-header.ai { color: var(--coverage); }
+    .authority-col-header.human { color: var(--command); }
+
+    .authority-row {
+      background: var(--ice); border: 1px solid var(--frost);
+      border-radius: var(--r-md); padding: var(--sp4) var(--sp6);
+      margin-bottom: var(--sp3);
+    }
+    .authority-row-label {
+      font-size: 12px; font-weight: 600; color: var(--perimeter);
+      letter-spacing: 0.04em; text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .authority-row-text {
+      font-size: 15px; font-weight: 500; color: var(--command);
+    }
+
+    /* ─── FINAL CTA ──────────────────────────────────────────── */
+    .final-cta {
+      padding: var(--sp20) 0;
+      background: var(--command);
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .final-cta .h1 { color: var(--white); margin-bottom: var(--sp4); }
+    .final-cta p { color: var(--perimeter); font-size: 18px; max-width: 480px; margin: 0 auto var(--sp8); line-height: 28px; }
+    .cta-actions { display: flex; gap: var(--sp4); justify-content: center; flex-wrap: wrap; margin-bottom: var(--sp4); }
+    .cta-note { font-size: 14px; color: rgba(107,143,174,0.6); }
+
+    /* ─── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      padding: var(--sp8) 0;
+      background: var(--command);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 10px; }
+    .footer-copy { font-size: 13px; color: rgba(107,143,174,0.5); }
+    .footer-links { display: flex; gap: var(--sp6); }
+    .footer-links a {
+      font-size: 13px; color: var(--perimeter); transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      :root { --gutter: 24px; }
+      .display { font-size: 36px; line-height: 44px; }
+      .h1 { font-size: 30px; line-height: 38px; }
+      .h2 { font-size: 24px; line-height: 32px; }
+      .hero { padding-top: 100px; }
+      .hero-grid { grid-template-columns: 1fr; gap: var(--sp8); }
+      .hero-screenshot { max-width: 480px; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .how-grid { grid-template-columns: 1fr; gap: var(--sp8); }
+      .how-step-item { border-left: none; border-top: 1px solid var(--haze); padding-top: var(--sp6); }
+      .how-step-item:first-child { border-top: none; padding-top: 0; }
+      .authority-grid { grid-template-columns: 1fr; }
+      .link-caption { grid-template-columns: 1fr; gap: var(--sp4); }
+    }
+    @media (max-width: 600px) {
+      .nav-back-text { display: none; }
+      .footer-inner { flex-direction: column; gap: var(--sp4); text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/" class="logo">
+        <div class="mark">
+          <svg viewBox="0 0 28 28" fill="none">
+            <circle cx="4"  cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+            <circle cx="24" cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+            <circle cx="4"  cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+            <circle cx="24" cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+            <circle cx="14" cy="4"  r="2.5" fill="rgba(46,97,138,0.8)"/>
+            <circle cx="4"  cy="14" r="2.5" fill="rgba(46,97,138,0.8)"/>
+            <circle cx="24" cy="14" r="2.5" fill="rgba(46,97,138,0.8)"/>
+            <circle cx="14" cy="24" r="2.5" fill="rgba(46,97,138,0.8)"/>
+            <circle cx="14" cy="14" r="4"   fill="#162038"/>
+          </svg>
+        </div>
+        <span class="wordmark">LEGIO</span>
+      </a>
+      <div class="nav-divider"></div>
+      <span class="nav-page">Regulatory Compliance</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:var(--sp6);">
+      <a href="/" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="nav-back-text">Back to home</span>
+      </a>
+      <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding:9px 18px;font-size:14px;">Book 30 minutes →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────────────────── -->
+<section class="hero" style="padding-bottom:var(--sp16);">
+  <div class="container">
+    <div style="max-width:760px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;" class="fade-up">
+      <span class="label">Regulatory Compliance</span>
+      <h1 class="display" style="margin-top:var(--sp3);">Compliance is the result of doing your job well. <em>Not a second job on top of it.</em></h1>
+      <p class="hero-sub" style="margin:var(--sp5) auto var(--sp8);max-width:580px;text-align:center;display:block;width:100%;">Legio doesn't run a compliance program alongside your safety program. Your safety program produces the compliance record — automatically, accurately, continuously.</p>
+      <div class="hero-actions" style="justify-content:center;width:100%;display:flex;">
+        <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book 30 minutes →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REFRAME ──────────────────────────────────────────────────── -->
+<section style="background:var(--command);padding:var(--sp20) 0;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;" class="fade-up">
+
+      <!-- Left — the old way -->
+      <div style="padding:var(--sp8);background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-xl);">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:var(--sp6);">The traditional approach</div>
+        <div style="display:flex;flex-direction:column;gap:var(--sp4);">
+          <div style="display:flex;align-items:flex-start;gap:var(--sp3);">
+            <div style="width:20px;height:20px;border-radius:50%;background:rgba(155,40,40,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(220,80,80,0.9)" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:24px;">Compliance is a separate workflow requiring dedicated staff time</p>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:var(--sp3);">
+            <div style="width:20px;height:20px;border-radius:50%;background:rgba(155,40,40,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(220,80,80,0.9)" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:24px;">Data compiled manually at reporting deadlines from fragmented sources</p>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:var(--sp3);">
+            <div style="width:20px;height:20px;border-radius:50%;background:rgba(155,40,40,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(220,80,80,0.9)" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:24px;">Classification decisions made under pressure at year end, not at point of incident</p>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:var(--sp3);">
+            <div style="width:20px;height:20px;border-radius:50%;background:rgba(155,40,40,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(220,80,80,0.9)" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:24px;">Compliance accuracy depends on how well operational records were kept</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right — the Legio way -->
+      <div style="padding:var(--sp8);background:rgba(46,97,138,0.2);border:1px solid rgba(46,97,138,0.4);border-radius:var(--r-xl);">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:var(--sp6);">The Legio approach</div>
+        <div style="display:flex;flex-direction:column;gap:var(--sp4);">
+          <div style="display:flex;align-items:flex-start;gap:var(--sp3);">
+            <div style="width:20px;height:20px;border-radius:50%;background:rgba(15,110,86,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p style="font-size:15px;color:rgba(255,255,255,0.8);line-height:24px;">Compliance data is built continuously from daily operations — not assembled at deadline</p>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:var(--sp3);">
+            <div style="width:20px;height:20px;border-radius:50%;background:rgba(15,110,86,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p style="font-size:15px;color:rgba(255,255,255,0.8);line-height:24px;">Classification happens at the point of incident — when the facts are fresh and the context is clear</p>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:var(--sp3);">
+            <div style="width:20px;height:20px;border-radius:50%;background:rgba(15,110,86,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p style="font-size:15px;color:rgba(255,255,255,0.8);line-height:24px;">No separate compliance program. No dedicated compliance workflow. Just operations that produce the record.</p>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:var(--sp3);">
+            <div style="width:20px;height:20px;border-radius:50%;background:rgba(15,110,86,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p style="font-size:15px;color:rgba(255,255,255,0.8);line-height:24px;">Reporting is ready because the underlying data was always structured to produce it</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── PULL QUOTE ────────────────────────────────────────────────── -->
+<section style="background:var(--ice);padding:var(--sp16) 0;border-top:1px solid var(--frost);border-bottom:1px solid var(--frost);">
+  <div class="container">
+    <div style="max-width:800px;margin:0 auto;text-align:center;" class="fade-up">
+      <p style="font-size:28px;line-height:42px;font-weight:400;color:var(--command);letter-spacing:-0.01em;">"A compliance program that lives inside your operations program isn't a burden. A compliance program that runs parallel to it is."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FRAMEWORKS ───────────────────────────────────────────────── -->
+<section style="padding:var(--sp20) 0;background:var(--white);">
+  <div class="container">
+    <div style="max-width:600px;margin-bottom:var(--sp12);" class="fade-up">
+      <span class="label">Frameworks supported</span>
+      <h2 style="font-size:40px;line-height:50px;font-weight:600;letter-spacing:-0.01em;margin:var(--sp3) 0 var(--sp4);">Whether it's Clery or Joint Commission, the record is already there.</h2>
+      <p style="font-size:17px;color:var(--slate);line-height:28px;">Different frameworks. Same principle — your operations produce the compliance record, and Legio structures it to meet the specific requirements of each.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp8);">
+
+      <!-- Clery -->
+      <div style="border:1px solid var(--frost);border-radius:var(--r-xl);overflow:hidden;" class="fade-up">
+        <div style="background:var(--command);padding:var(--sp6) var(--sp8);">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:var(--sp2);">Higher education</div>
+          <div style="font-size:22px;font-weight:700;color:var(--white);">Clery Act</div>
+        </div>
+        <div style="padding:var(--sp8);display:flex;flex-direction:column;gap:var(--sp5);">
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--command);margin-bottom:var(--sp2);">Annual Security Report</div>
+            <p style="font-size:14px;color:var(--slate);line-height:22px;">Built continuously from classified incidents throughout the year. Review and publish — don't compile.</p>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--command);margin-bottom:var(--sp2);">Daily Crime Log</div>
+            <p style="font-size:14px;color:var(--slate);line-height:22px;">Automatically populated from incident records. Always current, always accessible, always accurate.</p>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--command);margin-bottom:var(--sp2);">Timely Warnings</div>
+            <p style="font-size:14px;color:var(--slate);line-height:22px;">Flagged automatically when a reportable incident meets the threshold. Nothing falls through because someone forgot to check.</p>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--command);margin-bottom:var(--sp2);">Geographic Classification</div>
+            <p style="font-size:14px;color:var(--slate);line-height:22px;">On-campus, non-campus, public property — categorised at intake so reporting doesn't require retrospective review.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Joint Commission -->
+      <div style="border:1px solid var(--frost);border-radius:var(--r-xl);overflow:hidden;" class="fade-up fade-up-delay-1">
+        <div style="background:var(--coverage);padding:var(--sp6) var(--sp8);">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:var(--sp2);">Healthcare</div>
+          <div style="font-size:22px;font-weight:700;color:var(--white);">Joint Commission</div>
+        </div>
+        <div style="padding:var(--sp8);display:flex;flex-direction:column;gap:var(--sp5);">
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--command);margin-bottom:var(--sp2);">Sentinel Event Documentation</div>
+            <p style="font-size:14px;color:var(--slate);line-height:22px;">Structured incident capture ensures the documentation required for sentinel event reporting is complete from the moment of intake.</p>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--command);margin-bottom:var(--sp2);">Environment of Care</div>
+            <p style="font-size:14px;color:var(--slate);line-height:22px;">Security rounds, patrol records, and incident data provide the operational evidence required for EC standard compliance.</p>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--command);margin-bottom:var(--sp2);">Workplace Violence Prevention</div>
+            <p style="font-size:14px;color:var(--slate);line-height:22px;">Incident trends, response records, and officer activity logs support the documentation requirements for WPV program compliance.</p>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--command);margin-bottom:var(--sp2);">Audit Readiness</div>
+            <p style="font-size:14px;color:var(--slate);line-height:22px;">When a survey is scheduled, the record is already there. No preparation sprint. No document scramble. Just operations, already documented.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ─────────────────────────────────────────────── -->
+<section style="background:var(--command);padding:var(--sp20) 0;">
+  <div class="container">
+    <div style="max-width:600px;margin-bottom:var(--sp12);" class="fade-up">
+      <span class="label" style="color:var(--perimeter);">How it works</span>
+      <h2 style="font-size:40px;line-height:50px;font-weight:600;letter-spacing:-0.01em;color:var(--white);margin-top:var(--sp3);">The compliance record builds itself.</h2>
+    </div>
+
+    <!-- Step 1 — text left, visual right -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:var(--sp12) 0;border-bottom:1px solid rgba(255,255,255,0.07);" class="fade-up">
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:var(--sp3);">Step 1 — Operate</div>
+        <h3 style="font-size:24px;font-weight:600;color:var(--white);margin-bottom:var(--sp4);line-height:32px;">Your team does their job. The record forms around them.</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:26px;">Officers capture incidents, complete patrols, and log activity the way they always have. Legio structures that data against the applicable framework — automatically, at the point of entry.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-xl);padding:var(--sp6);">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:var(--sp4);">Classification at intake</div>
+        <div style="display:flex;flex-direction:column;gap:var(--sp2);">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(255,255,255,0.05);border-radius:var(--r-md);">
+            <span style="font-size:13px;color:rgba(255,255,255,0.8);">Incident type</span>
+            <span style="font-size:12px;color:#34D399;font-weight:600;">Auto-classified</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(255,255,255,0.05);border-radius:var(--r-md);">
+            <span style="font-size:13px;color:rgba(255,255,255,0.8);">Geographic category</span>
+            <span style="font-size:12px;color:#34D399;font-weight:600;">Auto-classified</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(255,255,255,0.05);border-radius:var(--r-md);">
+            <span style="font-size:13px;color:rgba(255,255,255,0.8);">Reportable flag</span>
+            <span style="font-size:12px;color:#34D399;font-weight:600;">Auto-applied</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(255,255,255,0.05);border-radius:var(--r-md);">
+            <span style="font-size:13px;color:rgba(255,255,255,0.8);">ASR / EC record updated</span>
+            <span style="font-size:12px;color:#34D399;font-weight:600;">Immediate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 — visual left, text right -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:var(--sp12) 0;border-bottom:1px solid rgba(255,255,255,0.07);" class="fade-up fade-up-delay-1">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-xl);padding:var(--sp6);">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:var(--sp4);">Compliance status — live</div>
+        <div style="display:flex;flex-direction:column;gap:var(--sp3);">
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div style="width:8px;height:8px;border-radius:50%;background:#34D399;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:rgba(255,255,255,0.8);flex:1;">Crime log</span>
+            <span style="font-size:11px;color:rgba(255,255,255,0.35);">Current</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div style="width:8px;height:8px;border-radius:50%;background:#34D399;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:rgba(255,255,255,0.8);flex:1;">ASR data</span>
+            <span style="font-size:11px;color:rgba(255,255,255,0.35);">Up to date</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div style="width:8px;height:8px;border-radius:50%;background:#34D399;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:rgba(255,255,255,0.8);flex:1;">EC patrol records</span>
+            <span style="font-size:11px;color:rgba(255,255,255,0.35);">Complete</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;">
+            <div style="width:8px;height:8px;border-radius:50%;background:#34D399;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:rgba(255,255,255,0.8);flex:1;">Timely warning threshold</span>
+            <span style="font-size:11px;color:rgba(255,255,255,0.35);">Monitoring</span>
+          </div>
+        </div>
+        <p style="font-size:12px;color:rgba(255,255,255,0.2);margin-top:var(--sp4);font-style:italic;">Not at year end. Right now.</p>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:var(--sp3);">Step 2 — Monitor</div>
+        <h3 style="font-size:24px;font-weight:600;color:var(--white);margin-bottom:var(--sp4);line-height:32px;">Compliance status is visible at all times — not just at reporting time.</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:26px;">No end-of-year scramble. No frantic data pull. The compliance record is live, structured, and accurate at every moment — because it's built from operations that are already happening.</p>
+      </div>
+    </div>
+
+    <!-- Step 3 — full width -->
+    <div style="padding:var(--sp12) 0;display:grid;grid-template-columns:1fr 1fr;gap:64px;" class="fade-up fade-up-delay-2">
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:var(--sp3);">Step 3 — Report</div>
+        <h3 style="font-size:24px;font-weight:600;color:var(--white);margin-bottom:var(--sp4);line-height:32px;">When it's time to report, everything is already there.</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:26px;">Annual Security Reports, crime logs, patrol documentation, sentinel event records — generated from operational data that was structured from day one to produce them. Review, verify, publish.</p>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--perimeter);margin-bottom:var(--sp3);">The outcome</div>
+        <h3 style="font-size:24px;font-weight:600;color:var(--white);margin-bottom:var(--sp4);line-height:32px;">Compliance that proves your program works — not one that runs alongside it.</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:26px;">The best compliance outcomes come from excellent operations. Legio makes excellent operations produce the record automatically — so compliance is the proof, not the work.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ────────────────────────────────────────────────── -->
+<section class="final-cta">
+  <div class="container">
+    <h2 class="h1">See what compliance looks like when it runs on its own.</h2>
+    <p>Book 30 minutes. We'll show you how Legio turns your operations into the compliance record.</p>
+    <div class="cta-actions">
+      <a href="https://calendly.com/darren-klasscapital/30min" target="_blank" rel="noopener noreferrer" class="btn btn-white">Book 30 minutes →</a>
+    </div>
+    <p class="cta-note">A real conversation about your operations — not a scripted demo.</p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <div class="mark">
+            <svg viewBox="0 0 28 28" fill="none">
+              <circle cx="4"  cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="24" cy="4"  r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="4"  cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="24" cy="24" r="2"   fill="rgba(107,143,174,0.6)"/>
+              <circle cx="14" cy="4"  r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="4"  cy="14" r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="24" cy="14" r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="14" cy="24" r="2.5" fill="rgba(107,143,174,0.8)"/>
+              <circle cx="14" cy="14" r="4"   fill="rgba(255,255,255,0.9)"/>
+            </svg>
+          </div>
+          <span class="wordmark wordmark-light">LEGIO</span>
+        </a>
+      </div>
+      <span class="footer-copy">&copy; 2026 Legio. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="/privacy/">Privacy</a>
+        <a href="https://www.linkedin.com/company/legiosoftware" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;color:rgba(255,255,255,0.3);transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.6)'" onmouseout="this.style.color='rgba(255,255,255,0.3)'" aria-label="Legio on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="/terms/">Terms</a>
+        <a href="mailto:hello@getlegio.com">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── SCRIPTS ──────────────────────────────────────────────────── -->
+<script>
+// Intersection Observer for fade-up animations
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
+</script>
+
+</body>
+</html>
